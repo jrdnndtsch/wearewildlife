@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @featured_donor.short_description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @featured_donor.link %>
+</p>
+
+<%= link_to 'Edit', edit_featured_donor_path(@featured_donor) %> |
+<%= link_to 'Back', featured_donors_path %>

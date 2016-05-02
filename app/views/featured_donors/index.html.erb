@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Featured Donors</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Short description</th>
+      <th>Link</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @featured_donors.each do |featured_donor| %>
+      <tr>
+        <td><%= featured_donor.short_description %></td>
+        <td><%= featured_donor.link %></td>
+        <td><%= link_to 'Show', featured_donor %></td>
+        <td><%= link_to 'Edit', edit_featured_donor_path(featured_donor) %></td>
+        <td><%= link_to 'Destroy', featured_donor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Featured donor', new_featured_donor_path %>

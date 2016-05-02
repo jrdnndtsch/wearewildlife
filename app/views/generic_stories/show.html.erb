@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @generic_story.title %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @generic_story.short_description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @generic_story.link %>
+</p>
+
+<%= link_to 'Edit', edit_generic_story_path(@generic_story) %> |
+<%= link_to 'Back', generic_stories_path %>

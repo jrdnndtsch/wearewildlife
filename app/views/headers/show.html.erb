@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @header.number %>
+</p>
+
+<p>
+  <strong>Tag line:</strong>
+  <%= @header.tag_line %>
+</p>
+
+<p>
+  <strong>About:</strong>
+  <%= @header.about %>
+</p>
+
+<%= link_to 'Edit', edit_header_path(@header) %> |
+<%= link_to 'Back', headers_path %>

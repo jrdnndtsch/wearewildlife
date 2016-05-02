@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sub Menus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Main menu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sub_menus.each do |sub_menu| %>
+      <tr>
+        <td><%= sub_menu.title %></td>
+        <td><%= sub_menu.link %></td>
+        <td><%= sub_menu.main_menu %></td>
+        <td><%= link_to 'Show', sub_menu %></td>
+        <td><%= link_to 'Edit', edit_sub_menu_path(sub_menu) %></td>
+        <td><%= link_to 'Destroy', sub_menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sub menu', new_sub_menu_path %>
