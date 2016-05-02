@@ -1,6 +1,6 @@
 class HeadersController < ApplicationController
   before_action :set_header, only: [:show, :edit, :update, :destroy]
-
+  before_filter :set_paper_trail_whodunnit
   # GET /headers
   # GET /headers.json
   def index

@@ -1,6 +1,6 @@
 class SubMenusController < ApplicationController
   before_action :set_sub_menu, only: [:show, :edit, :update, :destroy]
-
+  before_filter :set_paper_trail_whodunnit
   # GET /sub_menus
   # GET /sub_menus.json
   def index

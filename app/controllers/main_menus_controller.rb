@@ -1,6 +1,6 @@
 class MainMenusController < ApplicationController
   before_action :set_main_menu, only: [:show, :edit, :update, :destroy]
-
+  before_filter :set_paper_trail_whodunnit
   # GET /main_menus
   # GET /main_menus.json
   def index

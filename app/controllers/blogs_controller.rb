@@ -1,5 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_filter :set_paper_trail_whodunnit
 
   # GET /blogs
   # GET /blogs.json

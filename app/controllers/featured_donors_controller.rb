@@ -1,5 +1,6 @@
 class FeaturedDonorsController < ApplicationController
   before_action :set_featured_donor, only: [:show, :edit, :update, :destroy]
+   before_filter :set_paper_trail_whodunnit
 
   # GET /featured_donors
   # GET /featured_donors.json

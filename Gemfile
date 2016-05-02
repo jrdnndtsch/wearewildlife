@@ -28,6 +28,9 @@ gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk-v1'
 gem 'aws-s3'
+
+#for change tracking
+gem 'paper_trail'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 

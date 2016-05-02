@@ -1,6 +1,6 @@
 class GenericStoriesController < ApplicationController
   before_action :set_generic_story, only: [:show, :edit, :update, :destroy]
-
+  before_filter :set_paper_trail_whodunnit
   # GET /generic_stories
   # GET /generic_stories.json
   def index

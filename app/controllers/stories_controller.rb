@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
-
+  before_filter :set_paper_trail_whodunnit
   # GET /stories
   # GET /stories.json
   def index
