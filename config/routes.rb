@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'admin/show'
+
+  get 'front_page/show'
+
   devise_for :users
   resources :sub_menus
   resources :main_menus
