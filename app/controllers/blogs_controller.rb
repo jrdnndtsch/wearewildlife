@@ -2,6 +2,8 @@ class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_filter :set_paper_trail_whodunnit
 
+  include UpdatedBy
+
   # GET /blogs
   # GET /blogs.json
   def index
@@ -11,6 +13,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @updated_by = model_updated_by_user(@blog)
   end
 
   # GET /blogs/new
