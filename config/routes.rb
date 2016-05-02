@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'admin/show'
+
+  get 'front_page/show'
+
+
   devise_for :users
   resources :sub_menus
   resources :main_menus
@@ -11,7 +16,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'stories#index'
+  root 'front_page#show'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
