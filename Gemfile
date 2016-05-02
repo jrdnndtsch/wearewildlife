@@ -23,6 +23,11 @@ gem 'jbuilder', '~> 2.0'
 
 #for user authentication
 gem 'devise'
+
+#for image uploads
+gem 'paperclip'
+gem 'aws-sdk-v1'
+gem 'aws-s3'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
