@@ -10,8 +10,8 @@ class FrontPageController < ApplicationController
 
   	client_key = ENV['client_key']
   	client_secret = ENV['client_secret']
-  	oauth_token = 'OuIDhHyGzBJliYizeb9tS1zk'
-  	oauth_token_secret = 'pYhEj7SJAYTaAnwD6cTG5REhlqA2VyEbFcN2pfYYyyitQEP0'
+  	oauth_token = ENV['oauth_token']
+  	oauth_token_secret = ENV['oauth_token_secret']
   	method = 'GET'
   	uri = 'http://jordandeutsch.com/wp-json/wp/v2/posts/106'
   	image_uri = 'http://jordandeutsch.com/wp-json/wp/v2/media/24'
