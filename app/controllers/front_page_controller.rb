@@ -1,6 +1,7 @@
 class FrontPageController < ApplicationController
 	skip_before_action :authenticate_user!
 	require 'HTTParty'
+  require 'json'
 	
   def show
 
@@ -12,16 +13,16 @@ class FrontPageController < ApplicationController
   	oauth_token = 'OuIDhHyGzBJliYizeb9tS1zk'
   	oauth_token_secret = 'pYhEj7SJAYTaAnwD6cTG5REhlqA2VyEbFcN2pfYYyyitQEP0'
   	method = 'GET'
-  	uri = 'http://jordandeutsch.com/wp-json/wp/v2/posts/161'
-  	
+  	uri = 'http://jordandeutsch.com/wp-json/wp/v2/posts/106'
+  	image_uri = 'http://jordandeutsch.com/wp-json/wp/v2/media/24'
   	def generate_nonce(size=7)
   	  Base64.encode64(OpenSSL::Random.random_bytes(size)).gsub(/\W/, '')
   	end
 
-  	def params(client_key, oauth_token)
+  	def params(client_key, oauth_token, nonce)
   	  params = {
   	    'oauth_consumer_key' => client_key, # Your consumer key
-  	    'oauth_nonce' => generate_nonce, # A random string, see below for function
+  	    'oauth_nonce' => nonce, # A random string, see below for function
   	    'oauth_signature_method' => 'HMAC-SHA1', # How you'll be signing (see later)
   	    'oauth_timestamp' => Time.now.getutc.to_i.to_s, # Timestamp
   	    'oauth_version' => '1.0',# oAuth version
@@ -71,30 +72,52 @@ class FrontPageController < ApplicationController
   	  resp.body
   	end
 
+    # params = params(client_key, oauth_token, generate_nonce)
+    # params['oauth_consumer_key'] = client_key
+    # params['oauth_token'] = oauth_token
+    # create this for the oauth_signature
+    # signature_base_string = signature_base_string(method, uri, params)
+    # image_signature_base_string = signature_base_string(method, image_uri, params)
+    # access_token = oauth_token_secret
+    # access_token ||= '' # if not set, blank string
+    # signing_key = client_secret + '&' + access_token
+
+    def make_request(method, uri, client_key, oauth_token, oauth_token_secret, client_secret)
+      access_token = oauth_token_secret
+      params = params(client_key, oauth_token, generate_nonce)
+      params['oauth_consumer_key'] = client_key
+      params['oauth_token'] = oauth_token
+      params['oauth_nonce'] = generate_nonce
+      signing_key = client_secret + '&' + access_token
+      signature_base_string = signature_base_string(method, uri, params)
+      params['oauth_signature'] = url_encode(sign(signing_key, signature_base_string))
+      header_string = header(params)
+      return header_string
+    end
   	# Steps for OAuth
 
   	# use consumer_key and consumer_secret and send to /oauth1/request (GET)
   	#get back oauth_token and oauth_secret (temporary)
 
   	#add consumer key to params
-  	params = params(client_key, oauth_token)
-  	params['oauth_consumer_key'] = client_key
-  	params['oauth_token'] = oauth_token
-  	# create this for the oauth_signature
-  	signature_base_string = signature_base_string(method, uri, params)
-  	access_token = oauth_token_secret
-  	# access_token ||= '' # if not set, blank string
-  	signing_key = client_secret + '&' + access_token
+  
   	#add oauth_signature to params
-  	params['oauth_signature'] = url_encode(sign(signing_key, signature_base_string))
+  	# params['oauth_signature'] = url_encode(sign(signing_key, image_signature_base_string))
 
   	#create the authorization header
-  	header_string = header(params)
+  	# header_string = header(params)
+    # image_header_string = header(params)
+  	#get those temporary token
+    repsonse_request = make_request(method, uri, client_key, oauth_token, oauth_token_secret, client_secret)
+    image_request = make_request(method, image_uri, client_key, oauth_token, oauth_token_secret, client_secret)
+  	response = request_data(repsonse_request, uri, method)
+    image = request_data(image_request, image_uri, method)
+    @response = JSON.parse(response)
+    @image = JSON.parse(image)
 
-  	#get those temporary tokens
-  	response = request_data(header_string, uri, method)
 
-  	raise 'hell'
+
+  	# raise 'the roof'
 
   	# in browser got to url/oauth1/access?oauth_token and oauth_secret to get oauth_verifier
 
@@ -111,8 +134,8 @@ class FrontPageController < ApplicationController
 
 
   	
-  	oauth_token = response.split('=')[1].split('&')[0]
-  	oauth_token_secret = response.split('=')[2].split('&')[0]
+  	# oauth_token = response.split('=')[1].split('&')[0]
+  	# oauth_token_secret = response.split('=')[2].split('&')[0]
   	# new_params['oauth_token'] = oauth_token
   	# new_params['oauth_token_secret'] = oauth_token_secret
   	# new_params['oauth_verifier'] = '1C4xr8qqR7wI19EmNiTbJBl8'

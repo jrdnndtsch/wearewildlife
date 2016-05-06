@@ -19,6 +19,7 @@ gem 'oauth1'
 gem 'oauth'
 
 gem 'omniauth'
+gem 'json'
 
 #for more fun HTTP requests
 gem 'httparty'
