@@ -16,3 +16,11 @@
 <% end %>
 
 <% end %>
+
+
+<h3>Tweets</h3>
+<p><%= @tweets%></p>
+
+<% @tweets.each do |tweet| %>
+	<p><%= tweet.text %></p>
+<% end %>

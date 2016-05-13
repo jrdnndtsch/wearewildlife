@@ -53,6 +53,7 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    buftok (0.2.0)
     builder (3.2.2)
     bullet (5.0.0)
       activesupport (>= 3.0.0)
@@ -90,6 +91,7 @@ GEM
     dotenv-rails (2.1.1)
       dotenv (= 2.1.1)
       railties (>= 4.0, < 5.1)
+    equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.7.0)
@@ -122,6 +124,9 @@ GEM
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
     hashie (3.4.4)
+    http (0.5.0)
+      http_parser.rb
+    http_parser.rb (0.6.0)
     i18n (0.7.0)
     instagram (1.1.6)
       faraday (>= 0.7, < 0.10)
@@ -146,6 +151,8 @@ GEM
     lumberjack (1.0.10)
     mail (2.6.4)
       mime-types (>= 1.16, < 4)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
     method_source (0.8.2)
     mime-types (3.0)
       mime-types-data (~> 3.2015)
@@ -155,6 +162,7 @@ GEM
     minitest (5.8.4)
     multi_json (1.11.3)
     multipart-post (2.0.0)
+    naught (1.0.0)
     nenv (0.3.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
@@ -257,6 +265,7 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     shellany (0.0.1)
+    simple_oauth (0.2.0)
     slop (3.6.0)
     spring (1.7.1)
     sprockets (3.6.0)
@@ -272,6 +281,17 @@ GEM
     tilt (2.0.2)
     turbolinks (2.5.3)
       coffee-rails
+    twitter (5.8.0)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      equalizer (~> 0.0.9)
+      faraday (~> 0.9.0)
+      http (~> 0.5.0)
+      http_parser.rb (~> 0.6.0)
+      json (~> 1.8)
+      memoizable (~> 0.4.0)
+      naught (~> 1.0)
+      simple_oauth (~> 0.2.0)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
     uglifier (3.0.0)
@@ -320,6 +340,7 @@ DEPENDENCIES
   spring
   sqlite3
   turbolinks
+  twitter
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
 
