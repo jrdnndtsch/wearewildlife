@@ -1,26 +1,38 @@
 <h1>FrontPage#show</h1>
 <p>Find me in app/views/front_page/show.html.erb</p>
 
-<h2>Count</h2>
-<p>
-<%= @instagram.count %>
-	
-</p>
+<h2>Instagram</h2>
+<h3>Total : <%= @instagram.count %></h3>
 <% @instagram.each do |instagram| %>
 
-<% if instagram.caption.text.include?('#brunch') %>
+	<% if instagram.caption.text.include?('#brunch') %>
+		<%= image_tag instagram.images.standard_resolution.url %>
+		<h2>Params</h2>
+		<p><%= instagram.caption.text %></p>
+	<% end %>
 
-<%= image_tag instagram.images.standard_resolution.url %>
-<h2>Params</h2>
-<p><%= instagram.caption.text %></p>
 <% end %>
 
+<hr>
+<h2>Instwogram</h2>
+<h3>Total : <%= @instwogram_count %></h3>
+<% @instwogram.each do |instagram| %>
+	<%= image_tag instagram.images.standard_resolution.url %>
+	<p><%= instagram.caption.text %></p>
 <% end %>
 
 
-<h3>Tweets</h3>
-<p><%= @tweets%></p>
+<h2>Tweets</h2>
+<p><%= @tweets.count %></p>
 
 <% @tweets.each do |tweet| %>
 	<p><%= tweet.text %></p>
+<% end %>
+
+<h2>WWF Hashtag</h2>
+<h3>total count: <%= @jb_count_with_hashtag %>| <%= @jb.count %> </h3>
+<% @jb_with_hashtag[0..3].each do |tweet| %>
+	<% if tweet.text.include?('#ExploreTheSound')%>
+		<p><%= "#{tweet.user.screen_name}: #{tweet.text}" %></p>
+	<% end %>
 <% end %>
