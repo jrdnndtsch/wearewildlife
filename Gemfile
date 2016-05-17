@@ -8,6 +8,8 @@ gem 'sqlite3'
 
 gem 'instagram'
 gem 'twitter'
+gem 'rails_autolink'
+gem 'rinku'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -64,6 +66,8 @@ group :development do
   gem 'web-console', '~> 2.0'
 
   gem 'better_errors'
+
+  gem 'quiet_assets'
 
   # optimization
   gem 'bullet'
