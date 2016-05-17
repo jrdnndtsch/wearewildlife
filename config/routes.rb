@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'admin/show'
+  # get 'admin/show'
 
   get 'front_page/show'
 
@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   devise_for :users
   resources :sub_menus
   resources :main_menus
-  resources :generic_stories
+  # resources :generic_stories
   resources :featured_donors
-  resources :blogs
+  # resources :blogs
   resources :stories
   resources :headers
   # The priority is based upon order of creation: first created -> highest priority.
@@ -17,6 +17,13 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'front_page#show'
+
+  get 'admin/show'
+
+  namespace :admin do
+    resources :blogs
+    resources :generic_stories
+  end    
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

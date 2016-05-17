@@ -18,9 +18,9 @@
         <td><%= generic_story.title %></td>
         <td><%= generic_story.short_description %></td>
         <td><%= generic_story.link %></td>
-        <td><%= link_to 'Show', generic_story %></td>
-        <td><%= link_to 'Edit', edit_generic_story_path(generic_story) %></td>
-        <td><%= link_to 'Destroy', generic_story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_generic_story_path(generic_story) %></td>
+        <td><%= link_to 'Edit', edit_admin_generic_story_path(generic_story) %></td>
+        <td><%= link_to 'Destroy', admin_generic_story, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Generic story', new_generic_story_path %>
+<%= link_to 'New Generic story', new_admin_generic_story_path %>

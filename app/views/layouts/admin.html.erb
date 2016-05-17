@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wearewildlife</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link rel="stylesheet" href="http://localhost:8000/styleguide/assets/styles/styleguide.css">
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="admin">
+		<div class="sidebar">
+			<%= link_to "WFF Admin", admin_show_path, class: 'sidebar--header'%>
+			<%= link_to "header", headers_path, class: is_active?("admin/headers") %>
+			<%= link_to "blogs", admin_blogs_path, class: is_active?("admin/blogs") %>
+			<%= link_to "stories", stories_path, class: is_active?("admin/stories") %>
+			<%= link_to "generic stories", admin_generic_stories_path, class: is_active?("admin/generic_stories") %>
+			<%= link_to "menus", main_menus_path, class: is_active?("admin/menus") %>
+			<% if user_signed_in? %>
+				<div class="sidebar--user">
+					<span>Logged in as <strong><%= current_user.email %></strong></span>
+			  	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+				</div>
+			<% end %>
+		</div>
+		<div class="breadcrumb">
+			<span>test</span><span>this</span><span>edit</span>
+		</div>
+		<div class="admin--content">
+			<%= yield %>
+		</div>
+	</div>
+
+</body>
+</html>
+
+
+
+
+
+
+

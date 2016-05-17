@@ -1,4 +1,4 @@
-<%= form_for(@generic_story) do |f| %>
+<%= form_for [:admin, @generic_story] do |f| %>
   <% if @generic_story.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@generic_story.errors.count, "error") %> prohibited this generic_story from being saved:</h2>
