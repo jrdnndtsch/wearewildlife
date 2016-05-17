@@ -1,0 +1,17 @@
+<fieldset>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :link %><br>
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :main_menu_id, value: @main_menu.id  %>
+  </div>
+  <div class="fieldset">
+    <%= f.hidden_field :_destroy %>
+    <%= link_to "remove", "#", class: "remove_fields" %>
+  </div>
+</fieldset>

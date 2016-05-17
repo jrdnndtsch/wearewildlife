@@ -19,7 +19,34 @@
     <%= f.label :link %><br>
     <%= f.text_field :link %>
   </div>
+  <h2>Sub Menus</h2>
+  <%= f.fields_for :sub_menus do |builder| %>
+    <%= render 'sub_menu_fields', f: builder %>
+  <% end %>
+
+  <%= link_to_add_fields "add sub menu", f, :sub_menus %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script>
+$(document).ready(function(){
+  console.log('ready')
+  $('form').on('click', '.remove_fields', function(even){
+    event.preventDefault()
+    $(this).prev('input[type=hidden]').val('1');
+    $(this).closest('fieldset').hide();
+  });
+  
+  $('form').on('click', '.add_fields', function(event){
+    event.preventDefault();
+    time = new Date().getTime();
+    regexp = new RegExp($(this).data('id'), 'g');
+    $(this).before($(this).data('fields').replace(regexp, time));
+
+  })
+});
+  
+</script>
