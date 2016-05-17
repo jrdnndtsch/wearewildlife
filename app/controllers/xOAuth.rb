@@ -1,9 +1,12 @@
 class FrontPageController < ApplicationController
 	skip_before_action :authenticate_user!
 	require 'HTTParty'
-    require 'json'
+  require 'json'
 	
   def show
+
+
+
 
   	client_key = ENV['client_key']
   	client_secret = ENV['client_secret']
@@ -36,6 +39,8 @@ class FrontPageController < ApplicationController
 
   end
 
+  	# raise 'the roof'
+
   	# in browser got to url/oauth1/access?oauth_token and oauth_secret to get oauth_verifier
 
   	# use consumer_key , consumer_secret, oauth_token(temporary), and oauth_secret(temporary) in Authorization header AND oauth_verifier in the request and send to /oauth1/access?oauth_verifier=
@@ -43,6 +48,31 @@ class FrontPageController < ApplicationController
 
   	#GET data send request to endpoint wp-json/wp/v2/ with consumer_key consumer_secret oauth_key (permanent), oauth_secret(permanent)
 
+
+  	
+  	
+
+  	
+
+
+  	
+  	# oauth_token = response.split('=')[1].split('&')[0]
+  	# oauth_token_secret = response.split('=')[2].split('&')[0]
+  	# new_params['oauth_token'] = oauth_token
+  	# new_params['oauth_token_secret'] = oauth_token_secret
+  	# new_params['oauth_verifier'] = '1C4xr8qqR7wI19EmNiTbJBl8'
+  	# test_header = header(new_params)
+  	# new_method = 'POST'
+
+  	# url = 'http://jordandeutsch.com/oauth1/access'
+  	# test = request_data(test_header, url, new_method)
+  	# raise 'the roof'
+
+
+
+
+
+  	# raise 'hell'
   	# headers = {'Authorization' =>}
   	# @response = HTTParty.get('http://jordandeutsch.com/wp-json/wp/v2/posts/106?oauth_consumer_key=hZRYr39SFyYW&oauth_token=1OicIxJ0cimikraxauBCxTKQ&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1462463037&oauth_nonce=0xVtJT&oauth_version=1.0&oauth_signature=hsqRc4GS22FItTC4PKUQ5SaxBU0=')
   	
@@ -68,9 +98,7 @@ class FrontPageController < ApplicationController
   	# Returns
   	# oauth.signature_base # Returns the signature appended in the auth url
   	# oauth.full_url       # The proper url used for authentication
-  	
-
-  private 
+  	private
 
 	def generate_nonce(size=7)
 	  Base64.encode64(OpenSSL::Random.random_bytes(size)).gsub(/\W/, '')
@@ -129,21 +157,28 @@ class FrontPageController < ApplicationController
 	  resp.body
 	end
 
+  # params = params(client_key, oauth_token, generate_nonce)
+  # params['oauth_consumer_key'] = client_key
+  # params['oauth_token'] = oauth_token
+  # create this for the oauth_signature
+  # signature_base_string = signature_base_string(method, uri, params)
+  # image_signature_base_string = signature_base_string(method, image_uri, params)
+  # access_token = oauth_token_secret
+  # access_token ||= '' # if not set, blank string
+  # signing_key = client_secret + '&' + access_token
 
-	# access_token ||= '' # if not set, blank string
+  def make_request(method, uri, client_key, oauth_token, oauth_token_secret, client_secret)
+    access_token = oauth_token_secret
+    params = params(client_key, oauth_token, generate_nonce)
+    params['oauth_consumer_key'] = client_key
+    params['oauth_token'] = oauth_token
+    params['oauth_nonce'] = generate_nonce
+    signing_key = client_secret + '&' + access_token
+    signature_base_string = signature_base_string(method, uri, params)
+    params['oauth_signature'] = url_encode(sign(signing_key, signature_base_string))
+    header_string = header(params)
+    return header_string
+  end
+  	
 
-
-	def make_request(method, uri, client_key, oauth_token, oauth_token_secret, client_secret)
-	  access_token = oauth_token_secret
-	  params = params(client_key, oauth_token, generate_nonce)
-	  params['oauth_consumer_key'] = client_key
-	  params['oauth_token'] = oauth_token
-	  params['oauth_nonce'] = generate_nonce
-	  signing_key = client_secret + '&' + access_token
-	# create this for the oauth_signature
-	  signature_base_string = signature_base_string(method, uri, params)
-	  params['oauth_signature'] = url_encode(sign(signing_key, signature_base_string))
-	  header_string = header(params)
-	  return header_string
-	end
 end
