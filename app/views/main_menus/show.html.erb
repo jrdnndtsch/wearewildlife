@@ -10,5 +10,13 @@
   <%= @main_menu.link %>
 </p>
 
+<h3>Sub Menus</h3>
+
+<ul>
+	<% @main_menu.sub_menus.each do |sub_menu| %>
+		<li><%= sub_menu.title %> | <%= sub_menu.link %></li>
+	<% end%>
+</ul>
+
 <%= link_to 'Edit', edit_main_menu_path(@main_menu) %> |
 <%= link_to 'Back', main_menus_path %>
