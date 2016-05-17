@@ -1,6 +1,7 @@
 
 <h1>FrontPage#show</h1>
 <p>Find me in app/views/front_page/show.html.erb</p>
+<<<<<<< HEAD
 
 <h2>Instagram</h2>
 <h3>total count: <%= @instagram.count %></h3>
@@ -37,3 +38,8 @@
 		<p><%= Rinku.auto_link(tweet.text, :all, 'target="_blank"').html_safe %></p>
 	<% end %>
 <% end %>
+=======
+<h2><%= @response['title']['rendered']%></h2>
+<div class="content"><%= @response['content']['rendered'].html_safe%></div>
+<img src="<%= @image['source_url']%>" alt="">
+>>>>>>> master
