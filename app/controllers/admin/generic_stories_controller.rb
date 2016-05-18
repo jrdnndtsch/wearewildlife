@@ -5,6 +5,7 @@ class Admin::GenericStoriesController < AdminController
   # GET /generic_stories.json
   def index
     @generic_stories = GenericStory.all
+    add_breadcrumb "Generic Stories", 'generic_stories'
   end
 
   # GET /generic_stories/1
@@ -15,10 +16,14 @@ class Admin::GenericStoriesController < AdminController
   # GET /generic_stories/new
   def new
     @generic_story = GenericStory.new
+    add_breadcrumb "Generic Stories", '/admin/generic_stories'
+    add_breadcrumb "New", '#'
   end
 
   # GET /generic_stories/1/edit
   def edit
+    add_breadcrumb "Generic Stories", '/admin/generic_stories'
+    add_breadcrumb "Edit", '#'
   end
 
   # POST /generic_stories
@@ -28,7 +33,7 @@ class Admin::GenericStoriesController < AdminController
 
     respond_to do |format|
       if @generic_story.save
-        format.html { redirect_to admin_generic_story_path(@generic_story), notice: 'Generic story was successfully created.' }
+        format.html { redirect_to admin_generic_stories_path, notice: 'Generic story was successfully created.' }
         format.json { render :show, status: :created, location: @generic_story }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class Admin::GenericStoriesController < AdminController
   def update
     respond_to do |format|
       if @generic_story.update(generic_story_params)
-        format.html { redirect_to admin_generic_story_path(@generic_story), notice: 'Generic story was successfully updated.' }
+        format.html { redirect_to admin_generic_stories_path, notice: 'Generic story was successfully updated.' }
         format.json { render :show, status: :ok, location: @generic_story }
       else
         format.html { render :edit }
