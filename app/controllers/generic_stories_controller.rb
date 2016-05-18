@@ -69,6 +69,6 @@ class GenericStoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def generic_story_params
-      params.require(:generic_story).permit(:title, :short_description, :link)
+      params.require(:generic_story).permit(:title, :short_description, :link, :selected)
     end
 end

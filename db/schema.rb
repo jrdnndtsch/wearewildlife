@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502193213) do
+ActiveRecord::Schema.define(version: 20160518142532) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -20,12 +20,13 @@ ActiveRecord::Schema.define(version: 20160502193213) do
     t.text     "short_description"
     t.string   "link"
     t.string   "video_link"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.boolean  "approved",           default: false
   end
 
   create_table "featured_donors", force: :cascade do |t|
@@ -43,8 +44,9 @@ ActiveRecord::Schema.define(version: 20160502193213) do
     t.string   "title"
     t.text     "short_description"
     t.string   "link"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.boolean  "selected",          default: false
   end
 
   create_table "headers", force: :cascade do |t|
@@ -70,12 +72,13 @@ ActiveRecord::Schema.define(version: 20160502193213) do
     t.string   "link"
     t.text     "description"
     t.boolean  "featured"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.boolean  "selected",           default: false
   end
 
   create_table "sub_menus", force: :cascade do |t|
