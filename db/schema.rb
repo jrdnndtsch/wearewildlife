@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518152618) do
+ActiveRecord::Schema.define(version: 20160518164941) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -60,6 +60,13 @@ ActiveRecord::Schema.define(version: 20160518152618) do
     t.string   "video_link"
   end
 
+  create_table "insta", force: :cascade do |t|
+    t.string   "imag_url"
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "main_menus", force: :cascade do |t|
     t.string   "title"
     t.string   "link"
@@ -92,6 +99,12 @@ ActiveRecord::Schema.define(version: 20160518152618) do
   end
 
   add_index "sub_menus", ["main_menu_id"], name: "index_sub_menus_on_main_menu_id"
+
+  create_table "tweets", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

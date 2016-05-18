@@ -10,15 +10,18 @@ class FrontPageController < ApplicationController
   	@header = Header.last
   	@featured_story = Story.is_featured.first
   	@stories = Story.are_selected.are_not_featured.last(7).reverse
+    @tweets = Tweet.last(5)
+    @instagrams = Insta.last(5)
   	@featured_donor = FeaturedDonor.is_featured.first
   	@generic_stories = GenericStory.are_selected.last(3).reverse
-  	@instagram = Instagram.user_recent_media(@deartrudence, {:count => 15})
-  	@instwogram = Instagram.user_recent_media(@deartrudence, {:count => 15}).select { |pic| pic.caption.text.include?('#Repost')}
-  	@instwogram_count = Instagram.user_recent_media(@deartrudence).count { |pic| pic.caption.text.include?('#Repost')}
-  	@tweets = $client.user_timeline[0..4]
-  	@jb = $client.search("from:WWFCanada", :result_type => "recent").take(50)
-  	@jb_count_with_hashtag = @jb.count {|tweet| tweet.text.include?('#ExploreTheSound') }
-  	@jb_with_hashtag = @jb.select { |tweet| tweet.text.include?('#ExploreTheSound') }
+  	# @instagram = Instagram.user_recent_media(@deartrudence, {:count => 15})
+  	# @instwogram = Instagram.user_recent_media(@deartrudence, {:count => 15}).select { |pic| pic.caption.text.include?('#Repost')}
+  	# @instwogram_count = Instagram.user_recent_media(@deartrudence).count { |pic| pic.caption.text.include?('#Repost')}
+
+  	# @tweets = $client.user_timeline[0..4]
+  	# @jb = $client.search("from:WWFCanada", :result_type => "recent").take(50)
+  	# @jb_count_with_hashtag = @jb.count {|tweet| tweet.text.include?('#ExploreTheSound') }
+  	# @jb_with_hashtag = @jb.select { |tweet| tweet.text.include?('#ExploreTheSound') }
   	# raise "the roof"
   	@link = Rinku.auto_link("Go to http://www.rubyonrails.org and say hello to david@loudthinking.com").html_safe
 
