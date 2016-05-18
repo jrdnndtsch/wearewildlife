@@ -43,6 +43,13 @@
 	<p><%= Rinku.auto_link(tweet.text, :all, 'target="_blank"').html_safe %></p>
 <% end %>
 
+<h2>Instagram</h2>
+<h3>total count: <%= @instagrams.count %></h3>
+<% @instagrams.each do |instagram| %>
+	<%= image_tag instagram.imag_url %>
+	<p><%= Rinku.auto_link(instagram.text, :all, 'target="_blank"').html_safe  %></p>
+<% end %>
+
 <h2>Featured Donor</h2>
 <% if @featured_donor.present? %>
 	<h4><%= @featured_donor.title %></h4>
@@ -55,26 +62,6 @@
 	<h4><%= gstory.title %></h4>
 	<p><%= simple_format(gstory.short_description) %></p>
 	<%= link_to gstory.title, url_for(gstory.link), :target => "_blank" %>
-<% end %>
-
-<h2>Instagram</h2>
-<h3>total count: <%= @instagram.count %></h3>
-<% @instagram.each do |instagram| %>
-
-	<% if instagram.caption.text.include?('#brunch') %>
-		<%= image_tag instagram.images.standard_resolution.url %>
-		<h2>Params</h2>
-		<p><%= instagram.caption.text %></p>
-	<% end %>
-
-<% end %>
-
-<hr>
-<h2>Instagram</h2>
-<h3>total count: <%= @instagrams.count %></h3>
-<% @instagrams.each do |instagram| %>
-	<%= image_tag instagram.imag_url %>
-	<p><%= Rinku.auto_link(instagram.caption.text, :all, 'target="_blank"').html_safe  %></p>
 <% end %>
 
 
