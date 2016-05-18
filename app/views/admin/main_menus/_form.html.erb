@@ -44,6 +44,7 @@ $(document).ready(function(){
     event.preventDefault();
     time = new Date().getTime();
     regexp = new RegExp($(this).data('id'), 'g');
+    console.log(regexp)
     $(this).before($(this).data('fields').replace(regexp, time));
 
   })

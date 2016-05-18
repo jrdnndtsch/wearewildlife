@@ -13,4 +13,6 @@ class Blog < ActiveRecord::Base
 
   has_paper_trail
 
+  scope :are_approved, -> { where(approved: true)}
+
 end

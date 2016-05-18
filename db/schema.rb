@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502193213) do
+ActiveRecord::Schema.define(version: 20160518132510) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -20,12 +20,13 @@ ActiveRecord::Schema.define(version: 20160502193213) do
     t.text     "short_description"
     t.string   "link"
     t.string   "video_link"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.boolean  "approved",           default: false
   end
 
   create_table "featured_donors", force: :cascade do |t|
