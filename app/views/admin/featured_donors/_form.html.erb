@@ -1,4 +1,4 @@
-<%= form_for(@featured_donor) do |f| %>
+<%= form_for [:admin, @featured_donor] do |f| %>
   <% if @featured_donor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@featured_donor.errors.count, "error") %> prohibited this featured_donor from being saved:</h2>

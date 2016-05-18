@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', admin_main_menu_path(@main_menu) %> |
+<%= link_to 'Destroy', admin_main_menu_path(@main_menu), method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', admin_main_menus_path %>

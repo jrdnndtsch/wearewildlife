@@ -1,11 +1,14 @@
-<h1>Listing Main Menus</h1>
+<div class="as--admin-index-title">
+  <h1>All Main Menu Items</h1>
+  <%= link_to 'New Main menu', new_admin_main_menu_path, class: 'button button--tertiary as--no-margin-bottom' %>
+</div>
 
 <table>
   <thead>
     <tr>
       <th>Title</th>
       <th>Link</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -14,9 +17,7 @@
       <tr>
         <td><%= main_menu.title %></td>
         <td><%= main_menu.link %></td>
-        <td><%= link_to 'Show', admin_main_menu_path(main_menu) %></td>
-        <td><%= link_to 'Edit', edit_admin_main_menu_path(main_menu) %></td>
-        <td><%= link_to 'Destroy', admin_main_menu_path(main_menu), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="table--button"><%= link_to 'Edit', edit_admin_main_menu_path(main_menu), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Main menu', new_admin_main_menu_path %>
+

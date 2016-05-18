@@ -1,6 +1,5 @@
 <h1>Editing Generic Story</h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Show', admin_generic_story_path(@generic_story) %> |
+<%= link_to 'Destroy', admin_generic_story_path(@generic_story), method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to 'Back', admin_generic_stories_path %>

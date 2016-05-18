@@ -1,0 +1,6 @@
+<h1>Editing Featured Donor</h1>
+
+<%= render 'form' %>
+
+<td><%= link_to 'Destroy', admin_featured_donor_path(@featured_donor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<%= link_to 'Back', admin_featured_donors_path %>
