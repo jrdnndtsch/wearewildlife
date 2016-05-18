@@ -24,10 +24,10 @@
     <%= render 'sub_menu_fields', f: builder %>
   <% end %>
 
-  <%= link_to_add_fields "add sub menu", f, :sub_menus %>
+  <%= link_to_add_fields "add sub menu", f, :sub_menus  %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: 'button button--tertiary' %>
   </div>
 <% end %>
 

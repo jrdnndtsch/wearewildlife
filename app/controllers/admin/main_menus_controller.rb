@@ -34,7 +34,7 @@ class Admin::MainMenusController < AdminController
 
     respond_to do |format|
       if @main_menu.save
-        format.html { redirect_to admin_main_menu_path(@main_menu), notice: 'Main menu was successfully created.' }
+        format.html { redirect_to edit_admin_main_menu_path(@main_menu), notice: 'Main menu was successfully created.' }
         format.json { render :show, status: :created, location: @main_menu }
       else
         format.html { render :new }
@@ -48,7 +48,7 @@ class Admin::MainMenusController < AdminController
   def update
     respond_to do |format|
       if @main_menu.update(main_menu_params)
-        format.html { redirect_to admin_main_menu_path(@main_menu), notice: 'Main menu was successfully updated.' }
+        format.html { redirect_to edit_admin_main_menu_path(@main_menu), notice: 'Main menu was successfully updated.' }
         format.json { render :show, status: :ok, location: @main_menu }
       else
         format.html { render :edit }

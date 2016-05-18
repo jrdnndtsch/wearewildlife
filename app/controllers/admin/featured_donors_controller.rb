@@ -23,8 +23,8 @@ class Admin::FeaturedDonorsController < AdminController
 
   # GET /featured_donors/1/edit
   def edit
-    add_breadcrumb "featured donors", 'featured_donors'
-    add_breadcrumb @featured_donor.id, '#'
+    add_breadcrumb "featured donors", '/admin/featured_donors'
+    add_breadcrumb @featured_donor.title, '#'
     add_breadcrumb "edit", '#'
   end
 
@@ -63,7 +63,7 @@ class Admin::FeaturedDonorsController < AdminController
   def destroy
     @featured_donor.destroy
     respond_to do |format|
-      format.html { redirect_to featured_donors_url, notice: 'Featured donor was successfully destroyed.' }
+      format.html { redirect_to admin_featured_donors_path, notice: 'Featured donor was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

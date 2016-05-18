@@ -1,6 +1,9 @@
-<h1>Editing Featured Donor</h1>
+<div class="form--contained">
+	<h1>Editing <%= @featured_donor.title %></h1>
 
-<%= render 'form' %>
-
-<td><%= link_to 'Destroy', admin_featured_donor_path(@featured_donor), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-<%= link_to 'Back', admin_featured_donors_path %>
+	<%= render 'form' %>
+	<div class="wrapper--flex">
+		<%= link_to 'Back', admin_featured_donors_path, class: 'button button--primary as--half' %>
+		<%= link_to 'Delete', admin_featured_donor_path(@featured_donor), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary button--delete as--half' %>
+	</div>
+</div>
