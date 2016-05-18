@@ -11,11 +11,11 @@
 	<div id="admin">
 		<div class="sidebar">
 			<%= link_to "WFF Admin", admin_show_path, class: 'sidebar--header'%>
-			<%= link_to "header", headers_path, class: is_active?("admin/headers") %>
+			<%= link_to "header", admin_headers_path, class: is_active?("admin/headers") %>
 			<%= link_to "blogs", admin_blogs_path, class: is_active?("admin/blogs") %>
-			<%= link_to "stories", stories_path, class: is_active?("admin/stories") %>
+			<%= link_to "stories", admin_stories_path, class: is_active?("admin/stories") %>
 			<%= link_to "generic stories", admin_generic_stories_path, class: is_active?("admin/generic_stories") %>
-			<%= link_to "menus", main_menus_path, class: is_active?("admin/menus") %>
+			<%= link_to "menus", admin_main_menus_path, class: is_active?("admin/menus") %>
 			<% if user_signed_in? %>
 				<div class="sidebar--user">
 					<span>Logged in as <strong><%= current_user.email %></strong></span>

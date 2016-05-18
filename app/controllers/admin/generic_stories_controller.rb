@@ -28,7 +28,7 @@ class Admin::GenericStoriesController < AdminController
 
     respond_to do |format|
       if @generic_story.save
-        format.html { redirect_to @generic_story, notice: 'Generic story was successfully created.' }
+        format.html { redirect_to admin_generic_story_path(@generic_story), notice: 'Generic story was successfully created.' }
         format.json { render :show, status: :created, location: @generic_story }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class Admin::GenericStoriesController < AdminController
   def update
     respond_to do |format|
       if @generic_story.update(generic_story_params)
-        format.html { redirect_to @generic_story, notice: 'Generic story was successfully updated.' }
+        format.html { redirect_to admin_generic_story_path(@generic_story), notice: 'Generic story was successfully updated.' }
         format.json { render :show, status: :ok, location: @generic_story }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class Admin::GenericStoriesController < AdminController
   def destroy
     @generic_story.destroy
     respond_to do |format|
-      format.html { redirect_to generic_stories_url, notice: 'Generic story was successfully destroyed.' }
+      format.html { redirect_to admin_generic_stories_path, notice: 'Generic story was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

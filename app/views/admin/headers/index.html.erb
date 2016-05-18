@@ -18,9 +18,9 @@
         <td><%= header.number %></td>
         <td><%= header.tag_line %></td>
         <td><%= header.about %></td>
-        <td><%= link_to 'Show', header %></td>
-        <td><%= link_to 'Edit', edit_header_path(header) %></td>
-        <td><%= link_to 'Destroy', header, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', admin_header_path(header) %></td>
+        <td><%= link_to 'Edit', edit_admin_header_path(header) %></td>
+        <td><%= link_to 'Destroy', admin_header_path(header), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Header', new_header_path %>
+<%= link_to 'New Header', new_admin_header_path %>

@@ -6,12 +6,12 @@ Rails.application.routes.draw do
 
   devise_for :users
   resources :sub_menus
-  resources :main_menus
+  # resources :main_menus
   # resources :generic_stories
   resources :featured_donors
   # resources :blogs
-  resources :stories
-  resources :headers
+  # resources :stories
+  # resources :headers
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -19,10 +19,13 @@ Rails.application.routes.draw do
   root 'front_page#show'
 
   get 'admin/show'
-
+  resources :articles, module: 'admin'
   namespace :admin do
     resources :blogs
     resources :generic_stories
+    resources :main_menus
+    resources :stories
+    resources :headers
   end    
 
   # Example of regular route:
