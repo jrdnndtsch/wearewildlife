@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Featured Donors</h1>
 
 <table>
@@ -17,10 +15,9 @@
       <tr>
         <td><%= featured_donor.short_description %></td>
         <td><%= featured_donor.link %></td>
-        <td><%= image_tag photo.url('header')%></td>
-        <td><%= link_to 'Show', featured_donor %></td>
-        <td><%= link_to 'Edit', edit_featured_donor_path(featured_donor) %></td>
-        <td><%= link_to 'Destroy', featured_donor, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= image_tag featured_donor.photo.url('header')%></td>
+        <td><%= link_to 'Edit', edit_admin_featured_donor_path(featured_donor) %></td>
+        
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Featured donor', new_featured_donor_path %>
+<%= link_to 'New Featured donor', new_admin_featured_donor_path %>

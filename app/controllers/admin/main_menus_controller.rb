@@ -5,6 +5,7 @@ class Admin::MainMenusController < AdminController
   # GET /main_menus.json
   def index
     @main_menus = MainMenu.all
+    add_breadcrumb "main menu", 'main_menus'
   end
 
   # GET /main_menus/1
@@ -15,10 +16,15 @@ class Admin::MainMenusController < AdminController
   # GET /main_menus/new
   def new
     @main_menu = MainMenu.new
+    add_breadcrumb "main menu", '/admin/main_menus'
+    add_breadcrumb "new", '#'
   end
 
   # GET /main_menus/1/edit
   def edit
+    add_breadcrumb "main menu", '/admin/main_menus'
+    add_breadcrumb @main_menu.title, '#'
+    add_breadcrumb "new", '#'
   end
 
   # POST /main_menus

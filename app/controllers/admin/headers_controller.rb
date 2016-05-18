@@ -5,6 +5,7 @@ class Admin::HeadersController < AdminController
   # GET /headers.json
   def index
     @headers = Header.all
+    add_breadcrumb "Header", 'headers'
   end
 
   # GET /headers/1
@@ -15,10 +16,14 @@ class Admin::HeadersController < AdminController
   # GET /headers/new
   def new
     @header = Header.new
+    add_breadcrumb "Header", '/admin/headers'
+    add_breadcrumb "New", '#'
   end
 
   # GET /headers/1/edit
   def edit
+    add_breadcrumb "Header", '#'
+    add_breadcrumb "Edit", '#'
   end
 
   # POST /headers
@@ -28,7 +33,7 @@ class Admin::HeadersController < AdminController
 
     respond_to do |format|
       if @header.save
-        format.html { redirect_to admin_header_path(@header), notice: 'Header was successfully created.' }
+        format.html { redirect_to admin_headers_path, notice: 'Header was successfully created.' }
         format.json { render :show, status: :created, location: @header }
       else
         format.html { render :new }
@@ -42,7 +47,7 @@ class Admin::HeadersController < AdminController
   def update
     respond_to do |format|
       if @header.update(header_params)
-        format.html { redirect_to admin_hader_path(@header), notice: 'Header was successfully updated.' }
+        format.html { redirect_to edit_admin_header_path(@header), notice: 'Header was successfully updated.' }
         format.json { render :show, status: :ok, location: @header }
       else
         format.html { render :edit }

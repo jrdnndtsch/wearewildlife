@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :sub_menus
   # resources :main_menus
   # resources :generic_stories
-  resources :featured_donors
+  # resources :featured_donors
   # resources :blogs
   # resources :stories
   # resources :headers
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :main_menus
     resources :stories
     resources :headers
+    resources :featured_donors
   end    
 
   # Example of regular route:

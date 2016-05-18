@@ -1,34 +1,27 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Stories</h1>
+<div class="as--admin-index-title">
+  <h1>Listing Stories</h1>
+  <%= link_to 'New Story', new_admin_story_path, class: 'button button--tertiary as--no-margin-bottom' %>
+</div>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Location</th>
-      <th>Date</th>
-      <th>Link</th>
-      <th>Description</th>
+      <th></th>
       <th>Featured</th>
-      <th>photo</th>
-      <th colspan="3"></th>
+      <th>Title</th>
+      <th>Date</th>
+      <th></th>
     </tr>
   </thead>
 
   <tbody>
     <% @stories.each do |story| %>
       <tr>
-        <td><%= story.title %></td>
-        <td><%= story.location %></td>
-        <td><%= story.date %></td>
-        <td><%= story.link %></td>
-        <td><%= story.description %></td>
-        <td><%= story.featured %></td>
         <td><%= image_tag story.photo.url('header')%></td>
-        <td><%= link_to 'Show', admin_story_path(story) %></td>
-        <td><%= link_to 'Edit', edit_admin_story_path(story) %></td>
-        <td><%= link_to 'Destroy', admin_story_path(story), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= story.featured %></td>
+        <td><%= story.title %></td>
+        <td><%= story.date %></td>
+        <td class="table--button"><%= link_to 'Edit', edit_admin_story_path(story), class:'button button--primary button--edit as--no-margin-bottom' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Story', new_admin_story_path %>
+

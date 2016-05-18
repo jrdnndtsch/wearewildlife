@@ -5,6 +5,7 @@ class Admin::StoriesController < AdminController
   # GET /stories.json
   def index
     @stories = Story.all
+    add_breadcrumb "stories", "/admin/stories"
   end
 
   # GET /stories/1
@@ -15,10 +16,17 @@ class Admin::StoriesController < AdminController
   # GET /stories/new
   def new
     @story = Story.new
+    add_breadcrumb "stories", "/admin/stories"
+    add_breadcrumb "new", "#"
   end
 
   # GET /stories/1/edit
   def edit
+    add_breadcrumb "stories", "/admin/stories"
+    add_breadcrumb @story.title, "#"
+    add_breadcrumb "edit", "#"
+
+
   end
 
   # POST /stories

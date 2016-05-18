@@ -14,8 +14,6 @@ class Admin::BlogsController < AdminController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    add_breadcrumb "blog", "/admin/blogs"
-    add_breadcrumb @blog.title, "#"
     @updated_by = model_updated_by_user(@blog)
   end
 
@@ -29,8 +27,8 @@ class Admin::BlogsController < AdminController
   # GET /blogs/1/edit
   def edit
     add_breadcrumb "blog", "/admin/blogs"
-    add_breadcrumb @blog.title, "/admin/blogs/" + @blog.id.to_s
-    add_breadcrumb "edit", "/admin/blogs/" + @blog.id.to_s 
+    add_breadcrumb @blog.title, "#"
+    add_breadcrumb "edit", "#"
   end
 
   # POST /blogs
@@ -40,7 +38,7 @@ class Admin::BlogsController < AdminController
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to admin_blog_path(@blog), notice: 'Blog was successfully created.' }
+        format.html { redirect_to edit_admin_blog_path(@blog), notice: 'Blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
         format.html { render :new }
@@ -54,7 +52,7 @@ class Admin::BlogsController < AdminController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to admin_blog_path(@blog), notice: 'Blog was successfully updated.' }
+        format.html { redirect_to edit_admin_blog_path(@blog), notice: 'Blog was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog }
       else
         format.html { render :edit }
