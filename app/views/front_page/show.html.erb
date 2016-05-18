@@ -50,6 +50,17 @@
 	<p><%= Rinku.auto_link(instagram.text, :all, 'target="_blank"').html_safe  %></p>
 <% end %>
 
+<h2>Blogs</h2>
+<h3>total count: <%= @blogs.count %></h3>
+<% @blogs.each do |blog| %>
+	<%= image_tag blog.image_url %>
+	<p><%= blog.title %></p>
+	<p><%= blog.author %></p>
+	<p><%= blog.date %></p>
+	<p><%= blog.short_description %></p>
+	<p><%= Rinku.auto_link(blog.link, :all, 'target="blank"').html_safe %></p>
+<% end %>
+
 <h2>Featured Donor</h2>
 <% if @featured_donor.present? %>
 	<h4><%= @featured_donor.title %></h4>
@@ -68,9 +79,20 @@
 
 <h2>WP API</h2>
 
-<h2><%= @response['title']['rendered']%></h2>
-<div class="content"><%= @response['content']['rendered'].html_safe%></div>
-<img src="<%= @image['source_url']%>" alt="">
+
+<% @response.each do |r| %>
+<p><%= r %></p>
+<h3>Info we need</h3>
+<p><%= r['date'] %></p>
+<p><%= r['title']['rendered'] %></p>
+<p><%= r['link'] %></p>
+<p><%= r['excerpt']['rendered'].html_safe %></p>
+<p><%= r['_links']['author'][0]['href'] %></p>
+<% if r['_links']['https://api.w.org/featuredmedia'].present? %>
+<p><%=  r['_links']['https://api.w.org/featuredmedia'][0]['href'] %></p>
+<% end %>
+<hr>
+<% end %>
 
 <script>
 

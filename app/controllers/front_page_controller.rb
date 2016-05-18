@@ -12,6 +12,7 @@ class FrontPageController < ApplicationController
   	@stories = Story.are_selected.are_not_featured.last(7).reverse
     @tweets = Tweet.last(5)
     @instagrams = Insta.last(5)
+    @blogs = Blog.last(3)
   	@featured_donor = FeaturedDonor.is_featured.first
   	@generic_stories = GenericStory.are_selected.last(3).reverse
   	# @instagram = Instagram.user_recent_media(@deartrudence, {:count => 15})
@@ -31,7 +32,7 @@ class FrontPageController < ApplicationController
   	oauth_token = ENV['oauth_token']
   	oauth_token_secret = ENV['oauth_token_secret']
   	method = 'GET'
-  	uri = 'http://jordandeutsch.com/wp-json/wp/v2/posts/161'
+  	uri = 'http://jordandeutsch.com/wp-json/wp/v2/posts'
   	image_uri = 'http://jordandeutsch.com/wp-json/wp/v2/media/24'
   	
   	# Steps for OAuth
@@ -54,6 +55,7 @@ class FrontPageController < ApplicationController
     image = request_data(image_request, image_uri, method)
     @response = JSON.parse(response)
     @image = JSON.parse(image)
+
 
   end
 
