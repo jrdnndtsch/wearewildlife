@@ -7,22 +7,30 @@ class Admin::BlogsController < AdminController
   # GET /blogs
   # GET /blogs.json
   def index
+    add_breadcrumb "blog", 'blogs'
     @blogs = Blog.all
   end
 
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    add_breadcrumb "blog", "/admin/blogs"
+    add_breadcrumb @blog.title, "#"
     @updated_by = model_updated_by_user(@blog)
   end
 
   # GET /blogs/new
   def new
+    add_breadcrumb "blog", "/admin/blogs"
+    add_breadcrumb "new" , "#"
     @blog = Blog.new
   end
 
   # GET /blogs/1/edit
   def edit
+    add_breadcrumb "blog", "/admin/blogs"
+    add_breadcrumb @blog.title, "/admin/blogs/" + @blog.id.to_s
+    add_breadcrumb "edit", "/admin/blogs/" + @blog.id.to_s 
   end
 
   # POST /blogs

@@ -15,7 +15,7 @@
 			<%= link_to "blogs", admin_blogs_path, class: is_active?("admin/blogs") %>
 			<%= link_to "stories", admin_stories_path, class: is_active?("admin/stories") %>
 			<%= link_to "generic stories", admin_generic_stories_path, class: is_active?("admin/generic_stories") %>
-			<%= link_to "menus", admin_main_menus_path, class: is_active?("admin/menus") %>
+			<%= link_to "menus", admin_main_menus_path, class: is_active?("admin/main_menus") %>
 			<% if user_signed_in? %>
 				<div class="sidebar--user">
 					<span>Logged in as <strong><%= current_user.email %></strong></span>
@@ -24,7 +24,7 @@
 			<% end %>
 		</div>
 		<div class="breadcrumb">
-			<span>test</span><span>this</span><span>edit</span>
+			<%= render_breadcrumbs :separator => '>' %>
 		</div>
 		<div class="admin--content">
 			<%= yield %>

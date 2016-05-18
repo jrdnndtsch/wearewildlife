@@ -26,6 +26,9 @@ gem 'oauth'
 gem 'omniauth'
 gem 'json'
 
+#to build breadcrumbs
+gem "breadcrumbs_on_rails"
+
 #for more fun HTTP requests
 gem 'httparty'
 # Use jquery as the JavaScript library
