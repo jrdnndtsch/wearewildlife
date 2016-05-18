@@ -1,6 +1,7 @@
 class Admin::GenericStoriesController < AdminController
   before_action :set_generic_story, only: [:show, :edit, :update, :destroy]
   before_filter :set_paper_trail_whodunnit
+  include UpdatedBy
   # GET /generic_stories
   # GET /generic_stories.json
   def index
@@ -22,6 +23,7 @@ class Admin::GenericStoriesController < AdminController
 
   # GET /generic_stories/1/edit
   def edit
+    @updated_by = model_updated_by_user(@generic_story)
     add_breadcrumb "Generic Stories", '/admin/generic_stories'
     add_breadcrumb "Edit", '#'
   end

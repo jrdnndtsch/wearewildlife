@@ -1,6 +1,7 @@
 class Admin::HeadersController < AdminController
   before_action :set_header, only: [:show, :edit, :update, :destroy]
   before_filter :set_paper_trail_whodunnit
+  include UpdatedBy
   # GET /headers
   # GET /headers.json
   def index
@@ -22,6 +23,7 @@ class Admin::HeadersController < AdminController
 
   # GET /headers/1/edit
   def edit
+    @updated_by = model_updated_by_user(@header)
     add_breadcrumb "Header", '#'
     add_breadcrumb "Edit", '#'
   end

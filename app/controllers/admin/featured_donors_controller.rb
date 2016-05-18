@@ -2,6 +2,8 @@ class Admin::FeaturedDonorsController < AdminController
   before_action :set_featured_donor, only: [:show, :edit, :update, :destroy]
    before_filter :set_paper_trail_whodunnit
 
+   include UpdatedBy
+
   # GET /featured_donors
   # GET /featured_donors.json
   def index
@@ -23,6 +25,7 @@ class Admin::FeaturedDonorsController < AdminController
 
   # GET /featured_donors/1/edit
   def edit
+    @updated_by = model_updated_by_user(@featured_donor)
     add_breadcrumb "featured donors", '/admin/featured_donors'
     add_breadcrumb @featured_donor.title, '#'
     add_breadcrumb "edit", '#'
