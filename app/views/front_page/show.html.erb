@@ -2,6 +2,38 @@
 <h1>FrontPage#show</h1>
 <p>Find me in app/views/front_page/show.html.erb</p>
 
+<h2>Menus</h2>
+<ul>
+	<% @main_menus.each do |main_menu| %>
+		<li><%= link_to main_menu.title, url_for(main_menu.link), :target => "_blank" %></li>
+		<ul>
+			<% main_menu.sub_menus.each do |sub_menu| %>
+				<li><%= link_to sub_menu.title, url_for(sub_menu.link), :target => "_blank" %></li>
+			<% end%>
+		</ul>
+	<% end %>
+</ul>
+
+<h2>Header</h2>
+<h2><span class="count"><%= @header.number %></span>  </h2>
+<h4><%= @header.tag_line %></h4>
+
+<h2>About</h2>
+<p><%= simple_format(@header.about) %></p>
+
+<h2>Stories</h2>
+<% @stories.each do |story| %>
+	<h4><%= story.title %></h4>
+	<p><%= story.description %></p>
+	<%= link_to story.title, url_for(story.link), :target => "_blank" %>
+<% end %>
+
+<h2>Generic Stories</h2>
+<% @generic_stories.each do |gstory| %>
+	<p><%= gstory.title %></p>
+	<p><%= %></p>
+<% end %>
+
 <h2>Instagram</h2>
 <h3>total count: <%= @instagram.count %></h3>
 <% @instagram.each do |instagram| %>
@@ -43,4 +75,44 @@
 <h2><%= @response['title']['rendered']%></h2>
 <div class="content"><%= @response['content']['rendered'].html_safe%></div>
 <img src="<%= @image['source_url']%>" alt="">
+
+<script>
+
+	commaSeparateNumber = function(val){
+	   	while (/(\d+)(\d{3})/.test(val)){
+	     	val = val.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+	   }
+	   return val;
+	 }
+
+	$('.count').each(function () {
+		console.log($(this))
+	    $(this).prop('Counter',0).animate({
+	        Counter: $(this).text()
+	    }, {
+	        duration: 12000,
+	        easing: 'swing',
+	        step: function (now) {
+	            $(this).text(commaSeparateNumber(Math.ceil(now)) );
+	            console.log(Math.ceil(now))
+	        }
+	    });
+	});
+	// $('.some').each(function(){
+	// 	console.log($(this))
+	// 	$(this).prop('Something',0).animate({
+	// 		Something: $(this).text()
+	// 	}, {
+	//         duration: 8000,
+	//         easing: 'swing',
+	//         step: function (now) {
+	//             $(this).text(commaSeparateNumber(Math.ceil(now)));
+	//         }
+	// 	});
+
+	// });
+
+
+</script>
+
 

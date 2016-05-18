@@ -6,6 +6,10 @@ class FrontPageController < ApplicationController
     require 'json'
 
   def show
+  	@main_menus = MainMenu.all
+  	@header = Header.last
+  	@stories = Story.are_selected.last(7)
+  	@generic_stories = GenericStory.are_selected.last(7)
   	@instagram = Instagram.user_recent_media(@deartrudence, {:count => 15})
   	@instwogram = Instagram.user_recent_media(@deartrudence, {:count => 15}).select { |pic| pic.caption.text.include?('#Repost')}
   	@instwogram_count = Instagram.user_recent_media(@deartrudence).count { |pic| pic.caption.text.include?('#Repost')}
