@@ -8,7 +8,8 @@ class FrontPageController < ApplicationController
   def show
   	@main_menus = MainMenu.all
   	@header = Header.last
-  	@stories = Story.are_selected.last(7)
+  	@featured_story = Story.is_featured.first
+  	@stories = Story.are_selected.are_not_featured.last(7)
   	@generic_stories = GenericStory.are_selected.last(7)
   	@instagram = Instagram.user_recent_media(@deartrudence, {:count => 15})
   	@instwogram = Instagram.user_recent_media(@deartrudence, {:count => 15}).select { |pic| pic.caption.text.include?('#Repost')}
