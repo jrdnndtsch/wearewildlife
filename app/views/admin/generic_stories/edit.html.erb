@@ -1,5 +1,8 @@
-<h1>Editing Generic Story</h1>
-
-<%= render 'form' %>
-<%= link_to 'Destroy', admin_generic_story_path(@generic_story), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', admin_generic_stories_path %>
+<div class="form--contained">
+	<h1>Editing Generic Story</h1>
+	<%= render 'form' %>
+	<div class="wrapper--flex">
+		<%= link_to 'Back', admin_generic_stories_path, class: 'button button--primary as--half' %>
+		<%= link_to 'Delete', admin_generic_story_path(@generic_story), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary button--delete as--half' %>
+	</div>
+</div>

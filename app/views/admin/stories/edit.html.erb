@@ -1,7 +1,12 @@
-<h1>Editing <%= @story.title%></h1>
+<div class="form--contained">
+	<h1>Editing <%= @story.title%></h1>
+	<%= render 'form' %>
+	<div class="wrapper--flex">
+		<%= link_to 'Back', admin_stories_path, class: 'button button--primary as--half' %>
+		<%= link_to 'Delete', admin_story_path(@story), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary as--half button--delete' %>
+	</div>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Destroy', admin_story_path(@story), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', admin_stories_path %>
+
 

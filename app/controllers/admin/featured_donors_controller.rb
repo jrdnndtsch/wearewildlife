@@ -23,8 +23,8 @@ class Admin::FeaturedDonorsController < AdminController
 
   # GET /featured_donors/1/edit
   def edit
-    add_breadcrumb "featured donors", 'featured_donors'
-    add_breadcrumb @featured_donor.id, '#'
+    add_breadcrumb "featured donors", '/admin/featured_donors'
+    add_breadcrumb @featured_donor.title, '#'
     add_breadcrumb "edit", '#'
   end
 

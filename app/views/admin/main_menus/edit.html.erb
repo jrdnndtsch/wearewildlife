@@ -1,6 +1,9 @@
-<h1>Editing Main Menu</h1>
+<div class="form--contained">
+	<h1>Editing Main Menu</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Destroy', admin_main_menu_path(@main_menu), method: :delete, data: { confirm: 'Are you sure?' } %>
-<%= link_to 'Back', admin_main_menus_path %>
+	<%= render 'form' %>
+	<div class="wrapper--flex">
+		<%= link_to 'Back', admin_main_menus_path, class: 'button button--primary as--half' %>
+		<%= link_to 'Delete', admin_main_menu_path(@main_menu), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary button--delete as--half' %>
+	</div>
+</div>

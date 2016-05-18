@@ -1,5 +1,12 @@
-<h1>New Blog</h1>
+<div class="form--contained">
+	<div class="as--admin-index-title">
+		<h1>New Blog</h1>
+		<%= link_to 'Back', admin_blogs_path, class: 'button button--primary button--large as--no-margin-bottom' %>
+	</div>
+	<%= render 'form' %>
+</div>
 
-<%= render 'form' %>
 
-<%= link_to 'Back', admin_blogs_path %>
+
+
+
