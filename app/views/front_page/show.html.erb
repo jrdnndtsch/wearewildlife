@@ -25,21 +25,29 @@
 <% if @featured_story.present? %>
 	<h3>Featured Story</h3>
 	<h4><%= @featured_story.title %></h4>
-	<p><%= @featured_story.description %></p>
+	<p><%= simple_format(@featured_story.description) %></p>
 	<%= link_to @featured_story.title, url_for(@featured_story.link), :target => "_blank"  %>
 <% end %>
 
 <h3>All other stories</h3>	
 <% @stories.each do |story| %>
 	<h4><%= story.title %></h4>
-	<p><%= story.description %></p>
+	<p><%= simple_format(story.description) %></p>
 	<%= link_to story.title, url_for(story.link), :target => "_blank" %>
+<% end %>
+
+<h2>Featured Donor</h2>
+<% if @featured_donor.present? %>
+	<h4><%= @featured_donor.title %></h4>
+	<p><%= simple_format(@featured_donor.short_description) %></p>
+	<%= link_to @featured_donor.title, url_for(@featured_donor.link), :target => "_blank" %>
 <% end %>
 
 <h2>Generic Stories</h2>
 <% @generic_stories.each do |gstory| %>
-	<p><%= gstory.title %></p>
-	<p><%= %></p>
+	<h4><%= gstory.title %></h4>
+	<p><%= simple_format(gstory.short_description) %></p>
+	<%= link_to gstory.title, url_for(gstory.link), :target => "_blank" %>
 <% end %>
 
 <h2>Instagram</h2>
@@ -94,7 +102,6 @@
 	 }
 
 	$('.count').each(function () {
-		console.log($(this))
 	    $(this).prop('Counter',0).animate({
 	        Counter: $(this).text()
 	    }, {
@@ -102,23 +109,9 @@
 	        easing: 'swing',
 	        step: function (now) {
 	            $(this).text(commaSeparateNumber(Math.ceil(now)) );
-	            console.log(Math.ceil(now))
 	        }
 	    });
 	});
-	// $('.some').each(function(){
-	// 	console.log($(this))
-	// 	$(this).prop('Something',0).animate({
-	// 		Something: $(this).text()
-	// 	}, {
-	//         duration: 8000,
-	//         easing: 'swing',
-	//         step: function (now) {
-	//             $(this).text(commaSeparateNumber(Math.ceil(now)));
-	//         }
-	// 	});
-
-	// });
 
 
 </script>

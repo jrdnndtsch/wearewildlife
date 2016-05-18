@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518142532) do
+ActiveRecord::Schema.define(version: 20160518152618) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -32,12 +32,14 @@ ActiveRecord::Schema.define(version: 20160518142532) do
   create_table "featured_donors", force: :cascade do |t|
     t.string   "short_description"
     t.string   "link"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.string   "title"
+    t.boolean  "featured",           default: false
   end
 
   create_table "generic_stories", force: :cascade do |t|

@@ -12,12 +12,20 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
     <%= f.label :short_description %><br>
     <%= f.text_field :short_description %>
   </div>
   <div class="field">
     <%= f.label :link %><br>
     <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.label :featured %><br>
+    <%= f.check_box :featured %>
   </div>
   <div class="field">
     <%= f.label :photo %><br>
