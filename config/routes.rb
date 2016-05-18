@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   root 'front_page#show'
 
   get 'admin/show'
-  resources :articles, module: 'admin'
+  # resources :articles, module: 'admin'
   namespace :admin do
     resources :blogs
     resources :generic_stories
@@ -27,6 +27,9 @@ Rails.application.routes.draw do
     resources :stories
     resources :headers
     resources :featured_donors
+    get 'upload_tweets' => 'tweets#upload'
+    get 'upload_instas' => 'instas#upload'
+    get 'upload_wps' => 'blogs#upload'
   end    
 
   # Example of regular route:

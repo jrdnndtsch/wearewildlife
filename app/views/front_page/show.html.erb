@@ -36,6 +36,13 @@
 	<%= link_to story.title, url_for(story.link), :target => "_blank" %>
 <% end %>
 
+<h2>Tweets</h2>
+<h3>total count: <%= @tweets.count %></h3>
+
+<% @tweets.each do |tweet| %>
+	<p><%= Rinku.auto_link(tweet.text, :all, 'target="_blank"').html_safe %></p>
+<% end %>
+
 <h2>Featured Donor</h2>
 <% if @featured_donor.present? %>
 	<h4><%= @featured_donor.title %></h4>
@@ -63,28 +70,14 @@
 <% end %>
 
 <hr>
-<h2>Instwogram</h2>
-<h3>total count: <%= @instwogram_count %></h3>
-<% @instwogram.each do |instagram| %>
-	<%= image_tag instagram.images.standard_resolution.url %>
+<h2>Instagram</h2>
+<h3>total count: <%= @instagrams.count %></h3>
+<% @instagrams.each do |instagram| %>
+	<%= image_tag instagram.imag_url %>
 	<p><%= Rinku.auto_link(instagram.caption.text, :all, 'target="_blank"').html_safe  %></p>
 <% end %>
 
 
-<h2>Tweets</h2>
-<h3>total count: <%= @tweets.count %></h3>
-
-<% @tweets.each do |tweet| %>
-	<p><%= Rinku.auto_link(tweet.text, :all, 'target="_blank"').html_safe %></p>
-<% end %>
-
-<h2>WWF Hashtag</h2>
-<h3>total count: <%= @jb_count_with_hashtag %>| <%= @jb.count %> </h3>
-<% @jb_with_hashtag[0..3].each do |tweet| %>
-	<% if tweet.text.include?('#ExploreTheSound')%>
-		<p><%= Rinku.auto_link(tweet.text, :all, 'target="_blank"').html_safe %></p>
-	<% end %>
-<% end %>
 
 <h2>WP API</h2>
 
