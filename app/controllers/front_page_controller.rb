@@ -12,7 +12,7 @@ class FrontPageController < ApplicationController
   	@stories = Story.are_selected.are_not_featured.last(7).reverse
     @tweets = Tweet.last(5)
     @instagrams = Insta.last(5)
-    @blogs = Blog.last(3)
+    @blogs = Blog.first(3)
   	@featured_donor = FeaturedDonor.is_featured.first
   	@generic_stories = GenericStory.are_selected.last(3).reverse
   	# @instagram = Instagram.user_recent_media(@deartrudence, {:count => 15})

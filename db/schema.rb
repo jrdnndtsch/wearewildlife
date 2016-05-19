@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518203106) do
+ActiveRecord::Schema.define(version: 20160519144754) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160518203106) do
   end
 
   create_table "insta", force: :cascade do |t|
-    t.string   "imag_url"
+    t.string   "image_url"
     t.string   "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

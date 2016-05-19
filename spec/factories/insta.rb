@@ -1,6 +1,6 @@
 FactoryGirl.define do
   factory :instum, class: 'Insta' do
-    imag_url "MyString"
+    image_url "MyString"
     text "MyString"
   end
 end
