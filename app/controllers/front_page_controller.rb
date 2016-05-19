@@ -53,7 +53,6 @@ class FrontPageController < ApplicationController
   	response = request_data(response_request, uri, method)
     # image = request_data(image_request, image_uri, method)
     @response = JSON.parse(response)
-    raise 'hell'
     # @image = JSON.parse(image)
 
 

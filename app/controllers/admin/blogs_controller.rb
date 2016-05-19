@@ -33,6 +33,14 @@ class Admin::BlogsController < AdminController
           image_source_url = @image['source_url']
           new_blog.update(image_url: image_source_url)
         end
+        if blog['_links']['wp:featuredmedia'].present?
+          image_uri = blog['_links']['wp:featuredmedia'][0]['href']
+          image_request = make_request(method, image_uri, client_key, oauth_token, oauth_token_secret, client_secret)
+          image = request_data(image_request, image_uri, method)
+          @image = JSON.parse(image)
+          image_source_url = @image['source_url']
+          new_blog.update(image_url: image_source_url)
+        end
         if blog['_links']['author'].present?
           author_uri = blog['_links']['author'][0]['href']
           author_request = make_request(method, author_uri, client_key, oauth_token, oauth_token_secret, client_secret)
