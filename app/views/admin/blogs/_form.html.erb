@@ -39,7 +39,13 @@
     <%= f.label :photo %><br>
     <%= f.file_field :photo %>
   </div>
+  <% if @blog.photo? %>
+    <%= image_tag @blog.photo.url('header')%>
+    <br>
 
+    <%= f.label :remove_photo %>
+    <%= check_box_tag :remove_photo %>
+  <% end %>
   <div class="actions">
     <%= f.submit class: 'button button--tertiary' %>
   </div>
