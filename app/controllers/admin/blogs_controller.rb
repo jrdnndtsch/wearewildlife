@@ -11,7 +11,7 @@ class Admin::BlogsController < AdminController
       oauth_token = ENV['oauth_token']
       oauth_token_secret = ENV['oauth_token_secret']
       method = 'GET'
-      uri = 'http://jordandeutsch.com/wp-json/wp/v2/posts'
+      uri = 'http://blog.wwf.ca/wp-json/wp/v2/posts'
       # image_uri = 'http://jordandeutsch.com/wp-json/wp/v2/media/24'
       
 
