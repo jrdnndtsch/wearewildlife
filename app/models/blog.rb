@@ -1,4 +1,6 @@
 class Blog < ActiveRecord::Base
+
+
 	has_attached_file :photo,
     styles: {
           thumbnail: '100x100^',

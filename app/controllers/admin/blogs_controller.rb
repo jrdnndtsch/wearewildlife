@@ -100,6 +100,9 @@ class Admin::BlogsController < AdminController
   def update
     respond_to do |format|
       if @blog.update(blog_params)
+        if params[:remove_photo].present?
+          @blog.update(photo: nil)
+        end
         format.html { redirect_to edit_admin_blog_path(@blog), notice: 'Blog was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog }
       else
