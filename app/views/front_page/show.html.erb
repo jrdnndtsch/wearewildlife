@@ -81,22 +81,7 @@
 
 
 
-<h2>WP API</h2>
 
-
-<% @response.each do |r| %>
-<p><%= r %></p>
-<h3>Info we need</h3>
-<p><%= r['date'] %></p>
-<p><%= r['title']['rendered'] %></p>
-<p><%= r['link'] %></p>
-<p><%= r['excerpt']['rendered'].html_safe %></p>
-<p><%= r['_links']['author'][0]['href'] %></p>
-<% if r['_links']['https://api.w.org/featuredmedia'].present? %>
-<p><%=  r['_links']['https://api.w.org/featuredmedia'][0]['href'] %></p>
-<% end %>
-<hr>
-<% end %>
 
 <script>
 

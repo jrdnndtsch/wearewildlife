@@ -55,7 +55,6 @@ class FrontPageController < ApplicationController
     @response = JSON.parse(response)
     # @image = JSON.parse(image)
 
-
   end
 
   	# in browser got to url/oauth1/access?oauth_token and oauth_secret to get oauth_verifier

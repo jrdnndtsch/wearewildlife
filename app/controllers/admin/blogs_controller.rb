@@ -70,7 +70,7 @@ class Admin::BlogsController < AdminController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @updated_by = model_updated_by_user(@blog)
+    
   end
 
   # GET /blogs/new
@@ -82,6 +82,7 @@ class Admin::BlogsController < AdminController
 
   # GET /blogs/1/edit
   def edit
+    @updated_by = model_updated_by_user(@blog)
     add_breadcrumb "blog", "/admin/blogs"
     add_breadcrumb @blog.title, "#"
     add_breadcrumb "edit", "#"
@@ -215,7 +216,6 @@ class Admin::BlogsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params[:id] = params[:id].to_i
       params.require(:blog).permit(:title, :author, :date, :short_description, :link, :video_link, :photo, :approved)
     end
 end
