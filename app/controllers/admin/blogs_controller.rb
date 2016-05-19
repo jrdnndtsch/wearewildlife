@@ -215,6 +215,7 @@ class Admin::BlogsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
+      params[:id] = params[:id].to_i
       params.require(:blog).permit(:title, :author, :date, :short_description, :link, :video_link, :photo, :approved)
     end
 end
