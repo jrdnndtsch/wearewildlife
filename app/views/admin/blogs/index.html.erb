@@ -4,10 +4,12 @@
   <%= link_to 'New Custom Blog Post', new_admin_blog_path, class: 'button button--tertiary as--no-margin-bottom' %>
 </div>
 
+
 <table>
   <thead>
     <tr>
       <th class="table--image"></th>
+      <th>Approved?</th>
       <th>Title</th>
       <th>Date</th>
       <th></th>
@@ -17,7 +19,17 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= image_tag blog.photo.url('header')%></td>
+        <% if blog.photo.present? %>
+          <td><%= image_tag blog.photo.url('header') %></td>
+        <% else %>
+          <td><%= image_tag blog.image_url %></td>
+        <% end %>
+        <td><%= blog.approved %></td>
+  <!--       <td>
+          <%= form_for(admin_blog_path(blog), remote: true, :authenticity_token => true, class: 'approve_blog') do |f| %>
+            <%= f.check_box :approved, class: "blog_approved" %>
+          <% end %>
+        </td> -->
         <td><%= blog.title %></td>
         <td><%= blog.date %></td>
         <td class="table--button"><%= link_to 'Edit', edit_admin_blog_path(blog), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
@@ -27,5 +39,29 @@
 </table>
 
 <br>
+
+<script>
+  $(function() {
+    console.log('ready')
+    $('.blog_approved').change(function(){
+      // $(this).parent().submit();
+      blog_approved = $(this).val();
+      console.log(blog_approved)
+      blog = parseInt($(this).attr('id').split('_')[3])
+      console.log(blog)
+      $.ajax({
+        url: 'blogs/'+blog,
+        type: 'put',
+        data: {
+          blog : blog,
+          approved : blog_approved
+        },
+        dataType: 'script'
+      });
+      console.log('submitted?')
+      console.log($(this).parent()[0])
+    });
+  });
+</script>
 
 
