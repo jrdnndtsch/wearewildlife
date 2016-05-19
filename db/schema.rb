@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518164941) do
+ActiveRecord::Schema.define(version: 20160518203106) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 20160518164941) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.boolean  "approved",           default: false
+    t.string   "image_url"
+    t.integer  "wp_id"
   end
 
   create_table "featured_donors", force: :cascade do |t|

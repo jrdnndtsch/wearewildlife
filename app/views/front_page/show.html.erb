@@ -46,7 +46,7 @@
 <h2>Instagram</h2>
 <h3>total count: <%= @instagrams.count %></h3>
 <% @instagrams.each do |instagram| %>
-	<%= image_tag instagram.image_url %>
+	<%= image_tag instagram.imag_url %>
 	<p><%= Rinku.auto_link(instagram.text, :all, 'target="_blank"').html_safe  %></p>
 <% end %>
 
