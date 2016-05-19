@@ -12,6 +12,7 @@ class FrontPageController < ApplicationController
   	@stories = Story.are_selected.are_not_featured.last(7).reverse
     @tweets = Tweet.last(5)
     @instagrams = Insta.last(5)
+    @blogs = Blog.are_approved.first(3)
   	@featured_donor = FeaturedDonor.is_featured.first
   	@generic_stories = GenericStory.are_selected.last(3).reverse
   	# @instagram = Instagram.user_recent_media(@deartrudence, {:count => 15})
@@ -25,13 +26,12 @@ class FrontPageController < ApplicationController
   	# raise "the roof"
   	@link = Rinku.auto_link("Go to http://www.rubyonrails.org and say hello to david@loudthinking.com").html_safe
 
-
   	client_key = ENV['client_key']
   	client_secret = ENV['client_secret']
   	oauth_token = ENV['oauth_token']
   	oauth_token_secret = ENV['oauth_token_secret']
   	method = 'GET'
-  	uri = 'http://blog.wwf.ca/wp-json/wp/v2/posts/22896'
+  	uri = 'http://blog.wwf.ca/wp-json/wp/v2/posts'
   	image_uri = 'http://jordandeutsch.com/wp-json/wp/v2/media/24'
   	
   	# Steps for OAuth

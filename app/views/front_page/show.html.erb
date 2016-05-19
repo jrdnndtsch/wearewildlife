@@ -50,6 +50,21 @@
 	<p><%= Rinku.auto_link(instagram.text, :all, 'target="_blank"').html_safe  %></p>
 <% end %>
 
+<h2>Blogs</h2>
+<h3>total count: <%= @blogs.count %></h3>
+<% @blogs.each do |blog| %>
+	<% if blog.photo.present? %>
+	  <%= image_tag blog.photo.url('header') %>
+	<% else %>
+	  <%= image_tag blog.image_url %>
+	<% end %>
+	<p><%= blog.title %></p>
+	<p><%= blog.author %></p>
+	<p><%= blog.date.strftime("%B %d, %Y") %></p>
+	<p><%= blog.short_description.html_safe %></p>
+	<p><%= Rinku.auto_link(blog.link, :all, 'target="blank"').html_safe %></p>
+<% end %>
+
 <h2>Featured Donor</h2>
 <% if @featured_donor.present? %>
 	<h4><%= @featured_donor.title %></h4>
@@ -66,10 +81,6 @@
 
 
 
-
-
-<h2><%= @response['title']['rendered']%></h2>
-<div class="content"><%= @response['content']['rendered'].html_safe%></div>
 
 
 <script>
