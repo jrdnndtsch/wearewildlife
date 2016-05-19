@@ -68,6 +68,10 @@
 
 
 
+<h2><%= @response['title']['rendered']%></h2>
+<div class="content"><%= @response['content']['rendered'].html_safe%></div>
+
+
 <script>
 
 	commaSeparateNumber = function(val){

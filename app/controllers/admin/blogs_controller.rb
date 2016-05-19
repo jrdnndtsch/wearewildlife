@@ -26,7 +26,7 @@ class Admin::BlogsController < AdminController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @updated_by = model_updated_by_user(@blog)
+    
   end
 
   # GET /blogs/new
@@ -38,6 +38,7 @@ class Admin::BlogsController < AdminController
 
   # GET /blogs/1/edit
   def edit
+    @updated_by = model_updated_by_user(@blog)
     add_breadcrumb "blog", "/admin/blogs"
     add_breadcrumb @blog.title, "#"
     add_breadcrumb "edit", "#"

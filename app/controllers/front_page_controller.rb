@@ -31,7 +31,7 @@ class FrontPageController < ApplicationController
   	oauth_token = ENV['oauth_token']
   	oauth_token_secret = ENV['oauth_token_secret']
   	method = 'GET'
-  	uri = 'http://jordandeutsch.com/wp-json/wp/v2/posts/161'
+  	uri = 'http://blog.wwf.ca/wp-json/wp/v2/posts/22896'
   	image_uri = 'http://jordandeutsch.com/wp-json/wp/v2/media/24'
   	
   	# Steps for OAuth
@@ -49,11 +49,11 @@ class FrontPageController < ApplicationController
     # image_header_string = header(params)
   	#get those temporary token
     response_request = make_request(method, uri, client_key, oauth_token, oauth_token_secret, client_secret)
-    image_request = make_request(method, image_uri, client_key, oauth_token, oauth_token_secret, client_secret)
+    # image_request = make_request(method, image_uri, client_key, oauth_token, oauth_token_secret, client_secret)
   	response = request_data(response_request, uri, method)
-    image = request_data(image_request, image_uri, method)
+    # image = request_data(image_request, image_uri, method)
     @response = JSON.parse(response)
-    @image = JSON.parse(image)
+    # @image = JSON.parse(image)
 
   end
 
