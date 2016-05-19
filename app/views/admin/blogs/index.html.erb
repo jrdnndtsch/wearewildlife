@@ -17,7 +17,11 @@
   <tbody>
     <% @blogs.each do |blog| %>
       <tr>
-        <td><%= image_tag blog.photo.url('header')%></td>
+        <% if blog.photo.present? %>
+          <td><%= image_tag blog.photo.url('header') %></td>
+        <% else %>
+          <td><%= image_tag blog.image_url %></td>
+        <% end %>
         <td><%= blog.title %></td>
         <td><%= blog.date %></td>
         <td class="table--button"><%= link_to 'Edit', edit_admin_blog_path(blog), class: 'button button--primary button--edit as--no-margin-bottom' %></td>

@@ -26,7 +26,6 @@ class FrontPageController < ApplicationController
   	# raise "the roof"
   	@link = Rinku.auto_link("Go to http://www.rubyonrails.org and say hello to david@loudthinking.com").html_safe
 
-
   	client_key = ENV['client_key']
   	client_secret = ENV['client_secret']
   	oauth_token = ENV['oauth_token']
