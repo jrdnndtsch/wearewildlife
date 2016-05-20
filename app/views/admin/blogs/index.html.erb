@@ -2,6 +2,7 @@
 <div class="as--admin-index-title">
   <h1>All Blog Posts</h1>
   <%= link_to 'New Custom Blog Post', new_admin_blog_path, class: 'button button--tertiary as--no-margin-bottom' %>
+  <%= link_to 'Upload From WordPress', admin_upload_wps_path, class: 'button button--tertiary as--no-margin-bottom' %>
 </div>
 
 
@@ -24,7 +25,7 @@
         <% else %>
           <td><%= image_tag blog.image_url %></td>
         <% end %>
-        <td><%= blog.approved %></td>
+        <td><%= blog.approved ? 'yes' : 'no' %></td>
   <!--       <td>
           <%= form_for(admin_blog_path(blog), remote: true, :authenticity_token => true, class: 'approve_blog') do |f| %>
             <%= f.check_box :approved, class: "blog_approved" %>

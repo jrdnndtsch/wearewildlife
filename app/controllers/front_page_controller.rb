@@ -23,8 +23,6 @@ class FrontPageController < ApplicationController
   	# @jb = $client.search("from:WWFCanada", :result_type => "recent").take(50)
   	# @jb_count_with_hashtag = @jb.count {|tweet| tweet.text.include?('#ExploreTheSound') }
   	# @jb_with_hashtag = @jb.select { |tweet| tweet.text.include?('#ExploreTheSound') }
-  	# raise "the roof"
-  	@link = Rinku.auto_link("Go to http://www.rubyonrails.org and say hello to david@loudthinking.com").html_safe
 
   	client_key = ENV['client_key']
   	client_secret = ENV['client_secret']
