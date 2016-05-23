@@ -1,6 +1,49 @@
 // Place all the styles related to the MainMenus controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'generic'
 
 nav.main
 	:background black
+	img 
+		:width 100px
+		:position absolute
+
+.menu--main
+	:padding 30px 0 12px 0
+	:margin-left 140px
+	>li.item--main 	
+		:position relative
+		>a 
+			:color white
+			:text-transform uppercase
+			&:after
+				:content '▼'
+				:font-size 8px
+				:vertical-align top
+				:padding 5px
+				:display inline-block
+				&:hover 
+					:color $pink
+			&:hover
+				:color $pink	
+
+.menu--sub
+	:background white	
+	:border-bottom 2px solid $pink	
+	:border-top 2px solid $blue
+	:position absolute
+	:padding 0 16px
+	:min-width 220px
+	// :display none
+	li 
+		:border-bottom 1px solid $grey
+		:display block
+		:padding 8px 0
+		&:last-of-type
+			:border-bottom none
+	a 
+		:color black
+		:text-transform capitalize
+		:font-size 14px
+	
