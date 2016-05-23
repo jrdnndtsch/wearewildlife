@@ -18,33 +18,66 @@ $grid-base: 40
 
 //adaptive screen sizes
 %make-adaptive
-  @media screen and (min-width: 1170px)
-    // XL
-    :width 1146px
-    :margin
-      :left 12px
-      :right 12px
-  @media screen and (min-width: 960px) and (max-width: 1169px)
-    // LG
-    :width 936px
-    :margin
-      :left 12px
-      :right 12px
-  @media screen and (min-width: 768px) and (max-width: 959px)
-    // MD
-    :width 744px
-    :margin
-      :left 12px
-      :right 12px
-  @media screen and (min-width: 500px) and (max-width: 767px)
-    // SM
-    :width 480px
-    :margin
-      :left 12px
-      :right 12px
-  @media screen and (max-width: 499px)
-    // XS
-    :width auto
-    :margin-left 8px
-    :margin-right 8px
+	@media screen and (min-width: 1170px)
+		// XL
+		:width 1146px
+		:margin
+			:left 12px
+			:right 12px
+	@media screen and (min-width: 960px) and (max-width: 1169px)
+		// LG
+		:width 936px
+		:margin
+			:left 12px
+			:right 12px
+	@media screen and (min-width: 768px) and (max-width: 959px)
+		// MD
+		:width 744px
+		:margin
+			:left 12px
+			:right 12px
+	@media screen and (min-width: 500px) and (max-width: 767px)
+		// SM
+		:width 480px
+		:margin
+			:left 12px
+			:right 12px
+	@media screen and (max-width: 499px)
+		// XS
+		:width auto
+		:margin-left 8px
+		:margin-right 8px
 
+
+=display-for($size: false)
+	@each $screen in $size
+		@if $screen == xl
+			@media screen and (min-width: 1170px)
+				@content
+		@else if $screen == lg
+			@media screen and (min-width: 960px) and (max-width: 1169px)
+				@content
+		@if $screen == md
+			@media screen and (min-width: 768px) and (max-width: 959px)
+				@content
+		@else if $screen == sm
+			@media screen and (min-width: 500px) and (max-width: 767px)
+				@content
+		@else if $screen == xs
+			@media screen and (max-width: 499px)
+				@content
+
+.wrapper
+	@extend %make-adaptive
+	:box-sizing border-box
+	:position relative
+	+display-for(xl lg md sm)
+		:margin 0 auto
+	+display-for(xs)
+		:margin 0
+		:padding 0 12px
+	&--flex
+		:display flex
+		:align-items stretch
+		:justify-content space-between
+		:flex-flow row wrap
