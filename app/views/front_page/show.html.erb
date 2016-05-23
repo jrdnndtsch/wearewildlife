@@ -83,7 +83,16 @@
 
 
 <script>
-
+	$(function(){
+		$('.item--main').on('mouseenter', function(){
+			$(this).find('a').addClass('active');
+			$(this).find('.menu--sub').addClass('active');
+		});
+		$('.item--main').on('mouseleave', function(){
+			$(this).find('a').removeClass('active');
+			$(this).find('.menu--sub').removeClass('active');
+		});
+	});
 	commaSeparateNumber = function(val){
 	   	while (/(\d+)(\d{3})/.test(val)){
 	     	val = val.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
