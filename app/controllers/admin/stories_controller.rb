@@ -52,7 +52,10 @@ class Admin::StoriesController < AdminController
   def update
     respond_to do |format|
       if @story.update(story_params)
-        format.html { redirect_to admin_story_path(@story), notice: 'Story was successfully updated.' }
+        if params[:remove_photo].present?
+          @story.update(photo: nil)
+        end
+        format.html { redirect_to edit_admin_story_path(@story), notice: 'Story was successfully updated.' }
         format.json { render :show, status: :ok, location: @story }
       else
         format.html { render :edit }

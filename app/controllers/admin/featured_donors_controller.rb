@@ -52,6 +52,9 @@ class Admin::FeaturedDonorsController < AdminController
   def update
     respond_to do |format|
       if @featured_donor.update(featured_donor_params)
+        if params[:remove_photo].present?
+          @featured_donor.update(photo: nil)
+        end
         format.html { redirect_to edit_admin_featured_donor_path(@featured_donor), notice: 'Featured donor was successfully updated.' }
         format.json { render :show, status: :ok, location: @featured_donor }
       else

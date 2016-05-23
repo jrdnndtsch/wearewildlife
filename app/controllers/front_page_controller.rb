@@ -23,8 +23,6 @@ class FrontPageController < ApplicationController
   	# @jb = $client.search("from:WWFCanada", :result_type => "recent").take(50)
   	# @jb_count_with_hashtag = @jb.count {|tweet| tweet.text.include?('#ExploreTheSound') }
   	# @jb_with_hashtag = @jb.select { |tweet| tweet.text.include?('#ExploreTheSound') }
-  	# raise "the roof"
-  	@link = Rinku.auto_link("Go to http://www.rubyonrails.org and say hello to david@loudthinking.com").html_safe
 
   	client_key = ENV['client_key']
   	client_secret = ENV['client_secret']
@@ -48,11 +46,11 @@ class FrontPageController < ApplicationController
   	# header_string = header(params)
     # image_header_string = header(params)
   	#get those temporary token
-    response_request = make_request(method, uri, client_key, oauth_token, oauth_token_secret, client_secret)
+    # response_request = make_request(method, uri, client_key, oauth_token, oauth_token_secret, client_secret)
     # image_request = make_request(method, image_uri, client_key, oauth_token, oauth_token_secret, client_secret)
-  	response = request_data(response_request, uri, method)
+  	# response = request_data(response_request, uri, method)
     # image = request_data(image_request, image_uri, method)
-    @response = JSON.parse(response)
+    # @response = JSON.parse(response)
     # @image = JSON.parse(image)
 
   end

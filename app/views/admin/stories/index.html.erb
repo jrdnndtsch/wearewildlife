@@ -8,6 +8,7 @@
     <tr>
       <th class="table--image"></th>
       <th>Featured</th>
+      <th>Selected</th>
       <th>Title</th>
       <th>Date</th>
       <th></th>
@@ -18,7 +19,8 @@
     <% @stories.each do |story| %>
       <tr>
         <td><%= image_tag story.photo.url('header')%></td>
-        <td><%= story.featured %></td>
+        <td><%= story.featured ? 'yes' : 'no' %></td>
+        <td><%= story.selected ? 'yes' : 'no'%></td>
         <td><%= story.title %></td>
         <td><%= story.date %></td>
         <td class="table--button"><%= link_to 'Edit', edit_admin_story_path(story), class:'button button--primary button--edit as--no-margin-bottom' %></td>

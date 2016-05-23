@@ -65,6 +65,7 @@
 <h2>Featured Donor</h2>
 <% if @featured_donor.present? %>
 	<h4><%= @featured_donor.title %></h4>
+	<%= image_tag @featured_donor.photo.url %>
 	<p><%= simple_format(@featured_donor.short_description) %></p>
 	<%= link_to @featured_donor.title, url_for(@featured_donor.link), :target => "_blank" %>
 <% end %>
@@ -75,9 +76,6 @@
 	<p><%= simple_format(gstory.short_description) %></p>
 	<%= link_to gstory.title, url_for(gstory.link), :target => "_blank" %>
 <% end %>
-
-
-
 
 
 <script>
