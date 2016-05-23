@@ -10,6 +10,9 @@ gem 'instagram'
 gem 'twitter'
 gem 'rails_autolink'
 gem 'rinku'
+
+#for sass
+gem 'bourbon'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -28,6 +31,9 @@ gem 'json'
 
 #to build breadcrumbs
 gem "breadcrumbs_on_rails"
+
+#for cron jobs
+gem 'whenever', '~> 0.9.4', :require => false
 
 #for more fun HTTP requests
 gem 'httparty'

@@ -1,18 +1,15 @@
-
-<h1>FrontPage#show</h1>
-<p>Find me in app/views/front_page/show.html.erb</p>
-
-<h2>Menus</h2>
-<ul>
-	<% @main_menus.each do |main_menu| %>
-		<li><%= link_to main_menu.title, url_for(main_menu.link), :target => "_blank" %></li>
-		<ul>
-			<% main_menu.sub_menus.each do |sub_menu| %>
-				<li><%= link_to sub_menu.title, url_for(sub_menu.link), :target => "_blank" %></li>
-			<% end%>
-		</ul>
-	<% end %>
-</ul>
+<nav class="main">
+	<ul class="wrapper">
+		<% @main_menus.each do |main_menu| %>
+			<li><%= link_to main_menu.title, url_for(main_menu.link), :target => "_blank" %></li>
+			<ul>
+				<% main_menu.sub_menus.each do |sub_menu| %>
+					<li><%= link_to sub_menu.title, url_for(sub_menu.link), :target => "_blank" %></li>
+				<% end%>
+			</ul>
+		<% end %>
+	</ul>
+</nav>
 
 <h2>Header</h2>
 <h2><span class="count"><%= @header.number %></span>  </h2>

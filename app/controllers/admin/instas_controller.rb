@@ -1,5 +1,5 @@
 class Admin::InstasController < ApplicationController
-
+	skip_before_action :authenticate_user!
 	def upload	
 		@instas = Instagram.user_recent_media(@deartrudence, {:count => 15})
 		@instas_with_hashtag = @instas.select { |pic| pic.caption.text.include?('#Repost') }
