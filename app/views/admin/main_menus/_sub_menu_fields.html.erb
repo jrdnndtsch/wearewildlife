@@ -8,6 +8,10 @@
     <%= f.text_field :link %>
   </div>
   <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
     <%= f.hidden_field :main_menu_id, value: @main_menu.id  %>
   </div>
   <div class="fieldset">
