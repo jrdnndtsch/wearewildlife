@@ -10,7 +10,7 @@ class Story < ActiveRecord::Base
         },
     default_url: "photo.jpg"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
-  validates :featured, :uniqueness => true
+  # validates :featured, :uniqueness => true
   
   has_paper_trail  
 

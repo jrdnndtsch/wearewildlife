@@ -15,67 +15,100 @@
 <h2><span class="count"><%= @header.number %></span>  </h2>
 <h4><%= @header.tag_line %></h4>
 
-<h2>About</h2>
-<p><%= simple_format(@header.about) %></p>
+<section class="about wrapper">
+	<p><%= simple_format(@header.about) %></p>	
+</section>
 
-<h2>Stories</h2>
-<% if @featured_story.present? %>
-	<h3>Featured Story</h3>
-	<h4><%= @featured_story.title %></h4>
-	<p><%= simple_format(@featured_story.description) %></p>
-	<%= link_to @featured_story.title, url_for(@featured_story.link), :target => "_blank"  %>
-<% end %>
-
-<h3>All other stories</h3>	
-<% @stories.each do |story| %>
-	<h4><%= story.title %></h4>
-	<p><%= simple_format(story.description) %></p>
-	<%= link_to story.title, url_for(story.link), :target => "_blank" %>
-<% end %>
-
-<h2>Tweets</h2>
-<h3>total count: <%= @tweets.count %></h3>
-
-<% @tweets.each do |tweet| %>
-	<p><%= Rinku.auto_link(tweet.text, :all, 'target="_blank"').html_safe %></p>
-<% end %>
-
-<h2>Instagram</h2>
-<h3>total count: <%= @instagrams.count %></h3>
-<% @instagrams.each do |instagram| %>
-	<%= image_tag instagram.image_url %>
-	<p><%= Rinku.auto_link(instagram.text, :all, 'target="_blank"').html_safe  %></p>
-<% end %>
-
-<h2>Blogs</h2>
-<h3>total count: <%= @blogs.count %></h3>
-<% @blogs.each do |blog| %>
-	<% if blog.photo.present? %>
-	  <%= image_tag blog.photo.url('header') %>
-	<% else %>
-	  <%= image_tag blog.image_url %>
+<section class="stories wrapper">
+	<h2>Stories</h2>
+	<% if @featured_story.present? %>
+		<h3>Featured Story</h3>
+		<h4><%= @featured_story.title %></h4>
+		<p><%= simple_format(@featured_story.description) %></p>
+		<%= link_to @featured_story.title, url_for(@featured_story.link), :target => "_blank"  %>
 	<% end %>
-	<p><%= blog.title %></p>
-	<p><%= blog.author %></p>
-	<p><%= blog.date.strftime("%B %d, %Y") %></p>
-	<p><%= blog.short_description.html_safe %></p>
-	<p><%= Rinku.auto_link(blog.link, :all, 'target="blank"').html_safe %></p>
-<% end %>
+	<div class="wrapper--flex">
+		<% @stories.each do |story| %>
+			<div class="col--three">
+				<h4><%= story.title %></h4>
+				<p><%= simple_format(story.description) %></p>
+				<%= link_to story.title, url_for(story.link), :target => "_blank" %>		
+			</div>
+		<% end %>
+		
+	</div>	
+</section>
 
-<h2>Featured Donor</h2>
-<% if @featured_donor.present? %>
-	<h4><%= @featured_donor.title %></h4>
-	<%= image_tag @featured_donor.photo.url %>
-	<p><%= simple_format(@featured_donor.short_description) %></p>
-	<%= link_to @featured_donor.title, url_for(@featured_donor.link), :target => "_blank" %>
-<% end %>
+<section class="social">
+	<h2>#WeCountForNature</h2>
 
-<h2>Generic Stories</h2>
-<% @generic_stories.each do |gstory| %>
-	<h4><%= gstory.title %></h4>
-	<p><%= simple_format(gstory.short_description) %></p>
-	<%= link_to gstory.title, url_for(gstory.link), :target => "_blank" %>
-<% end %>
+	<div class="wrapper wrapper--flex">
+		<% @tweets.each do |tweet| %>
+			<div class="col--five">
+				<p><%= Rinku.auto_link(tweet.text, :all, 'target="_blank"').html_safe %></p>
+			</div>
+		<% end %>
+	</div>
+	<div class="wrapper wrapper--flex">
+		<% @instagrams.each do |instagram| %>
+			<div class="col--five">
+				<%= image_tag instagram.image_url %>
+			</div>
+		<% end %>
+		
+	</div>
+</section>
+
+<section class="wp-blog wrapper">
+	<h2>Blogs</h2>
+		<% @blogs.each do |blog| %>
+		<div class="wrapper--flex">
+			<div class="col--two">
+				<% if blog.photo.present? %>
+				  <%= image_tag blog.photo.url('header') %>
+				<% else %>
+				  <%= image_tag blog.image_url %>
+				<% end %>
+			</div>
+			<div class="col--two">
+				<p><%= blog.title %></p>
+				<p><%= blog.author %></p>
+				<p><%= blog.date.strftime("%B %d, %Y") %></p>
+				<p><%= blog.short_description.html_safe %></p>
+				<p><%= Rinku.auto_link(blog.link, :all, 'target="blank"').html_safe %></p>
+			</div>
+		</div>
+		<% end %>
+</section>
+
+<section class="featured-donor">
+	<h2>Featured Donor</h2>
+	<% if @featured_donor.present? %>
+		<div class="wrapper wrapper--flex">
+			<div class="col--two">
+				<h4><%= @featured_donor.title %></h4>
+				<p><%= simple_format(@featured_donor.short_description) %></p>
+				<%= link_to @featured_donor.title, url_for(@featured_donor.link), :target => "_blank" %>
+			</div>
+			<div class="col--two">
+				<%= image_tag @featured_donor.photo.url %>
+			</div>
+		</div>
+	<% end %>
+</section>
+
+<section class="generic-stories wrapper">
+	<h2>Generic Stories</h2>
+	<div class="wrapper--flex">	
+		<% @generic_stories.each do |gstory| %>
+			<div class="col--three">
+				<h4><%= gstory.title %></h4>
+				<p><%= simple_format(gstory.short_description) %></p>
+				<%= link_to gstory.title, url_for(gstory.link), :target => "_blank" %>
+			</div>
+		<% end %>
+	</div>
+</section>
 
 
 <script>
