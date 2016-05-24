@@ -74,7 +74,15 @@ nav.main
 			:min-width 150px
 			:font-size 12px
 
-
+.item--main
+	&:last-of-type
+		.menu--sub-desc
+			:right calc(100% + 30px)
+			:left auto
+			&:before
+				:right -13px
+				:left auto
+				:transform rotate(180deg) translateY(50%)
 .menu--sub.active, .menu--sub-desc.active
 	:display block
 
