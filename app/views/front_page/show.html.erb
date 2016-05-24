@@ -171,7 +171,7 @@
 		}
 		function mainMenuSmall(){
 			if(windowSize <= 500){
-				$('.menu--main').css({'width': '100%', 'margin-left': '0', 'left' : '0'})
+				$('.menu--main').css({'width': '100%', 'margin-left': '0', 'left' : '0', 'display' : 'none'})
 			}else if(windowSize < 960){
 				menu = $('.menu--main');
 				menuWidth = $('.wrapper').innerWidth()
@@ -180,7 +180,7 @@
 				$('.menu--main').css({'width' : windowSize, 'margin-left': '-' + marginLeft + 'px', 'display': 'none'});
 			}else{
 				console.log('else')
-				$('.menu--main').css({'width': 'auto', 'margin-left': '140px'})
+				$('.menu--main').css({'width': 'auto', 'margin-left': '140px', 'display': 'flex'})
 			}
 		}
 		$(window).resize(function(){
