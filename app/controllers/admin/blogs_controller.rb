@@ -65,6 +65,11 @@ class Admin::BlogsController < AdminController
   def index
     add_breadcrumb "blog", 'blogs'
     @blogs = Blog.all
+    @title = Title.where("section_name = 'blog'")
+    if params[:title_thing].present?
+      @the_title = Title.find(params[:title_thing])
+      @the_title.update(title: params[:title])
+    end
   end
 
   # GET /blogs/1

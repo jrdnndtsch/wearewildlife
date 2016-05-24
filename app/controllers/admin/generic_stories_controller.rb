@@ -7,6 +7,11 @@ class Admin::GenericStoriesController < AdminController
   def index
     @generic_stories = GenericStory.all
     add_breadcrumb "Generic Stories", 'generic_stories'
+    @title = Title.where("section_name = 'generic_stories'")
+    if params[:title_thing].present?
+      @the_title = Title.find(params[:title_thing])
+      @the_title.update(title: params[:title])
+    end
   end
 
   # GET /generic_stories/1

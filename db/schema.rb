@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523153105) do
+ActiveRecord::Schema.define(version: 20160524162516) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -102,6 +102,13 @@ ActiveRecord::Schema.define(version: 20160523153105) do
   end
 
   add_index "sub_menus", ["main_menu_id"], name: "index_sub_menus_on_main_menu_id"
+
+  create_table "titles", force: :cascade do |t|
+    t.string   "title"
+    t.string   "section_name"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "tweets", force: :cascade do |t|
     t.string   "text"

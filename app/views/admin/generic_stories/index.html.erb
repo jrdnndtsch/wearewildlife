@@ -1,8 +1,19 @@
 <div class="as--admin-index-title">
   <h1>All Generic Stories</h1>
   <%= link_to 'New Generic Story', new_admin_generic_story_path, class: 'button button--tertiary as--no-margin-bottom' %>
-
 </div>
+<%= form_for(@title.first, remote: true) do |f|%>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'title--field', :data => {:id => @title.first.id} %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :section_name, value: 'generic_stories' %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+<% end %>
 
 <table>
   <thead>
@@ -23,6 +34,26 @@
     <% end %>
   </tbody>
 </table>
+
+<script>
+  $(function(){
+    $('.title--field').on('blur', function(){
+      console.log('changed')
+      var id = $(this).data('id')
+      var text = $(this).val()
+      console.log(id)
+      $.ajax({
+        url: '' ,
+        type: 'get',
+        data: {
+          title: text,
+          title_thing: id
+        },
+        dataType: 'script'
+      });
+    });
+  });
+</script>
 
 
 
