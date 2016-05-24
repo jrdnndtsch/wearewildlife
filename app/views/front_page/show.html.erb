@@ -84,7 +84,7 @@
 		<div class="wrapper--flex">
 			<div class="col--two">
 				<% if blog.photo.present? %>
-				  <%= image_tag blog.photo.url('header') %>
+				  <%= image_tag blog.photo.url %>
 				<% else %>
 				  <%= image_tag blog.image_url %>
 				<% end %>
