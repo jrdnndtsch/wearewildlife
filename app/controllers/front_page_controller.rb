@@ -13,7 +13,7 @@ class FrontPageController < ApplicationController
     @tweets = Tweet.last(5)
     @instagrams = Insta.last(5)
     @socials = []
-    (0..5).each do |i|
+    (0..4).each do |i|
       @socials << @tweets[i]
       @socials << @instagrams[i]
     end

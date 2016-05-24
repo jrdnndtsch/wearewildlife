@@ -46,16 +46,19 @@
 <section class="social">
 	<h2>#WeCountForNature</h2>
 
-	<div class="wrapper wrapper--flex">
+	<div class="wrapper--flex">
 		<% @socials.each_with_index do |social, index| %>
-			<div class="col--five">
+			<div class="col--five social-element">
 				<% if index.modulo(2).zero? %>
 					<% if social.present? %>
-						<p><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
+						<div class="tweet">
+							<p><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
+						</div>
 					<% end %>
 				<% else %>
 					<% if social.present? %>
-						<%= image_tag social.image_url %>
+						<div class="instagram" style="background-image: url(<%= social.image_url %>)">
+						</div>
 					<% end %>
 				<% end %>
 			</div>
