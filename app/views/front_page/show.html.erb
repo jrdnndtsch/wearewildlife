@@ -36,15 +36,24 @@
 	<h2>Stories</h2>
 	<% if @featured_story.present? %>
 		<h3>Featured Story</h3>
-		<h4><%= @featured_story.title %></h4>
-		<p><%= simple_format(@featured_story.description) %></p>
-		<%= link_to @featured_story.title, url_for(@featured_story.link), :target => "_blank"  %>
+		<div class="featured-story">
+			<h3><%= @featured_story.title %></h3>
+			<div class="wrapper--flex stories--flex">
+				<div class="col--two">
+					<%= simple_format(@featured_story.description) %>
+				</div>
+				<div class="col--two">
+					<%= image_tag @featured_story.photo.url %>
+				</div>
+			</div>
+			<%= link_to @featured_story.title, url_for(@featured_story.link), :target => "_blank"  %>
+		</div>
 	<% end %>
 	<div class="wrapper--flex">
 		<% @stories.each do |story| %>
-			<div class="col--three">
-				<h4><%= story.title %></h4>
-				<p><%= simple_format(story.description) %></p>
+			<div class="col--three-margin story">
+				<div class="story--photo" style="background-image: url(<%= story.photo.url %>)"></div>
+				<h3><%= story.title %></h3>
 				<%= link_to story.title, url_for(story.link), :target => "_blank" %>		
 			</div>
 		<% end %>
