@@ -5,20 +5,97 @@
 
 nav.main
 	:background black
+	:width 100%
+	+display-for(md sm xs)
 	img 
 		:width 100px
 		:position absolute
+		:z-index 10
+	.main--toggle
+		:display none
+		+display-for(md sm xs)
+			:float right 
+			:display block
+			:transition all 0.3s
+			:padding 12px 0 18px
+			&:hover 
+				&:before
+					:transform translate3d(0, -1px, 0)
+				&:after 
+					:transform translate3d(0, 1px, 0)
+			&:before, &:after
+				:content ' '
+				:width 32px
+				:height 2px
+				:background white
+				:display block
+				:margin-top 6px
+				:transition all 0.3s
+					
+			span
+				:width 32px
+				:height 2px
+				:margin-top 6px
+				:display block
+				:background white
+				:transition all 0.3s
+	.main--toggle.active
+		+display-for(md sm xs)
+			:padding 11px 0 17px
+			span 
+				:opacity 0
+				:width 28px
+				:height 4px
+				:transform translate3d(0, 0, 0) rotate(45deg)
+			&:before
+				:transform translate3d(0, 8px, 0) rotate(45deg)
+				:width 22px
+				:height 2px
+			&:after
+				:transform translate3d(0, -10px, 0) rotate(-45deg)
+				:width 22px
+				:height 2px
+
+
+
+
 .menu--main
+	// :display none !important
+	+display-for(md sm xs)
+		:position absolute
+		:background white
+		:top 55px
+		:margin 0
+		:padding 80px 0
+		:width 100%
+		:z-index 1
+		// :display none !important
 	// :padding 30px 0
 	:margin-left 140px
 	>li.item--main 	
 		:position relative
 		:padding 30px 0
+		:list-style none
+		:transition all 0.3s
+		+display-for(md sm xs)
+			:display block
+			:margin 0 auto
+			:padding 20px 0
+		+display-for(md)
+			:width 744px
+		+display-for(sm)
+			:width 480px
+		+display-for(xs)
+			:width 100%
+			:padding 20px 14px			
 		>a 
 			:color white
 			:text-transform uppercase
 			:font-family 'WWF'
 			:letter-spacing 0.86px
+			+display-for(md sm xs)
+				:color $blue
+				:font-size 18px
 			&:after
 				:content '▾'
 				:font-size 12px
@@ -43,6 +120,10 @@ nav.main
 	:padding 0 16px
 	:min-width 220px
 	:display none
+	// :transition all 0.3s
+	+display-for(md sm xs)
+		:position static
+		:margin-top 20px
 	li 
 		:border-bottom 1px solid $grey
 		:display block
@@ -55,24 +136,28 @@ nav.main
 		:text-transform capitalize
 		:font-size 14px
 	.menu--sub-desc
-		:background $blue	
-		:position absolute
-		:top 0
-		:left calc(100% + 30px)
-		:color white
-		:padding 10px
-		:display none
-		&:before
-			:content '◀'
-			:color $blue
-			:left -13px
+		+display-for(xl lg)
+			:background $blue	
 			:position absolute
-			:top 50%
-			:transform translateY(-50%)
+			:top 0
+			:left calc(100% + 30px)
+			:color white
+			:padding 10px
+			:display none
+			&:before
+				:content '◀'
+				:color $blue
+				:left -13px
+				:position absolute
+				:top 50%
+				:transform translateY(-50%)
+			
 		p 
 			:margin 0
 			:min-width 150px
 			:font-size 12px
+			+display-for(md sm xs)
+				:color $blue
 
 .item--main
 	&:last-of-type
