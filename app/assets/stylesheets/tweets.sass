@@ -2,16 +2,46 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .social-element
+	:position relative
+	:justify-content center
 	&:nth-of-type(2n+5)
 		:background-color $light-blue
 	&:nth-of-type(8n+1)
 		:background-color $blue
 	&:nth-of-type(3)
 		:background-color $medium-blue
+	&:after
+		:content ""
+		:display block
+		:padding-bottom 100%
 .instagram
-	:height 280px
+	:position absolute
+	:height 100%
+	:width 100%
 	:background-size cover
+	:background-position center
 .tweet
-	:height 280px
-	:padding 20px
+	:position absolute
+	:padding 0 28px
+	:height 50%
+	:overflow auto
+	:margin auto
+	:top 0 
+	:left 0 
+	:bottom 0 
+	:right 0
 	:color white
+	:font-size 16px
+	:font-family 'Georgia'
+	:word-break break-all
+	a 
+		:color white
+		:font-weight bold
+.square
+	:position relative
+	// :width 20%
+	:border 2px solid black
+.square:after
+	:content ""
+	:display block
+	:padding-bottom 100%
