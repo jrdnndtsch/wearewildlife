@@ -1,6 +1,9 @@
 <nav class="main">
-	<div class="wrapper">
+	<div class="wrapper clearfix">
 		<%= image_tag 'wwf-logo.png'%>
+		<a href="#" class="main--toggle">
+			<span></span>
+		</a>
 		<ul class="wrapper--flex menu--main">
 			<% @main_menus.each do |main_menu| %>
 				<li class="item--main"><%= link_to main_menu.title, url_for(main_menu.link), :target => "_blank" %>
@@ -126,21 +129,65 @@
 
 <script>
 	$(function(){
-		$('.item--main').on('mouseenter', function(){
-			$(this).find('a').addClass('active');
-			$(this).find('.menu--sub').addClass('active');
-		});
-		$('.item--main').on('mouseleave', function(){
-			$(this).find('a').removeClass('active');
-			$(this).find('.menu--sub').removeClass('active');
-		});
+		
+		
 
-		$('.item--sub').on('mouseenter', function(){
-			$(this).find('.menu--sub-desc').addClass('active')
+		//hamburger nav
+		$('.main--toggle').on('click', function(){
+			$(this).toggleClass('active');
+			$('.menu--main').slideToggle('normal')
+		})
+		var windowSize = $(window).innerWidth()
+		function mainMenu(){
+			console.log(windowSize);
+			if(windowSize >= 960){
+				$('.item--main').on('mouseenter', function(){
+					$(this).find('a').addClass('active');
+					$(this).find('.menu--sub').addClass('active');
+				});
+				$('.item--main').on('mouseleave', function(){
+					$(this).find('a').removeClass('active');
+					$(this).find('.menu--sub').removeClass('active');
+				});
+
+				$('.item--sub').on('mouseenter', function(){
+					$(this).find('.menu--sub-desc').addClass('active')
+				});
+				$('.item--sub').on('mouseleave', function(){
+					$(this).find('.menu--sub-desc').removeClass('active')
+				});
+				$('.item--main a').unbind('click')
+			}else{
+				$('.item--main, .item--sub').unbind('mouseenter mouseleave')
+				$('.item--main a').unbind('click')
+				$('.item--main a').on('click', function(e){
+					e.preventDefault()
+					$(this).toggleClass('active')
+					$(this).parent('.item--main').find('.menu--sub').slideToggle('normal');
+				})
+			}
+		}
+		function mainMenuSmall(){
+			if(windowSize <= 500){
+				$('.menu--main').css({'width': '100%', 'margin-left': '0', 'left' : '0'})
+			}else if(windowSize < 960){
+				menu = $('.menu--main');
+				menuWidth = $('.wrapper').innerWidth()
+				console.log(menuWidth)
+				marginLeft = (windowSize - menuWidth) / 2
+				$('.menu--main').css({'width' : windowSize, 'margin-left': '-' + marginLeft + 'px', 'display': 'none'});
+			}else{
+				console.log('else')
+				$('.menu--main').css({'width': 'auto', 'margin-left': '140px'})
+			}
+		}
+		$(window).resize(function(){
+			windowSize = $(window).innerWidth()
+			mainMenu()
+			mainMenuSmall()
 		});
-		$('.item--sub').on('mouseleave', function(){
-			$(this).find('.menu--sub-desc').removeClass('active')
-		});
+		mainMenu()
+		mainMenuSmall()
 	});
 	commaSeparateNumber = function(val){
 	   	while (/(\d+)(\d{3})/.test(val)){
