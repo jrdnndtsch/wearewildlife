@@ -87,9 +87,51 @@ $grid-base: 40
 		:align-items stretch
 		:justify-content space-between
 		:flex-flow row wrap
-
+.wrapper, .wrapper--flex
+	.col
+		&--two
+			+make-column(20)
+			+display-for(xs)
+				+make-column(40)
+		&--three
+			+make-column(13.33)
+			+display-for(sm)
+				+make-column(20)
+			+display-for(xs)
+				+make-column(40)
+		&--four
+			+make-column(10)
+			+display-for(sm)
+				+make-column(20)
+			+display-for(xs)
+				+make-column(40)
+		&--five
+			+make-column(8)
+			+display-for(sm)
+				+make-column(13.33)
+			+display-for(xs)
+				+make-column(20)
+		&--threefourths
+			+make-column(30)
+			+display-for(sm)
+				+make-column(30)
+			+display-for(xs)
+				+make-column(40)
+				+make-column(40)
+		&--half
+			+display-for(xl lg)
+				:width calc(50% - 20px)
+				&:nth-of-type(2n + 1)
+					:margin-right 40px	
+			+display-for(md sm xs)
+				:margin-bottom 20px
+				:width 100%
+				img 
+					:width 100%		
 //COLORS
 $pink : #CF1E53
-$blue : #2E708E 
-$blue--transparent : rgba(46,112,142, 0.9)
+$blue : #2E708E
 $grey : #979797
+$light-blue : #7EC9E7
+$medium-blue : #47A8CB
+

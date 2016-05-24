@@ -12,6 +12,13 @@ class FrontPageController < ApplicationController
   	@stories = Story.are_selected.are_not_featured.last(7).reverse
     @tweets = Tweet.last(5)
     @instagrams = Insta.last(5)
+    @socials = []
+    (0..4).each do |i|
+      @socials << @tweets[i]
+      @socials << @instagrams[i]
+    end
+
+    # raise 'the roof'
     @blogs = Blog.are_approved.first(3)
   	@featured_donor = FeaturedDonor.is_featured.first
   	@generic_stories = GenericStory.are_selected.last(3).reverse
