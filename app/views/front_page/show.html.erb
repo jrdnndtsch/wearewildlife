@@ -33,7 +33,7 @@
 </section>
 
 <section class="stories wrapper">
-	<h2>Stories</h2>
+	<h2><%= @stories_title.title%></h2>
 	<% if @featured_story.present? %>
 		<h3>Featured Story</h3>
 		<h4><%= @featured_story.title %></h4>
@@ -53,6 +53,7 @@
 </section>
 
 <section class="social">
+<h2><%= @title_blog.title%></h2>
 <div class="hashtag">	
 	<h2 class="center-text">#WeCountForNature</h2>
 	<p class="center-text"><i class="fa fa-facebook"></i><i class="fa fa-twitter"></i><i class="fa fa-instagram"></i></p>
@@ -116,7 +117,7 @@
 </section>
 
 <section class="generic-stories wrapper">
-	<h2>Generic Stories</h2>
+	<h2><%=  @generic_stories_title.title%></h2>
 	<div class="wrapper--flex">	
 		<% @generic_stories.each do |gstory| %>
 			<div class="col--three">

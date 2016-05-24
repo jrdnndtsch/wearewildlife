@@ -7,6 +7,12 @@ class Admin::StoriesController < AdminController
   def index
     @stories = Story.all
     add_breadcrumb "stories", "/admin/stories"
+
+    @title = Title.where("section_name = 'stories'")
+    if params[:title_thing].present?
+      @the_title = Title.find(params[:title_thing])
+      @the_title.update(title: params[:title])
+    end
   end
 
   # GET /stories/1

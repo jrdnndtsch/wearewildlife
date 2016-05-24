@@ -4,6 +4,18 @@
   <%= link_to 'New Custom Blog Post', new_admin_blog_path, class: 'button button--tertiary as--no-margin-bottom' %>
   <%= link_to 'Upload From WordPress', admin_upload_wps_path, class: 'button button--tertiary as--no-margin-bottom' %>
 </div>
+<%= form_for(@title.first, remote: true) do |f|%>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'title--field', :data => {:id => @title.first.id} %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :section_name, value: 'blog' %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+<% end %>
 
 
 <table>
@@ -47,7 +59,6 @@
     $('.blog_approved').change(function(){
       // $(this).parent().submit();
       blog_approved = $(this).val();
-      console.log(blog_approved)
       blog = parseInt($(this).attr('id').split('_')[3])
       console.log(blog)
       $.ajax({
@@ -61,6 +72,22 @@
       });
       console.log('submitted?')
       console.log($(this).parent()[0])
+    });
+
+    $('.title--field').on('blur', function(){
+      console.log('changed')
+      var id = $(this).data('id')
+      var text = $(this).val()
+      console.log(id)
+      $.ajax({
+        url: '' ,
+        type: 'get',
+        data: {
+          title: text,
+          title_thing: id
+        },
+        dataType: 'script'
+      });
     });
   });
 </script>

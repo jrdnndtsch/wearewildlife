@@ -18,6 +18,10 @@ class FrontPageController < ApplicationController
       @socials << @instagrams[i]
     end
 
+    @title_blog = Title.where("section_name = 'blog'").first
+    @stories_title = Title.where("section_name = 'stories'").first
+    @generic_stories_title = Title.where("section_name = 'generic_stories'").first
+
     # raise 'the roof'
     @blogs = Blog.are_approved.first(3)
   	@featured_donor = FeaturedDonor.is_featured.first

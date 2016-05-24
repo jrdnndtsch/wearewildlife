@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :titles
   # get 'admin/show'
 
   get 'front_page/show'
