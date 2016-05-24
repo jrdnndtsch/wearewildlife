@@ -50,16 +50,19 @@
 </section>
 
 <section class="social">
-	<h2>#WeCountForNature</h2>
+<div class="hashtag">	
+	<h2 class="center-text">#WeCountForNature</h2>
+	<p class="center-text"><i class="fa fa-facebook"></i><i class="fa fa-twitter"></i><i class="fa fa-instagram"></i></p>
+</div>
 
 	<div class="wrapper--flex">
 		<% @socials.each_with_index do |social, index| %>
 			<div class="social-element col--five">
 				<% if index.modulo(2).zero? %>
 					<% if social.present? %>
-						<!-- <div class="tweet"> -->
-							<p class="tweet"><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
-						<!-- </div> -->
+						<div class="tweet">
+							<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
+						</div>
 					<% end %>
 				<% else %>
 					<% if social.present? %>

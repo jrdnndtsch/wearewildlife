@@ -1,6 +1,18 @@
 // Place all the styles related to the Tweets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.hashtag
+	:background-color black
+	:height 200px
+	h2 
+		:font-family 'WWF'
+		:font-size 60px
+		:color white
+		:margin 0
+	p 
+		:font-size 30px
+		:color white
+		:margin 0
 .social-element
 	:position relative
 	:justify-content center
@@ -14,6 +26,27 @@
 		:content ""
 		:display block
 		:padding-bottom 100%
+	+display-for(xs)
+		&:nth-of-type(1)
+			:order 1
+		&:nth-of-type(2)
+			:order 2
+		&:nth-of-type(3)
+			:order 4
+		&:nth-of-type(4)
+			:order 3
+		&:nth-of-type(5)
+			:order 5
+		&:nth-of-type(6)
+			:order 6
+		&:nth-of-type(7)
+			:order 8
+		&:nth-of-type(8)
+			:order 7
+		&:nth-of-type(9)
+			:order 9
+		&:nth-of-type(10)
+			:order 10
 .instagram
 	:position absolute
 	:height 100%
@@ -37,6 +70,12 @@
 	a 
 		:color white
 		:font-weight bold
+	+display-for(sm)
+		p
+			:font-size 13px
+	+display-for(xs)
+		p
+			:font-size 13px
 .square
 	:position relative
 	// :width 20%
