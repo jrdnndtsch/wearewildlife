@@ -10,25 +10,34 @@
 		:font-size 28px
 		:margin 0
 		:margin-bottom 36px
+	.featured-title 
+		:font-size 60px
+	.story-title
+		:padding 20px
+		:margin-bottom 75px
 	p 
 		:font-family 'Arial', sans-serif
 		:letter-spacing 0.8px
 		:margin-right 36px
 		&:nth-of-type(1)
 			:margin-top 0
-.col--three-margin
-	:width calc(33.33% - 18.666px)
+// .col--three-margin
+// 	:width calc(33.33% - 18.666px)
 .featured-story
 	:background-color black
 	:color white
 	:padding 70px 105px
 .story 
-	// :height 100%
+	:position relative
 	:background-color black
 	:color white
 	:margin-top 28px
 	:margin-bottom 28px
 	&:nth-of-type(1n+3)
+	a 
+		:position absolute
+		:right 20px 
+		:bottom 20px
 .story--photo
 	:height 210px
 	:background-size cover

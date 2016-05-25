@@ -152,6 +152,17 @@ $grid-base: 40
 				:width 100%
 				img 
 					:width 100%	
+		&--three-margin
+			+display-for(xl lg)
+				:width calc(33.33% - 20px)
+				&:nth-of-type(2n + 1)
+					:margin-right 0px	
+			+display-for(md sm xs)
+				:margin-bottom 20px
+				:width 100%
+				img 
+					:width 100%
+
 .center-text
 	:text-align center
 //COLORS
@@ -198,6 +209,7 @@ a.button
 	:letter-spacing 1.4px	
 	:font-weight 100
 	:display inline-block
+	:text-transform uppercase
 	span 
 		:font-size 12px
 .button--primary
