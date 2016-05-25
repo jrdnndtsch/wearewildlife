@@ -3,8 +3,23 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .header 
 	:text-align center
-	:background navy
-	:padding 74px 0 40px 0
+	:background rgba(255,255,255,0.1)
+	:padding 40px 0 40px 0
+	:position relative
+	:overflow hidden
+	video
+		:position absolute
+		:top 50%
+		:left 50%
+		:min-width 100%
+		:z-index -10
+		:min-height 100%
+		:width auto
+		:height auto
+		:transform translate(-50%, -50%)
+		:background-size cover
+		:transition 1s opacity
+
 	h2 
 		:margin 0
 	h3 

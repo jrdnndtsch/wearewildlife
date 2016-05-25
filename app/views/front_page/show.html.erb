@@ -24,6 +24,11 @@
 	</div>
 </nav>
 <div class="header">
+	<video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
+	  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+	<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
+	<source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
+	</video>
 	<h2><span class="count"><%= @header.number %></span></h2>
 	<h3><%= @header.tag_line %></h3>	
 	<a href="#count-for-nature" class="button button--primary">I Count For Nature</a>
@@ -162,7 +167,20 @@
 <script>
 	$(function(){
 		
-		
+		var vid = document.getElementById("bgvid");
+		var pauseButton = document.querySelector("#polina button");
+
+		function vidFade() {
+		  vid.classList.add("stopfade");
+		}
+
+		vid.addEventListener('ended', function()
+		{
+		// only functional if "loop" is removed 
+		vid.pause();
+		// to capture IE10
+		vidFade();
+		}); 
 
 		//hamburger nav
 		$('.main--toggle').on('click', function(){

@@ -11,6 +11,8 @@ gem 'twitter'
 gem 'rails_autolink'
 gem 'rinku'
 
+gem "autoprefixer-rails"
+
 #for sass
 gem 'bourbon'
 # Use SCSS for stylesheets

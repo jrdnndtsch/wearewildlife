@@ -39,6 +39,9 @@ GEM
     addressable (2.4.0)
     arel (6.0.3)
     ast (2.2.0)
+    autoprefixer-rails (5.2.1)
+      execjs
+      json
     aws-s3 (0.6.3)
       builder
       mime-types
@@ -336,6 +339,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autoprefixer-rails
   aws-s3
   aws-sdk-v1
   better_errors
