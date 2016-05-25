@@ -2,7 +2,7 @@ class FrontPageController < ApplicationController
 	skip_before_action :authenticate_user!
 
 	require 'rinku'
-	require 'HTTParty'
+	# require 'HTTParty'
     require 'json'
 
   def show
