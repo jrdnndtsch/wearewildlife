@@ -33,7 +33,7 @@
 </section>
 
 <section class="stories wrapper">
-	<h2><%= @stories_title.title%></h2>
+	<h2 class="title"><%= @stories_title.title%></h2>
 	<% if @featured_story.present? %>
 		<h3>Featured Story</h3>
 		<div class="featured-story">
@@ -62,7 +62,7 @@
 </section>
 
 <section class="social">
-<h2><%= @title_blog.title%></h2>
+<h2 class="title"><%= @title_blog.title%></h2>
 <div class="hashtag">	
 	<h2 class="center-text">#WeCountForNature</h2>
 	<p class="center-text"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></p>
@@ -88,22 +88,21 @@
 </section>
 
 <section class="wp-blog wrapper">
-	<h2>Blogs</h2>
 		<% @blogs.each do |blog| %>
 		<div class="wrapper--flex">
 			<div class="col--two">
 				<% if blog.photo.present? %>
-				  <%= image_tag blog.photo.url('header') %>
+				  <%= image_tag blog.photo.url %>
 				<% else %>
 				  <%= image_tag blog.image_url %>
 				<% end %>
 			</div>
 			<div class="col--two">
-				<p><%= blog.title %></p>
-				<p><%= blog.author %></p>
-				<p><%= blog.date.strftime("%B %d, %Y") %></p>
+				<h3><%= blog.title %></h3>
+				<p><span class="author"><%= blog.author %></span> <span class="seperator">•</span> <span class="date"><%= blog.date.strftime("%B %d, %Y") %></span></p>
 				<p><%= blog.short_description.html_safe %></p>
-				<p><%= Rinku.auto_link(blog.link, :all, 'target="blank"').html_safe %></p>
+				<!-- <p><%= Rinku.auto_link(blog.link, :all, 'target="blank"').html_safe %></p> -->
+				<a href="<%= blog.link%>" class="button button--secondary" target="_blank">Read More <span>▸</span></a>
 			</div>
 		</div>
 		<% end %>
@@ -126,7 +125,7 @@
 </section>
 
 <section class="generic-stories wrapper">
-	<h2><%=  @generic_stories_title.title%></h2>
+	<h2 class="title"><%=  @generic_stories_title.title%></h2>
 	<div class="wrapper--flex">	
 		<% @generic_stories.each do |gstory| %>
 			<div class="col--three">

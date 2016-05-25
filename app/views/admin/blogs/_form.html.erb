@@ -48,7 +48,7 @@
     <%= f.file_field :photo %>
   </div>
   <% if @blog.photo? %>
-    <%= image_tag @blog.photo.url('header')%>
+    <%= image_tag @blog.photo.url%>
     <br>
 
     <%= f.label :remove_photo %>

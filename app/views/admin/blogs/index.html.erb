@@ -33,7 +33,7 @@
     <% @blogs.each do |blog| %>
       <tr>
         <% if blog.photo.present? %>
-          <td><%= image_tag blog.photo.url('header') %></td>
+          <td><%= image_tag blog.photo.url %></td>
         <% else %>
           <td><%= image_tag blog.image_url %></td>
         <% end %>
