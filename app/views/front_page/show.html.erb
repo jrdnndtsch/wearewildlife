@@ -48,7 +48,7 @@
 					<%= image_tag @featured_story.photo.url %>
 				</div>
 			</div>
-			<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary'  %>
+			<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
 		</div>
 	<% end %>
 	<div class="wrapper--flex">
@@ -56,7 +56,7 @@
 			<div class="col--three-margin story">
 				<div class="story--photo" style="background-image: url(<%= story.photo.url %>)"></div>
 				<h3 class="story-title"><%= story.title %></h3>
-				<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary' %>		
+				<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>		
 			</div>
 		<% end %>
 		
