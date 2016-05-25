@@ -38,7 +38,7 @@ gem "breadcrumbs_on_rails"
 gem 'whenever', '~> 0.9.4', :require => false
 
 #for more fun HTTP requests
-gem 'httparty'
+# gem 'httparty'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
