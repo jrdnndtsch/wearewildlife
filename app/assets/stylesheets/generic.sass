@@ -24,7 +24,6 @@ p
 .clearfix
 	:display block
 
-
 a 
 	:text-decoration none
 p 
@@ -203,25 +202,21 @@ $medium-blue : #47A8CB
 
 a.button
 	:background $pink
+	:border 1.5px solid $pink
 	:text-decoration none
-	:border-bottom none
 	:color white
 	:font-family 'WWF', sans-serif
 	:letter-spacing 1.4px	
 	:font-weight 100
 	:display inline-block
 	:text-transform uppercase
+	:transition all 0.5s
 	span 
 		:font-size 12px
 	&:hover
 		:background white
 		:border 1.5px solid black
 		:color black
-.button--inverted
-	&:hover
-		:background black
-		:border 1.5px solid white
-		:color white
 .button--primary
 	:font-size 22px
 	:letter-spacing 1.5px
@@ -229,8 +224,10 @@ a.button
 	:padding 6px 14px 8px 14px	
 .button--secondary
 	:padding 4px 8px 6px 10px
-
-
+i 
+	:transition all 0.5s
+	&:hover
+		:color $pink
 
 
 
