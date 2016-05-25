@@ -35,9 +35,8 @@
 <section class="stories wrapper">
 	<h2 class="title"><%= @stories_title.title%></h2>
 	<% if @featured_story.present? %>
-		<h3>Featured Story</h3>
 		<div class="featured-story">
-			<h3><%= @featured_story.title %></h3>
+			<h3 class="featured-title"><%= @featured_story.title %></h3>
 			<div class="wrapper--flex stories--flex">
 				<div class="col--two">
 					<%= simple_format(@featured_story.description) %>
@@ -46,15 +45,15 @@
 					<%= image_tag @featured_story.photo.url %>
 				</div>
 			</div>
-			<%= link_to @featured_story.title, url_for(@featured_story.link), :target => "_blank"  %>
+			<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary'  %>
 		</div>
 	<% end %>
 	<div class="wrapper--flex">
 		<% @stories.each do |story| %>
 			<div class="col--three-margin story">
 				<div class="story--photo" style="background-image: url(<%= story.photo.url %>)"></div>
-				<h3><%= story.title %></h3>
-				<%= link_to story.title, url_for(story.link), :target => "_blank" %>		
+				<h3 class="story-title"><%= story.title %></h3>
+				<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary' %>		
 			</div>
 		<% end %>
 		
@@ -101,8 +100,7 @@
 				<h3><%= blog.title %></h3>
 				<p><span class="author"><%= blog.author %></span> <span class="seperator">•</span> <span class="date"><%= blog.date.strftime("%B %d, %Y") %></span></p>
 				<p><%= blog.short_description.html_safe %></p>
-				<!-- <p><%= Rinku.auto_link(blog.link, :all, 'target="blank"').html_safe %></p> -->
-				<a href="<%= blog.link%>" class="button button--secondary" target="_blank">Read More <span>▸</span></a>
+				<%= link_to 'Read More ▸' , url_for(blog.link), :target => "_blank", class: "button button--secondary" %>
 			</div>
 		</div>
 		<% end %>
@@ -128,10 +126,12 @@
 	<h2 class="title"><%=  @generic_stories_title.title%></h2>
 	<div class="wrapper--flex">	
 		<% @generic_stories.each do |gstory| %>
-			<div class="col--three">
+			<div class="col--three-margin generic-story">
 				<h4><%= gstory.title %></h4>
-				<p><%= simple_format(gstory.short_description) %></p>
-				<%= link_to gstory.title, url_for(gstory.link), :target => "_blank" %>
+				<!-- <div class="description"> -->
+					<div class="description"><%= simple_format(gstory.short_description) %></div>
+				<!-- </div> -->
+				<%= link_to 'read more ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary' %>
 			</div>
 		<% end %>
 	</div>
