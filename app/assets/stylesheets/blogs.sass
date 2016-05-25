@@ -32,6 +32,13 @@
 	.col--two
 		&:nth-of-type(2n + 2)
 			:padding 0 20px	
+			+display-for(xs)
+				:padding 0
+		&:nth-of-type(2n + 1)
+			+display-for(sm xs)
+				:height 200px 
+				:overflow hidden
+				:margin-bottom 22px	
 	.wrapper--flex	
 		:margin-bottom 40px
 		&:nth-of-type(2)
@@ -39,5 +46,9 @@
 			.col--two
 				&:nth-of-type(2n + 2)	
 					:padding-left 0
-
+					+display-for(sm)
+						:padding-left 20px
+					+display-for(xs)
+						:padding 0	
+	
 
