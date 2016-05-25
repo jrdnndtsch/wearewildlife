@@ -24,144 +24,148 @@
 	</div>
 </nav>
 <div class="header">
-	<video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
-	  <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-	<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
-	<source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
-	</video>
-	<h2><span class="count"><%= @header.number %></span></h2>
-	<h3><%= @header.tag_line %></h3>	
-	<a href="#count-for-nature" class="button button--primary">I Count For Nature</a>
-	<%= image_tag 'down-arrow.svg'%>
-</div>
-
-
-<section class="about wrapper">
-	<p><%= simple_format(@header.about) %></p>	
-</section>
-
-<section class="stories wrapper">
-	<h2 class="title"><%= @stories_title.title%></h2>
-	<% if @featured_story.present? %>
-		<div class="featured-story">
-			<h3 class="featured-title"><%= @featured_story.title %></h3>
-			<div class="wrapper--flex stories--flex">
-				<div class="col--two">
-					<%= simple_format(@featured_story.description) %>
-				</div>
-				<div class="col--two">
-					<%= image_tag @featured_story.photo.url %>
-				</div>
-			</div>
-			<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
-		</div>
-	<% end %>
-	<div class="wrapper--flex">
-		<% @stories.each do |story| %>
-			<div class="col--three-margin story">
-				<div class="story--photo" style="background-image: url(<%= story.photo.url %>)"></div>
-				<h3 class="story-title"><%= story.title %></h3>
-				<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>		
-			</div>
-		<% end %>
+	<div class="video-container">
+		<video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
 		
-	</div>	
-</section>
-
-<section class="social">
-<h2 class="title"><%= @title_blog.title%></h2>
-<div class="hashtag">	
-	<h2 class="center-text">#WeCountForNature</h2>
-	<p class="center-text"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></p>
+		<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
+		<source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
+		</video>
+		<h2><span class="count"><%= @header.number %></span></h2>
+		<h3><%= @header.tag_line %></h3>	
+		<a href="#count-for-nature" class="button button--primary">I Count For Nature</a>
+		<%= image_tag 'down-arrow.svg'%>
+	</div>
 </div>
 
-	<div class="wrapper--flex">
-		<% @socials.each_with_index do |social, index| %>
-			<div class="social-element col--five">
-				<% if index.modulo(2).zero? %>
-					<% if social.present? %>
-						<div class="tweet">
-							<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
-						</div>
-					<% end %>
-				<% else %>
-					<% if social.present? %>
-						<div class="instagram" style="background-image: url(<%= social.image_url %>)">
-						</div>
-					<% end %>
-				<% end %>
+<div class="content-wrapper">
+	
+	<section class="about wrapper">
+		<p><%= simple_format(@header.about) %></p>	
+	</section>
+
+	<section class="stories wrapper">
+		<h2 class="title"><%= @stories_title.title%></h2>
+		<% if @featured_story.present? %>
+			<div class="featured-story">
+				<h3 class="featured-title"><%= @featured_story.title %></h3>
+				<div class="wrapper--flex stories--flex">
+					<div class="col--two">
+						<%= simple_format(@featured_story.description) %>
+					</div>
+					<div class="col--two">
+						<%= image_tag @featured_story.photo.url %>
+					</div>
+				</div>
+				<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
 			</div>
 		<% end %>
-</section>
-
-<section class="wp-blog wrapper">
-		<% @blogs.each do |blog| %>
 		<div class="wrapper--flex">
-			<div class="col--two">
-				<% if blog.photo.present? %>
-				  <%= image_tag blog.photo.url %>
-				<% else %>
-				  <%= image_tag blog.image_url %>
-				<% end %>
-			</div>
-			<div class="col--two">
-				<h3><%= blog.title %></h3>
-				<p><span class="author"><%= blog.author %></span> <span class="seperator">•</span> <span class="date"><%= blog.date.strftime("%B %d, %Y") %></span></p>
-				<p><%= blog.short_description.html_safe %></p>
-				<%= link_to 'Read More ▸' , url_for(blog.link), :target => "_blank", class: "button button--secondary" %>
-			</div>
-		</div>
-		<% end %>
-</section>
+			<% @stories.each do |story| %>
+				<div class="col--three-margin story">
+					<div class="story--photo" style="background-image: url(<%= story.photo.url %>)"></div>
+					<h3 class="story-title"><%= story.title %></h3>
+					<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>		
+				</div>
+			<% end %>
+			
+		</div>	
+	</section>
 
-<section class="featured-donor">
-	<% if @featured_donor.present? %>
+	<section class="social">
+	<h2 class="title"><%= @title_blog.title%></h2>
+	<div class="hashtag">	
+		<h2 class="center-text">#WeCountForNature</h2>
+		<p class="center-text"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></p>
+	</div>
+
+		<div class="wrapper--flex">
+			<% @socials.each_with_index do |social, index| %>
+				<div class="social-element col--five">
+					<% if index.modulo(2).zero? %>
+						<% if social.present? %>
+							<div class="tweet">
+								<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
+							</div>
+						<% end %>
+					<% else %>
+						<% if social.present? %>
+							<div class="instagram" style="background-image: url(<%= social.image_url %>)">
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+			<% end %>
+	</section>
+
+	<section class="wp-blog wrapper">
+			<% @blogs.each do |blog| %>
+			<div class="wrapper--flex">
+				<div class="col--two">
+					<% if blog.photo.present? %>
+					  <%= image_tag blog.photo.url %>
+					<% else %>
+					  <%= image_tag blog.image_url %>
+					<% end %>
+				</div>
+				<div class="col--two">
+					<h3><%= blog.title %></h3>
+					<p><span class="author"><%= blog.author %></span> <span class="seperator">•</span> <span class="date"><%= blog.date.strftime("%B %d, %Y") %></span></p>
+					<p><%= blog.short_description.html_safe %></p>
+					<%= link_to 'Read More ▸' , url_for(blog.link), :target => "_blank", class: "button button--secondary" %>
+				</div>
+			</div>
+			<% end %>
+	</section>
+
+	<section class="featured-donor">
+		<% if @featured_donor.present? %>
+			<div class="wrapper wrapper--flex">
+				<div class="col--two">
+					<h3><%= @featured_donor.title %></h3>
+					<%= simple_format(@featured_donor.short_description) %>
+					<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>
+				</div>
+				<div class="col--two">
+					<%= image_tag @featured_donor.photo.url %>
+				</div>
+			</div>
+		<% end %>
+	</section>
+
+	<section id="count-for-nature">
+		<h1>the form</h1>
+	</section>
+
+	<section class="generic-stories wrapper">
+		<h2 class="title"><%=  @generic_stories_title.title%></h2>
+		<div class="wrapper--flex">	
+			<% @generic_stories.each do |gstory| %>
+				<div class="col--three-margin generic-story">
+					<h4><%= gstory.title %></h4>
+					<!-- <div class="description"> -->
+						<div class="description"><%= simple_format(gstory.short_description) %></div>
+					<!-- </div> -->
+					<%= link_to 'read more ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary' %>
+				</div>
+			<% end %>
+		</div>
+	</section>
+
+	<nav class="footer">
 		<div class="wrapper wrapper--flex">
-			<div class="col--two">
-				<h3><%= @featured_donor.title %></h3>
-				<%= simple_format(@featured_donor.short_description) %>
-				<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>
+			<%= image_tag 'wwf-logo-footer.svg'%>
+			<div class="copy">
+				<h4>Building a future in which people and nature thrive.</h4>
+				<p>© All photos, graphics and images on this site remain the copyright of WWF, unless otherwise noted, and should not be downloaded without prior permission. © 2011 WWF-Canada; © 1986 Panda symbol WWF-World Wide Fund For Nature (also known as World Wildlife Fund); ® "WWF" and "living planet" are WWF Registered Trademarks. Charitable Reg.#11930 4954 RR0001.</p>
 			</div>
-			<div class="col--two">
-				<%= image_tag @featured_donor.photo.url %>
+			<div class="social-links wrapper--flex">
+				<a href="#"><i class="fa fa-facebook"></i></a>
+				<a href="#"><i class="fa fa-twitter"></i></a>
+				<a href="#"><i class="fa fa-instagram"></i></a>
 			</div>
 		</div>
-	<% end %>
-</section>
-
-<section id="count-for-nature">
-	<h1>the form</h1>
-</section>
-
-<section class="generic-stories wrapper">
-	<h2 class="title"><%=  @generic_stories_title.title%></h2>
-	<div class="wrapper--flex">	
-		<% @generic_stories.each do |gstory| %>
-			<div class="col--three-margin generic-story">
-				<h4><%= gstory.title %></h4>
-				<!-- <div class="description"> -->
-					<div class="description"><%= simple_format(gstory.short_description) %></div>
-				<!-- </div> -->
-				<%= link_to 'read more ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary' %>
-			</div>
-		<% end %>
-	</div>
-</section>
-
-<nav class="footer">
-	<div class="wrapper wrapper--flex">
-		<%= image_tag 'wwf-logo-footer.svg'%>
-		<div class="copy">
-			<h4>Building a future in which people and nature thrive.</h4>
-			<p>© All photos, graphics and images on this site remain the copyright of WWF, unless otherwise noted, and should not be downloaded without prior permission. © 2011 WWF-Canada; © 1986 Panda symbol WWF-World Wide Fund For Nature (also known as World Wildlife Fund); ® "WWF" and "living planet" are WWF Registered Trademarks. Charitable Reg.#11930 4954 RR0001.</p>
-		</div>
-		<div class="social-links wrapper--flex">
-			<a href="#"><i class="fa fa-facebook"></i></a>
-			<a href="#"><i class="fa fa-twitter"></i></a>
-			<a href="#"><i class="fa fa-instagram"></i></a>
-		</div>
-	</div>
-</nav>
+	</nav>
+</div>
 
 
 <script>
