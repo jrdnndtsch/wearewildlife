@@ -107,13 +107,12 @@
 </section>
 
 <section class="featured-donor">
-	<h2>Featured Donor</h2>
 	<% if @featured_donor.present? %>
 		<div class="wrapper wrapper--flex">
 			<div class="col--two">
-				<h4><%= @featured_donor.title %></h4>
+				<h3><%= @featured_donor.title %></h3>
 				<p><%= simple_format(@featured_donor.short_description) %></p>
-				<%= link_to @featured_donor.title, url_for(@featured_donor.link), :target => "_blank" %>
+				<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>
 			</div>
 			<div class="col--two">
 				<%= image_tag @featured_donor.photo.url %>
