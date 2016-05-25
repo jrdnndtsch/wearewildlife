@@ -1,6 +1,6 @@
 class FrontPageController < ApplicationController
 	skip_before_action :authenticate_user!
-	require 'HTTParty'
+	# require 'HTTParty'
   require 'json'
 	
   def show
