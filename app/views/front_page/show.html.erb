@@ -100,8 +100,7 @@
 			<div class="col--two">
 				<h3><%= blog.title %></h3>
 				<p><span class="author"><%= blog.author %></span> <span class="seperator">•</span> <span class="date"><%= blog.date.strftime("%B %d, %Y") %></span></p>
-				<p><%= blog.short_description.html_safe %></p>
-				<!-- <p><%= Rinku.auto_link(blog.link, :all, 'target="blank"').html_safe %></p> -->
+				<p><%= Rinku.auto_link(blog.short_description, :all, 'target="blank"').html_safe %></p>
 				<a href="<%= blog.link%>" class="button button--secondary" target="_blank">Read More <span>▸</span></a>
 			</div>
 		</div>
