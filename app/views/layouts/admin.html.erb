@@ -12,8 +12,10 @@
 		<div id="admin--only">
 			<div class="sidebar">
 				<%= link_to "WFF Admin", admin_show_path, class: 'sidebar--header'%>
-				<% @header = Header.first%>
-				<%= link_to "header", edit_admin_header_path(@header), class: is_active?("admin/headers") %>
+				<% if Header.first.present?%>
+					<% @header = Header.first%>
+					<%= link_to "header", edit_admin_header_path(@header), class: is_active?("admin/headers") %>
+				<% end %>
 				<%= link_to "blogs", admin_blogs_path, class: is_active?("admin/blogs") %>
 				<%= link_to "stories", admin_stories_path, class: is_active?("admin/stories") %>
 				<%= link_to "generic stories", admin_generic_stories_path, class: is_active?("admin/generic_stories") %>
