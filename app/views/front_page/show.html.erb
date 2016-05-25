@@ -23,10 +23,13 @@
 		</ul>
 	</div>
 </nav>
+<div class="header">
+	<h2><span class="count"><%= @header.number %></span></h2>
+	<h3><%= @header.tag_line %></h3>	
+	<a href="#count-for-nature" class="button button--primary">I Count For Nature</a>
+	<%= image_tag 'down-arrow.svg'%>
+</div>
 
-<h2>Header</h2>
-<h2><span class="count"><%= @header.number %></span>  </h2>
-<h4><%= @header.tag_line %></h4>
 
 <section class="about wrapper">
 	<p><%= simple_format(@header.about) %></p>	
@@ -123,6 +126,10 @@
 	<% end %>
 </section>
 
+<section id="count-for-nature">
+	<h1>the form</h1>
+</section>
+
 <section class="generic-stories wrapper">
 	<h2 class="title"><%=  @generic_stories_title.title%></h2>
 	<div class="wrapper--flex">	
@@ -135,6 +142,21 @@
 		<% end %>
 	</div>
 </section>
+
+<nav class="footer">
+	<div class="wrapper wrapper--flex">
+		<%= image_tag 'wwf-logo-footer.svg'%>
+		<div class="copy">
+			<h4>Building a future in which people and nature thrive.</h4>
+			<p>© All photos, graphics and images on this site remain the copyright of WWF, unless otherwise noted, and should not be downloaded without prior permission. © 2011 WWF-Canada; © 1986 Panda symbol WWF-World Wide Fund For Nature (also known as World Wildlife Fund); ® "WWF" and "living planet" are WWF Registered Trademarks. Charitable Reg.#11930 4954 RR0001.</p>
+		</div>
+		<div class="social-links wrapper--flex">
+			<a href="#"><i class="fa fa-facebook"></i></a>
+			<a href="#"><i class="fa fa-twitter"></i></a>
+			<a href="#"><i class="fa fa-instagram"></i></a>
+		</div>
+	</div>
+</nav>
 
 
 <script>
@@ -198,6 +220,19 @@
 		});
 		mainMenu()
 		mainMenuSmall()
+
+		$('a[href*="#"]:not([href="#"])').click(function() {
+		   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		     var target = $(this.hash);
+		     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		     if (target.length) {
+		       $('html, body').animate({
+		         scrollTop: target.offset().top
+		       }, 1000);
+		       return false;
+		     }
+		   }
+		 });
 	});
 	commaSeparateNumber = function(val){
 	   	while (/(\d+)(\d{3})/.test(val)){
