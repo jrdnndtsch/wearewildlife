@@ -9,6 +9,12 @@
 </head>
 <body>
 	<div id="admin">
+	<% if notice %>
+	  <p class="alert alert-success"><%= notice %></p>
+	<% end %>
+	<% if alert %>
+	  <p class="alert alert-danger"><%= alert %></p>
+	<% end %>
 		<div id="admin--only">
 			<div class="sidebar">
 				<%= link_to "WFF Admin", admin_show_path, class: 'sidebar--header'%>
