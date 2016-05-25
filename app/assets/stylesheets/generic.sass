@@ -26,6 +26,8 @@ body
 
 a 
 	:text-decoration none
+p 
+	:font-size 16px	
 ul 
 	:margin 0	
 	:padding 0
@@ -167,6 +169,26 @@ $medium-blue : #47A8CB
 .title
 	:font-family 'WWF', sans-serif
 	:font-size 40px
+	:color $light-grey
+	:text-transform uppercase
+	:font-weight 100
+	:letter-spacing 2.86px
+	:position relative
+	:text-align center
+	&:before, &:after
+		:content ' '
+		:height 4px
+		:width 200px
+		:background black
+		:position absolute
+		:left 50%
+		:transform translateX(-50%)
+	&:before
+		:top -10px
+	&:after
+		:bottom -14px	
+		
+
 a.button
 	:background $pink
 	:text-decoration none
