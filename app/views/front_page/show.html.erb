@@ -204,9 +204,16 @@
 
 		//generic story slider for mobile view
 		$('.arrow-right').on('click', function(){
+			var nextStory = $('.generic-story.active').next().hasClass('generic-story') ? $('.generic-story.active').next() : $('.generic-story')[0]
 			$('.generic-story.active').removeClass('active').addClass('off')
-			console.log($('.generic-story.active'))
-		})
+			$(nextStory).removeClass('off').addClass('active')
+		});
+		$('.arrow-left').on('click', function(){
+			var length = $('.generic-story').length - 1
+			var nextStory = $('.generic-story.active').prev().hasClass('generic-story') ? $('.generic-story.active').prev() : $('.generic-story')[length]
+			$('.generic-story.active').removeClass('active').addClass('off')
+			$(nextStory).removeClass('off').addClass('active')
+		});
 
 		//hamburger nav
 		$('.main--toggle').on('click', function(){
@@ -215,7 +222,6 @@
 		})
 		var windowSize = $(window).innerWidth()
 		function mainMenu(){
-			console.log(windowSize);
 			if(windowSize >= 960){
 				$('.item--main').on('mouseenter', function(){
 					$(this).find('a').addClass('active');

@@ -27,9 +27,12 @@
 				:left -100%
 				:display none
 	.arrow 
+		+display-for(xl lg md sm)
+			:display none
 		:position absolute
 		:top 50%
-		:transform translateY(-50%)			
+		:transform translateY(-50%)	
+		:cursor pointer		
 	.arrow-left
 		:left 0
 	.arrow-right 
