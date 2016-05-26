@@ -35,7 +35,6 @@
 			<h3 class="hidden sub-title-02"><%= @header.tag_line %></h3>	
 			<a href="#count-for-nature" class="hidden sub-title-03 button button--primary">I Count For Nature</a>
 			<%= image_tag 'down-arrow.svg', class: "hidden sub-title-03" %>
-			
 		</div>
 	</div>
 </div>
@@ -122,15 +121,20 @@
 
 	<section class="featured-donor">
 		<% if @featured_donor.present? %>
+			<div class="wrapper">
+				<h3><%= @featured_donor.title %></h3>
+			</div>
 			<div class="wrapper wrapper--flex">
-				<div class="col--two">
-					<h3><%= @featured_donor.title %></h3>
+				<div class="col--two donor">
 					<%= simple_format(@featured_donor.short_description) %>
-					<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>
 				</div>
-				<div class="col--two">
+				<div class="col--two donor">
 					<%= image_tag @featured_donor.photo.url %>
 				</div>
+			</div>
+			<div class="wrapper">
+				<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>
+				
 			</div>
 		<% end %>
 	</section>
