@@ -132,12 +132,13 @@
 		<% end %>
 	</section>
 
-	<section id="count-for-nature">
+	<section id="count-for-nature" class="wrapper">
+		<h2 class="title"><%=  @generic_stories_title.title%></h2>
 		<h1>the form</h1>
 	</section>
 
 	<section class="generic-stories wrapper">
-		<h2 class="title"><%=  @generic_stories_title.title%></h2>
+		
 		<div class="wrapper--flex">	
 			<% @generic_stories.each do |gstory| %>
 				<div class="col--three-margin generic-story">
