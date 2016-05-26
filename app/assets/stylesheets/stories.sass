@@ -4,6 +4,12 @@
 .stories
 	&--flex
 		:margin-bottom 36px
+		.col--two
+			+display-for(sm xs)
+				&:nth-of-type(1)
+					:order 2
+				&:nth-of-type(2)
+					:order 1
 	h3 
 		:font-family 'WWF'
 		:letter-spacing 0.5px
@@ -19,6 +25,8 @@
 		:font-family 'Arial', sans-serif
 		:letter-spacing 0.8px
 		:margin-right 36px
+		+display-for(sm xs)
+		:margin-right 0
 		&:nth-of-type(1)
 			:margin-top 0
 	a.button
@@ -33,6 +41,10 @@
 	:color white
 	:padding 70px 105px
 	:margin-bottom 28px
+	+display-for(sm)
+		:padding 50px 36px
+	+display-for(xs)
+		:padding 50px 28px
 .story 
 	:position relative
 	:background-color black

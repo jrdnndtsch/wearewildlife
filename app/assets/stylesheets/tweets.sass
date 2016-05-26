@@ -79,15 +79,16 @@
 	:font-size 16px
 	:font-family 'Georgia'
 	:word-break break-all
+	+display-for(sm xs)
+		:padding 0 15px
+		:height 90%
 	a 
 		:color white
 		:font-weight bold
-	+display-for(sm)
+	+display-for(sm xs)
 		p
 			:font-size 13px
-	+display-for(xs)
-		p
-			:font-size 13px
+			:line-height 1.1
 .square
 	:position relative
 	// :width 20%
