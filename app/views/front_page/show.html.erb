@@ -140,6 +140,7 @@
 	<section class="generic-stories wrapper">
 		
 		<div class="wrapper--flex">	
+			<%= image_tag 'left-arrow-black.svg', class: 'arrow arrow-left'%>
 			<% @generic_stories.each do |gstory| %>
 				<div class="col--three-margin generic-story">
 					<h4><%= gstory.title %></h4>
@@ -149,6 +150,7 @@
 					<%= link_to 'read more ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary' %>
 				</div>
 			<% end %>
+			<%= image_tag 'right-arrow-black.svg', class: 'arrow arrow-right'%>
 		</div>
 	</section>
 
@@ -186,6 +188,12 @@
 		// to capture IE10
 		vidFade();
 		}); 
+
+		//generic story slider for mobile view
+		$('.arrow-right').on('click', function(){
+			$('.generic-story.active').removeClass('active').addClass('off')
+			console.log($('.generic-story.active'))
+		})
 
 		//hamburger nav
 		$('.main--toggle').on('click', function(){
@@ -225,6 +233,10 @@
 		function mainMenuSmall(){
 			if(windowSize <= 500){
 				$('.menu--main').css({'width': '100%', 'margin-left': '0', 'left' : '0', 'display' : 'none'})
+				$('.generic-story').each(function(i){
+					i > 0 ? $(this).addClass('off') : null
+					i == 0 ? $(this).addClass('active') : null
+				})
 			}else if(windowSize < 960){
 				menu = $('.menu--main');
 				menuWidth = $('.wrapper').innerWidth()

@@ -6,6 +6,8 @@
 		:position relative
 		:border 2px solid black
 		:padding 20px
+		+display-for(xs)
+			:margin 0 36px
 		h4
 			:font-family 'WWF'
 			:font-size 28px
@@ -17,3 +19,19 @@
 			:position absolute
 			:right 20px 
 			:bottom 20px
+	.wrapper--flex
+		+display-for(xs)
+			:position relative
+			.generic-story.off
+				:position absolute
+				:left -100%
+				:display none
+	.arrow 
+		:position absolute
+		:top 50%
+		:transform translateY(-50%)			
+	.arrow-left
+		:left 0
+	.arrow-right 
+		:right 0	
+
