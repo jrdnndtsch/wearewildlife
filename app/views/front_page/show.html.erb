@@ -62,7 +62,7 @@
 		<div class="wrapper--flex">
 			<% @stories.each do |story| %>
 				<div class="col--three-margin story">
-					<div class="story--photo" style="background-image: image-url(<%= story.photo.url %>)"></div>
+					<div class="story--photo" style="background-image: url(<%= story.photo.url %>)"></div>
 					<h3 class="story-title"><%= story.title %></h3>
 					<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>		
 				</div>
