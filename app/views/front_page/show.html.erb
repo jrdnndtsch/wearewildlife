@@ -25,7 +25,7 @@
 </nav>
 <div class="header hidden">
 	<div class="video-container">
-		<video autoplay  poster="<%= image_url('video-image.jpg')%>" id="bgvid" loop>
+		<video poster="<%= image_url('video-image.jpg')%>" id="bgvid" loop>
 		
 		<!-- <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm"> -->
 		<source src="http://natcooper.com/staging/wwf/img/we-are-all-wildlife-pg.mp4" type="video/mp4">
@@ -179,6 +179,11 @@
 
 <script>
 	$(document).on('ready page:load',function(){
+		
+		var vid = document.getElementById("bgvid");
+		var pauseButton = document.querySelector("#polina button");
+		var windowSize = $(window).innerWidth();
+
 		$('.main').removeClass('hidden')
 			$('.header').removeClass('hidden').hide().fadeIn(500, function(){
 				$('.header-text').removeClass('hidden').hide().fadeIn(1000, function(){
@@ -189,15 +194,15 @@
 				  });
 				});	
 			});
-		// });
-		
-		var vid = document.getElementById("bgvid");
-		var pauseButton = document.querySelector("#polina button");
-
 		function vidFade() {
 		  vid.classList.add("stopfade");
 		}
 
+    if(windowSize > 768){
+    	$('#bgvid')[0].play();
+    }
+    	console.log("window!")
+    	console.log(windowSize)
 		vid.addEventListener('ended', function()
 		{
 		// only functional if "loop" is removed 
@@ -224,7 +229,7 @@
 			$(this).toggleClass('active');
 			$('.menu--main').slideToggle('normal')
 		})
-		var windowSize = $(window).innerWidth()
+		// var windowSize = $(window).innerWidth()
 		function mainMenu(){
 			if(windowSize >= 960){
 				$('.item--main').on('mouseenter', function(){
