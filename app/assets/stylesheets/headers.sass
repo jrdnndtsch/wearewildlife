@@ -50,7 +50,8 @@
 		:margin 0 auto	
 .about
 	:max-width 650px
-	:margin-bottom 80px
+	+display-for(xs)
+		:margin-bottom 80px
 	p
 		:font-family 'Georgia', script
 		:font-style italic
