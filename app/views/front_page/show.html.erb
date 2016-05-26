@@ -23,17 +23,20 @@
 		</ul>
 	</div>
 </nav>
-<div class="header">
+<div class="header hidden">
 	<div class="video-container">
-		<video autoplay  poster="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/polina.jpg" id="bgvid" loop>
+		<video autoplay  poster="<%= image_url('video-image.jpg')%>" id="bgvid" loop>
 		
-		<source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm">
-		<source src="//demosthenes.info/assets/videos/polina.mp4" type="video/mp4">
+		<!-- <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm"> -->
+		<source src="http://natcooper.com/staging/wwf/img/we-are-all-wildlife-pg.mp4" type="video/mp4">
 		</video>
-		<h2><span class="count"><%= @header.number %></span></h2>
-		<h3><%= @header.tag_line %></h3>	
-		<a href="#count-for-nature" class="button button--primary">I Count For Nature</a>
-		<%= image_tag 'down-arrow.svg'%>
+		<div class="header-text hidden">
+			<h2 class="hidden sub-title-01"><span class="count"><%= @header.number %></span></h2>
+			<h3 class="hidden sub-title-02"><%= @header.tag_line %></h3>	
+			<a href="#count-for-nature" class="hidden sub-title-03 button button--primary">I Count For Nature</a>
+			<%= image_tag 'down-arrow.svg', class: "hidden sub-title-03" %>
+			
+		</div>
 	</div>
 </div>
 
@@ -132,13 +135,12 @@
 		<% end %>
 	</section>
 
-	<section id="count-for-nature" class="wrapper">
-		<h2 class="title"><%=  @generic_stories_title.title%></h2>
+	<section id="count-for-nature">
 		<h1>the form</h1>
 	</section>
 
 	<section class="generic-stories wrapper">
-		
+		<h2 class="title"><%=  @generic_stories_title.title%></h2>
 		<div class="wrapper--flex">	
 			<%= image_tag 'left-arrow-black.svg', class: 'arrow arrow-left'%>
 			<% @generic_stories.each do |gstory| %>
@@ -172,7 +174,18 @@
 
 
 <script>
-	$(function(){
+	$(document).on('ready page:load',function(){
+		$('.main').removeClass('hidden')
+			$('.header').removeClass('hidden').hide().fadeIn(500, function(){
+				$('.header-text').removeClass('hidden').hide().fadeIn(1000, function(){
+				  $('.sub-title-01').removeClass('hidden').hide().fadeIn(5000, function(){
+				  	$('.sub-title-02').removeClass('hidden').hide().fadeIn(500, function(){
+				  		$('.sub-title-03').removeClass('hidden').hide().fadeIn(500)
+				  	});
+				  });
+				});	
+			});
+		// });
 		
 		var vid = document.getElementById("bgvid");
 		var pauseButton = document.querySelector("#polina button");
