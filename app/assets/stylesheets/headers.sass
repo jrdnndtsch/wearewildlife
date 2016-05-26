@@ -6,6 +6,8 @@
 	:background rgba(255,255,255,0.1)
 	:padding 40px 0 40px 0
 	:overflow hidden
+	+display-for(sm xs)
+		:padding-top 80px
 	video
 		:position fixed
 		:top 50%
@@ -30,10 +32,17 @@
 		:margin 0 auto
 		:line-height 36px
 		:margin-bottom 36px
+		+display-for(sm xs)
+			:font-size 18px
+			:line-height 28px
 	.count
 		:font-family 'WWF', sans-serif
 		:font-size 240px
 		:color rgba(255,255,255,0.7)
+		+display-for(sm)
+			:font-size 140px
+		+display-for(xs)
+			:font-size 80px	
 	.button
 		:margin-bottom 72px	
 	img 
@@ -41,6 +50,7 @@
 		:margin 0 auto	
 .about
 	:max-width 650px
+	:margin-bottom 80px
 	p
 		:font-family 'Georgia', script
 		:font-style italic
