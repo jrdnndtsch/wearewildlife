@@ -7,7 +7,6 @@
   <thead>
     <tr>
       <th>Title</th>
-      <th>Link</th>
       <th></th>
     </tr>
   </thead>
@@ -16,7 +15,6 @@
     <% @main_menus.each do |main_menu| %>
       <tr>
         <td><%= main_menu.title %></td>
-        <td><%= main_menu.link %></td>
         <td class="table--button"><%= link_to 'Edit', edit_admin_main_menu_path(main_menu), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
       </tr>
     <% end %>
