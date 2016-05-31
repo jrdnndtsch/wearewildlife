@@ -57,7 +57,9 @@ class Admin::BlogsController < AdminController
     #   this_insta = Insta.where(id: index_plus_one).first_or_initialize({text: insta.caption.text, imag_url: insta.images.standard_resolution.url})
     #   this_insta.save
     # end 
-    render nothing: true, status: :ok, content_type: "text/html"
+    @title = Title.where("section_name = 'blog'")
+    @blogs = Blog.all
+    redirect_to admin_blogs_path, :locals => {:title => @title, :blogs => @blogs} 
   end
 
   # GET /blogs

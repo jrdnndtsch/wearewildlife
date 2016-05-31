@@ -2,7 +2,7 @@
 <div class="as--admin-index-title">
   <h1>All Blog Posts</h1>
   <%= link_to 'New Custom Blog Post', new_admin_blog_path, class: 'button button--tertiary as--no-margin-bottom' %>
-  <%= link_to 'Upload From WordPress', admin_upload_wps_path, class: 'button button--tertiary as--no-margin-bottom' %>
+  <%= link_to 'Upload From WordPress', admin_upload_wps_path, class: 'button button--tertiary' %>
 </div>
 <%= form_for(@title.first, remote: true) do |f|%>
   <div class="field">
@@ -51,11 +51,9 @@
   </tbody>
 </table>
 
-<br>
 
 <script>
-  $(function() {
-    console.log('ready')
+  // $(function() {
     $('.blog_approved').change(function(){
       // $(this).parent().submit();
       blog_approved = $(this).val();
@@ -89,7 +87,8 @@
         dataType: 'script'
       });
     });
-  });
+
+  // });
 </script>
 
 
