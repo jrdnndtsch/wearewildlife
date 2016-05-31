@@ -23,7 +23,7 @@ class FrontPageController < ApplicationController
     @generic_stories_title = Title.where("section_name = 'generic_stories'").first
 
     # raise 'the roof'
-    @blogs = Blog.are_approved.first(3)
+    @blogs = Blog.are_approved.order(date: :DESC).first(3)
   	@featured_donor = FeaturedDonor.is_featured.first
   	@generic_stories = GenericStory.are_selected.last(3).reverse
   	# @instagram = Instagram.user_recent_media(@deartrudence, {:count => 15})
