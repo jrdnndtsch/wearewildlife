@@ -24,7 +24,7 @@
 	</div>
 </nav>
 <div class="header hidden">
-	<div class="video-container">
+	<div class="video-container" data-image= "<%= image_url('video-image.jpg')%>"=>
 		<video poster="<%= image_url('video-image.jpg')%>" id="bgvid" loop preload="none">
 		
 		<!-- <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm"> -->
@@ -201,6 +201,12 @@
 		// only play video if bigger than Medium size
     if(windowSize > 768){
     	$('#bgvid')[0].play();
+    	
+
+    }else{
+    	$('video').remove()
+    	var image = $('.video-container').data('image')
+    	$('.video-container').css('background-image', 'url(' + image + ')')
     }
     	console.log("window!")
     	console.log(windowSize)
