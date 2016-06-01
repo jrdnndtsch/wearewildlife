@@ -211,7 +211,7 @@
     }else{
     	$('video').remove()
     	var image = $('.video-container').data('image')
-    	$('.video-container').css({'background-image': 'url(' + image + ')', 'background-attachment' : 'fixed', 'background-size' : 'cover'})
+    	$('.video-container').css({'background-image': 'url(' + image + ')', 'background-attachment' : 'fixed', 'top': '0','left': '0', 'min-width' : '100%', 'mind-height' : '100%'})
     }
     	console.log("window!")
     	console.log(windowSize)
