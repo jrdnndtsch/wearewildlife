@@ -66,7 +66,8 @@ class Admin::BlogsController < AdminController
   # GET /blogs.json
   def index
     add_breadcrumb "blog", 'blogs'
-    @blogs = Blog.all
+    @blogs = Blog.all.order(date: :DESC)
+    
     @title = Title.where("section_name = 'blog'")
     if params[:title_thing].present?
       @the_title = Title.find(params[:title_thing])
