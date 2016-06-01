@@ -6,7 +6,7 @@
 		</a>
 		<ul class="wrapper--flex menu--main">
 			<% @main_menus.each do |main_menu| %>
-				<li class="item--main"><%= link_to main_menu.title, url_for(main_menu.link), :target => "_blank" %>
+				<li class="item--main"><%= link_to main_menu.title %>
 					<ul class="menu--sub">
 						<% main_menu.sub_menus.each do |sub_menu| %>
 							<li class="item--sub"><%= link_to sub_menu.title, url_for(sub_menu.link), :target => "_blank" %>
@@ -263,10 +263,13 @@
 			}else{
 				$('.item--main, .item--sub').unbind('mouseenter mouseleave')
 				$('.item--main a').unbind('click')
-				$('.item--main a').on('click', function(e){
-					e.preventDefault()
+				$('.item--main a').on('click', function(){
+					// e.preventDefault()
 					$(this).toggleClass('active')
 					$(this).parent('.item--main').find('.menu--sub').slideToggle('normal');
+				})
+				$('.item--main >a').on('click', function(e){
+					e.preventDefault();
 				})
 			}
 		}
@@ -288,10 +291,14 @@
 				$('.menu--main').css({'width': 'auto', 'margin-left': '140px', 'display': 'flex'})
 			}
 		}
+
+		var theWidth = $(window).width();
 		$(window).resize(function(){
-			windowSize = $(window).innerWidth()
-			mainMenu()
-			mainMenuSmall()
+			if($(this).width() != theWidth){
+				windowSize = $(window).innerWidth()
+				mainMenu()
+				mainMenuSmall()
+			}
 		});
 		mainMenu()
 		mainMenuSmall()
