@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Wearewildlife</title>
+  <title>Count For Nature – WWF Canada</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link rel="stylesheet" href="http://localhost:8000/styleguide/assets/styles/styleguide.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How you can help WWF Canada fundraise, volunteer or attend events that are happening around you.">
+
+  <!-- for facebook -->
+  <meta property="og:title" content="Count For Nature – WWF Canada" />
+  <meta property="og:image" content="<%= asset_path('bg-image.jpg')%>" />
+
+  <!-- for Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Count For Nature – WWF Canada" />
+  <meta name="twitter:description" content="How you can help WWF Canada fundraise, volunteer or attend events that are happening around you." />
+  <meta name="twitter:image" content="<%= asset_path('bg-image.jpg')%>" />
 </head>
 <body>
 
