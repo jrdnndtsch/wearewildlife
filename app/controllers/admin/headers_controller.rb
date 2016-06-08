@@ -76,6 +76,6 @@ class Admin::HeadersController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def header_params
-      params.require(:header).permit(:number, :tag_line, :about)
+      params.require(:header).permit(:number, :tag_line, :about, :video_link)
     end
 end

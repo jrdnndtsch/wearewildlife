@@ -28,7 +28,8 @@
 		<video poster="<%= image_url('video-image.jpg')%>" id="bgvid" loop preload="none">
 		
 		<!-- <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm"> -->
-		<source src="http://natcooper.com/staging/wwf/img/we-are-all-wildlife-pg.mp4" type="video/mp4">
+
+		<source src="<%= @header.video_link %>" type="video/mp4">
 		</video>
 		<div class="header-text hidden">
 			<h2 class="hidden sub-title-01"><span class="count"><%= @header.number %></span></h2>
@@ -89,7 +90,7 @@
 		<% end %>
 		<div class="hashtag">	
 			<h2 class="center-text">#WeCountForNature</h2>
-			<p class="center-text"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></p>
+			<p class="center-text"><a href="https://www.facebook.com/WWFCanada/" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/WWFCanada" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/wwfcanada/" target="_blank"><i class="fa fa-instagram"></i></a></p>
 		</div>
 
 		<div class="wrapper--flex">
@@ -185,9 +186,9 @@
 				<p>© All photos, graphics and images on this site remain the copyright of WWF, unless otherwise noted, and should not be downloaded without prior permission. © 2011 WWF-Canada; © 1986 Panda symbol WWF-World Wide Fund For Nature (also known as World Wildlife Fund); ® "WWF" and "living planet" are WWF Registered Trademarks. Charitable Reg.#11930 4954 RR0001.</p>
 			</div>
 			<div class="social-links wrapper--flex">
-				<a href="#"><i class="fa fa-facebook"></i></a>
-				<a href="#"><i class="fa fa-twitter"></i></a>
-				<a href="#"><i class="fa fa-instagram"></i></a>
+				<a href="https://www.facebook.com/WWFCanada/" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="https://twitter.com/WWFCanada" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="https://www.instagram.com/wwfcanada/" target="_blank"><i class="fa fa-instagram"></i></a>
 			</div>
 		</div>
 	</nav>

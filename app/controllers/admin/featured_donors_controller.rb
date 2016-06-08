@@ -8,7 +8,7 @@ class Admin::FeaturedDonorsController < AdminController
   # GET /featured_donors.json
   def index
     @featured_donors = FeaturedDonor.all
-    add_breadcrumb "featured donors", 'featured_donors'
+    add_breadcrumb "featured members", 'featured_donors'
   end
 
   # GET /featured_donors/1
@@ -19,14 +19,14 @@ class Admin::FeaturedDonorsController < AdminController
   # GET /featured_donors/new
   def new
     @featured_donor = FeaturedDonor.new
-    add_breadcrumb "featured donors", '/admin/featured_donors'
+    add_breadcrumb "featured members", '/admin/featured_donors'
     add_breadcrumb "new", '#'
   end
 
   # GET /featured_donors/1/edit
   def edit
     @updated_by = model_updated_by_user(@featured_donor)
-    add_breadcrumb "featured donors", '/admin/featured_donors'
+    add_breadcrumb "featured members", '/admin/featured_donors'
     add_breadcrumb @featured_donor.title, '#'
     add_breadcrumb "edit", '#'
   end
