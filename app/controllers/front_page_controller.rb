@@ -65,7 +65,7 @@ class FrontPageController < ApplicationController
     # @image = JSON.parse(image)
 
   end
-
+    # in browser got to oauth1/authosrize3
   	# in browser got to url/oauth1/access?oauth_token and oauth_secret to get oauth_verifier
 
   	# use consumer_key , consumer_secret, oauth_token(temporary), and oauth_secret(temporary) in Authorization header AND oauth_verifier in the request and send to /oauth1/access?oauth_verifier=
