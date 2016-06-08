@@ -47,7 +47,7 @@ Rails.application.configure do
   Paperclip.options[:command_path] = "/usr/local/bin/"
   config.paperclip_defaults = {
     :storage => :s3,
-    :bucket => 'wearewildlife'
+    :bucket => 'countfornature'
   }
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
