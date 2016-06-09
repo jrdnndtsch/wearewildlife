@@ -62,7 +62,11 @@
 						<%= image_tag @featured_story.photo.url %>
 					</div>
 				</div>
-				<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
+				<% if @featured_story.button_name.present? %>
+					<%= link_to @featured_story.button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
+				<% else %>
+					<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
+				<% end %>
 			</div>
 		<% end %>
 		<% if @stories.present? %>
@@ -71,7 +75,11 @@
 					<div class="col--three-margin story">
 						<div class="story--photo" style="background-image: url(<%= story.photo.url %>)"></div>
 						<h3 class="story-title"><%= story.title %></h3>
-						<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>		
+						<% if story.button_name.present? %>
+							<%= link_to story.button_name + ' ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>
+						<% else %>
+							<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>
+						<% end %>		
 					</div>
 				<% end %>		
 			</div>

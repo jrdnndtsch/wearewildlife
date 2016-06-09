@@ -88,6 +88,6 @@ class Admin::StoriesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :location, :date, :link, :description, :featured, :photo, :selected)
+      params.require(:story).permit(:title, :location, :date, :link, :description, :featured, :photo, :selected, :button_name)
     end
 end
