@@ -24,6 +24,13 @@
     <%= f.text_field :video_link %>
   </div>
   <div class="field">
+    <%= f.label :video_photo %><br>
+    <%= f.file_field :video_photo %>
+  </div>
+  <% if @header.video_photo.url.present? %>
+    <%= image_tag @header.video_photo.url('thumbnail')%>
+  <% end %>
+  <div class="field">
     <%= f.label :about %><br>
     <%= f.text_area :about %>
   </div>

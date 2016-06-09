@@ -9,7 +9,7 @@ class FrontPageController < ApplicationController
   	@main_menus = MainMenu.all
   	@header = Header.last
   	@featured_story = Story.is_featured.first
-  	@stories = Story.are_selected.are_not_featured.last(7).reverse
+  	@stories = Story.are_selected.are_not_featured.order(date: :desc).first(7)
     @tweets = Tweet.last(5)
     @instagrams = Insta.last(5)
     @socials = []
