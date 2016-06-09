@@ -76,9 +76,9 @@
 						<div class="story--photo" style="background-image: url(<%= story.photo.url %>)"></div>
 						<h3 class="story-title center-text"><%= story.title %></h3>
 						<% if story.button_name.present? %>
-							<%= link_to story.button_name + ' ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>
+							<%= link_to story.button_name + ' ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
 						<% else %>
-							<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>
+							<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
 						<% end %>		
 					</div>
 				<% end %>		
