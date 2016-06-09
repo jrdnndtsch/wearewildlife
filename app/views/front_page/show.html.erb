@@ -128,9 +128,9 @@
 					<% if blog.video_link.present? %>
 						<video src="<%= blog.video_link %>" controls ></video>
 					<% elsif blog.photo.present? %>
-					  <%= image_tag blog.image_url %>
+					  <%= image_tag blog.photo.url  %>
 					<% else %>
-					  <%= image_tag blog.photo.url %>
+					  <%= image_tag blog.image_url %>
 					<% end %>
 				</div>
 				<div class="col--two">
