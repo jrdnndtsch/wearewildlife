@@ -130,7 +130,7 @@ nav.main
 		:padding 8px 0
 		:position relative
 		&:last-of-type
-			:border-bottom none
+			:border-bottom none	
 	a 
 		:color black
 		:text-transform capitalize
@@ -139,7 +139,9 @@ nav.main
 		+display-for(xl lg)
 			:background $blue	
 			:position absolute
-			:top 0
+			:top -50%
+			:transform translateY(5px)
+			:z-index 100
 			:left calc(100% + 30px)
 			:color white
 			:padding 10px
@@ -161,7 +163,8 @@ nav.main
 				:color $blue
 
 .item--main
-	&:last-of-type
+	&:last-of-type, 
+	&:nth-last-of-type(2)
 		.menu--sub
 			:left -60px
 		.menu--sub-desc
