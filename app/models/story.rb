@@ -8,7 +8,7 @@ class Story < ActiveRecord::Base
           thumbnail: " -gravity center -crop '100x100+0+0'",
           header: " -gravity center -crop '500x500+0+0'"
         },
-    default_url: "photo.jpg"
+    default_url: "missing.jpg"
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
   # validates :featured, :uniqueness => true
   

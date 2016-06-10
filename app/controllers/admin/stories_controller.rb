@@ -5,7 +5,7 @@ class Admin::StoriesController < AdminController
   # GET /stories
   # GET /stories.json
   def index
-    @stories = Story.all
+    @stories = Story.all.order(date: :desc)
     add_breadcrumb "calls to action", "/admin/stories"
 
     @title = Title.where("section_name = 'stories'")

@@ -24,8 +24,8 @@
 	</div>
 </nav>
 <div class="header hidden">
-	<div class="video-container" data-image= "<%= image_url('WWF-Panda-VideoPlaceholder.png')%>"=>
-		<video poster="<%= image_url('WWF-Panda-VideoPlaceholder.png')%>" id="bgvid" loop preload="none">
+	<div class="video-container" data-image= "<%= image_url @header.video_photo.url('header') %>"=>
+		<video poster="<%= image_url(@header.video_photo.url('header'))%>" id="bgvid" loop preload="none">
 		
 		<!-- <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm"> -->
 
@@ -74,11 +74,11 @@
 				<% @stories.each do |story| %>
 					<div class="col--three-margin story">
 						<div class="story--photo" style="background-image: url(<%= story.photo.url %>)"></div>
-						<h3 class="story-title"><%= story.title %></h3>
+						<h3 class="story-title center-text"><%= story.title %></h3>
 						<% if story.button_name.present? %>
-							<%= link_to story.button_name + ' ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>
+							<%= link_to story.button_name + ' ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
 						<% else %>
-							<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted' %>
+							<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
 						<% end %>		
 					</div>
 				<% end %>		
@@ -135,7 +135,7 @@
 				</div>
 				<div class="col--two">
 					<h3><%= blog.title %></h3>
-					<p><span class="author"><%= blog.author %></span> <span class="seperator">•</span> <span class="date"><%= blog.date.strftime("%B %d, %Y") %></span></p>
+					<p><span class="author"><%= blog.author %></span></p>
 					<p><%= blog.short_description.html_safe %></p>
 					<%= link_to 'Read More ▸' , url_for(blog.link), :target => "_blank", class: "button button--secondary" %>
 				</div>
@@ -158,7 +158,11 @@
 				</div>
 			</div>
 			<div class="wrapper">
-				<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>			
+				<% if @featured_donor.button_name.present? %>
+					<%= link_to @featured_donor.button_name + ' ▸', url_for(@featured_donor.link), :target => "_blank", class: 'button button--secondary'  %>
+				<% else %>
+					<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>
+				<% end %>
 			</div>
 		</section>
 	<% end %>
@@ -216,7 +220,11 @@
 						<!-- <div class="description"> -->
 							<div class="description"><%= simple_format(gstory.short_description) %></div>
 						<!-- </div> -->
-						<%= link_to 'read more ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary' %>
+						<% if gstory.button_name.present? %>
+							<%= link_to gstory.button_name + ' ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary'  %>
+						<% else %>
+							<%= link_to 'read more ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary' %>
+						<% end %>
 					</div>
 				<% end %>
 				<%= image_tag 'right-arrow-black.svg', class: 'arrow arrow-right'%>
