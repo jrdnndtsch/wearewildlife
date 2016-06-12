@@ -59,11 +59,8 @@
 						<%= simple_format(@featured_story.description) %>
 					</div>
 					<div class="col--two">
-						<div class="photo-by">
-							<%= image_tag @featured_story.photo.url, :title => 'photo attribution' %>
-							<% if @featured_story.photo_by.present?%>
-								<p class="photo-attr"><%= @featured_story.photo_by%></p>
-							<% end %>
+						<div class="photo-by" <% if @featured_story.photo_by.present?%>title="<%= @featured_story.photo_by%>"<% end %>>
+							<%= image_tag @featured_story.photo.url, :title =>  @featured_story.photo_by %>
 						</div>
 					</div>
 				</div>
@@ -78,10 +75,7 @@
 			<div class="wrapper--flex">
 				<% @stories.each do |story| %>
 					<div class="col--three-margin story">
-						<div class="story--photo photo-by" style="background-image: url(<%= story.photo.url %>)">
-							<% if story.photo_by.present?%>
-								<p class="photo-attr"><%= story.photo_by%></p>
-							<% end %>
+						<div class="story--photo photo-by" style="background-image: url(<%= story.photo.url %>)" <% if story.photo_by.present?%>title="<%= story.photo_by%>"<% end %>>
 						</div>
 						<h3 class="story-title center-text"><%= story.title %></h3>
 						<% if story.button_name.present? %>
@@ -133,17 +127,16 @@
 		<section class="wp-blog wrapper">
 			<% @blogs.each do |blog| %>
 			<div class="wrapper--flex">
-				<div class="col--two photo-by">
-					<% if blog.video_link.present? %>
-						<video src="<%= blog.video_link %>" controls ></video>
-					<% elsif blog.photo.present? %>
-					  <%= image_tag blog.photo.url  %>
-					<% else %>
-					  <%= image_tag blog.image_url %>
-					<% end %>
-					<% if blog.photo_by.present?%>
-						<p class="photo-attr"><%= blog.photo_by%></p>
-					<% end %>
+				<div class="col--two">
+					<div class="photo-by" <% if blog.photo_by.present?%>title="<%= blog.photo_by%>"<% end %>>
+						<% if blog.video_link.present? %>
+							<video src="<%= blog.video_link %>" controls ></video>
+						<% elsif blog.photo.present? %>
+						  <%= image_tag blog.photo.url  %>
+						<% else %>
+						  <%= image_tag blog.image_url %>
+						<% end %>
+					</div>
 				</div>
 				<div class="col--two">
 					<h3><%= blog.title %></h3>
@@ -166,11 +159,9 @@
 					<%= simple_format(@featured_donor.short_description) %>
 				</div>
 				<div class="col--two donor">
-					<div class="photo-by">
+					<div class="photo-by" <% if @featured_donor.photo_by.present?%>title="<%= @featured_donor.photo_by%>"<% end %>>
 						<%= image_tag @featured_donor.photo.url %>
-						<% if @featured_donor.photo_by.present?%>
-							<p class="photo-attr"><%= @featured_donor.photo_by%></p>
-						<% end %>
+				
 					</div>
 				</div>
 			</div>
