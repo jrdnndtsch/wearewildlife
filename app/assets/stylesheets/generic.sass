@@ -243,6 +243,21 @@ i
 	:padding 40px 0		
 section
 	:padding 40px 0	
+.photo-by
+	:position relative
+	.photo-attr
+		:position absolute
+		:bottom 0
+		:right 0
+		:background rgba(0,0,0,0.7)
+		:padding 4px
+		:font-size 12px
+		:color white
+		:display none
+.photo-by
+	&:hover	
+		.photo-attr
+			:display block	
 #admin
 	.form--contained.form--login
 		:width 80%
@@ -253,6 +268,7 @@ section
 		:border 1px solid rgba(0,0,0,0.1)
 		:margin-top 100px
 		:padding 20px
+
 
 
 

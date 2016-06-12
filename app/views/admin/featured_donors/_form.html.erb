@@ -35,6 +35,10 @@
     <%= f.label :photo %><br>
     <%= f.file_field :photo %>
   </div>
+  <div class="field">
+    <%= f.label :photo_by %><br>
+    <%= f.text_field :photo_by %>
+  </div>
   <% if @featured_donor.photo? %>
     <%= image_tag @featured_donor.photo.url('header')%>
     <br>

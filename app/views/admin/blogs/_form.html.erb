@@ -47,6 +47,10 @@
     <%= f.label :photo %><br>
     <%= f.file_field :photo %>
   </div>
+  <div class="field">
+    <%= f.label :photo_by %><br>
+    <%= f.text_field :photo_by %>
+  </div>
   <% if @blog.photo? %>
     <%= image_tag @blog.photo.url%>
     <br>
