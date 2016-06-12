@@ -61,8 +61,8 @@
 					<div class="col--two">
 						<div class="photo-by">
 							<%= image_tag @featured_story.photo.url, :title => 'photo attribution' %>
-							<% if blog.photo_by.present?%>
-								<p class="photo-attr"><%= blog.photo_by%></p>
+							<% if @featured_story.photo_by.present?%>
+								<p class="photo-attr"><%= @featured_story.photo_by%></p>
 							<% end %>
 						</div>
 					</div>
@@ -79,8 +79,8 @@
 				<% @stories.each do |story| %>
 					<div class="col--three-margin story">
 						<div class="story--photo photo-by" style="background-image: url(<%= story.photo.url %>)">
-							<% if blog.photo_by.present?%>
-								<p class="photo-attr"><%= blog.photo_by%></p>
+							<% if story.photo_by.present?%>
+								<p class="photo-attr"><%= story.photo_by%></p>
 							<% end %>
 						</div>
 						<h3 class="story-title center-text"><%= story.title %></h3>
@@ -168,8 +168,8 @@
 				<div class="col--two donor">
 					<div class="photo-by">
 						<%= image_tag @featured_donor.photo.url %>
-						<% if blog.photo_by.present?%>
-							<p class="photo-attr"><%= blog.photo_by%></p>
+						<% if @featured_donor.photo_by.present?%>
+							<p class="photo-attr"><%= @featured_donor.photo_by%></p>
 						<% end %>
 					</div>
 				</div>
