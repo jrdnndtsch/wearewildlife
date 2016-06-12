@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609190546) do
+ActiveRecord::Schema.define(version: 20160612144251) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160609190546) do
     t.boolean  "approved",           default: false
     t.string   "image_url"
     t.integer  "wp_id"
+    t.string   "photo_by"
   end
 
   create_table "featured_donors", force: :cascade do |t|
@@ -43,6 +44,7 @@ ActiveRecord::Schema.define(version: 20160609190546) do
     t.string   "title"
     t.boolean  "featured",           default: false
     t.string   "button_name"
+    t.string   "photo_by"
   end
 
   create_table "generic_stories", force: :cascade do |t|
@@ -97,6 +99,7 @@ ActiveRecord::Schema.define(version: 20160609190546) do
     t.datetime "photo_updated_at"
     t.boolean  "selected",           default: false
     t.string   "button_name"
+    t.string   "photo_by"
   end
 
   create_table "sub_menus", force: :cascade do |t|

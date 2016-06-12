@@ -59,7 +59,7 @@
 						<%= simple_format(@featured_story.description) %>
 					</div>
 					<div class="col--two">
-						<%= image_tag @featured_story.photo.url %>
+						<%= image_tag @featured_story.photo.url, :title => 'photo attribution' %>
 					</div>
 				</div>
 				<% if @featured_story.button_name.present? %>
