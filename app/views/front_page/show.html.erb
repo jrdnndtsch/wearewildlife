@@ -49,18 +49,24 @@
 
 	<section class="stories wrapper">
 		<% if @stories_title.title.present? %>
-			<h2 class="title"><%= @stories_title.title%></h2>
+		
+				<h2 class="title"><%= @stories_title.title%></h2>
+			
 		<% end %>
 		<% if @featured_story.present? %>
 			<div class="featured-story">
-				<h3 class="featured-title"><%= @featured_story.title %></h3>
+				<%= link_to url_for(@featured_story.link), :target => '_blank' do%>
+					<h3 class="featured-title"><%= @featured_story.title %></h3>
+				<% end %>	
 				<div class="wrapper--flex stories--flex">
 					<div class="col--two">
 						<%= simple_format(@featured_story.description) %>
 					</div>
 					<div class="col--two">
 						<div class="photo-by" <% if @featured_story.photo_by.present?%>title="<%= @featured_story.photo_by%>"<% end %>>
+							<%= link_to  url_for(@featured_story.link), :target => '_blank' do%>
 							<%= image_tag @featured_story.photo.url, :title =>  @featured_story.photo_by %>
+							<% end %>
 						</div>
 					</div>
 				</div>
@@ -75,9 +81,13 @@
 			<div class="wrapper--flex">
 				<% @stories.each do |story| %>
 					<div class="col--three-margin story">
+						
 						<div class="story--photo photo-by" style="background-image: url(<%= story.photo.url %>)" <% if story.photo_by.present?%>title="<%= story.photo_by%>"<% end %>>
+							<%= link_to url_for(story.link), :target => '_blank' do %><%end %>
 						</div>
-						<h3 class="story-title center-text"><%= story.title %></h3>
+						<%= link_to url_for(story.link), :target => '_blank' do %>
+							<h3 class="story-title center-text"><%= story.title %></h3>
+						<% end %>
 						<% if story.button_name.present? %>
 							<%= link_to story.button_name + ' ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
 						<% else %>
@@ -129,6 +139,7 @@
 			<div class="wrapper--flex">
 				<div class="col--two">
 					<div class="photo-by" <% if blog.photo_by.present?%>title="<%= blog.photo_by%>"<% end %>>
+						<%= link_to url_for(blog.link), :target => '_blank' do%><% end %>
 						<% if blog.video_link.present? %>
 							<video src="<%= blog.video_link %>" controls ></video>
 						<% elsif blog.photo.present? %>
@@ -139,9 +150,11 @@
 					</div>
 				</div>
 				<div class="col--two">
-					<h3><%= blog.title %></h3>
+					<%= link_to url_for(blog.link), :target => '_blank' do%>
+						<h3><%= blog.title %></h3>
+					<% end %>	
 					<p><span class="author"><%= blog.author %></span></p>
-					<p><%= blog.short_description.html_safe %></p>
+					<p class="short-desc"><%= blog.short_description.html_safe %></p>
 					<%= link_to 'Read More ▸' , url_for(blog.link), :target => "_blank", class: "button button--secondary" %>
 				</div>
 			</div>
@@ -152,7 +165,9 @@
 	<% if @featured_donor.present? %>
 		<section class="featured-donor">
 			<div class="wrapper">
-				<h3><%= @featured_donor.title %></h3>
+				<%= link_to url_for(@featured_donor.link), :target => '_blank' do %>
+					<h3><%= @featured_donor.title %></h3>
+				<%end%>
 			</div>
 			<div class="wrapper wrapper--flex">
 				<div class="col--two donor">
@@ -160,6 +175,7 @@
 				</div>
 				<div class="col--two donor">
 					<div class="photo-by" <% if @featured_donor.photo_by.present?%>title="<%= @featured_donor.photo_by%>"<% end %>>
+						<%= link_to url_for(@featured_donor.link), :target => '_blank' do %><%end %>
 						<%= image_tag @featured_donor.photo.url %>
 				
 					</div>
@@ -412,5 +428,7 @@
 
 
 </script>
+
+
 
 
