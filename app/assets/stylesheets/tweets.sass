@@ -65,11 +65,13 @@
 	:width 100%
 	:background-size cover
 	:background-position center
+.wrapper--flex.tweet-flex
+	:flex-wrap wrap
 .tweet
 	:position absolute
 	:padding 0 20px
 	:height 70%
-	:overflow auto
+	:overflow scroll
 	:margin auto
 	:top 0 
 	:left 0 
@@ -78,17 +80,24 @@
 	:color white
 	:font-size 16px
 	:font-family 'Georgia'
-	:word-break break-all
+	+display-for(lg)
+		:padding 0px 15px
+		:height 80%
+		p 
+			:line-height 20px
+			:margin 0
 	+display-for(sm xs)
 		:padding 0 15px
 		:height 90%
 	a 
 		:color white
 		:font-weight bold
+		:word-wrap break-word
 	+display-for(sm xs)
 		p
-			:font-size 13px
-			:line-height 1.1
+			:font-size 15px
+			:line-height 1.2
+			:margin 3px 0
 .square
 	:position relative
 	// :width 20%
