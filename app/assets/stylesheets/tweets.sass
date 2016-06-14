@@ -70,7 +70,7 @@
 .tweet
 	:position absolute
 	:padding 0 20px
-	:height 70%
+	:height 80%
 	:overflow scroll
 	:margin auto
 	:top 0 
@@ -80,11 +80,13 @@
 	:color white
 	:font-size 16px
 	:font-family 'Georgia'
-	+display-for(lg)
+	p 
+		:line-height 28px
+	+display-for(lg md)
 		:padding 0px 15px
 		:height 80%
 		p 
-			:line-height 20px
+			:line-height 18px
 			:margin 0
 	+display-for(sm xs)
 		:padding 0 15px
