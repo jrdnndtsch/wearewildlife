@@ -26,8 +26,6 @@
 <div class="header hidden">
 	<div class="video-container" data-image= "<%= image_url @header.video_photo.url('header') %>"=>
 		<video poster="<%= image_url(@header.video_photo.url('header'))%>" id="bgvid" loop preload="none">
-		
-		<!-- <source src="//demosthenes.info/assets/videos/polina.webm" type="video/webm"> -->
 
 		<source src="<%= @header.video_link %>" type="video/mp4">
 		</video>
