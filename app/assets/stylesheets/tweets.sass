@@ -34,11 +34,19 @@
 		:background-color $blue
 	&:nth-of-type(3)
 		:background-color $medium-blue
+	&:nth-of-type(5)
+		:order 6
+	&:nth-of-type(6)
+		:order 5
+	&:nth-of-type(7)
+		:order 8
+	&:nth-of-type(8)
+		:order 7				
 	&:after
 		:content ""
 		:display block
 		:padding-bottom 100%
-	+display-for(xs)
+	+display-for(sm)
 		&:nth-of-type(1)
 			:order 1
 		&:nth-of-type(2)
@@ -55,10 +63,23 @@
 			:order 8
 		&:nth-of-type(8)
 			:order 7
-		&:nth-of-type(9)
-			:order 9
-		&:nth-of-type(10)
-			:order 10
+	+display-for(xs)
+		&:nth-of-type(1)
+			:order 1
+		&:nth-of-type(2)
+			:order 2
+		&:nth-of-type(3)
+			:order 3
+		&:nth-of-type(4)
+			:order 4
+		&:nth-of-type(5)
+			:order 5
+		&:nth-of-type(6)
+			:order 6
+		&:nth-of-type(7)
+			:order 7
+		&:nth-of-type(8)
+			:order 8
 .instagram
 	:position absolute
 	:height 100%
@@ -66,6 +87,7 @@
 	:background-size cover
 	:background-position center
 .tweet
+	:display flex
 	:position absolute
 	:padding 0 20px
 	:height 70%
@@ -79,16 +101,27 @@
 	:font-size 16px
 	:font-family 'Georgia'
 	:word-break break-all
-	+display-for(sm xs)
+	+display-for(md sm xs)
 		:padding 0 15px
 		:height 90%
 	a 
 		:color white
 		:font-weight bold
-	+display-for(sm xs)
-		p
-			:font-size 13px
-			:line-height 1.1
+	p 
+		:align-self center
+		:font-size 18px
+		+display-for(lg)
+			:font-size 16px
+			:line-height 1.2
+		+display-for(md)
+			:font-size 14px
+			:line-height 1.2
+		+display-for(sm)
+			:font-size 16px
+			:line-height 1.4			
+		+display-for(xs)
+			:font-size 16px
+			:line-height 1.2
 .square
 	:position relative
 	// :width 20%

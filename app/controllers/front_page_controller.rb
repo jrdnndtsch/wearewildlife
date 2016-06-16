@@ -10,10 +10,10 @@ class FrontPageController < ApplicationController
   	@header = Header.last
   	@featured_story = Story.is_featured.first
   	@stories = Story.are_selected.are_not_featured.order(date: :desc).first(7)
-    @tweets = Tweet.last(5)
-    @instagrams = Insta.last(5)
+    @tweets = Tweet.last(4)
+    @instagrams = Insta.last(4)
     @socials = []
-    (0..4).each do |i|
+    (0..3).each do |i|
       @socials << @tweets[i]
       @socials << @instagrams[i]
     end
