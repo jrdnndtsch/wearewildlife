@@ -1,6 +1,8 @@
 <nav class="main">
 	<div class="wrapper clearfix">
-		<%= image_tag 'wwf-logo.png'%>
+		<a href="http://wwf.ca">
+			<%= image_tag 'wwf-logo.png'%>
+		</a>
 		<a href="#" class="main--toggle">
 			<span></span>
 		</a>
@@ -109,7 +111,7 @@
 			<p class="center-text"><a href="https://www.facebook.com/WWFCanada/" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/WWFCanada" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/wwfcanada/" target="_blank"><i class="fa fa-instagram"></i></a></p>
 		</div>
 
-		<div class="wrapper--flex">
+		<div class="wrapper--flex tweet-flex">
 			<% @socials.each_with_index do |social, index| %>
 				<div class="social-element col--four">
 					<% if index.modulo(2).zero? %>
