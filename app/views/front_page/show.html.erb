@@ -366,11 +366,11 @@
 		}
 		function mainMenuSmall(){
 			if(windowSize <= 500){
-				$('.menu--main').css({'width': '100%', 'margin-left': '0', 'left' : '0', 'display' : 'none'})
+				$('.menu--main').css({'width': '100%', 'margin-left': '0', 'left' : '0', 'display' : 'none'});
 				$('.generic-story').each(function(i){
 					i > 0 ? $(this).addClass('off') : null
 					i == 0 ? $(this).addClass('active') : null
-				})
+				});
 			}else if(windowSize < 960){
 				menu = $('.menu--main');
 				menuWidth = $('.wrapper').innerWidth()
@@ -378,7 +378,7 @@
 				marginLeft = (windowSize - menuWidth) / 2
 				$('.menu--main').css({'width' : windowSize, 'margin-left': '-' + marginLeft + 'px', 'display': 'none'});
 			}else{
-				console.log('else')
+				console.log('bigger')
 				$('.menu--main').css({'width': 'auto', 'margin-left': '140px', 'display': 'flex'})
 			}
 		}
