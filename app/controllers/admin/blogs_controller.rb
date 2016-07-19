@@ -6,6 +6,7 @@ class Admin::BlogsController < AdminController
 
   def upload  
     # raise "the roof"
+      # all required keys for request
       client_key = ENV['client_key']
       client_secret = ENV['client_secret']
       oauth_token = ENV['oauth_token']
