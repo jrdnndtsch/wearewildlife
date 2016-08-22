@@ -6,7 +6,7 @@
   # get 'admin/show'
 
   get 'front_page/show'
-  get 'french' => 'front_page#fr_show'
+  get 'fr' => 'front_page#fr_show'
 
 
   devise_for :users

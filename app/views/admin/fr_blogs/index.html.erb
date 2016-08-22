@@ -37,7 +37,7 @@
         <% else %>
           <td><%= image_tag blog.image_url %></td>
         <% end %>
-        <td><%= blog.approved ? 'yes' : 'no' %></td>
+        <td><%= blog.approved ? 'oui' : 'non' %></td>
         <td><%= blog.title %></td>
         <td><%= blog.date %></td>
         <td class="table--button"><%= link_to 'Edit', edit_admin_fr_blog_path(blog), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
