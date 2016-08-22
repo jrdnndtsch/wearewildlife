@@ -11,46 +11,92 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="wrapper--flex">
+    <div class="field col--two">
+      <%= f.label :title %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field col--two">
+      <%= f.label :fr_title %><br>
+      <%= f.text_field :fr_title %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
+
+  <div class="wrapper--flex">
+    <div class="field col--two">
+      <%= f.label :location %><br>
+      <%= f.text_field :location %>
+    </div>
+    <div class="field col--two">
+      <%= f.label :fr_location %><br>
+      <%= f.text_field :fr_location %>
+    </div>
   </div>
-  <div class="field">
+
+  <div class="field col--two">
     <%= f.label :date %><br>
     <%= f.date_select :date %>
   </div>
-  <div class="field">
-    <%= f.label :link %><br>
-    <%= f.text_field :link %>
+    
+  <div class="wrapper--flex">
+    <div class="field col--two">
+      <%= f.label :link %><br>
+      <%= f.text_field :link %>
+    </div>
+    <div class="field col--two">
+      <%= f.label :fr_link %><br>
+      <%= f.text_field :fr_link %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :button_name %><br>
-    <%= f.text_field :button_name %>
+
+  <div class="wrapper--flex">
+    <div class="field col--two">
+      <%= f.label :button_name %><br>
+      <%= f.text_field :button_name %>
+    </div>
+    <div class="field col--two">
+      <%= f.label :fr_button_name %><br>
+      <%= f.text_field :fr_button_name %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
+
+  <div class="wrapper--flex">
+    <div class="field col--two">
+      <%= f.label :description %><br>
+      <%= f.text_area :description %>
+    </div>
+    <div class="field col--two">
+      <%= f.label :fr_description %><br>
+      <%= f.text_area :fr_description %>
+    </div>
   </div>
+
   <div class="field">
     <%= f.label :featured %><br>
     <%= f.check_box :featured %>
   </div>
+
   <div class="field">
     <%= f.label :selected %><br>
     <%= f.check_box :selected %>
   </div>
+
   <div class="field">
     <%= f.label :photo %><br>
     <%= f.file_field :photo %>
   </div>
-  <div class="field">
-    <%= f.label :photo_by %><br>
-    <%= f.text_field :photo_by %>
+
+  <div class="wrapper--flex">
+    <div class="field col--two">
+      <%= f.label :photo_by %><br>
+      <%= f.text_field :photo_by %>
+    </div>
+    <div class="field col--two">
+      <%= f.label :fr_photo_by %><br>
+      <%= f.text_field :fr_photo_by %>
+    </div>
   </div>
+
   <% if @story.photo? %>
     <%= image_tag @story.photo.url('header')%>
     <br>

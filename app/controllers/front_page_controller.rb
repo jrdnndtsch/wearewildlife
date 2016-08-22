@@ -65,6 +65,67 @@ class FrontPageController < ApplicationController
     # @image = JSON.parse(image)
 
   end
+
+  def fr_show
+    @main_menus = MainMenu.all
+    @header = Header.last
+    @featured_story = Story.is_featured.first
+    @stories = Story.are_selected.are_not_featured.order(date: :desc).first(7)
+    @tweets = Tweet.last(4)
+    @instagrams = Insta.last(4)
+    @socials = []
+    (0..3).each do |i|
+      @socials << @tweets[i]
+      @socials << @instagrams[i]
+    end
+
+    @title_blog = Title.where("section_name = 'blog'").first
+    @stories_title = Title.where("section_name = 'stories'").first
+    @generic_stories_title = Title.where("section_name = 'generic_stories'").first
+
+    # raise 'the roof'
+    @blogs = Blog.are_approved.order(date: :DESC).first(3)
+    @featured_donor = FeaturedDonor.is_featured.first
+    @generic_stories = GenericStory.are_selected.last(3).reverse
+    # @instagram = Instagram.user_recent_media(@deartrudence, {:count => 15})
+    # @instwogram = Instagram.user_recent_media(@deartrudence, {:count => 15}).select { |pic| pic.caption.text.include?('#Repost')}
+    # @instwogram_count = Instagram.user_recent_media(@deartrudence).count { |pic| pic.caption.text.include?('#Repost')}
+
+    # @tweets = $client.user_timeline[0..4]
+    # @jb = $client.search("from:WWFCanada", :result_type => "recent").take(50)
+    # @jb_count_with_hashtag = @jb.count {|tweet| tweet.text.include?('#ExploreTheSound') }
+    # @jb_with_hashtag = @jb.select { |tweet| tweet.text.include?('#ExploreTheSound') }
+
+    client_key = ENV['client_key']
+    client_secret = ENV['client_secret']
+    oauth_token = ENV['oauth_token']
+    oauth_token_secret = ENV['oauth_token_secret']
+    method = 'GET'
+    uri = 'http://blog.wwf.ca/wp-json/wp/v2/posts'
+    image_uri = 'http://jordandeutsch.com/wp-json/wp/v2/media/24'
+    
+    # Steps for OAuth
+
+    # use consumer_key and consumer_secret and send to /oauth1/request (GET)
+    #get back oauth_token and oauth_secret (temporary)
+
+    #add consumer key to params
+  
+    #add oauth_signature to params
+    # params['oauth_signature'] = url_encode(sign(signing_key, image_signature_base_string))
+
+    #create the authorization header
+    # header_string = header(params)
+    # image_header_string = header(params)
+    #get those temporary token
+    # response_request = make_request(method, uri, client_key, oauth_token, oauth_token_secret, client_secret)
+    # image_request = make_request(method, image_uri, client_key, oauth_token, oauth_token_secret, client_secret)
+    # response = request_data(response_request, uri, method)
+    # image = request_data(image_request, image_uri, method)
+    # @response = JSON.parse(response)
+    # @image = JSON.parse(image)
+
+  end
     # in browser got to oauth1/authosrize3
   	# in browser got to url/oauth1/access?oauth_token and oauth_secret to get oauth_verifier
 

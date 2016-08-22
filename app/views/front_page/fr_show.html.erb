@@ -1,0 +1,453 @@
+<nav class="main">
+	<div class="wrapper clearfix">
+		<a href="http://wwf.ca">
+			<%= image_tag 'wwf-logo.png'%>
+		</a>
+		<a href="#" class="main--toggle">
+			<span></span>
+		</a>
+		<ul class="wrapper--flex menu--main">
+			<% @main_menus.each do |main_menu| %>
+				<li class="item--main"><%= link_to main_menu.title %>
+					<ul class="menu--sub">
+						<% main_menu.sub_menus.each do |sub_menu| %>
+							<li class="item--sub"><%= link_to sub_menu.title, url_for(sub_menu.link), :target => "_blank" %>
+								<% if sub_menu.description.present? %>
+								<div class="menu--sub-desc">
+									<p><%=sub_menu.description%></p>
+								</div>
+								<% end %>
+							</li>
+						<% end%>
+					</ul>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+</nav>
+<div class="header hidden">
+	<div class="video-container" data-image= "<%= image_url @header.video_photo.url('header') %>"=>
+		<video poster="<%= image_url(@header.video_photo.url('header'))%>" id="bgvid" loop preload="none">
+
+		<source src="<%= @header.video_link %>" type="video/mp4">
+		</video>
+		<div class="header-text hidden">
+			<h2 class="hidden sub-title-01"><span class="count"><%= @header.number %></span></h2>
+			<h3 class="hidden sub-title-02"><%= @header.tag_line %></h3>	
+			<a href="#count-for-nature" class="hidden sub-title-03 button button--primary">I Count For Nature</a>
+			<%= image_tag 'down-arrow.svg', class: "hidden sub-title-03" %>
+		</div>
+	</div>
+</div>
+
+<div class="content-wrapper">
+	<% if @header.about.present? %>
+		<section class="about wrapper">
+			<p><%= simple_format(@header.about) %></p>	
+		</section>
+	<% end %>
+
+	<section class="stories wrapper">
+		<% if @stories_title.title.present? %>
+		
+				<h2 class="title"><%= @stories_title.title%></h2>
+			
+		<% end %>
+		<% if @featured_story.present? %>
+			<div class="featured-story">
+				<%= link_to url_for(@featured_story.link), :target => '_blank' do%>
+					<h3 class="featured-title"><%= @featured_story.title %></h3>
+				<% end %>	
+				<div class="wrapper--flex stories--flex">
+					<div class="col--two">
+						<%= simple_format(@featured_story.description) %>
+					</div>
+					<div class="col--two">
+						<div class="photo-by" <% if @featured_story.photo_by.present?%>title="<%= @featured_story.photo_by%>"<% end %>>
+							<%= link_to  url_for(@featured_story.link), :target => '_blank' do%>
+							<%= image_tag @featured_story.photo.url, :title =>  @featured_story.photo_by %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+				<% if @featured_story.button_name.present? %>
+					<%= link_to @featured_story.button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
+				<% else %>
+					<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
+				<% end %>
+			</div>
+		<% end %>
+		<% if @stories.present? %>
+			<div class="wrapper--flex">
+				<% @stories.each do |story| %>
+					<div class="col--three-margin story">
+						
+						<div class="story--photo photo-by" style="background-image: url(<%= story.photo.url %>)" <% if story.photo_by.present?%>title="<%= story.photo_by%>"<% end %>>
+							<%= link_to url_for(story.link), :target => '_blank' do %><%end %>
+						</div>
+						<%= link_to url_for(story.link), :target => '_blank' do %>
+							<h3 class="story-title center-text"><%= story.title %></h3>
+						<% end %>
+						<% if story.button_name.present? %>
+							<%= link_to story.button_name + ' ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
+						<% else %>
+							<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
+						<% end %>		
+					</div>
+				<% end %>		
+			</div>
+		<% end %>		
+	</section>
+
+	<div class="section">
+		<div class="center-text">
+			<a href="#count-for-nature" class="button button--primary">I Count For Nature</a>
+		</div>
+	</div>
+
+	<section class="social">
+		<div class="hashtag">	
+			<h2 class="center-text">#CountForNature</h2>
+			<p class="center-text"><a href="https://www.facebook.com/WWFCanada/" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/WWFCanada" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/wwfcanada/" target="_blank"><i class="fa fa-instagram"></i></a></p>
+		</div>
+
+		<div class="wrapper--flex tweet-flex">
+			<% @socials.each_with_index do |social, index| %>
+				<div class="social-element col--four">
+					<% if index.modulo(2).zero? %>
+						<% if social.present? %>
+							<div class="tweet">
+								<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
+							</div>
+						<% end %>
+					<% else %>
+						<% if social.present? %>
+							<div class="instagram" style="background-image: url(<%= social.image_url %>)">
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+			<% end %>
+	</section>
+
+	<% if @blogs.present? %>
+		<section class="wp-blog wrapper">
+			<% if @title_blog.title.present? %>
+				<h2 class="title"><%= @title_blog.title%></h2>
+			<% end %>
+			<% @blogs.each do |blog| %>
+			<div class="wrapper--flex">
+				<div class="col--two">
+					<div class="photo-by" <% if blog.photo_by.present?%>title="<%= blog.photo_by%>"<% end %>>
+						<%= link_to url_for(blog.link), :target => '_blank' do%><% end %>
+						<% if blog.video_link.present? %>
+							<video src="<%= blog.video_link %>" controls ></video>
+						<% elsif blog.photo.present? %>
+						  <%= image_tag blog.photo.url  %>
+						<% else %>
+						  <%= image_tag blog.image_url %>
+						<% end %>
+					</div>
+				</div>
+				<div class="col--two">
+					<%= link_to url_for(blog.link), :target => '_blank' do%>
+						<h3><%= blog.title %></h3>
+					<% end %>	
+					<p><span class="author"><%= blog.author %></span></p>
+					<p class="short-desc"><%= blog.short_description.html_safe %></p>
+					<%= link_to 'Read More ▸' , url_for(blog.link), :target => "_blank", class: "button button--secondary" %>
+				</div>
+			</div>
+			<% end %>
+		</section>
+	<% end %>
+
+	<% if @featured_donor.present? %>
+		<section class="featured-donor">
+			<div class="wrapper">
+				<%= link_to url_for(@featured_donor.link), :target => '_blank' do %>
+					<h3><%= @featured_donor.title %></h3>
+				<%end%>
+			</div>
+			<div class="wrapper wrapper--flex">
+				<div class="col--two donor">
+					<%= simple_format(@featured_donor.short_description) %>
+				</div>
+				<div class="col--two donor">
+					<div class="photo-by" <% if @featured_donor.photo_by.present?%>title="<%= @featured_donor.photo_by%>"<% end %>>
+						<%= link_to url_for(@featured_donor.link), :target => '_blank' do %><%end %>
+						<%= image_tag @featured_donor.photo.url %>
+				
+					</div>
+				</div>
+			</div>
+			<div class="wrapper">
+				<% if @featured_donor.button_name.present? %>
+					<%= link_to @featured_donor.button_name + ' ▸', url_for(@featured_donor.link), :target => "_blank", class: 'button button--secondary'  %>
+				<% else %>
+					<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>
+				<% end %>
+			</div>
+		</section>
+	<% end %>
+
+	<section id="count-for-nature" class="wrapper wrapper--form">
+		<div id="wufoo-mvhjj9902vjtoi">
+
+		Fill out my <a href="https://wwfcanada.wufoo.com/forms/mvhjj9902vjtoi">online form</a>.
+
+		</div>
+
+		<script type="text/javascript">var mvhjj9902vjtoi;(function(d, t) {
+
+		var s = d.createElement(t), options = {
+
+		'userName':'wwfcanada',
+
+		'formHash':'mvhjj9902vjtoi',
+
+		'autoResize':true,
+
+		'height':'1060',
+
+		'async':true,
+
+		'host':'wufoo.com',
+
+		'header':'show',
+
+		'ssl':true};
+
+		s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+
+		s.onload = s.onreadystatechange = function() {
+
+		var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+
+		try { mvhjj9902vjtoi = new WufooForm();mvhjj9902vjtoi.initialize(options);mvhjj9902vjtoi.display(); } catch (e) {}};
+
+		var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+
+		})(document, 'script');</script>
+	</section>
+
+	<% if @generic_stories.present? %>
+		<section class="generic-stories wrapper">
+			<% if @generic_stories_title.title.present? %>
+				<h2 class="title"><%=  @generic_stories_title.title%></h2>
+			<% end %>
+			<div class="wrapper--flex">	
+				<%= image_tag 'left-arrow-black.svg', class: 'arrow arrow-left'%>
+				<% @generic_stories.each do |gstory| %>
+					<div class="col--three-margin generic-story">
+						<h4><%= gstory.title %></h4>
+						<!-- <div class="description"> -->
+							<div class="description"><%= simple_format(gstory.short_description) %></div>
+						<!-- </div> -->
+						<% if gstory.button_name.present? %>
+							<%= link_to gstory.button_name + ' ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary'  %>
+						<% else %>
+							<%= link_to 'read more ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary' %>
+						<% end %>
+					</div>
+				<% end %>
+				<%= image_tag 'right-arrow-black.svg', class: 'arrow arrow-right'%>
+			</div>
+		</section>
+	<% end %>
+
+	<nav class="footer">
+		<div class="wrapper wrapper--flex">
+			<%= image_tag 'wwf-logo-footer.svg'%>
+			<div class="copy">
+				<h4>Building a future in which people and nature thrive.</h4>
+				<p>© All photos, graphics and images on this site remain the copyright of WWF, unless otherwise noted, and should not be downloaded without prior permission. © 2011 WWF-Canada; © 1986 Panda symbol WWF-World Wide Fund For Nature (also known as World Wildlife Fund); ® "WWF" and "living planet" are WWF Registered Trademarks. Charitable Reg.#11930 4954 RR0001.</p>
+			</div>
+			<div class="social-links wrapper--flex">
+				<a href="https://www.facebook.com/WWFCanada/" target="_blank"><i class="fa fa-facebook"></i></a>
+				<a href="https://twitter.com/WWFCanada" target="_blank"><i class="fa fa-twitter"></i></a>
+				<a href="https://www.instagram.com/wwfcanada/" target="_blank"><i class="fa fa-instagram"></i></a>
+			</div>
+		</div>
+	</nav>
+</div>
+
+
+<script>
+	//smartresize function (to deal with window maximize button and resize)
+	(function($,sr){
+	  var debounce = function (func, threshold, execAsap) {
+	      var timeout;
+
+	      return function debounced () {
+	          var obj = this, args = arguments;
+	          function delayed () {
+	              if (!execAsap)
+	                  func.apply(obj, args);
+	              timeout = null;
+	          };
+
+	          if (timeout)
+	              clearTimeout(timeout);
+	          else if (execAsap)
+	              func.apply(obj, args);
+
+	          timeout = setTimeout(delayed, threshold || 100);
+	      };
+	  }
+	  // smartresize 
+	  jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+
+	})(jQuery,'smartresize');
+		
+		var vid = document.getElementById("bgvid");
+		var pauseButton = document.querySelector("#polina button");
+		var windowSize = $(window).innerWidth();
+
+		$('.main').removeClass('hidden')
+			$('.header').removeClass('hidden').hide().fadeIn(300, function(){
+				$('.header-text').removeClass('hidden').hide().fadeIn(1000, function(){
+				  $('.sub-title-01').removeClass('hidden').hide().fadeIn(2000, function(){
+				  	$('.sub-title-02').removeClass('hidden').hide().fadeIn(500, function(){
+				  		$('.sub-title-03').removeClass('hidden').hide().fadeIn(500)
+				  	});
+				  });
+				});	
+			});
+		function vidFade() {
+		  vid.classList.add("stopfade");
+		}
+
+	// only play video if bigger than Medium size
+    if(windowSize > 768){
+    	$('#bgvid')[0].play();
+    }else{
+    	$('video').remove()
+    	var image = $('.video-container').data('image')
+    	$('.video-container').css({'background-image': 'url(' + image + ')', 'background-attachment' : 'scroll', 'top': '0','left': '0', 'min-width' : '100%', 'min-height' : '100%'})
+    }
+		vid.addEventListener('ended', function()
+		{
+		// only functional if "loop" is removed 
+		vid.pause();
+		// to capture IE10
+		vidFade();
+		}); 
+
+		//generic story slider for mobile view
+		$('.arrow-right').on('click', function(){
+			var nextStory = $('.generic-story.active').next().hasClass('generic-story') ? $('.generic-story.active').next() : $('.generic-story')[0]
+			$('.generic-story.active').removeClass('active').addClass('off')
+			$(nextStory).removeClass('off').addClass('active')
+		});
+		$('.arrow-left').on('click', function(){
+			var length = $('.generic-story').length - 1
+			var nextStory = $('.generic-story.active').prev().hasClass('generic-story') ? $('.generic-story.active').prev() : $('.generic-story')[length]
+			$('.generic-story.active').removeClass('active').addClass('off')
+			$(nextStory).removeClass('off').addClass('active')
+		});
+
+		//hamburger nav
+		$('.main--toggle').on('click', function(){
+			$(this).toggleClass('active');
+			$('.menu--main').slideToggle('normal')
+		})
+		// var windowSize = $(window).innerWidth()
+		function mainMenu(){
+			if(windowSize >= 960){
+				$('.item--main').on('mouseenter', function(){
+					$(this).find('a').addClass('active');
+					$(this).find('.menu--sub').addClass('active');
+				});
+				$('.item--main').on('mouseleave', function(){
+					$(this).find('a').removeClass('active');
+					$(this).find('.menu--sub').removeClass('active');
+				});
+
+				$('.item--sub').on('mouseenter', function(){
+					$(this).find('.menu--sub-desc').addClass('active')
+				});
+				$('.item--sub').on('mouseleave', function(){
+					$(this).find('.menu--sub-desc').removeClass('active')
+				});
+				$('.item--main a').unbind('click')
+			}else{
+				$('.item--main, .item--sub').unbind('mouseenter mouseleave')
+				$('.item--main a').unbind('click')
+				$('.item--main a').on('click', function(){
+					// e.preventDefault()
+					$(this).toggleClass('active')
+					$(this).parent('.item--main').find('.menu--sub').slideToggle('normal');
+				})
+				$('.item--main >a').on('click', function(e){
+					e.preventDefault();
+				})
+			}
+		}
+		function mainMenuSmall(){
+			if(windowSize <= 500){
+				$('.menu--main').css({'width': '100%', 'margin-left': '0', 'left' : '0', 'display' : 'none'});
+				$('.generic-story').each(function(i){
+					i > 0 ? $(this).addClass('off') : null
+					i == 0 ? $(this).addClass('active') : null
+				});
+			}else if(windowSize < 960){
+				menu = $('.menu--main');
+				menuWidth = $('.wrapper').innerWidth()
+				marginLeft = (windowSize - menuWidth) / 2
+				$('.menu--main').css({'width' : windowSize, 'margin-left': '-' + marginLeft + 'px', 'display': 'none'});
+			}else{
+				$('.menu--main').css({'width': 'auto', 'margin-left': '140px', 'display': 'flex'})
+			}
+		}
+
+		var theWidth = $(window).width();
+		$(window).smartresize(function(){
+			if($(this).width() != theWidth){
+				windowSize = $(window).innerWidth()
+				mainMenu()
+				mainMenuSmall()
+				theWidth = $(this).width()
+			}
+		});
+		mainMenu()
+		mainMenuSmall()
+
+		$('a[href*="#"]:not([href="#"])').click(function() {
+		   if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+		     var target = $(this.hash);
+		     target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+		     if (target.length) {
+		       $('html, body').animate({
+		         scrollTop: target.offset().top
+		       }, 1000);
+		       return false;
+		     }
+		   }
+		 });
+	
+	commaSeparateNumber = function(val){
+	   	while (/(\d+)(\d{3})/.test(val)){
+	     	val = val.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
+	   }
+	   return val;
+	 }
+
+	$('.count').each(function () {
+	    $(this).prop('Counter',0).animate({
+	        Counter: $(this).text()
+	    }, {
+	        duration: 3000,
+	        easing: 'swing',
+	        step: function (now) {
+	            $(this).text(commaSeparateNumber(Math.ceil(now)) );
+	        }
+	    });
+	});
+
+
+</script>
+
+
+
+

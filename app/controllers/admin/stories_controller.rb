@@ -13,6 +13,10 @@ class Admin::StoriesController < AdminController
       @the_title = Title.find(params[:title_thing])
       @the_title.update(title: params[:title])
     end
+    if params[:fr_title_thing].present?
+      @the_title = Title.find(params[:fr_title_thing])
+      @the_title.update(fr_title: params[:fr_title])
+    end
   end
 
   # GET /stories/1
@@ -88,6 +92,6 @@ class Admin::StoriesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def story_params
-      params.require(:story).permit(:title, :location, :date, :link, :description, :featured, :photo, :selected, :button_name, :photo_by)
+      params.require(:story).permit(:title, :fr_title, :location, :fr_location, :date, :link, :fr_link, :description, :fr_description, :featured, :photo, :selected, :button_name, :fr_button_name, :photo_by, :fr_photo_by)
     end
 end

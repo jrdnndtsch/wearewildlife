@@ -82,6 +82,6 @@ class Admin::FeaturedDonorsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def featured_donor_params
-      params.require(:featured_donor).permit(:short_description, :link, :photo, :title, :featured, :button_name, :photo_by)
+      params.require(:featured_donor).permit(:short_description,:fr_short_description, :link, :fr_link, :photo, :title, :fr_title, :featured, :button_name, :fr_button_name, :photo_by, :fr_photo_by)
     end
 end
