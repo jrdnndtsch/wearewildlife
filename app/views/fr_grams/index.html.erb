@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fr Grams</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Image url</th>
+      <th>Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fr_grams.each do |fr_gram| %>
+      <tr>
+        <td><%= fr_gram.image_url %></td>
+        <td><%= fr_gram.text %></td>
+        <td><%= link_to 'Show', fr_gram %></td>
+        <td><%= link_to 'Edit', edit_fr_gram_path(fr_gram) %></td>
+        <td><%= link_to 'Destroy', fr_gram, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fr gram', new_fr_gram_path %>

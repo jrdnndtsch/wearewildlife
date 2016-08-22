@@ -1,4 +1,7 @@
  Rails.application.routes.draw do
+  resources :fr_tweets
+  resources :fr_grams
+  resources :fr_blogs
   resources :titles
   # get 'admin/show'
 

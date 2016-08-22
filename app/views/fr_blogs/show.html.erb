@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fr_blog.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @fr_blog.author %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @fr_blog.date %>
+</p>
+
+<p>
+  <strong>Short description:</strong>
+  <%= @fr_blog.short_description %>
+</p>
+
+<p>
+  <strong>Link:</strong>
+  <%= @fr_blog.link %>
+</p>
+
+<p>
+  <strong>Video link:</strong>
+  <%= @fr_blog.video_link %>
+</p>
+
+<p>
+  <strong>Approved:</strong>
+  <%= @fr_blog.approved %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @fr_blog.image_url %>
+</p>
+
+<p>
+  <strong>Wp:</strong>
+  <%= @fr_blog.wp_id %>
+</p>
+
+<p>
+  <strong>Photo by:</strong>
+  <%= @fr_blog.photo_by %>
+</p>
+
+<%= link_to 'Edit', edit_fr_blog_path(@fr_blog) %> |
+<%= link_to 'Back', fr_blogs_path %>

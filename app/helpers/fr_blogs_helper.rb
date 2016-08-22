@@ -1,0 +1,2 @@
+module FrBlogsHelper
+end

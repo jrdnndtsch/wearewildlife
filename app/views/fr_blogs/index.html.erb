@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Fr Blogs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Date</th>
+      <th>Short description</th>
+      <th>Link</th>
+      <th>Video link</th>
+      <th>Approved</th>
+      <th>Image url</th>
+      <th>Wp</th>
+      <th>Photo by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @fr_blogs.each do |fr_blog| %>
+      <tr>
+        <td><%= fr_blog.title %></td>
+        <td><%= fr_blog.author %></td>
+        <td><%= fr_blog.date %></td>
+        <td><%= fr_blog.short_description %></td>
+        <td><%= fr_blog.link %></td>
+        <td><%= fr_blog.video_link %></td>
+        <td><%= fr_blog.approved %></td>
+        <td><%= fr_blog.image_url %></td>
+        <td><%= fr_blog.wp_id %></td>
+        <td><%= fr_blog.photo_by %></td>
+        <td><%= link_to 'Show', fr_blog %></td>
+        <td><%= link_to 'Edit', edit_fr_blog_path(fr_blog) %></td>
+        <td><%= link_to 'Destroy', fr_blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Fr blog', new_fr_blog_path %>

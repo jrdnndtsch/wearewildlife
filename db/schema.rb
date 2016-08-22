@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160612144251) do
+ActiveRecord::Schema.define(version: 20160822170905) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -35,26 +35,63 @@ ActiveRecord::Schema.define(version: 20160612144251) do
   create_table "featured_donors", force: :cascade do |t|
     t.string   "short_description"
     t.string   "link"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.string   "title"
-    t.boolean  "featured",           default: false
+    t.boolean  "featured",             default: false
     t.string   "button_name"
     t.string   "photo_by"
+    t.string   "fr_short_description"
+    t.string   "fr_link"
+    t.string   "fr_title"
+    t.string   "fr_button_name"
+    t.string   "fr_photo_by"
+  end
+
+  create_table "fr_blogs", force: :cascade do |t|
+    t.string   "title"
+    t.string   "author"
+    t.date     "date"
+    t.text     "short_description"
+    t.string   "link"
+    t.string   "video_link"
+    t.boolean  "approved",          default: false
+    t.string   "image_url"
+    t.integer  "wp_id"
+    t.string   "photo_by"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  create_table "fr_grams", force: :cascade do |t|
+    t.string   "image_url"
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "fr_tweets", force: :cascade do |t|
+    t.string   "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "generic_stories", force: :cascade do |t|
     t.string   "title"
     t.text     "short_description"
     t.string   "link"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.boolean  "selected",          default: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.boolean  "selected",             default: false
     t.string   "button_name"
+    t.string   "fr_title"
+    t.text     "fr_short_description"
+    t.string   "fr_link"
+    t.string   "fr_button_name"
   end
 
   create_table "headers", force: :cascade do |t|
@@ -68,6 +105,8 @@ ActiveRecord::Schema.define(version: 20160612144251) do
     t.string   "video_photo_content_type"
     t.integer  "video_photo_file_size"
     t.datetime "video_photo_updated_at"
+    t.string   "fr_tag_line"
+    t.text     "fr_about"
   end
 
   create_table "insta", force: :cascade do |t|
@@ -82,6 +121,8 @@ ActiveRecord::Schema.define(version: 20160612144251) do
     t.string   "link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "fr_title"
+    t.string   "fr_link"
   end
 
   create_table "stories", force: :cascade do |t|
@@ -100,15 +141,24 @@ ActiveRecord::Schema.define(version: 20160612144251) do
     t.boolean  "selected",           default: false
     t.string   "button_name"
     t.string   "photo_by"
+    t.string   "fr_title"
+    t.string   "fr_location"
+    t.string   "fr_link"
+    t.text     "fr_description"
+    t.string   "fr_button_name"
+    t.string   "fr_photo_by"
   end
 
   create_table "sub_menus", force: :cascade do |t|
     t.string   "title"
     t.string   "link"
     t.integer  "main_menu_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.string   "description"
+    t.string   "fr_title"
+    t.string   "fr_link"
+    t.string   "fr_description"
   end
 
   add_index "sub_menus", ["main_menu_id"], name: "index_sub_menus_on_main_menu_id"
