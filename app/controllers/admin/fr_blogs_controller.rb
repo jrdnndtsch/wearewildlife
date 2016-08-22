@@ -69,7 +69,7 @@ class Admin::FrBlogsController < AdminController
       add_breadcrumb "blog", 'blogs'
       @fr_blogs = FrBlog.all.order(date: :DESC)
       
-      @title = Title.where("section_name = 'blog'")
+      @title = Title.where("section_name = 'fr_blog'")
       if params[:title_thing].present?
         @the_title = Title.find(params[:title_thing])
         @the_title.update(title: params[:title])
@@ -225,6 +225,6 @@ class Admin::FrBlogsController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def fr_blog_params
-      params.require(:fr_blog).permit(:title, :author, :date, :short_description, :link, :video_link, :approved, :image_url, :wp_id, :photo_by)
+      params.require(:fr_blog).permit(:title, :author, :date, :short_description, :photo, :link, :video_link, :approved, :image_url, :wp_id, :photo_by)
     end
 end

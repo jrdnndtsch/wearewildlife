@@ -8,13 +8,13 @@
 		</a>
 		<ul class="wrapper--flex menu--main">
 			<% @main_menus.each do |main_menu| %>
-				<li class="item--main"><%= link_to main_menu.title %>
+				<li class="item--main"><%= link_to main_menu.fr_title %>
 					<ul class="menu--sub">
 						<% main_menu.sub_menus.each do |sub_menu| %>
-							<li class="item--sub"><%= link_to sub_menu.title, url_for(sub_menu.link), :target => "_blank" %>
-								<% if sub_menu.description.present? %>
+							<li class="item--sub"><%= link_to sub_menu.fr_title, url_for(sub_menu.link), :target => "_blank" %>
+								<% if sub_menu.fr_description.present? %>
 								<div class="menu--sub-desc">
-									<p><%=sub_menu.description%></p>
+									<p><%=sub_menu.fr_description%></p>
 								</div>
 								<% end %>
 							</li>
@@ -33,7 +33,7 @@
 		</video>
 		<div class="header-text hidden">
 			<h2 class="hidden sub-title-01"><span class="count"><%= @header.number %></span></h2>
-			<h3 class="hidden sub-title-02"><%= @header.tag_line %></h3>	
+			<h3 class="hidden sub-title-02"><%= @header.fr_tag_line %></h3>	
 			<a href="#count-for-nature" class="hidden sub-title-03 button button--primary">I Count For Nature</a>
 			<%= image_tag 'down-arrow.svg', class: "hidden sub-title-03" %>
 		</div>
@@ -43,24 +43,24 @@
 <div class="content-wrapper">
 	<% if @header.about.present? %>
 		<section class="about wrapper">
-			<p><%= simple_format(@header.about) %></p>	
+			<p><%= simple_format(@header.fr_about) %></p>	
 		</section>
 	<% end %>
 
 	<section class="stories wrapper">
 		<% if @stories_title.title.present? %>
 		
-				<h2 class="title"><%= @stories_title.title%></h2>
+				<h2 class="title"><%= @stories_title.fr_title%></h2>
 			
 		<% end %>
 		<% if @featured_story.present? %>
 			<div class="featured-story">
-				<%= link_to url_for(@featured_story.link), :target => '_blank' do%>
-					<h3 class="featured-title"><%= @featured_story.title %></h3>
+				<%= link_to url_for(@featured_story.fr_link), :target => '_blank' do%>
+					<h3 class="featured-title"><%= @featured_story.fr_title %></h3>
 				<% end %>	
 				<div class="wrapper--flex stories--flex">
 					<div class="col--two">
-						<%= simple_format(@featured_story.description) %>
+						<%= simple_format(@featured_story.fr_description) %>
 					</div>
 					<div class="col--two">
 						<div class="photo-by" <% if @featured_story.photo_by.present?%>title="<%= @featured_story.photo_by%>"<% end %>>
@@ -70,10 +70,10 @@
 						</div>
 					</div>
 				</div>
-				<% if @featured_story.button_name.present? %>
-					<%= link_to @featured_story.button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
+				<% if @featured_story.fr_button_name.present? %>
+					<%= link_to @featured_story.fr_button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
 				<% else %>
-					<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
+					<%= link_to 'read more ▸', url_for(@featured_story.fr_link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
 				<% end %>
 			</div>
 		<% end %>
@@ -85,13 +85,13 @@
 						<div class="story--photo photo-by" style="background-image: url(<%= story.photo.url %>)" <% if story.photo_by.present?%>title="<%= story.photo_by%>"<% end %>>
 							<%= link_to url_for(story.link), :target => '_blank' do %><%end %>
 						</div>
-						<%= link_to url_for(story.link), :target => '_blank' do %>
-							<h3 class="story-title center-text"><%= story.title %></h3>
+						<%= link_to url_for(story.fr_link), :target => '_blank' do %>
+							<h3 class="story-title center-text"><%= story.fr_title %></h3>
 						<% end %>
-						<% if story.button_name.present? %>
-							<%= link_to story.button_name + ' ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
+						<% if story.fr_button_name.present? %>
+							<%= link_to story.fr_button_name + ' ▸', url_for(story.fr_link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
 						<% else %>
-							<%= link_to 'read more ▸', url_for(story.link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
+							<%= link_to 'read more ▸', url_for(story.fr_link), :target => "_blank", class: 'button button--secondary button--inverted center-text' %>
 						<% end %>		
 					</div>
 				<% end %>		
@@ -165,27 +165,27 @@
 	<% if @featured_donor.present? %>
 		<section class="featured-donor">
 			<div class="wrapper">
-				<%= link_to url_for(@featured_donor.link), :target => '_blank' do %>
-					<h3><%= @featured_donor.title %></h3>
+				<%= link_to url_for(@featured_donor.fr_link), :target => '_blank' do %>
+					<h3><%= @featured_donor.fr_title %></h3>
 				<%end%>
 			</div>
 			<div class="wrapper wrapper--flex">
 				<div class="col--two donor">
-					<%= simple_format(@featured_donor.short_description) %>
+					<%= simple_format(@featured_donor.fr_short_description) %>
 				</div>
 				<div class="col--two donor">
 					<div class="photo-by" <% if @featured_donor.photo_by.present?%>title="<%= @featured_donor.photo_by%>"<% end %>>
-						<%= link_to url_for(@featured_donor.link), :target => '_blank' do %><%end %>
+						<%= link_to url_for(@featured_donor.fr_link), :target => '_blank' do %><%end %>
 						<%= image_tag @featured_donor.photo.url %>
 				
 					</div>
 				</div>
 			</div>
 			<div class="wrapper">
-				<% if @featured_donor.button_name.present? %>
-					<%= link_to @featured_donor.button_name + ' ▸', url_for(@featured_donor.link), :target => "_blank", class: 'button button--secondary'  %>
+				<% if @featured_donor.fr_button_name.present? %>
+					<%= link_to @featured_donor.fr_button_name + ' ▸', url_for(@featured_donor.fr_link), :target => "_blank", class: 'button button--secondary'  %>
 				<% else %>
-					<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>
+					<%= link_to 'Donate Now ▸', url_for(@featured_donor.fr_link), :target => "_blank", class: "button button--secondary" %>
 				<% end %>
 			</div>
 		</section>
@@ -234,20 +234,20 @@
 	<% if @generic_stories.present? %>
 		<section class="generic-stories wrapper">
 			<% if @generic_stories_title.title.present? %>
-				<h2 class="title"><%=  @generic_stories_title.title%></h2>
+				<h2 class="title"><%=  @generic_stories_title.fr_title%></h2>
 			<% end %>
 			<div class="wrapper--flex">	
 				<%= image_tag 'left-arrow-black.svg', class: 'arrow arrow-left'%>
 				<% @generic_stories.each do |gstory| %>
 					<div class="col--three-margin generic-story">
-						<h4><%= gstory.title %></h4>
+						<h4><%= gstory.fr_title %></h4>
 						<!-- <div class="description"> -->
-							<div class="description"><%= simple_format(gstory.short_description) %></div>
+							<div class="description"><%= simple_format(gstory.fr_short_description) %></div>
 						<!-- </div> -->
-						<% if gstory.button_name.present? %>
-							<%= link_to gstory.button_name + ' ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary'  %>
+						<% if gstory.fr_button_name.present? %>
+							<%= link_to gstory.fr_button_name + ' ▸', url_for(gstory.fr_link), :target => "_blank", class: 'button button--secondary'  %>
 						<% else %>
-							<%= link_to 'read more ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary' %>
+							<%= link_to 'read more ▸', url_for(gstory.fr_link), :target => "_blank", class: 'button button--secondary' %>
 						<% end %>
 					</div>
 				<% end %>
