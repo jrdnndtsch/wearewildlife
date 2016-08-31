@@ -8,7 +8,7 @@
 		</a>
 		<ul class="wrapper--flex menu--main">
 			<% @main_menus.each do |main_menu| %>
-				<li class="item--main"><%= link_to main_menu.title %>
+				<li class="item--main"><span><%= main_menu.title %></span>
 					<ul class="menu--sub">
 						<% main_menu.sub_menus.each do |sub_menu| %>
 							<li class="item--sub"><%= link_to sub_menu.title, url_for(sub_menu.link), :target => "_blank" %>
@@ -356,11 +356,11 @@
 		function mainMenu(){
 			if(windowSize >= 960){
 				$('.item--main').on('mouseenter', function(){
-					$(this).find('a').addClass('active');
+					$(this).find('span').addClass('active');
 					$(this).find('.menu--sub').addClass('active');
 				});
 				$('.item--main').on('mouseleave', function(){
-					$(this).find('a').removeClass('active');
+					$(this).find('span').removeClass('active');
 					$(this).find('.menu--sub').removeClass('active');
 				});
 
@@ -370,16 +370,16 @@
 				$('.item--sub').on('mouseleave', function(){
 					$(this).find('.menu--sub-desc').removeClass('active')
 				});
-				$('.item--main a').unbind('click')
+				$('.item--main span').unbind('click')
 			}else{
 				$('.item--main, .item--sub').unbind('mouseenter mouseleave')
-				$('.item--main a').unbind('click')
-				$('.item--main a').on('click', function(){
+				$('.item--main span').unbind('click')
+				$('.item--main span').on('click', function(){
 					// e.preventDefault()
 					$(this).toggleClass('active')
 					$(this).parent('.item--main').find('.menu--sub').slideToggle('normal');
 				})
-				$('.item--main >a').on('click', function(e){
+				$('.item--main >span').on('click', function(e){
 					e.preventDefault();
 				})
 			}
