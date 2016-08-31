@@ -2,10 +2,10 @@
 <div class="as--admin-index-title">
   <h1>All Blog Posts</h1>
   <%= link_to 'New Custom Blog Post', new_admin_blog_path, class: 'button button--tertiary as--no-margin-bottom' %>
-  <%= link_to 'Upload From WordPress', admin_upload_wps_path, class: 'button button--tertiary' %>
+  <%= link_to 'Upload From WordPress', admin_upload_fr_wps_path, class: 'button button--tertiary' %>
 </div>
 <%= form_for(@title.first, remote: true) do |f|%>
-  <div class="field col--two">
+  <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title, class: 'title--field', :data => {:id => @title.first.id} %>
   </div>
@@ -30,17 +30,17 @@
   </thead>
 
   <tbody>
-    <% @blogs.each do |blog| %>
+    <% @fr_blogs.each do |blog| %>
       <tr>
         <% if blog.photo.present? %>
           <td><%= image_tag blog.photo.url %></td>
         <% else %>
           <td><%= image_tag blog.image_url %></td>
         <% end %>
-        <td><%= blog.approved ? 'yes' : 'no' %></td>
+        <td><%= blog.approved ? 'oui' : 'non' %></td>
         <td><%= blog.title %></td>
         <td><%= blog.date %></td>
-        <td class="table--button"><%= link_to 'Edit', edit_admin_blog_path(blog), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
+        <td class="table--button"><%= link_to 'Edit', edit_admin_fr_blog_path(blog), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
       </tr>
     <% end %>
   </tbody>

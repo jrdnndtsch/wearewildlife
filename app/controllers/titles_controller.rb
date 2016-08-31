@@ -69,6 +69,6 @@ class TitlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def title_params
-      params.require(:title).permit(:title, :section_name)
+      params.require(:title).permit(:title, :fr_title, :section_name)
     end
 end

@@ -1,11 +1,12 @@
  Rails.application.routes.draw do
   resources :fr_tweets
   resources :fr_grams
-  resources :fr_blogs
+  # resources :fr_blogs
   resources :titles
   # get 'admin/show'
 
   get 'front_page/show'
+  get 'fr' => 'front_page#fr_show'
 
 
   devise_for :users
@@ -26,6 +27,7 @@
   # resources :articles, module: 'admin'
   namespace :admin do
     resources :blogs
+    resources :fr_blogs
     resources :generic_stories
     resources :main_menus
     resources :stories
@@ -34,6 +36,7 @@
     get 'upload_tweets' => 'tweets#upload'
     get 'upload_instas' => 'instas#upload'
     get 'upload_wps' => 'blogs#upload'
+    get 'upload_fr_wps' => 'fr_blogs#upload'
   end    
 
   # Example of regular route:

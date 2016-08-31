@@ -12,6 +12,10 @@ class Admin::GenericStoriesController < AdminController
       @the_title = Title.find(params[:title_thing])
       @the_title.update(title: params[:title])
     end
+    if params[:fr_title_thing].present?
+      @the_title = Title.find(params[:fr_title_thing])
+      @the_title.update(fr_title: params[:fr_title])
+    end
   end
 
   # GET /generic_stories/1
@@ -81,6 +85,6 @@ class Admin::GenericStoriesController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def generic_story_params
-      params.require(:generic_story).permit(:title, :short_description, :link, :selected, :button_name)
+      params.require(:generic_story).permit(:title, :fr_title, :short_description, :fr_short_description, :link, :fr_link, :selected, :button_name, :fr_button_name)
     end
 end
