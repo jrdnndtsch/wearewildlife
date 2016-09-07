@@ -39,7 +39,7 @@
         <td><%= image_tag story.photo.url('header')%></td>
         <td><%= story.featured ? 'yes' : 'no' %></td>
         <td><%= story.selected ? 'yes' : 'no'%></td>
-        <td><%= story.title %></td>
+        <td><%= story.title_used(current_user, story) %></td>
         <td><%= story.date %></td>
         <td class="table--button"><%= link_to 'Edit', edit_admin_story_path(story), class:'button button--primary button--edit as--no-margin-bottom' %></td>
       </tr>

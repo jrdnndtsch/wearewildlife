@@ -34,7 +34,7 @@
     <% @generic_stories.each do |generic_story| %>
       <tr>
         <td><%= generic_story.selected ? 'yes' : 'no' %></td>
-        <td><%= generic_story.title %></td>
+        <td><%= generic_story.title_used(current_user, generic_story) %></td>
         <td class="table--button"><%= link_to 'Edit', edit_admin_generic_story_path(generic_story), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
       </tr>
     <% end %>

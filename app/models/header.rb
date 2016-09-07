@@ -1,6 +1,8 @@
 class Header < ActiveRecord::Base
 	has_paper_trail
 
+  include LanguagePreference
+
 	has_attached_file :video_photo,
     styles: {
           thumbnail: '200x100^',

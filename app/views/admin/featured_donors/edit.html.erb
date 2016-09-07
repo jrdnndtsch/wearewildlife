@@ -8,7 +8,12 @@
 	</div>
 	<%= render 'form' %>
 	<div class="wrapper--flex">
-		<%= link_to 'Back', admin_featured_donors_path, class: 'button button--primary as--half' %>
-		<%= link_to 'Delete', admin_featured_donor_path(@featured_donor), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary button--delete as--half' %>
+		<%= link_to admin_featured_donors_path, class: 'button button--primary as--half' do %>
+			<%= @featured_donor.back_lang(current_user) %>
+		<% end %>
+
+		<%= link_to admin_featured_donor_path(@featured_donor), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary button--delete as--half' do %>
+			<%= @featured_donor.delete_lang(current_user) %>
+		<% end %>
 	</div>
 </div>

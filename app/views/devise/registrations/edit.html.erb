@@ -10,14 +10,28 @@
       <%= link_to "WWF Admin", admin_show_path, class: 'sidebar--header'%>
       <% if Header.first.present?%>
         <% @header = Header.first%>
-        <%= link_to "header", edit_admin_header_path(@header), class: is_active?("admin/headers") %>
-      <% end %>
-      <%= link_to "blogs", admin_blogs_path, class: is_active?("admin/blogs") %>
-      <%= link_to "french blogs", admin_fr_blogs_path, class: is_active?("admin/fr_blogs") %>
-      <%= link_to "calls to action", admin_stories_path, class: is_active?("admin/stories") %>
-      <%= link_to "generic stories", admin_generic_stories_path, class: is_active?("admin/generic_stories") %>
-      <%= link_to "menus", admin_main_menus_path, class: is_active?("admin/main_menus") %>
-      <%= link_to "featured member", admin_featured_donors_path, class: is_active?("admin/featured_donors")%>
+        <%= link_to edit_admin_header_path(@header), class: is_active?("admin/headers") do %>
+            <%= current_user.preferred_language == 'en' ? 'header' : 'fr header' %>
+          <% end %>
+        <% end %>
+        <%= link_to admin_blogs_path, class: is_active?("admin/blogs") do %>
+          <%= current_user.preferred_language == 'en' ? 'blogs' : 'blogues' %>
+        <% end %>
+        <%= link_to admin_fr_blogs_path, class: is_active?("admin/fr_blogs") do %>
+          <%= current_user.preferred_language == 'en' ? 'french blogs' : 'blogues en francais' %>
+        <% end %>
+        <%= link_to admin_stories_path, class: is_active?("admin/stories") do %>
+          <%= current_user.preferred_language == 'en' ? "calls to action" : "fr calls to action" %>
+        <% end %>
+        <%= link_to admin_generic_stories_path, class: is_active?("admin/generic_stories") do %>
+          <%= current_user.preferred_language == 'en' ? "generic stories" : "fr generic stories" %>
+        <% end %>
+        <%= link_to admin_main_menus_path, class: is_active?("admin/main_menus") do %>
+          <%= current_user.preferred_language == 'en' ? "menus" : "fr menus" %>
+        <% end %>
+        <%= link_to admin_featured_donors_path, class: is_active?("admin/featured_donors") do%>
+          <%= current_user.preferred_language == 'en' ? "featured member" : "fr featured member" %>
+        <% end %>
       <% if user_signed_in? %>
         <div class="sidebar--user">
           <span>Logged in as <strong><%= current_user.email %></strong></span>
@@ -40,6 +54,11 @@
               <%= f.label :email %><br />
               <%= f.email_field :email, autofocus: true %>
             </div>
+            <div class="field">
+              <%= f.label :preferred_language %><br />
+              <%= f.collection_select( :preferred_language, User::PREFERRED_LANGUAGE, :to_s, :humanize, include_hidden: false) %>
+            </div>
+
 
             <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>

@@ -12,6 +12,8 @@ class FeaturedDonor < ActiveRecord::Base
   validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
   validates :featured, :uniqueness => true
 
+  include LanguagePreference
+
   has_paper_trail 
 
   scope :is_featured, -> { where(featured: true) } 

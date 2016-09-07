@@ -48,6 +48,8 @@
       </div>
     </div>
     <div class="actions">
-      <%= f.submit class: 'button button--tertiary' %>
+      <%= f.submit class: 'button button--tertiary' do %>
+        <%= @header.update_lang(current_uer) %>
+      <% end %>
     </div>
   <% end %>

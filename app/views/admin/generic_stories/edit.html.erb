@@ -8,7 +8,13 @@
 	</div>
 	<%= render 'form' %>
 	<div class="wrapper--flex">
-		<%= link_to 'Back', admin_generic_stories_path, class: 'button button--primary as--half' %>
-		<%= link_to 'Delete', admin_generic_story_path(@generic_story), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary button--delete as--half' %>
+		<%= link_to admin_generic_stories_path, class: 'button button--primary as--half' do %>
+				<%= @generic_story.back_lang(current_user) %>
+			<% end %>
+
+		<%= link_to admin_generic_story_path(@generic_story), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary button--delete as--half' do %>
+				<%= @generic_story.delete_lang(current_user) %>
+			<% end %>
+
 	</div>
 </div>

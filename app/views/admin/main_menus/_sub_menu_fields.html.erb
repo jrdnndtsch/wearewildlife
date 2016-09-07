@@ -39,6 +39,8 @@
   </div>
   <div class="fieldset">
     <%= f.hidden_field :_destroy %>
-    <%= link_to "remove", "#", class: "remove_fields" %>
+    <%= link_to "#", class: "remove_fields" do %>
+      <%= @main_menu.remove_lang(current_user) %>
+    <% end %>
   </div>
 </fieldset>

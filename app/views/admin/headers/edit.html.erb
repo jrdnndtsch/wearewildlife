@@ -1,7 +1,10 @@
 <div class="form--contained">
 	<div class="as--admin-index-title">
-		<h1>Editing Header</h1>
-		<%= link_to 'Back', admin_show_path, class: 'button button--primary button--large as--no-margin-bottom' %>
+		<h1><%= @header.editing_lang(current_user) %> <%= @header.header_lang(current_user) %></h1>
+		<p></p> 
+		<%= link_to admin_show_path, class: 'button button--primary button--large as--no-margin-bottom' do %>
+			<%= @header.back_lang(current_user) %>
+		<% end %>
 	</div>
 	<div class="admin--module">
 		<p>Recent Updates</p>
