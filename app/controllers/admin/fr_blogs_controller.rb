@@ -7,12 +7,12 @@ class Admin::FrBlogsController < AdminController
     def upload  
       # raise "the roof"
         # all required keys for request
-        client_key = ENV['client_key']
-        client_secret = ENV['client_secret']
-        oauth_token = ENV['oauth_token']
-        oauth_token_secret = ENV['oauth_token_secret']
+        client_key = ENV['fr_client_key']
+        client_secret = ENV['fr_client_secret']
+        oauth_token = ENV['fr_oauth_token']
+        oauth_token_secret = ENV['fr_oauth_token_secret']
         method = 'GET'
-        uri = 'http://blog.wwf.ca/wp-json/wp/v2/posts'
+        uri = 'http://blog.wwf.ca/fr/wp-json/wp/v2/posts'
         # image_uri = 'http://jordandeutsch.com/wp-json/wp/v2/media/24'
         
 

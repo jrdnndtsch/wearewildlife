@@ -1,6 +1,6 @@
  Rails.application.routes.draw do
-  resources :fr_tweets
-  resources :fr_grams
+  # resources :fr_tweets
+  # resources :fr_grams
   # resources :fr_blogs
   resources :titles
   # get 'admin/show'
@@ -8,17 +8,8 @@
   get 'front_page/show'
   get 'fr' => 'front_page#fr_show'
 
-
   devise_for :users
   resources :sub_menus
-  # resources :main_menus
-  # resources :generic_stories
-  # resources :featured_donors
-  # resources :blogs
-  # resources :stories
-  # resources :headers
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   root 'front_page#show'
@@ -34,6 +25,7 @@
     resources :headers
     resources :featured_donors
     get 'upload_tweets' => 'tweets#upload'
+    get 'upload_fr_tweets' => 'fr_tweets#upload'
     get 'upload_instas' => 'instas#upload'
     get 'upload_wps' => 'blogs#upload'
     get 'upload_fr_wps' => 'fr_blogs#upload'

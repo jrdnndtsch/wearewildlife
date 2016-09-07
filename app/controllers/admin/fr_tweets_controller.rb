@@ -1,10 +1,24 @@
-class FrTweetsController < ApplicationController
+class Admin::FrTweetsController < ApplicationController
   before_action :set_fr_tweet, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!
 
+  def upload  
+    @wwf_tweets = $client.search("from:WWFCanadaFR", :result_type => "recent").take(25)
+    @wwf_tweets_with_hashtag = @wwf_tweets.select { |tweet| tweet.text.include?('#votrenature') }
+    @wwf_tweets_with_hashtag.last(5).each_with_index do |tweet, index|
+      index_plus_one = index + 1
+      this_tweet = FrTweet.where(id: index_plus_one).first_or_initialize
+      this_tweet.update(text: tweet.text)
+      this_tweet.save
+
+    end 
+    render nothing: true, status: :ok, content_type: "text/html"
+  end
   # GET /fr_tweets
   # GET /fr_tweets.json
   def index
     @fr_tweets = FrTweet.all
+    @WWFCanadaFR
   end
 
   # GET /fr_tweets/1

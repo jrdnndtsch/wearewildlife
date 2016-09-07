@@ -1,39 +1,74 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
+<div id="admin">
+<% if notice %>
+  <p class="alert alert-success"><%= notice %></p>
 <% end %>
+<% if alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+  <div id="admin--only">
+    <div class="sidebar">
+      <%= link_to "WWF Admin", admin_show_path, class: 'sidebar--header'%>
+      <% if Header.first.present?%>
+        <% @header = Header.first%>
+        <%= link_to "header", edit_admin_header_path(@header), class: is_active?("admin/headers") %>
+      <% end %>
+      <%= link_to "blogs", admin_blogs_path, class: is_active?("admin/blogs") %>
+      <%= link_to "french blogs", admin_fr_blogs_path, class: is_active?("admin/fr_blogs") %>
+      <%= link_to "calls to action", admin_stories_path, class: is_active?("admin/stories") %>
+      <%= link_to "generic stories", admin_generic_stories_path, class: is_active?("admin/generic_stories") %>
+      <%= link_to "menus", admin_main_menus_path, class: is_active?("admin/main_menus") %>
+      <%= link_to "featured member", admin_featured_donors_path, class: is_active?("admin/featured_donors")%>
+      <% if user_signed_in? %>
+        <div class="sidebar--user">
+          <span>Logged in as <strong><%= current_user.email %></strong></span>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        </div>
+      <% end %>
+    </div>
+    <div class="breadcrumb">
+      <%= render_breadcrumbs :separator => '>' %>
+    </div>
+    <div class="admin--content">
+      <div class="as--admin-index-title">
+        <div class="form--contained">
+          <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-<h3>Cancel my account</h3>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= devise_error_messages! %>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+            <div class="field">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autofocus: true %>
+            </div>
 
-<%= link_to "Back", :back %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+
+            <div class="field">
+              <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+              <%= f.password_field :password, autocomplete: "off" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :password_confirmation %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off" %>
+            </div>
+
+            <div class="field">
+              <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+              <%= f.password_field :current_password, autocomplete: "off" %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "Update" %>
+            </div>
+          <% end %>
+
+          <%= link_to "Back", :back, class: 'button button--primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

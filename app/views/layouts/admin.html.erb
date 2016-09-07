@@ -30,7 +30,7 @@
 				<%= link_to "featured member", admin_featured_donors_path, class: is_active?("admin/featured_donors")%>
 				<% if user_signed_in? %>
 					<div class="sidebar--user">
-						<span>Logged in as <strong><%= current_user.email %></strong></span>
+						<span>Logged in as <strong><%= link_to  edit_user_registration_path do %><%= current_user.email %><% end %></strong></span>
 				  	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 					</div>
 				<% end %>

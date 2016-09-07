@@ -1,4 +1,4 @@
-class FrGramsController < ApplicationController
+class Admin::FrGramsController < ApplicationController
   before_action :set_fr_gram, only: [:show, :edit, :update, :destroy]
 
   # GET /fr_grams
