@@ -12,44 +12,44 @@
   <% end %>
 
   <div class="wrapper--flex">
-    <div class="field col--two">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :title %><br>
       <%= f.text_field :title %>
     </div>
-    <div class="field col--two">
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
       <%= f.label :fr_title %><br>
       <%= f.text_field :fr_title %>
     </div>
   </div>
   
   <div class="wrapper--flex">
-    <div class="field col--two">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :short_description %><br>
       <%= f.text_area :short_description %>
     </div>
-    <div class="field col--two">
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
       <%= f.label :fr_short_description %><br>
       <%= f.text_area :fr_short_description %>
     </div>
   </div>
   
   <div class="wrapper--flex">
-    <div class="field col--two">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :link %><br>
       <%= f.text_field :link %>
     </div>
-    <div class="field col--two">
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
       <%= f.label :fr_link %><br>
       <%= f.text_field :fr_link %>
     </div>
   </div>
   
   <div class="wrapper--flex">
-    <div class="field col--two">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :button_name %><br>
       <%= f.text_field :button_name %>
     </div>
-    <div class="field col--two">
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
       <%= f.label :fr_button_name %><br>
       <%= f.text_field :fr_button_name %>
     </div>

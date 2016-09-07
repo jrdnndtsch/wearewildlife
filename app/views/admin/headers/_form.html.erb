@@ -17,11 +17,11 @@
       <%= f.number_field :number %>
     </div>
     <div class="wrapper--flex">
-      <div class="field col--two">
+      <div class="field en-<%= current_user.preferred_language %> col--two">
         <%= f.label :tag_line %><br>
         <%= f.text_field :tag_line %>
       </div>
-      <div class="field col--two">
+      <div class="field <%= current_user.preferred_language %>-fr col--two">
         <%= f.label :french_tag_line %><br>
         <%= f.text_field :fr_tag_line %>
       </div>
@@ -38,11 +38,11 @@
       <%= image_tag @header.video_photo.url('thumbnail')%>
     <% end %>
     <div class="wrapper--flex">
-      <div class="field col--two">
+      <div class="field en-<%= current_user.preferred_language %> col--two">
         <%= f.label :about %><br>
         <%= f.text_area :about %>
       </div>
-      <div class="field col--two">
+      <div class="field <%= current_user.preferred_language %>-fr col--two">
         <%= f.label :fr_about %><br>
         <%= f.text_area :fr_about %>
       </div>

@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="wrapper--flex">
-    <div class="field col--two">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :title %><br>
       <%= f.text_field :title %>
     </div>
-    <div class="field col--two">
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
       <%= f.label :fr_title %><br>
       <%= f.text_field :fr_title %>
     </div>

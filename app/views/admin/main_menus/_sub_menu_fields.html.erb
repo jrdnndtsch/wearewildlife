@@ -1,10 +1,10 @@
 <fieldset>
   <div class="wrapper--flex">
-    <div class="field col--two">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :title %><br>
       <%= f.text_field :title %>
     </div>
-    <div class="field col--two">
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
       <%= f.label :fr_title %><br>
       <%= f.text_field :fr_title %>
     </div>
@@ -12,22 +12,22 @@
   </div>
 
   <div class="wrapper--flex">
-    <div class="field col--two">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :link %><br>
       <%= f.text_field :link %>
     </div>
-    <div class="field col--two">
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
       <%= f.label :fr_link %><br>
       <%= f.text_field :fr_link %>
     </div>
   </div>
 
   <div class="wrapper--flex">
-    <div class="field col--two">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :description %><br>
       <%= f.text_field :description %>
     </div>
-    <div class="field col--two">
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
       <%= f.label :fr_description %><br>
       <%= f.text_field :fr_description %>
     </div>
