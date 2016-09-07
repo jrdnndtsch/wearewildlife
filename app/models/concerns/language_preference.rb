@@ -35,6 +35,10 @@ module LanguagePreference
 		user.preferred_language == 'en' ? 'WWF Admin' : "WWF Panneau d'Administration"	
 	end
 
+	def update_profile_lang(user)
+		user.preferred_language == 'en' ? 'Update My Profile' : "Fr Update My Profile"	
+	end
+
 	def logged_in_lang(user)
 		user.preferred_language == 'en' ? 'Logged in as' : 'Fr logged in as'	
 	end

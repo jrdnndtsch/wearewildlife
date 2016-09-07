@@ -8,7 +8,7 @@
   get 'front_page/show'
   get 'fr' => 'front_page#fr_show'
 
-  devise_for :users
+  devise_for :users, :controllers => { :registrations => "my_devise/registrations" }
   resources :sub_menus
 
   # You can have the root of your site routed with "root"

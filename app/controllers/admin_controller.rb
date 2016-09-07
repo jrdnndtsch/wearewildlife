@@ -3,5 +3,6 @@ class AdminController < ApplicationController
   def show
   	# @header = Header.first
   	add_breadcrumb "Admin", "#"
+  	@header = Header.first
   end
 end
