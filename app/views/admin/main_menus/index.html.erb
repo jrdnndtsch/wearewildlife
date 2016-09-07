@@ -1,12 +1,12 @@
 <div class="as--admin-index-title">
-  <h1>All Main Menu Items</h1>
+  <h1><%= @main_menus.first.all_lang(current_user) %> <%= @main_menus.first.menu_lang(current_user) %></h1>
   <%= link_to 'New Main menu', new_admin_main_menu_path, class: 'button button--tertiary as--no-margin-bottom' %>
 </div>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
+      <th><%= @main_menus.first.title_lang(current_user) %></th>
       <th></th>
     </tr>
   </thead>
@@ -14,8 +14,10 @@
   <tbody>
     <% @main_menus.each do |main_menu| %>
       <tr>
-        <td><%= main_menu.title %></td>
-        <td class="table--button"><%= link_to 'Edit', edit_admin_main_menu_path(main_menu), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
+        <td><%= main_menu.title_used(current_user, main_menu) %></td>
+        <td class="table--button"><%= link_to edit_admin_main_menu_path(main_menu), class: 'button button--primary button--edit as--no-margin-bottom' do %>
+          <%= main_menu.edit_lang(current_user) %>
+        <% end %></td>
       </tr>
     <% end %>
   </tbody>

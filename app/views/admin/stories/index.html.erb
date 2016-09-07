@@ -1,5 +1,5 @@
 <div class="as--admin-index-title">
-  <h1>Listing Calls to Action</h1>
+  <h1><%= @stories.first.all_lang(current_user) %> <%= @stories.first.calls_to_action_lang(current_user) %></h1>
   <%= link_to 'New Story', new_admin_story_path, class: 'button button--tertiary as--no-margin-bottom' %>
 </div>
 <%= form_for(@title.first, remote: true) do |f|%>
@@ -25,10 +25,10 @@
   <thead>
     <tr>
       <th class="table--image"></th>
-      <th>Featured</th>
-      <th>Selected</th>
-      <th>Title</th>
-      <th>Date</th>
+      <th><%= @stories.first.featured_lang(current_user) %></th>
+      <th><%= @stories.first.selected_lang(current_user) %></th>
+      <th><%= @stories.first.title_lang(current_user) %></th>
+      <th><%= @stories.first.date_lang(current_user) %></th>
       <th></th>
     </tr>
   </thead>
@@ -37,11 +37,14 @@
     <% @stories.each do |story| %>
       <tr>
         <td><%= image_tag story.photo.url('header')%></td>
-        <td><%= story.featured ? 'yes' : 'no' %></td>
-        <td><%= story.selected ? 'yes' : 'no'%></td>
+        <td><%= story.featured ? story.yes_lang(current_user) : story.no_lang(current_user) %></td>
+        <td><%= story.selected ? story.yes_lang(current_user) : story.no_lang(current_user) %></td>
         <td><%= story.title_used(current_user, story) %></td>
         <td><%= story.date %></td>
-        <td class="table--button"><%= link_to 'Edit', edit_admin_story_path(story), class:'button button--primary button--edit as--no-margin-bottom' %></td>
+        <td class="table--button"><%= link_to edit_admin_story_path(story), class:'button button--primary button--edit as--no-margin-bottom' do %>
+          <%= story.edit_lang(current_user) %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>

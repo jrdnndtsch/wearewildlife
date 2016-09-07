@@ -56,10 +56,10 @@
   </div>
   
   <div class="field col--two">
-    <%= f.label :selected %><br>
+    <%= f.label @generic_story.selected_lang(current_user) %><br>
     <%= f.check_box :selected %>
   </div>
   <div class="actions">
-    <%= f.submit class: 'button button--tertiary' %>
+    <%= f.submit @generic_story.update_lang(current_user), class: 'button button--tertiary' %>
   </div>
 <% end %>

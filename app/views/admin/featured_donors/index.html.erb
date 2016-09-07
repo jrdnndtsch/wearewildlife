@@ -1,5 +1,5 @@
 <div class="as--admin-index-title">
-  <h1>Listing Featured Members</h1>
+  <h1><%= @featured_donors.first.all_lang(current_user) %> <%= @featured_donors.first.featured_member_lang(current_user) %></h1>
   <%= link_to 'New Featured Member', new_admin_featured_donor_path, class: 'button button--tertiary as--no-margin-bottom' %>
 </div>
 
@@ -7,8 +7,8 @@
   <thead>
     <tr>
       <th class="table--image"></th>
-      <th>Featured</th>
-      <th>Title</th>
+      <th><%= @featured_donors.first.featured_lang(current_user) %></th>
+      <th><%= @featured_donors.first.title_lang(current_user) %></th>
       <th></th>
     </tr>
   </thead>
@@ -17,9 +17,10 @@
     <% @featured_donors.each do |featured_donor| %>
       <tr>
         <td><%= image_tag featured_donor.photo.url('header')%></td>
-        <td><%= featured_donor.featured ? 'yes' : 'no' %></td>
-        <td><%= featured_donor.title %></td>
-        <td class="table--button"><%= link_to 'Edit', edit_admin_featured_donor_path(featured_donor), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
+        <td><%= featured_donor.featured ? featured_donor.yes_lang(current_user) : featured_donor.no_lang(current_user) %></td>
+        <td><%= featured_donor.title_used(current_user, featured_donor) %></td>
+        <td class="table--button"><%= link_to edit_admin_featured_donor_path(featured_donor), class: 'button button--primary button--edit as--no-margin-bottom' do %><%= featured_donor.edit_lang(current_user) %>
+        <% end %></td>
         
       </tr>
     <% end %>

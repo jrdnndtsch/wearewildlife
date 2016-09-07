@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label 'titre' %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :author %><br>
+    <%= f.label 'auteur' %><br>
     <%= f.text_field :author %>
   </div>
   <div class="field">
@@ -24,7 +24,7 @@
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :short_description %><br>
+    <%= f.label 'brève description' %><br>
     <%= f.text_area :short_description %>
   </div>
   <div class="field">
@@ -36,7 +36,7 @@
     <%= f.text_field :video_link %>
   </div>
   <div class="field">
-    <%= f.label :approved %><br>
+    <%= f.label 'approuvé' %><br>
     <%= f.check_box :approved %>
   </div>
   <div class="field">
@@ -56,6 +56,6 @@
     <%= f.text_field :photo_by %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Réactualiser" %>
   </div>
 <% end %>

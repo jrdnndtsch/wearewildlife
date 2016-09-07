@@ -1,7 +1,7 @@
 <div class="form--contained">
-	<h1>Editing Generic Story</h1>
+	<h1><%= @generic_story.editing_lang(current_user) %> <%= @generic_story.title_used(current_user, @generic_story) %></h1>
 	<div class="admin--module">
-		<p>Recent Updates</p>
+		<p><%= @generic_story.recent_updates_lang(current_user) %></p>
 		<% @updated_by.each do |update|%>
 			<li><%= update.to_h[:user].email%> | <%= update.to_h[:time]%></li>
 		<% end %>

@@ -56,7 +56,7 @@
   </div>
   
   <div class="field col--two">
-    <%= f.label :featured %><br>
+    <%= f.label @featured_donor.featured_lang(current_user) %><br>
     <%= f.check_box :featured %>
   </div>
 
@@ -80,10 +80,10 @@
     <%= image_tag @featured_donor.photo.url('header')%>
     <br>
 
-    <%= f.label :remove_photo %>
+    <%= f.label "#{@featured_donor.remove_lang(current_user)} photo" %>
     <%= check_box_tag :remove_photo %>
   <% end %>
   <div class="actions">
-    <%= f.submit class: 'button button--tertiary' %>
+    <%= f.submit @featured_donor.update_lang(current_user), class: 'button button--tertiary' %>
   </div>
 <% end %>

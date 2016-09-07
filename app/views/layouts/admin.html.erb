@@ -16,36 +16,40 @@
 	  <p class="alert alert-danger"><%= alert %></p>
 	<% end %>
 		<div id="admin--only">
+		<% if Header.first.present?%>
+			<% @header = Header.first%>
 			<div class="sidebar">
-				<%= link_to "WWF Admin", admin_show_path, class: 'sidebar--header'%>
-				<% if Header.first.present?%>
-					<% @header = Header.first%>
-					<%= link_to edit_admin_header_path(@header), class: is_active?("admin/headers") do %>
-						<%= current_user.preferred_language == 'en' ? 'header' : 'fr header' %>
-					<% end %>
+				<%= link_to admin_show_path, class: 'sidebar--header' do %>
+					<%= @header.admin_lang(current_user) %>
 				<% end %>
+				<%= link_to edit_admin_header_path(@header), class: is_active?("admin/headers") do %>
+					<%= @header.header_lang(current_user).downcase %>
+				<% end %>
+		<% end %>
 				<%= link_to admin_blogs_path, class: is_active?("admin/blogs") do %>
-					<%= current_user.preferred_language == 'en' ? 'blogs' : 'blogues' %>
+					<%= @header.blog_lang(current_user).downcase %>
 				<% end %>
 				<%= link_to admin_fr_blogs_path, class: is_active?("admin/fr_blogs") do %>
 					<%= current_user.preferred_language == 'en' ? 'french blogs' : 'blogues en francais' %>
 				<% end %>
 				<%= link_to admin_stories_path, class: is_active?("admin/stories") do %>
-					<%= current_user.preferred_language == 'en' ? "calls to action" : "fr calls to action" %>
+					<%= @header.calls_to_action_lang(current_user).downcase %>
 				<% end %>
 				<%= link_to admin_generic_stories_path, class: is_active?("admin/generic_stories") do %>
-					<%= current_user.preferred_language == 'en' ? "generic stories" : "fr generic stories" %>
+					<%= @header.generic_stories_lang(current_user).downcase %>
 				<% end %>
 				<%= link_to admin_main_menus_path, class: is_active?("admin/main_menus") do %>
-					<%= current_user.preferred_language == 'en' ? "menus" : "fr menus" %>
+					<%= @header.menu_lang(current_user).downcase %>
 				<% end %>
 				<%= link_to admin_featured_donors_path, class: is_active?("admin/featured_donors") do%>
-					<%= current_user.preferred_language == 'en' ? "featured member" : "fr featured member" %>
+					<%= @header.featured_member_lang(current_user).downcase %>
 				<% end %>
 				<% if user_signed_in? %>
 					<div class="sidebar--user">
-						<span>Logged in as <strong><%= link_to  edit_user_registration_path do %><%= current_user.email %><% end %></strong></span>
-				  	<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+						<span><%= @header.logged_in_lang(current_user) %> <strong><%= link_to  edit_user_registration_path do %><%= current_user.email %><% end %></strong></span>
+				  	<%= link_to destroy_user_session_path, method: :delete do %>
+				  		<%= @header.logout_lang(current_user) %>
+				  	<% end %>
 					</div>
 				<% end %>
 			</div>

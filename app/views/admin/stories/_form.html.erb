@@ -72,12 +72,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :featured %><br>
+    <%= f.label @story.featured_lang(current_user) %><br>
     <%= f.check_box :featured %>
   </div>
 
   <div class="field">
-    <%= f.label :selected %><br>
+    <%= f.label @story.selected_lang(current_user) %><br>
     <%= f.check_box :selected %>
   </div>
 
@@ -101,10 +101,10 @@
     <%= image_tag @story.photo.url('header')%>
     <br>
 
-    <%= f.label :remove_photo %>
+    <%= f.label "#{@story.remove_lang(current_user)} photo" %>
     <%= check_box_tag :remove_photo %>
   <% end %>
   <div class="actions">
-    <%= f.submit class: 'button button--tertiary' %>
+    <%= f.submit @story.update_lang(current_user), class: 'button button--tertiary' %>
   </div>
 <% end %>

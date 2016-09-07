@@ -1,17 +1,16 @@
 
 <div class="as--admin-index-title">
-  <h1>All Blog Posts</h1>
+  <h1><%= @fr_blogs.first.all_lang(current_user) %> <%= @fr_blogs.first.blog_lang(current_user) %></h1>
   <%= link_to 'New Custom Blog Post', new_admin_blog_path, class: 'button button--tertiary as--no-margin-bottom' %>
   <%= link_to 'Upload From WordPress', admin_upload_fr_wps_path, class: 'button button--tertiary' %>
 </div>
 <%= form_for(@title.first, remote: true) do |f|%>
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label @fr_blogs.first.title_lang(current_user) %><br>
     <%= f.text_field :title, class: 'title--field', :data => {:id => @title.first.id} %>
   </div>
   <div class="field">
     <%= f.hidden_field :section_name, value: 'blog' %>
-
   </div>
   <div class="actions">
     <%= f.submit %>
@@ -22,9 +21,9 @@
   <thead>
     <tr>
       <th class="table--image"></th>
-      <th>Approved?</th>
-      <th>Title</th>
-      <th>Date</th>
+      <th><%= @fr_blogs.first.approved_lang(current_user) %></th>
+      <th><%= @fr_blogs.first.title_lang(current_user) %></th>
+      <th><%= @fr_blogs.first.date_lang(current_user) %></th>
       <th></th>
     </tr>
   </thead>
@@ -40,7 +39,10 @@
         <td><%= blog.approved ? 'oui' : 'non' %></td>
         <td><%= blog.title %></td>
         <td><%= blog.date %></td>
-        <td class="table--button"><%= link_to 'Edit', edit_admin_fr_blog_path(blog), class: 'button button--primary button--edit as--no-margin-bottom' %></td>
+        <td class="table--button"><%= link_to edit_admin_fr_blog_path(blog), class: 'button button--primary button--edit as--no-margin-bottom' do %>
+          <%= blog.edit_lang(current_user) %>
+          <% end %>
+        </td>
       </tr>
     <% end %>
   </tbody>
