@@ -1,6 +1,6 @@
 
 <div class="as--admin-index-title">
-  <h1><%= @blogs.first.all_lang(current_user) %> <%= @blogs.first.blog_lang(current_user) %></h1>
+  <h1>All Blogs</h1>
   <%= link_to 'New Custom Blog Post', new_admin_blog_path, class: 'button button--tertiary as--no-margin-bottom' %>
   <%= link_to 'Upload From WordPress', admin_upload_wps_path, class: 'button button--tertiary' %>
 </div>

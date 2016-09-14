@@ -1,5 +1,5 @@
 <div class="form--contained">
-	<h1>Editing Main Menu</h1>
+	<h1><%= @main_menu.editing_lang(current_user) %> <%= @main_menu.menu_lang(current_user) %></h1>
 
 	<%= render 'form' %>
 	<div class="wrapper--flex">

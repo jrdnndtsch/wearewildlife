@@ -8,7 +8,7 @@ class Admin::FeaturedDonorsController < AdminController
   # GET /featured_donors.json
   def index
     @featured_donors = FeaturedDonor.all
-    add_breadcrumb "featured members", 'featured_donors'
+    add_breadcrumb @featured_donors.first.featured_member_lang(current_user), 'featured_donors'
   end
 
   # GET /featured_donors/1
@@ -19,16 +19,16 @@ class Admin::FeaturedDonorsController < AdminController
   # GET /featured_donors/new
   def new
     @featured_donor = FeaturedDonor.new
-    add_breadcrumb "featured members", '/admin/featured_donors'
-    add_breadcrumb "new", '#'
+    add_breadcrumb @featured_donor.featured_member_lang(current_user), '/admin/featured_donors'
+    add_breadcrumb @featured_donor.new_lang(current_user), '#'
   end
 
   # GET /featured_donors/1/edit
   def edit
     @updated_by = model_updated_by_user(@featured_donor)
-    add_breadcrumb "featured members", '/admin/featured_donors'
-    add_breadcrumb @featured_donor.title, '#'
-    add_breadcrumb "edit", '#'
+    add_breadcrumb @featured_donor.featured_member_lang(current_user), '/admin/featured_donors'
+    add_breadcrumb @featured_donor.title_used(current_user, @featured_donor), '#'
+    add_breadcrumb @featured_donor.edit_lang(current_user), '#'
   end
 
   # POST /featured_donors

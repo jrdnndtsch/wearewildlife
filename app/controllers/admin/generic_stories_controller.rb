@@ -6,7 +6,7 @@ class Admin::GenericStoriesController < AdminController
   # GET /generic_stories.json
   def index
     @generic_stories = GenericStory.all
-    add_breadcrumb "Generic Stories", 'generic_stories'
+    add_breadcrumb @generic_stories.first.generic_stories_lang(current_user), 'generic_stories'
     @title = Title.where("section_name = 'generic_stories'")
     if params[:title_thing].present?
       @the_title = Title.find(params[:title_thing])
@@ -26,15 +26,16 @@ class Admin::GenericStoriesController < AdminController
   # GET /generic_stories/new
   def new
     @generic_story = GenericStory.new
-    add_breadcrumb "Generic Stories", '/admin/generic_stories'
-    add_breadcrumb "New", '#'
+    add_breadcrumb @generic_story.generic_stories_lang(current_user), '/admin/generic_stories'
+    add_breadcrumb @generic_story.new_lang(current_user), '#'
   end
 
   # GET /generic_stories/1/edit
   def edit
     @updated_by = model_updated_by_user(@generic_story)
-    add_breadcrumb "Generic Stories", '/admin/generic_stories'
-    add_breadcrumb "Edit", '#'
+    add_breadcrumb @generic_story.generic_stories_lang(current_user), '/admin/generic_stories'
+    add_breadcrumb @generic_story.title_used(current_user, @generic_story), '#'
+    add_breadcrumb @generic_story.edit_lang(current_user), '#'
   end
 
   # POST /generic_stories

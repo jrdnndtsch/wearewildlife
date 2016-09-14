@@ -1,6 +1,8 @@
 <div class="as--admin-index-title">
   <h1><%= @main_menus.first.all_lang(current_user) %> <%= @main_menus.first.menu_lang(current_user) %></h1>
-  <%= link_to 'New Main menu', new_admin_main_menu_path, class: 'button button--tertiary as--no-margin-bottom' %>
+  <%= link_to new_admin_main_menu_path, class: 'button button--tertiary as--no-margin-bottom' do %>
+    <%= @main_menus.first.new_lang(current_user) %> <%= @main_menus.first.menu_lang(current_user) %> 
+  <% end %>
 </div>
 
 <table>

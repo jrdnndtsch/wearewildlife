@@ -6,7 +6,7 @@ class Admin::HeadersController < AdminController
   # GET /headers.json
   def index
     @headers = Header.all
-    add_breadcrumb "Header", 'headers'
+    add_breadcrumb @headers.first.header_lang(current_user), 'headers'
   end
 
   # GET /headers/1
@@ -17,15 +17,15 @@ class Admin::HeadersController < AdminController
   # GET /headers/new
   def new
     @header = Header.new
-    add_breadcrumb "Header", '/admin/headers'
-    add_breadcrumb "New", '#'
+    add_breadcrumb @header.header_lang(current_user), '/admin/headers'
+    add_breadcrumb @header.new_lang(current_user), '#'
   end
 
   # GET /headers/1/edit
   def edit
     @updated_by = model_updated_by_user(@header)
-    add_breadcrumb "Header", '#'
-    add_breadcrumb "Edit", '#'
+    add_breadcrumb @header.header_lang(current_user), '#'
+    add_breadcrumb @header.edit_lang(current_user), '#'
   end
 
   # POST /headers

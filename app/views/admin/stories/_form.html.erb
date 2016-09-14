@@ -17,10 +17,11 @@
       <%= f.text_field :title %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
-      <%= f.label :fr_title %><br>
+      <%= f.label @story.title_lang(current_user) %><br>
       <%= f.text_field :fr_title %>
     </div>
   </div>
+
 
   <div class="wrapper--flex">
     <div class="field en-<%= current_user.preferred_language %> col--two">
@@ -28,23 +29,27 @@
       <%= f.text_field :location %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
-      <%= f.label :fr_location %><br>
+      <%= f.label @story.location_lang(current_user) %><br>
       <%= f.text_field :fr_location %>
     </div>
   </div>
 
   <div class="field col--two">
     <%= f.label :date %><br>
-    <%= f.date_select :date %>
+    <% if current_user.preferred_language == 'en' %>
+      <%= f.date_select :date %>
+    <% else %>
+      <%= f.date_select :date, {:use_month_names => ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre ','Décembre']}  %>
+    <% end %>
   </div>
-    
+
   <div class="wrapper--flex">
     <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :link %><br>
       <%= f.text_field :link %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
-      <%= f.label :fr_link %><br>
+      <%= f.label @story.link_lang(current_user) %><br>
       <%= f.text_field :fr_link %>
     </div>
   </div>
@@ -55,7 +60,7 @@
       <%= f.text_field :button_name %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
-      <%= f.label :fr_button_name %><br>
+      <%= f.label 'nom de button' %><br>
       <%= f.text_field :fr_button_name %>
     </div>
   </div>
@@ -66,7 +71,7 @@
       <%= f.text_area :description %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
-      <%= f.label :fr_description %><br>
+      <%= f.label @story.description_lang(current_user) %><br>
       <%= f.text_area :fr_description %>
     </div>
   </div>
@@ -92,7 +97,7 @@
       <%= f.text_field :photo_by %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
-      <%= f.label :fr_photo_by %><br>
+      <%= f.label "photo #{@story.by_lang(current_user)}" %><br>
       <%= f.text_field :fr_photo_by %>
     </div>
   </div>

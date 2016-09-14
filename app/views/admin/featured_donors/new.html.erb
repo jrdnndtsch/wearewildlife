@@ -1,7 +1,9 @@
 <div class="form--contained">
 	<div class="as--admin-index-title">
-		<h1>New Featured Donor</h1>
-		<%= link_to 'Back', admin_featured_donors_path, class: 'button button--primary button--large as--no-margin-bottom' %>
+		<h1><%= @featured_donor.new_lang(current_user)%> <%= @featured_donor.featured_member_lang(current_user) %></h1>
+		<%= link_to admin_featured_donors_path, class: 'button button--primary button--large as--no-margin-bottom' do %>
+			<%= @featured_donor.back_lang(current_user) %>
+		<% end %>
 	</div>
 	<%= render 'form' %>
 </div>

@@ -1,8 +1,8 @@
 
 <div class="as--admin-index-title">
-  <h1><%= @fr_blogs.first.all_lang(current_user) %> <%= @fr_blogs.first.blog_lang(current_user) %></h1>
-  <%= link_to 'New Custom Blog Post', new_admin_blog_path, class: 'button button--tertiary as--no-margin-bottom' %>
-  <%= link_to 'Upload From WordPress', admin_upload_fr_wps_path, class: 'button button--tertiary' %>
+  <h1><%= @fr_blogs.first.all_lang(current_user) %> <%= @fr_blogs.first.blog_lang(current_user) %>s</h1>
+  <%= link_to 'Nouveau Blogue', new_admin_fr_blog_path, class: 'button button--tertiary as--no-margin-bottom' %>
+  <%= link_to 'Mises à jour de WordPress', admin_upload_fr_wps_path, class: 'button button--tertiary' %>
 </div>
 <%= form_for(@title.first, remote: true) do |f|%>
   <div class="field">
@@ -13,7 +13,7 @@
     <%= f.hidden_field :section_name, value: 'blog' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "#{@title.first.update_lang(current_user)} #{@title.first.title_lang(current_user)}" %>
 <% end %>
 
 

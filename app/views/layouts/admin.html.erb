@@ -27,12 +27,8 @@
 					<%= @header.header_lang(current_user).downcase %>
 				<% end %>
 		<% end %>
-				<%= link_to admin_blogs_path, class: is_active?("admin/blogs") do %>
-					<%= @header.blog_lang(current_user).downcase %>
-				<% end %>
-				<%= link_to admin_fr_blogs_path, class: is_active?("admin/fr_blogs") do %>
-					<%= current_user.preferred_language == 'en' ? 'french blogs' : 'blogues en francais' %>
-				<% end %>
+				<%= link_to "blogs in english", admin_blogs_path, class: is_active?("admin/blogs") %>
+				<%= link_to 'blogues en francais', admin_fr_blogs_path, class: is_active?("admin/fr_blogs") %>
 				<%= link_to admin_stories_path, class: is_active?("admin/stories") do %>
 					<%= @header.calls_to_action_lang(current_user).downcase %>
 				<% end %>

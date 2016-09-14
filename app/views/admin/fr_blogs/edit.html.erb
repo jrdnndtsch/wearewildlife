@@ -1,5 +1,5 @@
 <div class="form--contained">
-	<h1>Editing <%= @fr_blog.title%></h1>
+	<h1><%= @fr_blog.editing_lang(current_user) %>  <%= @fr_blog.title%></h1>
 	<div class="admin--module">	
 		<p><%= @fr_blog.recent_updates_lang(current_user) %></p>
 		<% @updated_by.each do |update|%>
@@ -10,7 +10,11 @@
 	<%= render 'form' %>
 
 	<div class="wrapper--flex">	
-		<%= link_to 'Reculer', admin_blogs_path, class: 'button button--primary as--half' %>
-		<%= link_to 'Effacer', admin_fr_blog_path(@fr_blog), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary button--delete as--half' %>
+		<%= link_to admin_fr_blogs_path, class: 'button button--primary as--half' do %>
+			  <%= @fr_blog.back_lang(current_user) %>
+			<% end %>
+		<%= link_to admin_fr_blog_path(@fr_blog), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button button--primary button--delete as--half' do %>
+		  		<%= @fr_blog.delete_lang(current_user) %>
+			<% end %>
 	</div>
 </div>

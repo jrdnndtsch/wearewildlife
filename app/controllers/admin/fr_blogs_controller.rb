@@ -66,7 +66,7 @@ class Admin::FrBlogsController < AdminController
     # GET /blogs
     # GET /blogs.json
     def index
-      add_breadcrumb "blog", 'blogs'
+      add_breadcrumb "blogue", 'blogs'
       @fr_blogs = FrBlog.all.order(date: :DESC)
       
       @title = Title.where("section_name = 'fr_blog'")
@@ -84,17 +84,17 @@ class Admin::FrBlogsController < AdminController
 
     # GET /blogs/new
     def new
-      add_breadcrumb "blog", "/admin/blogs"
-      add_breadcrumb "new" , "#"
+      add_breadcrumb "blogue", "/admin/blogs"
+      add_breadcrumb "nouveau" , "#"
       @fr_blog = FrBlog.new
     end
 
     # GET /blogs/1/edit
     def edit
       @updated_by = model_updated_by_user(@fr_blog)
-      add_breadcrumb "blog", "/admin/blogs"
+      add_breadcrumb "blogue", "/admin/blogs"
       add_breadcrumb @fr_blog.title, "#"
-      add_breadcrumb "edit", "#"
+      add_breadcrumb "modifier", "#"
     end
 
     # POST /blogs

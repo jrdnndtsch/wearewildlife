@@ -5,7 +5,7 @@ class Admin::MainMenusController < AdminController
   # GET /main_menus.json
   def index
     @main_menus = MainMenu.all
-    add_breadcrumb "main menu", 'main_menus'
+    add_breadcrumb @main_menus.first.menu_lang(current_user), 'main_menus'
   end
 
   # GET /main_menus/1
@@ -16,15 +16,15 @@ class Admin::MainMenusController < AdminController
   # GET /main_menus/new
   def new
     @main_menu = MainMenu.new
-    add_breadcrumb "main menu", '/admin/main_menus'
-    add_breadcrumb "new", '#'
+    add_breadcrumb @main_menu.menu_lang(current_user), '/admin/main_menus'
+    add_breadcrumb @main_menu.new_lang(current_user), '#'
   end
 
   # GET /main_menus/1/edit
   def edit
-    add_breadcrumb "main menu", '/admin/main_menus'
-    add_breadcrumb @main_menu.title, '#'
-    add_breadcrumb "new", '#'
+    add_breadcrumb @main_menu.menu_lang(current_user), '/admin/main_menus'
+    add_breadcrumb @main_menu.title_used(current_user, @main_menu), '#'
+    add_breadcrumb @main_menu.edit_lang(current_user), '#'
   end
 
   # POST /main_menus

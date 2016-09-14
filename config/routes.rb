@@ -5,8 +5,10 @@
   resources :titles
   # get 'admin/show'
 
-  get 'front_page/show'
+  # get 'front_page/show'
+  match '/', to: 'front_page#show', constraints: { subdomain: 'www' }, via: [:get, :post, :put, :patch, :delete]
   get 'fr' => 'front_page#fr_show'
+  match '/', to: 'front_page#fr_show', constraints: { subdomain: /.+/ }, via: [:get, :post, :put, :patch, :delete]
 
   devise_for :users, :controllers => { :registrations => "my_devise/registrations" }
   resources :sub_menus

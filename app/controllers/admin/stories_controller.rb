@@ -6,7 +6,7 @@ class Admin::StoriesController < AdminController
   # GET /stories.json
   def index
     @stories = Story.all.order(date: :desc)
-    add_breadcrumb "calls to action", "/admin/stories"
+    add_breadcrumb @stories.first.calls_to_action_lang(current_user), "/admin/stories"
 
     @title = Title.where("section_name = 'stories'")
     if params[:title_thing].present?
@@ -27,16 +27,16 @@ class Admin::StoriesController < AdminController
   # GET /stories/new
   def new
     @story = Story.new
-    add_breadcrumb "calls to action", "/admin/stories"
-    add_breadcrumb "new", "#"
+    add_breadcrumb @story.calls_to_action_lang(current_user), "/admin/stories"
+    add_breadcrumb @story.new_lang(current_user), "#"
   end
 
   # GET /stories/1/edit
   def edit
     @updated_by = model_updated_by_user(@story)
-    add_breadcrumb "calls to action", "/admin/stories"
-    add_breadcrumb @story.title, "#"
-    add_breadcrumb "edit", "#"
+    add_breadcrumb @story.calls_to_action_lang(current_user), "/admin/stories"
+    add_breadcrumb @story.title_used(current_user, @story), "#"
+    add_breadcrumb @story.edit_lang(current_user), "#"
 
 
   end

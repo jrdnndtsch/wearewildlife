@@ -1,6 +1,6 @@
 <div class="form--contained">
 	<div class="as--admin-index-title">
-		<h1>New Header</h1>
+		<h1><%= @header.editing_lang(current_user) %> <%= @header.header_lang(current_user) %></h1>
 		<%= link_to 'Back', admin_headers_path, class: 'button button--primay button--large as--no-margin-bottom' %>
 	</div>
 	<%= render 'form' %>

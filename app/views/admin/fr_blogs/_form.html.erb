@@ -12,31 +12,31 @@
   <% end %>
 
   <div class="field">
-    <%= f.label 'titre' %><br>
+    <%= f.label @fr_blog.title_lang(current_user) %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label 'auteur' %><br>
+    <%= f.label @fr_blog.author_lang(current_user) %><br>
     <%= f.text_field :author %>
   </div>
   <div class="field">
     <%= f.label :date %><br>
-    <%= f.date_select :date %>
+    <%= f.date_select :date, {:use_month_names => ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre ','Décembre']}  %>
   </div>
   <div class="field">
-    <%= f.label 'brève description' %><br>
+    <%= f.label @fr_blog.brief_description_lang(current_user) %><br>
     <%= f.text_area :short_description %>
   </div>
   <div class="field">
-    <%= f.label :link %><br>
+    <%= f.label @fr_blog.link_lang(current_user) %><br>
     <%= f.text_field :link %>
   </div>
   <div class="field">
-    <%= f.label :video_link %><br>
+    <%= f.label "video #{@fr_blog.link_lang(current_user)}" %><br>
     <%= f.text_field :video_link %>
   </div>
   <div class="field">
-    <%= f.label 'approuvé' %><br>
+    <%= f.label @fr_blog.approved_lang(current_user) %><br>
     <%= f.check_box :approved %>
   </div>
   <div class="field">
@@ -52,10 +52,10 @@
     <%= f.number_field :wp_id %>
   </div>
   <div class="field">
-    <%= f.label :photo_by %><br>
+    <%= f.label "photo #{@fr_blog.by_lang(current_user)}" %><br>
     <%= f.text_field :photo_by %>
   </div>
   <div class="actions">
-    <%= f.submit "Réactualiser" %>
+    <%= f.submit @fr_blog.update_lang(current_user) %>
   </div>
 <% end %>

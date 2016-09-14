@@ -1,7 +1,9 @@
 <div class="form--contained">
 	<div class="as--admin-index-title">
-		<h1>New Story</h1>
-		<%= link_to 'Back', admin_stories_path, class: 'button button--primary button--large as--no-margin-bottom' %>
+		<h1><%= @story.new_lang(current_user) %> <%= @story.calls_to_action_lang(current_user) %></h1>
+		<%= link_to admin_stories_path, class: 'button button--primary button--large as--no-margin-bottom' do %>
+			<%= @story.back_lang(current_user) %>
+		<% end %>
 	</div>
 	<%= render 'form' %>
 </div>

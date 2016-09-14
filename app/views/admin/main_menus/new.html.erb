@@ -1,7 +1,9 @@
 <div class="form--contained">
 	<div class="as--admin-index-title">
-		<h1>New Main Menu</h1>
-		<%= link_to 'Back', admin_main_menus_path, class: 'button button--primary button--large as--no-margin-bottom' %>
+		<h1><%= @main_menu.new_lang(current_user) %> <%= @main_menu.menu_lang(current_user) %></h1>
+		<%= link_to admin_main_menus_path, class: 'button button--primary button--large as--no-margin-bottom' do %>
+			<%= @main_menu.back_lang(current_user) %>
+		<% end %>
 	</div>
 	
 
