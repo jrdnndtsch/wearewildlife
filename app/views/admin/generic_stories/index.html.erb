@@ -1,17 +1,17 @@
 <div class="as--admin-index-title">
-  <h1><%= @generic_stories.first.all_lang(current_user) %> <%= @generic_stories.first.generic_stories_lang(current_user) %></h1>
+  <h1><%= @generic_stories.first.all_generic_stories_lang(current_user) %></h1>
   <%= link_to new_admin_generic_story_path, class: 'button button--tertiary as--no-margin-bottom' do %>
-    <%= @generic_stories.first.new_lang(current_user) %> <%= @generic_stories.first.generic_stories_lang(current_user) %>
+    <%= @generic_stories.first.new_f_lang(current_user) %> <%= @generic_stories.first.generic_stories_lang(current_user) %>
   <% end %>
 </div>
 <%= form_for(@title.first, remote: true) do |f|%>
   <div class="wrapper--flex">
-    <div class="field col--two">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :title %><br>
       <%= f.text_field :title, class: 'title--field', :data => {:id => @title.first.id} %>
     </div>
-    <div class="field col--two">
-      <%= f.label :fr_title %><br>
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
+      <%= f.label :titre %><br>
       <%= f.text_field :fr_title, class: 'fr-title--field', :data => {:id => @title.first.id} %>
     </div>
   </div>
@@ -20,7 +20,7 @@
 
   </div>
   <div class="actions">
-    <%= f.submit "#{@title.first.update_lang(current_user)} #{@title.first.title_lang(current_user)}" %>
+    <%= f.submit "#{@title.first.update_lang(current_user)} #{@title.first.the_title_lang(current_user)}" %>
 <% end %>
 
 <table>

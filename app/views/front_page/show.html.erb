@@ -41,8 +41,6 @@
 </div>
 
 <div class="content-wrapper">
-	<%= link_to "french", root_url(subdomain: "french") %>
-	<%= link_to "english", root_url(subdomain: "english") %>
 	<% if @header.about.present? %>
 		<section class="about wrapper">
 			<p><%= simple_format(@header.about) %></p>	

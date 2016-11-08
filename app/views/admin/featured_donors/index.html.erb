@@ -1,7 +1,7 @@
 <div class="as--admin-index-title">
   <h1><%= @featured_donors.first.all_lang(current_user) %> <%= @featured_donors.first.featured_member_lang(current_user) %></h1>
   <%= link_to new_admin_featured_donor_path, class: 'button button--tertiary as--no-margin-bottom'  do %>
-    <%= @featured_donors.first.new_lang(current_user) %> <%= @featured_donors.first.featured_member_lang(current_user) %>
+     <%= @featured_donors.first.new_featured_member_lang(current_user) %>
   <% end %>
 </div>
 

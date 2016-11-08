@@ -22,16 +22,16 @@
         <%= f.text_field :tag_line %>
       </div>
       <div class="field <%= current_user.preferred_language %>-fr col--two">
-        <%= f.label :french_tag_line %><br>
+        <%= f.label :Descriptif %><br>
         <%= f.text_field :fr_tag_line %>
       </div>
     </div>  
     <div class="field">
-      <%= f.label :video %>
+      <%= f.label @header.video_lang(current_user) %>
       <%= f.text_field :video_link %>
     </div>
     <div class="field">
-      <%= f.label :video_photo %><br>
+      <%= f.label @header.video_photo_lang(current_user) %><br>
       <%= f.file_field :video_photo %>
     </div>
     <% if @header.video_photo.url.present? %>
@@ -43,11 +43,11 @@
         <%= f.text_area :about %>
       </div>
       <div class="field <%= current_user.preferred_language %>-fr col--two">
-        <%= f.label :fr_about %><br>
+        <%= f.label 'À propos' %><br>
         <%= f.text_area :fr_about %>
       </div>
     </div>
     <div class="actions">
-      <%= f.submit @header.update_lang(current_user), class: 'button button--tertiary' %>
+      <%= f.submit "#{@header.edit_lang(current_user)} #{@header.the_header_lang(current_user)}", class: 'button button--tertiary' %>
     </div>
   <% end %>
