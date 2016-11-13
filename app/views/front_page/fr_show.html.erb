@@ -371,7 +371,7 @@
 				$('.item--sub').on('mouseleave', function(){
 					$(this).find('.menu--sub-desc').removeClass('active')
 				});
-				$('.item--main a').unbind('click')
+				$('.item--main span').unbind('click')
 			}else{
 				$('.item--main, .item--sub').unbind('mouseenter mouseleave')
 				$('.item--main span').unbind('click')
