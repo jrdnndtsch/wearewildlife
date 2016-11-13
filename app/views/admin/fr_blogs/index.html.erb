@@ -10,7 +10,7 @@
     <%= f.text_field :title, class: 'title--field', :data => {:id => @title.first.id} %>
   </div>
   <div class="field">
-    <%= f.hidden_field :section_name, value: 'blog' %>
+    <%= f.hidden_field :section_name, value: 'fr_blog' %>
   </div>
   <div class="actions">
     <%= f.submit "#{@title.first.update_lang(current_user)} #{@title.first.the_title_lang(current_user)}" %>
