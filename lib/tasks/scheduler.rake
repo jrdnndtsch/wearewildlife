@@ -12,7 +12,6 @@ task :update_feed => :environment do
 
 	@wwf_tweets = $client.search("from:WWFCanada", :result_type => "recent").take(25)
 	@wwf_tweets_with_hashtag = @wwf_tweets.select { |tweet| tweet.text.include?('#CountForNature') }
-
 	@wwf_tweets_with_hashtag.last(4).each_with_index do |tweet, index|
 		index_plus_one = index + 1
 		this_tweet = Tweet.where(id: index_plus_one).first_or_initialize
@@ -22,7 +21,7 @@ task :update_feed => :environment do
 	end 
 
 	@instas = Instagram.user_recent_media(@wwfcanada, {:count => 15})
-	@instas_with_hashtag = @instas.select { |pic| pic.caption.text.include?('#CountForNature') }
+	@instas_with_hashtag = @instas.select { |pic| pic.caption.try(:text).try(:include?, '#CountForNature') }
 	@instas_with_hashtag.last(4).each_with_index do |insta, index|
 		index_plus_one = index + 1
 		this_insta = Insta.where(id: index_plus_one).first_or_initialize({text: insta.caption.text, image_url: insta.images.standard_resolution.url})
@@ -51,7 +50,8 @@ task :update_feed => :environment do
 	end 
 
 	@fr_instas = Instagram.user_recent_media(@wwfcanadafr, {:count => 15})
-	@fr_instas_with_hashtag = @fr_instas.select { |pic| pic.caption.text.include?('#Plus1') }
+	@fr_instas_with_hashtag = @fr_instas.select { |pic| pic.caption.try(:text).try(:include?, '#Plus1') }
+	puts @fr_instas_with_hashtag
 	@fr_instas_with_hashtag.last(4).each_with_index do |insta, index|
 		index_plus_one = index + 1
 		this_insta = FrGram.where(id: index_plus_one).first_or_initialize({text: insta.caption.text, image_url: insta.images.standard_resolution.url})
