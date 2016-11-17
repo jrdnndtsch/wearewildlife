@@ -17,7 +17,7 @@
       <%= f.text_field :title %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
-      <%= f.label @story.title_lang(current_user) %><br>
+      <%= f.label :titre %><br>
       <%= f.text_field :fr_title %>
     </div>
   </div>
@@ -49,7 +49,7 @@
       <%= f.text_field :link %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
-      <%= f.label @story.link_lang(current_user) %><br>
+      <%= f.label :lien %><br>
       <%= f.text_field :fr_link %>
     </div>
   </div>
@@ -71,7 +71,7 @@
       <%= f.text_area :description %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
-      <%= f.label @story.description_lang(current_user) %><br>
+      <%= f.label :déscription %><br>
       <%= f.text_area :fr_description %>
     </div>
   </div>
