@@ -36,6 +36,14 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  config.asset_host = Proc.new {|source, request|
+    if request.env["REQUEST_URI"] == "http://localhost:3000/"
+      "http://localhost:3000/"
+    else
+    end
+
+  }
+
     # Add the fonts path
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.paths << Rails.root.join('/app/assets/fonts')

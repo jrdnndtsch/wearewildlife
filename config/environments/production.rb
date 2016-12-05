@@ -56,7 +56,16 @@ Rails.application.configure do
   # when problems arise.
   config.log_level = :debug
 
-  config.asset_host = 'http://countfornature.wwf.ca/'
+  # config.asset_host = 'http://countfornature.wwf.ca/'
+
+  config.asset_host = Proc.new {|source, request|
+    if request.env["REQUEST_URI"] == "http://countfornature.wwf.ca/"
+      "http://countfornature.wwf.ca/"
+    elsif request.env["REQUEST_URI"] == "http://pluspourlanature.wwf.ca/"
+      "http://pluspourlanature.wwf.ca/"
+    end
+
+  }
 
   # Prepend all log lines with the following tags.
   # config.log_tags = [ :subdomain, :uuid ]
