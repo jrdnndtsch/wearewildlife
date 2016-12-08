@@ -5,10 +5,12 @@ class FrontPageController < ApplicationController
   require 'json'
 
   def home
-    if request.env["REQUEST_URI"] == "http://localhost:3000/home"
-      raise "hell" 
+    if request.env["REQUEST_URI"] == "http://countfornature.wwf.ca/"
+      redirect_to en_path
+    elsif request.env["REQUEST_URI"] == "http://pluspourlanature.wwf.ca/" 
+      redirect_to fr_path
     else 
-      redirect_to root_path
+      redirect_to en_path
     end
   end
 

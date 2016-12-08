@@ -8,13 +8,14 @@
   # get 'front_page/show'
   # match '/', to: 'front_page#show', constraints: { subdomain: 'www' }, via: [:get, :post, :put, :patch, :delete]
   get 'fr' => 'front_page#fr_show'
+  get 'en' => 'front_page#show'
   # match '/', to: 'front_page#fr_show', constraints: { subdomain: /.+/ }, via: [:get, :post, :put, :patch, :delete]
   get 'home' => 'front_page#home'
   devise_for :users, :controllers => { :registrations => "my_devise/registrations" }
   resources :sub_menus
 
   # You can have the root of your site routed with "root"
-  root 'front_page#show'
+  root 'front_page#home'
 
   get 'admin/show'
   # resources :articles, module: 'admin'
