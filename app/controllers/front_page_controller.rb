@@ -4,6 +4,14 @@ class FrontPageController < ApplicationController
 	require 'rinku'
   require 'json'
 
+  def home
+    if request.env["REQUEST_URI"] == "http://localhost:3000/home"
+      raise "hell" 
+    else 
+      redirect_to root_path
+    end
+  end
+
   def show
   	@main_menus = MainMenu.all
   	@header = Header.last
