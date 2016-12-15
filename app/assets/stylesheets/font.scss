@@ -1,6 +1,6 @@
 @font-face{
   font-family: 'WWF';
-  src: font_url('/assets/wwf-webfont.eot');
-  src: font_url('/assets/wwf-webfont.eot') format('embedded-opentype'), font_url('/assets/wwf-webfont.woff') format('woff');
+  src: url(font-path('wwf-webfont.eot'));
+  src: url(font-path('wwf-webfont.eot')) format('embedded-opentype'), url(font-path('wwf-webfont.woff')) format('woff');
 }
 
