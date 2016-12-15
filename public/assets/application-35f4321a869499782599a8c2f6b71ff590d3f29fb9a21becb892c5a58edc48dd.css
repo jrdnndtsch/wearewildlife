@@ -1,0 +1,5394 @@
+@charset "UTF-8";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ */
+/* line 1, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+html {
+  box-sizing: border-box;
+}
+
+/* line 3, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* line 5, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+body {
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+/* line 10, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+p {
+  line-height: 32px;
+}
+
+/* line 12, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+em {
+  font-style: italic;
+}
+
+/* line 16, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "this";
+  clear: both;
+  height: 0;
+}
+
+/* line 24, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.clearfix {
+  display: inline-block;
+}
+
+/* line 27, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+* html .clearfix {
+  height: 1%;
+}
+
+/* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.clearfix {
+  display: block;
+}
+
+/* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.hidden {
+  visibility: hidden;
+}
+
+/* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.hidden-display {
+  display: none;
+}
+
+/* line 35, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a {
+  text-decoration: none;
+}
+
+/* line 37, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+p {
+  font-size: 16px;
+}
+
+/* line 39, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 42, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1170px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 1146px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 936px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 744px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 480px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+/* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper {
+  box-sizing: border-box;
+  position: relative;
+}
+@media screen and (min-width: 1170px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0;
+    padding: 0 12px;
+  }
+}
+/* line 116, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper--flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 121, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper--form {
+  padding: 60px 10%;
+}
+@media screen and (max-width: 499px) {
+  /* line 121, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper--form {
+    padding: 60px 12px;
+  }
+}
+
+/* line 127, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--two, .wrapper--flex .col--two {
+  box-sizing: border-box;
+  width: 50%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 127, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--two, .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 127, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--two, .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 131, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--three, .wrapper--flex .col--three {
+  box-sizing: border-box;
+  width: 33.325%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 131, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three, .wrapper--flex .col--three {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 131, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three, .wrapper--flex .col--three {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 137, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--four, .wrapper--flex .col--four {
+  box-sizing: border-box;
+  width: 25%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 137, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--four, .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 137, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--four, .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--five, .wrapper--flex .col--five {
+  box-sizing: border-box;
+  width: 20%;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--five, .wrapper--flex .col--five {
+    box-sizing: border-box;
+    width: 33.325%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--five, .wrapper--flex .col--five {
+    box-sizing: border-box;
+    width: 33.325%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--five, .wrapper--flex .col--five {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+/* line 151, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--threefourths, .wrapper--flex .col--threefourths {
+  box-sizing: border-box;
+  width: 75%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 151, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--threefourths, .wrapper--flex .col--threefourths {
+    box-sizing: border-box;
+    width: 75%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 151, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--threefourths, .wrapper--flex .col--threefourths {
+    box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1170px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    width: calc(50% - 20px);
+  }
+  /* line 161, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half:nth-of-type(2n + 1), .wrapper--flex .col--half:nth-of-type(2n + 1) {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    width: calc(50% - 20px);
+  }
+  /* line 161, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half:nth-of-type(2n + 1), .wrapper--flex .col--half:nth-of-type(2n + 1) {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 166, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half img, .wrapper--flex .col--half img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 166, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half img, .wrapper--flex .col--half img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 166, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half img, .wrapper--flex .col--half img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1170px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    width: calc(33.33% - 20px);
+  }
+  /* line 171, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin:nth-of-type(2n + 1), .wrapper--flex .col--three-margin:nth-of-type(2n + 1) {
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    width: calc(33.33% - 20px);
+  }
+  /* line 171, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin:nth-of-type(2n + 1), .wrapper--flex .col--three-margin:nth-of-type(2n + 1) {
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 176, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin img, .wrapper--flex .col--three-margin img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 176, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin img, .wrapper--flex .col--three-margin img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 176, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin img, .wrapper--flex .col--three-margin img {
+    width: 100%;
+  }
+}
+
+/* line 179, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.center-text {
+  text-align: center;
+}
+
+/* line 193, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title {
+  font-family: "WWF", sans-serif;
+  font-size: 40px;
+  color: #9B9B9B;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2.86px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 80px;
+}
+/* line 203, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title:before, .title:after {
+  content: " ";
+  height: 4px;
+  width: 160px;
+  background: black;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+/* line 211, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title:before {
+  top: -10px;
+}
+/* line 213, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title:after {
+  bottom: -14px;
+}
+
+/* line 217, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a.button {
+  background: #CF1E53;
+  border: 1.5px solid #CF1E53;
+  text-decoration: none;
+  color: white;
+  font-family: "WWF", sans-serif;
+  letter-spacing: 1.4px;
+  font-weight: 100;
+  display: inline-block;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+/* line 228, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a.button span {
+  font-size: 12px;
+}
+/* line 230, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a.button:hover {
+  background: white;
+  border: 1.5px solid black;
+  color: black;
+}
+
+/* line 234, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.button--primary {
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px 8px 14px;
+}
+
+/* line 239, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.button--secondary {
+  padding: 4px 8px 6px 10px;
+}
+
+/* line 241, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+i {
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+/* line 243, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+i:hover {
+  color: #CF1E53;
+}
+
+/* line 245, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.content-wrapper {
+  background: white;
+  padding: 40px 0;
+}
+
+/* line 248, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+section {
+  padding: 40px 0;
+}
+
+/* line 250, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by {
+  position: relative;
+  display: inline-block;
+}
+/* line 253, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by img {
+  display: block;
+}
+/* line 255, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by p.photo-attr {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0px 8px;
+  font-size: 12px;
+  color: white;
+  display: none;
+  margin: 0;
+  line-height: 24px;
+}
+
+/* line 269, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by:hover .photo-attr {
+  display: block;
+}
+
+/* line 272, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+#admin .form--contained.form--login {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+  padding: 20px;
+}
+
+/* line 6, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.main {
+  background: black;
+  width: 100%;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 10, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .wrapper {
+    margin-left: 30px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 10, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .wrapper {
+    margin-left: 30px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 10, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .wrapper {
+    margin-left: 30px;
+  }
+}
+/* line 13, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.main img {
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+}
+/* line 17, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.main .translate {
+  float: left;
+  color: white;
+  font-family: "WWF";
+  padding: 30px 0;
+  margin-left: 10px;
+}
+/* line 23, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.main .main--toggle {
+  display: none;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 23, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle {
+    float: right;
+    display: block;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+    padding: 12px 0 18px;
+  }
+  /* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle:hover:before {
+    -webkit-transform: translate3d(0, -1px, 0);
+            transform: translate3d(0, -1px, 0);
+  }
+  /* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle:hover:after {
+    -webkit-transform: translate3d(0, 1px, 0);
+            transform: translate3d(0, 1px, 0);
+  }
+  /* line 35, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle:before, nav.main .main--toggle:after {
+    content: " ";
+    width: 32px;
+    height: 2px;
+    background: white;
+    display: block;
+    margin-top: 6px;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+  }
+  /* line 44, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle span {
+    width: 32px;
+    height: 2px;
+    margin-top: 6px;
+    display: block;
+    background: white;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 23, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle {
+    float: right;
+    display: block;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+    padding: 12px 0 18px;
+  }
+  /* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle:hover:before {
+    -webkit-transform: translate3d(0, -1px, 0);
+            transform: translate3d(0, -1px, 0);
+  }
+  /* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle:hover:after {
+    -webkit-transform: translate3d(0, 1px, 0);
+            transform: translate3d(0, 1px, 0);
+  }
+  /* line 35, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle:before, nav.main .main--toggle:after {
+    content: " ";
+    width: 32px;
+    height: 2px;
+    background: white;
+    display: block;
+    margin-top: 6px;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+  }
+  /* line 44, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle span {
+    width: 32px;
+    height: 2px;
+    margin-top: 6px;
+    display: block;
+    background: white;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 23, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle {
+    float: right;
+    display: block;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+    padding: 12px 0 18px;
+  }
+  /* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle:hover:before {
+    -webkit-transform: translate3d(0, -1px, 0);
+            transform: translate3d(0, -1px, 0);
+  }
+  /* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle:hover:after {
+    -webkit-transform: translate3d(0, 1px, 0);
+            transform: translate3d(0, 1px, 0);
+  }
+  /* line 35, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle:before, nav.main .main--toggle:after {
+    content: " ";
+    width: 32px;
+    height: 2px;
+    background: white;
+    display: block;
+    margin-top: 6px;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+  }
+  /* line 44, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle span {
+    width: 32px;
+    height: 2px;
+    margin-top: 6px;
+    display: block;
+    background: white;
+    -webkit-transition: all 0.3s;
+            transition: all 0.3s;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 51, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active {
+    padding: 11px 0 17px;
+  }
+  /* line 54, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active span {
+    opacity: 0;
+    width: 28px;
+    height: 4px;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  /* line 59, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active:before {
+    -webkit-transform: translate3d(0, 8px, 0) rotate(45deg);
+            transform: translate3d(0, 8px, 0) rotate(45deg);
+    width: 22px;
+    height: 2px;
+  }
+  /* line 63, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active:after {
+    -webkit-transform: translate3d(0, -10px, 0) rotate(-45deg);
+            transform: translate3d(0, -10px, 0) rotate(-45deg);
+    width: 22px;
+    height: 2px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 51, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active {
+    padding: 11px 0 17px;
+  }
+  /* line 54, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active span {
+    opacity: 0;
+    width: 28px;
+    height: 4px;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  /* line 59, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active:before {
+    -webkit-transform: translate3d(0, 8px, 0) rotate(45deg);
+            transform: translate3d(0, 8px, 0) rotate(45deg);
+    width: 22px;
+    height: 2px;
+  }
+  /* line 63, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active:after {
+    -webkit-transform: translate3d(0, -10px, 0) rotate(-45deg);
+            transform: translate3d(0, -10px, 0) rotate(-45deg);
+    width: 22px;
+    height: 2px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 51, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active {
+    padding: 11px 0 17px;
+  }
+  /* line 54, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active span {
+    opacity: 0;
+    width: 28px;
+    height: 4px;
+    -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+            transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  /* line 59, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active:before {
+    -webkit-transform: translate3d(0, 8px, 0) rotate(45deg);
+            transform: translate3d(0, 8px, 0) rotate(45deg);
+    width: 22px;
+    height: 2px;
+  }
+  /* line 63, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.main .main--toggle.active:after {
+    -webkit-transform: translate3d(0, -10px, 0) rotate(-45deg);
+            transform: translate3d(0, -10px, 0) rotate(-45deg);
+    width: 22px;
+    height: 2px;
+  }
+}
+
+/* line 71, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--main {
+  margin-left: 140px;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 71, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main {
+    position: absolute;
+    background: white;
+    top: 55px;
+    margin: 0;
+    padding: 80px 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 71, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main {
+    position: absolute;
+    background: white;
+    top: 55px;
+    margin: 0;
+    padding: 80px 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 71, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main {
+    position: absolute;
+    background: white;
+    top: 55px;
+    margin: 0;
+    padding: 80px 0;
+    width: 100%;
+    z-index: 1;
+  }
+}
+/* line 84, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--main > li.item--main {
+  position: relative;
+  padding: 30px 0;
+  list-style: none;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 84, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main > li.item--main {
+    display: block;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 84, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main > li.item--main {
+    display: block;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 84, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main > li.item--main {
+    display: block;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 84, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main > li.item--main {
+    width: 744px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 84, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main > li.item--main {
+    width: 480px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 84, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main > li.item--main {
+    width: 100%;
+    padding: 20px 14px;
+  }
+}
+/* line 102, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--main > li.item--main > span {
+  color: white;
+  text-transform: uppercase;
+  font-family: "WWF";
+  letter-spacing: 0.86px;
+  cursor: pointer;
+  -webkit-transition: 0.3s all ease;
+          transition: 0.3s all ease;
+}
+/* line 109, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--main > li.item--main > span:after {
+  content: "▾";
+  font-size: 12px;
+  vertical-align: top;
+  padding: 2px 5px;
+  display: inline-block;
+}
+/* line 115, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--main > li.item--main > span:hover {
+  color: #CF1E53;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 102, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main > li.item--main > span {
+    color: #2E708E;
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 102, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main > li.item--main > span {
+    color: #2E708E;
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 102, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--main > li.item--main > span {
+    color: #2E708E;
+    font-size: 18px;
+  }
+}
+/* line 138, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--main > li.item--main > span.active {
+  color: #CF1E53;
+}
+/* line 140, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--main > li.item--main > span.active:after {
+  color: #CF1E53;
+}
+
+/* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--sub {
+  background: white;
+  border-bottom: 2px solid #CF1E53;
+  border-top: 2px solid #2E708E;
+  position: absolute;
+  top: 60px;
+  padding: 0 16px;
+  min-width: 220px;
+  display: none;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub {
+    position: static;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub {
+    position: static;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub {
+    position: static;
+    margin-top: 20px;
+  }
+}
+/* line 156, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--sub li {
+  border-bottom: 1px solid #979797;
+  display: block;
+  padding: 8px 0;
+  position: relative;
+}
+/* line 161, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--sub li:last-of-type {
+  border-bottom: none;
+}
+/* line 163, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--sub a {
+  color: black;
+  text-transform: capitalize;
+  font-size: 14px;
+}
+/* line 167, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--sub a:hover {
+  color: #CF1E53;
+}
+@media screen and (min-width: 1170px) {
+  /* line 169, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub .menu--sub-desc {
+    background: #2E708E;
+    position: absolute;
+    top: -50%;
+    -webkit-transform: translateY(5px);
+        -ms-transform: translateY(5px);
+            transform: translateY(5px);
+    z-index: 100;
+    left: calc(100% + 30px);
+    color: white;
+    padding: 10px;
+    display: none;
+  }
+  /* line 180, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub .menu--sub-desc:before {
+    content: "◀";
+    color: #2E708E;
+    left: -13px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 169, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub .menu--sub-desc {
+    background: #2E708E;
+    position: absolute;
+    top: -50%;
+    -webkit-transform: translateY(5px);
+        -ms-transform: translateY(5px);
+            transform: translateY(5px);
+    z-index: 100;
+    left: calc(100% + 30px);
+    color: white;
+    padding: 10px;
+    display: none;
+  }
+  /* line 180, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub .menu--sub-desc:before {
+    content: "◀";
+    color: #2E708E;
+    left: -13px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+  }
+}
+/* line 188, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--sub .menu--sub-desc p {
+  margin: 0;
+  min-width: 150px;
+  font-size: 12px;
+  line-height: 16px;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 188, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub .menu--sub-desc p {
+    color: #2E708E;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 188, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub .menu--sub-desc p {
+    color: #2E708E;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 188, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  .menu--sub .menu--sub-desc p {
+    color: #2E708E;
+  }
+}
+
+/* line 199, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.item--main:last-of-type .menu--sub, .item--main:nth-last-of-type(2) .menu--sub {
+  left: -60px;
+}
+/* line 201, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.item--main:last-of-type .menu--sub-desc, .item--main:nth-last-of-type(2) .menu--sub-desc {
+  right: calc(100% + 30px);
+  left: auto;
+}
+/* line 204, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.item--main:last-of-type .menu--sub-desc:before, .item--main:nth-last-of-type(2) .menu--sub-desc:before {
+  right: -13px;
+  left: auto;
+  -webkit-transform: rotate(180deg) translateY(50%);
+      -ms-transform: rotate(180deg) translateY(50%);
+          transform: rotate(180deg) translateY(50%);
+}
+
+/* line 208, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+.menu--sub.active, .menu--sub-desc.active {
+  display: block;
+}
+
+/* line 211, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer {
+  background: black;
+  color: white;
+  padding-top: 4px;
+  position: relative;
+  margin-top: 60px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 211, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer {
+    padding: 20px 0;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 211, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer {
+    padding: 20px 0;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 219, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer .wrapper--flex {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 219, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer .wrapper--flex {
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+/* line 222, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer h4 {
+  font-family: "WWF", sans-serif;
+  font-size: 26px;
+  letter-spacing: 1.4px;
+  margin: 0;
+}
+/* line 227, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer p {
+  font-family: "Georgia", script;
+  font-style: italic;
+  font-size: 12px;
+  line-height: 18px;
+}
+/* line 232, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer a {
+  color: white;
+}
+/* line 234, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer img {
+  width: 110px;
+  position: absolute;
+  top: -28px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 234, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer img {
+    position: static;
+    display: inline-block;
+    width: 90px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 234, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer img {
+    position: static;
+    display: inline-block;
+    width: 90px;
+  }
+}
+/* line 243, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer .copy {
+  width: calc(90% - 128px);
+  margin-left: 128px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 243, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer .copy {
+    width: calc(100% - 90px);
+    margin-left: 0;
+    display: inline-block;
+    padding-left: 5%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 243, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer .copy {
+    width: calc(100% - 90px);
+    margin-left: 0;
+    display: inline-block;
+    padding-left: 5%;
+  }
+}
+/* line 251, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer .social-links {
+  width: 10%;
+  text-align: center;
+  font-size: 20px;
+  padding: 20px 0 0 18px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 251, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer .social-links {
+    width: 30%;
+    margin-left: calc(90px + 5%);
+    padding: 10px 0 0 0;
+    min-width: 120px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 251, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+  nav.footer .social-links {
+    width: 30%;
+    margin-left: calc(90px + 5%);
+    padding: 10px 0 0 0;
+    min-width: 120px;
+  }
+}
+/* line 261, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer .social-links a {
+  width: 33%;
+  display: inline-block;
+}
+/* line 264, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer .social-links a:first-of-type {
+  text-align: left;
+}
+/* line 266, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer .social-links a:nth-of-type(3n + 2) {
+  text-align: center;
+}
+/* line 268, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/main_menus.sass */
+nav.footer .social-links a:last-of-type {
+  text-align: right;
+}
+
+/* line 5, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.stories--flex {
+  margin-bottom: 36px;
+}
+/* line 7, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.stories--flex a {
+  color: white;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 11, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+  .stories--flex .col--two:nth-of-type(1) {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 13, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+  .stories--flex .col--two:nth-of-type(2) {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 11, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+  .stories--flex .col--two:nth-of-type(1) {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 13, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+  .stories--flex .col--two:nth-of-type(2) {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+/* line 15, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.stories h3 {
+  font-family: "WWF";
+  letter-spacing: 0.8px;
+  font-size: 28px;
+  margin: 0;
+  margin-bottom: 36px;
+}
+/* line 21, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.stories .featured-title {
+  font-size: 60px;
+  color: white;
+}
+/* line 24, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.stories .story-title {
+  padding: 20px;
+  margin-bottom: 75px;
+  color: white;
+}
+/* line 28, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.stories p {
+  font-family: "Arial", sans-serif;
+  letter-spacing: 0.8px;
+  margin-right: 36px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 28, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+  .stories p {
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 28, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+  .stories p {
+    margin-right: 0;
+  }
+}
+/* line 34, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.stories p:nth-of-type(1) {
+  margin-top: 0;
+}
+/* line 37, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.stories a.button:hover {
+  background: black;
+  border: 1.5px solid white;
+  color: white;
+}
+
+/* line 43, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.featured-story {
+  background-color: black;
+  color: white;
+  padding: 30px 60px;
+  margin-bottom: 28px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 43, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+  .featured-story {
+    padding: 50px 36px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 43, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+  .featured-story {
+    padding: 50px 28px;
+  }
+}
+
+/* line 52, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.story {
+  position: relative;
+  background-color: black;
+  color: white;
+  margin-bottom: 28px;
+}
+/* line 58, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.story a.button {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  bottom: 20px;
+}
+
+/* line 63, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.story--photo {
+  height: 210px;
+  width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+/* line 69, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/stories.sass */
+.story--photo a {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 4, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.hashtag {
+  background-color: black;
+  height: 200px;
+  padding-top: 26px;
+}
+/* line 8, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.hashtag h2 {
+  font-family: "WWF";
+  font-size: 60px;
+  color: white;
+  margin: 0;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 8, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .hashtag h2 {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 8, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .hashtag h2 {
+    font-size: 40px;
+  }
+}
+/* line 16, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.hashtag p {
+  font-size: 30px;
+  color: white;
+  margin: 0;
+}
+/* line 21, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.hashtag p a {
+  color: white;
+}
+/* line 24, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.hashtag p a:last-of-type i {
+  margin-right: 0;
+}
+/* line 26, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.hashtag p a i {
+  margin-right: 30px;
+}
+
+/* line 28, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.social-element {
+  position: relative;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.social-element:nth-of-type(2n+5) {
+  background-color: #7EC9E7;
+}
+/* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.social-element:nth-of-type(8n+1) {
+  background-color: #2E708E;
+}
+/* line 35, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.social-element:nth-of-type(3) {
+  background-color: #47A8CB;
+}
+/* line 37, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.social-element:nth-of-type(5) {
+  -webkit-box-ordinal-group: 7;
+  -webkit-order: 6;
+      -ms-flex-order: 6;
+          order: 6;
+}
+/* line 39, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.social-element:nth-of-type(6) {
+  -webkit-box-ordinal-group: 6;
+  -webkit-order: 5;
+      -ms-flex-order: 5;
+          order: 5;
+}
+/* line 41, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.social-element:nth-of-type(7) {
+  -webkit-box-ordinal-group: 9;
+  -webkit-order: 8;
+      -ms-flex-order: 8;
+          order: 8;
+}
+/* line 43, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.social-element:nth-of-type(8) {
+  -webkit-box-ordinal-group: 8;
+  -webkit-order: 7;
+      -ms-flex-order: 7;
+          order: 7;
+}
+/* line 45, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.social-element:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 50, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(1) {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  /* line 52, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(2) {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 54, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(3) {
+    -webkit-box-ordinal-group: 5;
+    -webkit-order: 4;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  /* line 56, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(4) {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  /* line 58, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(5) {
+    -webkit-box-ordinal-group: 6;
+    -webkit-order: 5;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  /* line 60, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(6) {
+    -webkit-box-ordinal-group: 7;
+    -webkit-order: 6;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  /* line 62, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(7) {
+    -webkit-box-ordinal-group: 9;
+    -webkit-order: 8;
+        -ms-flex-order: 8;
+            order: 8;
+  }
+  /* line 64, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(8) {
+    -webkit-box-ordinal-group: 8;
+    -webkit-order: 7;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 50, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(1) {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  /* line 52, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(2) {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 54, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(3) {
+    -webkit-box-ordinal-group: 5;
+    -webkit-order: 4;
+        -ms-flex-order: 4;
+            order: 4;
+  }
+  /* line 56, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(4) {
+    -webkit-box-ordinal-group: 4;
+    -webkit-order: 3;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  /* line 58, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(5) {
+    -webkit-box-ordinal-group: 6;
+    -webkit-order: 5;
+        -ms-flex-order: 5;
+            order: 5;
+  }
+  /* line 60, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(6) {
+    -webkit-box-ordinal-group: 7;
+    -webkit-order: 6;
+        -ms-flex-order: 6;
+            order: 6;
+  }
+  /* line 62, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(7) {
+    -webkit-box-ordinal-group: 9;
+    -webkit-order: 8;
+        -ms-flex-order: 8;
+            order: 8;
+  }
+  /* line 64, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element:nth-of-type(8) {
+    -webkit-box-ordinal-group: 8;
+    -webkit-order: 7;
+        -ms-flex-order: 7;
+            order: 7;
+  }
+}
+
+@media screen and (max-width: 499px) {
+  /* line 83, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .social-element.col--four {
+    width: 50% !important;
+  }
+}
+
+/* line 86, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.instagram {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+/* line 92, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.wrapper--flex.tweet-flex {
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+/* line 94, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.tweet {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  padding: 0 20px;
+  height: 80%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: white;
+  font-size: 16px;
+  font-family: "Georgia";
+}
+/* line 108, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.tweet p {
+  line-height: 28px;
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 94, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet {
+    padding: 0px 15px;
+    height: 80%;
+  }
+  /* line 113, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet p {
+    line-height: 18px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 94, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet {
+    padding: 0px 15px;
+    height: 80%;
+  }
+  /* line 113, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet p {
+    line-height: 18px;
+    margin: 0;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 94, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet {
+    padding: 0 15px;
+    height: 90%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 94, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet {
+    padding: 0 15px;
+    height: 90%;
+  }
+}
+/* line 119, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.tweet a {
+  color: white;
+  font-weight: bold;
+  word-break: break-all;
+  display: inline-block;
+}
+/* line 125, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.tweet p {
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 18px;
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 125, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet p {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 125, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet p {
+    font-size: 14px;
+    line-height: 1.2;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 125, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet p {
+    font-size: 16px;
+    line-height: 1.8;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 125, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+  .tweet p {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}
+
+/* line 141, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.square {
+  position: relative;
+  border: 2px solid black;
+}
+
+/* line 145, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/tweets.sass */
+.square:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+}
+
+/* line 1, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+html {
+  box-sizing: border-box;
+}
+
+/* line 3, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* line 5, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+body {
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+/* line 10, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+p {
+  line-height: 32px;
+}
+
+/* line 12, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+em {
+  font-style: italic;
+}
+
+/* line 16, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "this";
+  clear: both;
+  height: 0;
+}
+
+/* line 24, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.clearfix {
+  display: inline-block;
+}
+
+/* line 27, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+* html .clearfix {
+  height: 1%;
+}
+
+/* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.clearfix {
+  display: block;
+}
+
+/* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.hidden {
+  visibility: hidden;
+}
+
+/* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.hidden-display {
+  display: none;
+}
+
+/* line 35, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a {
+  text-decoration: none;
+}
+
+/* line 37, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+p {
+  font-size: 16px;
+}
+
+/* line 39, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 42, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1170px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 1146px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 936px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 744px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 480px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+/* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper {
+  box-sizing: border-box;
+  position: relative;
+}
+@media screen and (min-width: 1170px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0;
+    padding: 0 12px;
+  }
+}
+/* line 116, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper--flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 121, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper--form {
+  padding: 60px 10%;
+}
+@media screen and (max-width: 499px) {
+  /* line 121, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper--form {
+    padding: 60px 12px;
+  }
+}
+
+/* line 127, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--two, .wrapper--flex .col--two {
+  box-sizing: border-box;
+  width: 50%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 127, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--two, .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 127, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--two, .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 131, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--three, .wrapper--flex .col--three {
+  box-sizing: border-box;
+  width: 33.325%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 131, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three, .wrapper--flex .col--three {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 131, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three, .wrapper--flex .col--three {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 137, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--four, .wrapper--flex .col--four {
+  box-sizing: border-box;
+  width: 25%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 137, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--four, .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 137, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--four, .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--five, .wrapper--flex .col--five {
+  box-sizing: border-box;
+  width: 20%;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--five, .wrapper--flex .col--five {
+    box-sizing: border-box;
+    width: 33.325%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--five, .wrapper--flex .col--five {
+    box-sizing: border-box;
+    width: 33.325%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--five, .wrapper--flex .col--five {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+/* line 151, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--threefourths, .wrapper--flex .col--threefourths {
+  box-sizing: border-box;
+  width: 75%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 151, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--threefourths, .wrapper--flex .col--threefourths {
+    box-sizing: border-box;
+    width: 75%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 151, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--threefourths, .wrapper--flex .col--threefourths {
+    box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1170px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    width: calc(50% - 20px);
+  }
+  /* line 161, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half:nth-of-type(2n + 1), .wrapper--flex .col--half:nth-of-type(2n + 1) {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    width: calc(50% - 20px);
+  }
+  /* line 161, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half:nth-of-type(2n + 1), .wrapper--flex .col--half:nth-of-type(2n + 1) {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 166, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half img, .wrapper--flex .col--half img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 166, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half img, .wrapper--flex .col--half img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 166, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half img, .wrapper--flex .col--half img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1170px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    width: calc(33.33% - 20px);
+  }
+  /* line 171, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin:nth-of-type(2n + 1), .wrapper--flex .col--three-margin:nth-of-type(2n + 1) {
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    width: calc(33.33% - 20px);
+  }
+  /* line 171, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin:nth-of-type(2n + 1), .wrapper--flex .col--three-margin:nth-of-type(2n + 1) {
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 176, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin img, .wrapper--flex .col--three-margin img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 176, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin img, .wrapper--flex .col--three-margin img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 176, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin img, .wrapper--flex .col--three-margin img {
+    width: 100%;
+  }
+}
+
+/* line 179, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.center-text {
+  text-align: center;
+}
+
+/* line 193, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title {
+  font-family: "WWF", sans-serif;
+  font-size: 40px;
+  color: #9B9B9B;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2.86px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 80px;
+}
+/* line 203, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title:before, .title:after {
+  content: " ";
+  height: 4px;
+  width: 160px;
+  background: black;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+/* line 211, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title:before {
+  top: -10px;
+}
+/* line 213, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title:after {
+  bottom: -14px;
+}
+
+/* line 217, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a.button {
+  background: #CF1E53;
+  border: 1.5px solid #CF1E53;
+  text-decoration: none;
+  color: white;
+  font-family: "WWF", sans-serif;
+  letter-spacing: 1.4px;
+  font-weight: 100;
+  display: inline-block;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+/* line 228, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a.button span {
+  font-size: 12px;
+}
+/* line 230, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a.button:hover {
+  background: white;
+  border: 1.5px solid black;
+  color: black;
+}
+
+/* line 234, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.button--primary {
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px 8px 14px;
+}
+
+/* line 239, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.button--secondary {
+  padding: 4px 8px 6px 10px;
+}
+
+/* line 241, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+i {
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+/* line 243, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+i:hover {
+  color: #CF1E53;
+}
+
+/* line 245, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.content-wrapper {
+  background: white;
+  padding: 40px 0;
+}
+
+/* line 248, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+section {
+  padding: 40px 0;
+}
+
+/* line 250, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by {
+  position: relative;
+  display: inline-block;
+}
+/* line 253, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by img {
+  display: block;
+}
+/* line 255, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by p.photo-attr {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0px 8px;
+  font-size: 12px;
+  color: white;
+  display: none;
+  margin: 0;
+  line-height: 24px;
+}
+
+/* line 269, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by:hover .photo-attr {
+  display: block;
+}
+
+/* line 272, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+#admin .form--contained.form--login {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+  padding: 20px;
+}
+
+/* line 6, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog .photo-by {
+  position: relative;
+}
+/* line 8, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog .photo-by a {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+}
+/* line 13, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog h3 {
+  font-family: "WWF", sans-serif;
+  font-size: 30px;
+  letter-spacing: 0.47px;
+  margin: 0 0 12px 0;
+  line-height: 32px;
+  font-weight: normal;
+  color: #222222;
+}
+/* line 21, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog h3 + p {
+  margin: 10px 0 22px 0;
+}
+/* line 23, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog p {
+  line-height: 24px;
+  color: #222222;
+  margin-bottom: 12px;
+}
+/* line 27, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog p .author, .wp-blog p .date {
+  font-size: 12px;
+}
+/* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog p .author {
+  text-transform: uppercase;
+}
+/* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog p .seperator {
+  vertical-align: middle;
+}
+/* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog p + a.button {
+  margin-top: 10px;
+}
+/* line 35, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog .short-desc a {
+  color: #222222;
+  border-bottom: 1px solid #222222;
+  font-weight: bold;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+/* line 41, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog img, .wp-blog video {
+  width: 100%;
+}
+/* line 44, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog .col--two:nth-of-type(2n + 2) {
+  padding: 0 20px;
+}
+@media screen and (max-width: 499px) {
+  /* line 44, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+  .wp-blog .col--two:nth-of-type(2n + 2) {
+    padding: 0;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 48, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+  .wp-blog .col--two:nth-of-type(2n + 1) {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 22px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 48, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+  .wp-blog .col--two:nth-of-type(2n + 1) {
+    height: 200px;
+    overflow: hidden;
+    margin-bottom: 22px;
+  }
+}
+/* line 53, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog .wrapper--flex {
+  margin-bottom: 40px;
+}
+/* line 55, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog .wrapper--flex:nth-of-type(2) {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+/* line 58, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+.wp-blog .wrapper--flex:nth-of-type(2) .col--two:nth-of-type(2n + 2) {
+  padding-left: 0;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 58, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+  .wp-blog .wrapper--flex:nth-of-type(2) .col--two:nth-of-type(2n + 2) {
+    padding-left: 20px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 58, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/blogs.sass */
+  .wp-blog .wrapper--flex:nth-of-type(2) .col--two:nth-of-type(2n + 2) {
+    padding: 0;
+  }
+}
+
+/* line 4, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+.featured-donor {
+  background-color: black;
+  color: white;
+  padding: 80px;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 4, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor {
+    padding: 0;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 4, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor {
+    padding: 0;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 4, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor {
+    padding: 0;
+    text-align: center;
+  }
+}
+/* line 12, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+.featured-donor a.button:hover {
+  background: black;
+  border: 1.5px solid white;
+  color: white;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 11, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor a.button {
+    display: inline-block;
+    margin: 36px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 11, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor a.button {
+    display: inline-block;
+    margin: 36px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 11, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor a.button {
+    display: inline-block;
+    margin: 36px;
+  }
+}
+/* line 19, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+.featured-donor .col--two.donor {
+  text-align: center;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+}
+/* line 21, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+.featured-donor .col--two.donor p {
+  text-align: left;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 19, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor .col--two.donor {
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 19, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor .col--two.donor {
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 19, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor .col--two.donor {
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor .col--two.donor:nth-of-type(1) {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor .col--two.donor:nth-of-type(2) {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor .col--two.donor:nth-of-type(1) {
+    -webkit-box-ordinal-group: 3;
+    -webkit-order: 2;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  /* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor .col--two.donor:nth-of-type(2) {
+    -webkit-box-ordinal-group: 2;
+    -webkit-order: 1;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+}
+/* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+.featured-donor h3 {
+  font-family: "WWF";
+  font-size: 60px;
+  margin: 0;
+  color: white;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor h3 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor h3 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor h3 {
+    text-align: center;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor h3 {
+    margin: 36px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor h3 {
+    margin: 36px;
+  }
+}
+/* line 42, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+.featured-donor img {
+  width: 304px;
+  height: 304px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  border: 10px solid black;
+  box-shadow: 0 0 0 2px white;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 42, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor img {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 42, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+  .featured-donor img {
+    width: 250px;
+    height: 250px;
+  }
+}
+/* line 53, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+.featured-donor a {
+  margin-top: 10px;
+}
+/* line 55, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+.featured-donor .photo-by {
+  position: relative;
+}
+/* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/featured_donors.sass */
+.featured-donor .photo-by a {
+  margin-top: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* line 5, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+.generic-stories .generic-story {
+  position: relative;
+  border: 2px solid black;
+  padding: 20px;
+}
+@media screen and (max-width: 499px) {
+  /* line 5, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+  .generic-stories .generic-story {
+    margin: 0 36px;
+  }
+}
+/* line 11, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+.generic-stories .generic-story h4 {
+  font-family: "WWF";
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+}
+/* line 16, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+.generic-stories .generic-story .description {
+  margin-bottom: 50px;
+}
+/* line 18, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+.generic-stories .generic-story a {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+}
+@media screen and (max-width: 499px) {
+  /* line 22, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+  .generic-stories .wrapper--flex {
+    position: relative;
+  }
+  /* line 25, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+  .generic-stories .wrapper--flex .generic-story.off {
+    position: absolute;
+    left: -100%;
+    display: none;
+  }
+}
+/* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+.generic-stories .arrow {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+          transform: translateY(-50%);
+  cursor: pointer;
+}
+@media screen and (min-width: 1170px) {
+  /* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+  .generic-stories .arrow {
+    display: none;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+  .generic-stories .arrow {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+  .generic-stories .arrow {
+    display: none;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+  .generic-stories .arrow {
+    display: none;
+  }
+}
+/* line 36, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+.generic-stories .arrow-left {
+  left: 0;
+}
+/* line 38, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic_stories.sass */
+.generic-stories .arrow-right {
+  right: 0;
+}
+
+/* line 1, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+html {
+  box-sizing: border-box;
+}
+
+/* line 3, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* line 5, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+body {
+  margin: 0;
+  letter-spacing: 0.5px;
+  font-family: "Arial", sans-serif;
+  font-weight: normal;
+}
+
+/* line 10, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+p {
+  line-height: 32px;
+}
+
+/* line 12, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+h1, h2, h3, h4, h5 {
+  font-weight: normal;
+}
+
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+em {
+  font-style: italic;
+}
+
+/* line 16, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: "this";
+  clear: both;
+  height: 0;
+}
+
+/* line 24, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.clearfix {
+  display: inline-block;
+}
+
+/* line 27, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+* html .clearfix {
+  height: 1%;
+}
+
+/* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.clearfix {
+  display: block;
+}
+
+/* line 31, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.hidden {
+  visibility: hidden;
+}
+
+/* line 33, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.hidden-display {
+  display: none;
+}
+
+/* line 35, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a {
+  text-decoration: none;
+}
+
+/* line 37, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+p {
+  font-size: 16px;
+}
+
+/* line 39, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 42, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 1170px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 1146px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 936px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 744px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: 480px;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 57, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    width: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+
+/* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper {
+  box-sizing: border-box;
+  position: relative;
+}
+@media screen and (min-width: 1170px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 107, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper {
+    margin: 0;
+    padding: 0 12px;
+  }
+}
+/* line 116, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper--flex {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+
+/* line 121, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper--form {
+  padding: 60px 10%;
+}
+@media screen and (max-width: 499px) {
+  /* line 121, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper--form {
+    padding: 60px 12px;
+  }
+}
+
+/* line 127, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--two, .wrapper--flex .col--two {
+  box-sizing: border-box;
+  width: 50%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 127, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--two, .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 127, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--two, .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 131, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--three, .wrapper--flex .col--three {
+  box-sizing: border-box;
+  width: 33.325%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 131, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three, .wrapper--flex .col--three {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 131, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three, .wrapper--flex .col--three {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 137, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--four, .wrapper--flex .col--four {
+  box-sizing: border-box;
+  width: 25%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 137, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--four, .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 137, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--four, .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--five, .wrapper--flex .col--five {
+  box-sizing: border-box;
+  width: 20%;
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--five, .wrapper--flex .col--five {
+    box-sizing: border-box;
+    width: 33.325%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--five, .wrapper--flex .col--five {
+    box-sizing: border-box;
+    width: 33.325%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 143, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--five, .wrapper--flex .col--five {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+/* line 151, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.wrapper .col--threefourths, .wrapper--flex .col--threefourths {
+  box-sizing: border-box;
+  width: 75%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 151, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--threefourths, .wrapper--flex .col--threefourths {
+    box-sizing: border-box;
+    width: 75%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 151, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--threefourths, .wrapper--flex .col--threefourths {
+    box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1170px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    width: calc(50% - 20px);
+  }
+  /* line 161, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half:nth-of-type(2n + 1), .wrapper--flex .col--half:nth-of-type(2n + 1) {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    width: calc(50% - 20px);
+  }
+  /* line 161, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half:nth-of-type(2n + 1), .wrapper--flex .col--half:nth-of-type(2n + 1) {
+    margin-right: 40px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 166, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half img, .wrapper--flex .col--half img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 166, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half img, .wrapper--flex .col--half img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 158, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half, .wrapper--flex .col--half {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 166, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--half img, .wrapper--flex .col--half img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1170px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    width: calc(33.33% - 20px);
+  }
+  /* line 171, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin:nth-of-type(2n + 1), .wrapper--flex .col--three-margin:nth-of-type(2n + 1) {
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    width: calc(33.33% - 20px);
+  }
+  /* line 171, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin:nth-of-type(2n + 1), .wrapper--flex .col--three-margin:nth-of-type(2n + 1) {
+    margin-right: 0px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 176, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin img, .wrapper--flex .col--three-margin img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 176, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin img, .wrapper--flex .col--three-margin img {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 168, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin, .wrapper--flex .col--three-margin {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  /* line 176, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+  .wrapper .col--three-margin img, .wrapper--flex .col--three-margin img {
+    width: 100%;
+  }
+}
+
+/* line 179, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.center-text {
+  text-align: center;
+}
+
+/* line 193, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title {
+  font-family: "WWF", sans-serif;
+  font-size: 40px;
+  color: #9B9B9B;
+  text-transform: uppercase;
+  font-weight: 100;
+  letter-spacing: 2.86px;
+  position: relative;
+  text-align: center;
+  margin-bottom: 80px;
+}
+/* line 203, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title:before, .title:after {
+  content: " ";
+  height: 4px;
+  width: 160px;
+  background: black;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+/* line 211, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title:before {
+  top: -10px;
+}
+/* line 213, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.title:after {
+  bottom: -14px;
+}
+
+/* line 217, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a.button {
+  background: #CF1E53;
+  border: 1.5px solid #CF1E53;
+  text-decoration: none;
+  color: white;
+  font-family: "WWF", sans-serif;
+  letter-spacing: 1.4px;
+  font-weight: 100;
+  display: inline-block;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+/* line 228, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a.button span {
+  font-size: 12px;
+}
+/* line 230, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+a.button:hover {
+  background: white;
+  border: 1.5px solid black;
+  color: black;
+}
+
+/* line 234, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.button--primary {
+  font-size: 22px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 6px 14px 8px 14px;
+}
+
+/* line 239, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.button--secondary {
+  padding: 4px 8px 6px 10px;
+}
+
+/* line 241, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+i {
+  -webkit-transition: all 0.5s;
+          transition: all 0.5s;
+}
+/* line 243, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+i:hover {
+  color: #CF1E53;
+}
+
+/* line 245, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.content-wrapper {
+  background: white;
+  padding: 40px 0;
+}
+
+/* line 248, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+section {
+  padding: 40px 0;
+}
+
+/* line 250, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by {
+  position: relative;
+  display: inline-block;
+}
+/* line 253, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by img {
+  display: block;
+}
+/* line 255, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by p.photo-attr {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0px 8px;
+  font-size: 12px;
+  color: white;
+  display: none;
+  margin: 0;
+  line-height: 24px;
+}
+
+/* line 269, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+.photo-by:hover .photo-attr {
+  display: block;
+}
+
+/* line 272, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/generic.sass */
+#admin .form--contained.form--login {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+  padding: 20px;
+}
+
+@font-face {
+  font-family: 'WWF';
+  src: url(http://localhost:3000/assets/wwf-webfont-c56fffb264f7cfde76b5d7c3352b04cfdac9441dd9db5043c045d4c857d398f9.eot);
+  src: url(http://localhost:3000/assets/wwf-webfont-c56fffb264f7cfde76b5d7c3352b04cfdac9441dd9db5043c045d4c857d398f9.eot) format("embedded-opentype"), url(http://localhost:3000/assets/wwf-webfont-766a99a6da6d0a10aec1700f3fd71d6f010c0b797e5efc854ef59534aed4b680.woff) format("woff");
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .green {
+  background: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .grey {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .black {
+  background: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li p {
+  position: absolute;
+  padding: 3px 13px;
+  color: #666;
+  background-color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  left: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li .color {
+  height: 120px;
+  margin-right: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li:last-child {
+  margin-right: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin html {
+  box-sizing: border-box;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin *, #admin *:before, #admin *:after {
+  box-sizing: inherit;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin body {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 1146px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 936px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 744px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 480px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper {
+  box-sizing: border-box;
+  position: relative;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0;
+    padding: 0 12px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex .col--two {
+  box-sizing: border-box;
+  width: 47.5%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex .col--four {
+  box-sizing: border-box;
+  width: 25%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex.tab-content {
+  display: none;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex.tab-content.current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--secondary {
+  background: white;
+  border-radius: 5px;
+  padding: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide li {
+  height: 100px;
+  background: lightgrey;
+  box-sizing: border-box;
+  width: 22.5%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide li:nth-of-type(2n+1) {
+  background: rgba(0, 0, 0, 0.1);
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin img {
+  max-width: 100%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .green {
+  background: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .grey {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .black {
+  background: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li p {
+  position: absolute;
+  padding: 3px 13px;
+  color: #666;
+  background-color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  left: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li .color {
+  height: 120px;
+  margin-right: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li:last-child {
+  margin-right: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin body {
+  font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
+  color: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin h1, #admin h2, #admin h3 {
+  font-weight: 400;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin h1 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin h1 {
+    font-size: 40px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin h2 {
+  font-size: 28px;
+  line-height: 1.2;
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin h2 {
+    font-size: 32px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin h3 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin p.small, #admin a.small {
+  font-size: 13px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .bold {
+  font-weight: 700;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .italic {
+  font-style: italic;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .center {
+  text-align: center;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin a {
+  color: #242424;
+  cursor: pointer;
+  text-decoration: none;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin a:hover {
+  background: transparent;
+  text-decoration: none !important;
+  color: #3e3e3e;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #typography h1, #admin #typography h2, #admin #typography h3, #admin #typography h4, #admin #typography h5, #admin #typography h6, #admin #typography p {
+  margin-top: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .green {
+  background: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .grey {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .black {
+  background: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li p {
+  position: absolute;
+  padding: 3px 13px;
+  color: #666;
+  background-color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  left: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li .color {
+  height: 120px;
+  margin-right: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li:last-child {
+  margin-right: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  color: #242424;
+  border: 1px solid #242424;
+  background: transparent;
+  -webkit-transition: background-color 0.3s,opacity 0.3s;
+  transition: background-color 0.3s,opacity 0.3s;
+  margin-bottom: 16px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button--primary {
+  font-size: 10px;
+  text-transform: uppercase;
+  border: 2px solid #242424;
+  border-radius: 3px;
+  padding: 5px 14px;
+  line-height: 15px;
+  background: white;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button--secondary {
+  border: 2px solid #242424;
+  border-radius: 5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  font-size: 16px;
+  min-width: 120px;
+  letter-spacing: 1.2px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button--secondary:hover, #admin .button--primary:hover {
+  border: 2px solid #3e3e3e;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button--edit {
+  background: lightblue;
+  border: 2px solid lightblue;
+  color: #242424;
+  margin-right: 12px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button--edit:hover {
+  background: #c1e1ec;
+  border: 2px solid #c1e1ec;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button--delete {
+  background: lightcoral;
+  border: 2px solid lightcoral;
+  color: white;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button--delete:hover {
+  color: white;
+  background: #f39797;
+  border: 2px solid #f39797;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button--tertiary {
+  background: #78D18B;
+  color: white;
+  text-transform: uppercase;
+  padding: 6px;
+  border: none;
+  border-radius: 5px;
+  border: 2px solid #78D18B;
+  font-weight: normal;
+  min-width: 190px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .button--large {
+  width: 190px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .remove_fields {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  color: #242424;
+  border: 1px solid #242424;
+  background: transparent;
+  -webkit-transition: background-color 0.3s,opacity 0.3s;
+  transition: background-color 0.3s,opacity 0.3s;
+  margin-bottom: 16px;
+  font-size: 10px;
+  text-transform: uppercase;
+  border: 2px solid #242424;
+  border-radius: 3px;
+  padding: 5px 14px;
+  line-height: 15px;
+  background: white;
+  background: lightcoral;
+  border: 2px solid lightcoral;
+  color: white;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .remove_fields:hover {
+  color: white;
+  background: #f39797;
+  border: 2px solid #f39797;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #buttons .button {
+  margin-bottom: 20px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .green {
+  background: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .grey {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .black {
+  background: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li p {
+  position: absolute;
+  padding: 3px 13px;
+  color: #666;
+  background-color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  left: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li .color {
+  height: 120px;
+  margin-right: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li:last-child {
+  margin-right: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin ol, #admin ul {
+  margin: 0 0 12px 0;
+  padding: 0;
+  list-style: none;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin ul.list li {
+  padding-left: 20px;
+  position: relative;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin ul.list li:before {
+  content: '•';
+  font-size: 24px;
+  top: 0;
+  color: #78D18B;
+  position: absolute;
+  left: 0;
+  line-height: 30px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin ol.list li {
+  counter-increment: step-counter;
+  padding-left: 20px;
+  position: relative;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin ol.list li:before {
+  content: counter(step-counter);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin html {
+  box-sizing: border-box;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin *, #admin *:before, #admin *:after {
+  box-sizing: inherit;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin body {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 1146px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 936px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 744px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 480px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper {
+  box-sizing: border-box;
+  position: relative;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0;
+    padding: 0 12px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex .col--two {
+  box-sizing: border-box;
+  width: 47.5%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex .col--four {
+  box-sizing: border-box;
+  width: 25%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex.tab-content {
+  display: none;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex.tab-content.current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--secondary {
+  background: white;
+  border-radius: 5px;
+  padding: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide li {
+  height: 100px;
+  background: lightgrey;
+  box-sizing: border-box;
+  width: 22.5%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide li:nth-of-type(2n+1) {
+  background: rgba(0, 0, 0, 0.1);
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin img {
+  max-width: 100%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .green {
+  background: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .grey {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .black {
+  background: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li p {
+  position: absolute;
+  padding: 3px 13px;
+  color: #666;
+  background-color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  left: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li .color {
+  height: 120px;
+  margin-right: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li:last-child {
+  margin-right: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .form--contained {
+  width: 80%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .form--contained {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .form--contained {
+    width: 90%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin select {
+  padding: 10px 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: none;
+  font-size: 14px;
+  background: #d3d3d3;
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin input, #admin textarea, #admin fieldset {
+  width: 100%;
+  padding: 6px 4px;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin textarea {
+  height: 200px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin input[type=checkbox] {
+  width: auto;
+  margin-bottom: 16px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin fieldset {
+  padding: 20px 20px 0 20px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .en-fr label {
+  color: #ddd;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .en-fr input, #admin .en-fr textarea, #admin .en-fr fieldset {
+  border: 1px solid #ddd;
+  color: #ddd;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .green {
+  background: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .grey {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .black {
+  background: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li p {
+  position: absolute;
+  padding: 3px 13px;
+  color: #666;
+  background-color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  left: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li .color {
+  height: 120px;
+  margin-right: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li:last-child {
+  margin-right: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin table th {
+  text-align: left;
+  padding: 6px 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin table tr {
+  background: white;
+  border-bottom: 1.5px solid #e0e0e0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin table tbody tr:hover {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin table td {
+  padding: 10px 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin table img {
+  width: 50px;
+  padding: 6px 0;
+  display: block;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin table .table--image {
+  width: 100px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin table .table--button {
+  text-align: right;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .green {
+  background: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .grey {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .black {
+  background: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li p {
+  position: absolute;
+  padding: 3px 13px;
+  color: #666;
+  background-color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  left: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li .color {
+  height: 120px;
+  margin-right: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li:last-child {
+  margin-right: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #admin--only .sidebar {
+  height: 100%;
+  position: fixed;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .sidebar {
+  width: 230px;
+  background: #242424;
+  position: relative;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .sidebar a, #admin .sidebar p, #admin .sidebar span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+  padding: 16px 12px;
+  display: block;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .sidebar a:hover {
+  color: white;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .sidebar a.active {
+  background: #3e3e3e;
+  color: white;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .sidebar .sidebar--header {
+  background: #78D18B;
+  padding: 18px 12px;
+  text-transform: uppercase;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .sidebar .sidebar--header:hover {
+  background: #8bd79b;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .sidebar .sidebar--user {
+  position: absolute;
+  bottom: 12px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .sidebar .sidebar--user a, #admin .sidebar .sidebar--user span {
+  padding: 6px 12px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #admin--only .breadcrumb {
+  position: fixed;
+  margin-left: 230px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .breadcrumb {
+  width: calc(100% - 230px);
+  padding: 18px 10px;
+  font-size: 14px;
+  background: #F9F9F9;
+  text-transform: uppercase;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .breadcrumb span {
+  color: #242424;
+  padding: 0 10px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .breadcrumb span:after {
+  content: '>';
+  padding: 0 10px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .breadcrumb span:last-of-type:after {
+  content: '';
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .breadcrumb a {
+  padding: 0 10px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .admin--content {
+  width: calc(100% - 230px);
+  padding: 12px;
+  padding-top: 60px;
+  margin-left: 230px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .admin--module {
+  background: #F9F9F9;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 16px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .admin--module p {
+  margin-top: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .admin--module li {
+  margin-bottom: 4px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin html {
+  box-sizing: border-box;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin *, #admin *:before, #admin *:after {
+  box-sizing: inherit;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin body {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 1146px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 936px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 744px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 480px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper {
+  box-sizing: border-box;
+  position: relative;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0;
+    padding: 0 12px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex .col--two {
+  box-sizing: border-box;
+  width: 47.5%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex .col--four {
+  box-sizing: border-box;
+  width: 25%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex.tab-content {
+  display: none;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex.tab-content.current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--secondary {
+  background: white;
+  border-radius: 5px;
+  padding: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide li {
+  height: 100px;
+  background: lightgrey;
+  box-sizing: border-box;
+  width: 22.5%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide li:nth-of-type(2n+1) {
+  background: rgba(0, 0, 0, 0.1);
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin img {
+  max-width: 100%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .as--no-margin-bottom {
+  margin-bottom: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .as--admin-index-title h1 {
+  width: calc(100% - 200px);
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .as--admin-index-title h1, #admin .as--admin-index-title a {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .as--half {
+  width: calc(50% - 20px);
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .green {
+  background: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .grey {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .black {
+  background: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li p {
+  position: absolute;
+  padding: 3px 13px;
+  color: #666;
+  background-color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  left: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li .color {
+  height: 120px;
+  margin-right: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li:last-child {
+  margin-right: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin html {
+  box-sizing: border-box;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin *, #admin *:before, #admin *:after {
+  box-sizing: inherit;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin body {
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 1146px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 936px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 744px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: 480px;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper:margin {
+    left: 12px;
+    right: 12px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    width: auto;
+    margin-left: 8px;
+    margin-right: 8px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper {
+  box-sizing: border-box;
+  position: relative;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0 auto;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper {
+    margin: 0;
+    padding: 0 12px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  -ms-flex-flow: row wrap;
+  -webkit-flex-flow: row wrap;
+          flex-flow: row wrap;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex .col--two {
+  box-sizing: border-box;
+  width: 47.5%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--two {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex .col--four {
+  box-sizing: border-box;
+  width: 25%;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 50%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .wrapper--flex .col--four {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex.tab-content {
+  display: none;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--flex.tab-content.current {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .wrapper--secondary {
+  background: white;
+  border-radius: 5px;
+  padding: 25px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide li {
+  height: 100px;
+  background: lightgrey;
+  box-sizing: border-box;
+  width: 22.5%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .container--style-guide li:nth-of-type(2n+1) {
+  background: rgba(0, 0, 0, 0.1);
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin img {
+  max-width: 100%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main {
+  background: #1a1a1a;
+  padding: 12px 0;
+  color: white;
+  line-height: 30px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main a {
+  color: white;
+  text-transform: uppercase;
+  display: inline-block;
+  padding: 0 10px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .logo {
+  font-size: 20px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .logo {
+    z-index: 20;
+    display: block;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .logo {
+    z-index: 20;
+    display: block;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .logo a {
+  text-transform: lowercase;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .logo span {
+  font-size: 20px;
+  vertical-align: middle;
+  display: inline-block;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .logo img {
+  width: 30px;
+  margin-right: 6px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--links {
+  font-size: 12px;
+  font-weight: 100;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links {
+    float: right;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links {
+    float: right;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links {
+    float: right;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    background: #1a1a1a;
+    display: none;
+    height: 100vh;
+    padding-top: 20vh;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    z-index: 10;
+    background: #1a1a1a;
+    display: none;
+    height: 100vh;
+    padding-top: 20vh;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--links a {
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 33px;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a:last-of-type {
+    border: none;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a:last-of-type {
+    border: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a {
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a:last-of-type {
+    border: none;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a {
+    display: block;
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a:hover {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a {
+    display: block;
+    width: 100%;
+    padding: 20px 10px;
+    font-size: 32px;
+    color: white;
+    text-align: center;
+  }
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links a:hover {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--links img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links img {
+    display: none;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--links img {
+    display: none;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--hamburger {
+  position: absolute;
+  top: 18px;
+  right: 46px;
+  z-index: 20;
+}
+@media screen and (min-width: 1170px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--hamburger {
+    display: none;
+  }
+}
+@media screen and (min-width: 960px) and (max-width: 1169px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--hamburger {
+    display: none;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 959px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--main .nav--hamburger {
+    display: none;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--hamburger span, #admin .nav--main .nav--hamburger span:before, #admin .nav--main .nav--hamburger span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 3px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+  -webkit-transition: all 500ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--hamburger span:before {
+  top: -10px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--hamburger span:after {
+  bottom: -10px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--hamburger.active span {
+  background-color: transparent;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--hamburger.active span:before, #admin .nav--main .nav--hamburger.active span:after {
+  top: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--hamburger.active span:before {
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .nav--main .nav--hamburger.active span:after {
+  -webkit-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--links.active {
+    display: block;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin .nav--links.active {
+    display: block;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer {
+  background: white;
+  padding: 40px;
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--footer {
+    padding: 0;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer h3 {
+  margin-top: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer .email-form {
+  width: 40%;
+  padding-left: 28px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--footer .email-form {
+    padding-left: 0;
+    padding: 20px 0;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--footer .email-form {
+    padding-left: 0;
+    padding: 20px 0;
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer .email-form input {
+  width: 80%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer .email-form input[type=email] {
+  border: 1px solid #333;
+  padding: 6px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer ul {
+  width: 30%;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer ul:last-of-type {
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  padding-left: 28px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--footer ul:last-of-type {
+    padding-left: 0;
+    border-right: none;
+    border-left: none;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--footer ul:last-of-type {
+    padding-left: 0;
+    border-right: none;
+    border-left: none;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--footer ul {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    padding: 20px 0;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--footer ul {
+    width: 100%;
+    border-bottom: 1px solid grey;
+    padding: 20px 0;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer ul a, #admin footer.nav--footer ul input[type=submit] {
+  color: #78D18B;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer ul a:hover, #admin footer.nav--footer ul input[type=submit]:hover {
+  color: #4d4d4d;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer ul input[type=submit] {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--footer ul form {
+  display: inline-block;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--sponsor {
+  background: #eaefec;
+  padding: 20px 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--sponsor p, #admin footer.nav--sponsor img {
+  display: inline-block;
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--sponsor p, #admin footer.nav--sponsor img {
+    width: 100%;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--sponsor img {
+  width: 30%;
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--sponsor img {
+    max-width: 250px;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin footer.nav--sponsor p {
+  margin-right: 10%;
+}
+@media screen and (max-width: 499px) {
+  /* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+  #admin footer.nav--sponsor p {
+    margin-right: 0;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .text-edit h1 {
+  font-size: 20px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .text-edit h2 {
+  font-size: 18px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .text-edit h3 {
+  font-size: 16px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .text-edit ul {
+  list-style: disc;
+  margin-left: 10px;
+  padding-left: 20px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .text-edit ol {
+  list-style: decimal;
+  margin-left: 10px;
+  padding-left: 20px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .green {
+  background: #78D18B;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .grey {
+  background: #F9F9F9;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .black {
+  background: #242424;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li {
+  position: relative;
+  padding: 0;
+  margin-bottom: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li p {
+  position: absolute;
+  padding: 3px 13px;
+  color: #666;
+  background-color: #fff;
+  font-size: 12px;
+  bottom: 0;
+  left: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li .color {
+  height: 120px;
+  margin-right: 0.9375em;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #colors li:last-child {
+  margin-right: 0;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #notice, #admin .alert {
+  color: #333;
+  position: absolute;
+  width: 60%;
+  max-width: 500px;
+  background: white;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+  z-index: 30;
+  padding: 50px;
+  text-align: center;
+  border-radius: 5px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin .alert {
+  background: #e0a6a6;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #error_explanation {
+  background: rgba(178, 34, 34, 0.4);
+  border-radius: 5px;
+  padding: 10px 25px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #error_explanation h2 {
+  font-size: 18px;
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/admin.scss */
+#admin #error_explanation ul {
+  list-style: disc;
+  padding: 20;
+}
+
+/* line 4, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+.video-container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 40px 0 40px 0;
+  overflow: hidden;
+  background-position: center;
+  background-attachment: fixed;
+}
+@media screen and (max-width: 499px) {
+  /* line 4, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+  .video-container {
+    padding: 80px 0 40px 0;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 4, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+  .video-container {
+    padding: 80px 0 40px 0;
+  }
+}
+/* line 14, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+.video-container video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  z-index: -10;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-size: cover;
+  -webkit-transition: 1s opacity;
+          transition: 1s opacity;
+}
+/* line 27, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+.video-container h2 {
+  margin: 0;
+}
+/* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+.video-container h3 {
+  color: white;
+  font-family: "Georgia", serif;
+  font-size: 20px;
+  font-weight: 100;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 36px;
+  margin-bottom: 36px;
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+  .video-container h3 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 29, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+  .video-container h3 {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+/* line 41, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+.video-container .count {
+  font-family: "WWF", sans-serif;
+  font-size: 240px;
+  color: rgba(255, 255, 255, 0.7);
+}
+@media screen and (min-width: 500px) and (max-width: 767px) {
+  /* line 41, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+  .video-container .count {
+    font-size: 140px;
+  }
+}
+@media screen and (max-width: 499px) {
+  /* line 41, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+  .video-container .count {
+    font-size: 80px;
+  }
+}
+/* line 49, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+.video-container .button {
+  margin-bottom: 72px;
+}
+/* line 51, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+.video-container img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 54, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+.about {
+  max-width: 650px;
+}
+@media screen and (max-width: 499px) {
+  /* line 54, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+  .about {
+    margin-bottom: 80px;
+  }
+}
+/* line 58, /Users/trudy/Code/wearewildlife/app/assets/stylesheets/headers.sass */
+.about p {
+  font-family: "Georgia", script;
+  font-style: italic;
+  font-size: 18.5px;
+  text-align: center;
+  letter-spacing: 0.46px;
+  line-height: 32px;
+}
