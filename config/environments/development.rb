@@ -38,17 +38,17 @@ Rails.application.configure do
 
   # config.asset_host = "http://localhost:3000/"
 
-  config.asset_host = Proc.new {|source, request|
-    if request.present? 
-      if request.env["REQUEST_URI"] == "http://localhost:3000/"
-        "http://localhost:3000/"
-      end
-    else
-      "http://localhost:3000/"
-    end
+  # config.asset_host = Proc.new {|source, request|
+  #   if request.present? 
+  #     if request.env["REQUEST_URI"] == "http://localhost:3000/"
+  #       "http://localhost:3000/"
+  #     end
+  #   else
+  #     "http://localhost:3000/"
+  #   end
 
 
-  }
+  # }
 
     # Add the fonts path
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
