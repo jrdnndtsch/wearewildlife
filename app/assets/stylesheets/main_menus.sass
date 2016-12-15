@@ -7,10 +7,19 @@ nav.main
 	:background black
 	:width 100%
 	+display-for(md sm xs)
+	.wrapper
+		+display-for(md sm xs)
+			:margin-left 30px
 	img 
 		:width 100px
 		:position absolute
 		:z-index 10
+	.translate
+		:float left
+		:color white
+		:font-family 'WWF'
+		:padding 30px 0
+		:margin-left 10px
 	.main--toggle
 		:display none
 		+display-for(md sm xs)

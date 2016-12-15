@@ -36,11 +36,17 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
+  # config.asset_host = "http://localhost:3000/"
+
   config.asset_host = Proc.new {|source, request|
-    if request.env["REQUEST_URI"] == "http://localhost:3000/"
-      "http://localhost:3000/"
+    if request.present? 
+      if request.env["REQUEST_URI"] == "http://localhost:3000/"
+        "http://localhost:3000/"
+      end
     else
+      "http://localhost:3000/"
     end
+
 
   }
 
