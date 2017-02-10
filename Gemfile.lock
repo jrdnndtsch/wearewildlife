@@ -385,5 +385,8 @@ DEPENDENCIES
   web-console (~> 2.0)
   whenever (~> 0.9.4)
 
+RUBY VERSION
+   ruby 2.2.1p85
+
 BUNDLED WITH
-   1.10.6
+   1.13.7
