@@ -101,20 +101,28 @@
     <div class="field en-<%= current_user.preferred_language %> col--two">
       <%= f.label :photo_by %><br>
       <%= f.text_field :photo_by %>
+      <% if @story.photo? %>
+        <%= image_tag @story.photo.url('header')%>
+        <br>
+
+        <%= f.label "#{@story.remove_lang(current_user)} photo" %>
+        <%= check_box_tag :remove_photo %>
+      <% end %>
     </div>
     <div class="field <%= current_user.preferred_language %>-fr col--two">
       <%= f.label "photo #{@story.by_lang(current_user)}" %><br>
       <%= f.text_field :fr_photo_by %>
+
+      <% if @story.fr_photo? %>
+        <%= image_tag @story.fr_photo.url('header')%>
+        <br>
+
+        <%= f.label "#{@story.remove_lang(current_user)} photo" %>
+        <%= check_box_tag :remove_fr_photo %>
+      <% end %>
     </div>
   </div>
 
-  <% if @story.photo? %>
-    <%= image_tag @story.photo.url('header')%>
-    <br>
-
-    <%= f.label "#{@story.remove_lang(current_user)} photo" %>
-    <%= check_box_tag :remove_photo %>
-  <% end %>
   <div class="actions">
     <%= f.submit @story.update_lang(current_user), class: 'button button--tertiary' %>
   </div>

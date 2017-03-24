@@ -65,6 +65,9 @@ class Admin::StoriesController < AdminController
         if params[:remove_photo].present?
           @story.update(photo: nil)
         end
+        if params[:remove_fr_photo].present?
+          @story.update(fr_photo: nil)
+        end
         format.html { redirect_to edit_admin_story_path(@story), notice: 'Story was successfully updated.' }
         format.json { render :show, status: :ok, location: @story }
       else

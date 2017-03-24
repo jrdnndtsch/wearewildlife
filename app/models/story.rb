@@ -9,6 +9,7 @@ class Story < ActiveRecord::Base
           header: " -gravity center -crop '500x500+0+0'"
         },
     default_url: "missing.jpg"
+  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
 
     has_attached_file :fr_photo,
       styles: {
@@ -20,7 +21,7 @@ class Story < ActiveRecord::Base
             header: " -gravity center -crop '500x500+0+0'"
           },
       default_url: "missing.jpg"
-  validates_attachment_content_type :photo, content_type: /\Aimage\/.*\Z/
+  validates_attachment_content_type :fr_photo, content_type: /\Aimage\/.*\Z/
   # validates :featured, :uniqueness => true
   include LanguagePreference
   
