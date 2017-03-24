@@ -66,7 +66,7 @@
 					<div class="col--two">
 						<div class="photo-by" <% if @featured_story.photo_by.present?%>title="<%= @featured_story.photo_by%>"<% end %>>
 							<%= link_to  url_for(@featured_story.fr_link), :target => '_blank' do%>
-							<%= image_tag @featured_story.photo.url, :title =>  @featured_story.photo_by %>
+							<%= image_tag @featured_story.fr_photo.url, :title =>  @featured_story.fr_photo_by %>
 							<% end %>
 						</div>
 					</div>
@@ -83,7 +83,7 @@
 				<% @stories.each do |story| %>
 					<div class="col--three-margin story">
 						
-						<div class="story--photo photo-by" style="background-image: url(<%= story.photo.url %>)" <% if story.photo_by.present?%>title="<%= story.photo_by%>"<% end %>>
+						<div class="story--photo photo-by" style="background-image: url(<%= story.fr_photo.url %>)" <% if story.photo_by.present?%>title="<%= story.photo_by%>"<% end %>>
 							<%= link_to url_for(story.fr_link), :target => '_blank' do %><%end %>
 						</div>
 						<%= link_to url_for(story.fr_link), :target => '_blank' do %>

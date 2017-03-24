@@ -86,9 +86,15 @@
     <%= f.check_box :selected %>
   </div>
 
-  <div class="field">
-    <%= f.label :photo %><br>
-    <%= f.file_field :photo %>
+  <div class="field wrapper--flex">
+    <div class="field en-<%= current_user.preferred_language %> col--two">
+      <%= f.label :photo %><br>
+      <%= f.file_field :photo %>
+    </div> 
+    <div class="field <%= current_user.preferred_language %>-fr col--two">
+      <%= f.label :fr_photo %><br>
+      <%= f.file_field :fr_photo %>
+    </div> 
   </div>
 
   <div class="wrapper--flex">

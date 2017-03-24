@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160907161250) do
+ActiveRecord::Schema.define(version: 20170324161946) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -136,13 +136,13 @@ ActiveRecord::Schema.define(version: 20160907161250) do
     t.string   "link"
     t.text     "description"
     t.boolean  "featured"
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
-    t.boolean  "selected",           default: false
+    t.boolean  "selected",              default: false
     t.string   "button_name"
     t.string   "photo_by"
     t.string   "fr_title"
@@ -151,6 +151,10 @@ ActiveRecord::Schema.define(version: 20160907161250) do
     t.text     "fr_description"
     t.string   "fr_button_name"
     t.string   "fr_photo_by"
+    t.string   "fr_photo_file_name"
+    t.string   "fr_photo_content_type"
+    t.integer  "fr_photo_file_size"
+    t.datetime "fr_photo_updated_at"
   end
 
   create_table "sub_menus", force: :cascade do |t|
