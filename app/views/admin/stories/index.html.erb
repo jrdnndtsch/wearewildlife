@@ -38,7 +38,7 @@
   <tbody>
     <% @stories.each do |story| %>
       <tr>
-        <% if current_user.preferred_langua == 'en' %>
+        <% if current_user.preferred_language == 'en' %>
           <td><%= image_tag story.photo.url('header') %></td>
         <% else %>
           <td><%=  image_tag story.fr_photo.url('header') %></td>
