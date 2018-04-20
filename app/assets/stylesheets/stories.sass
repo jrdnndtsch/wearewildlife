@@ -21,10 +21,11 @@
 	.featured-title 
 		:font-size 60px
 		:color white
+		:margin 0 auto 36px auto
 	.story-title
 		:padding 20px
 		:margin-bottom 75px
-		:color white
+		:color black
 	p 
 		:font-family 'Arial', sans-serif
 		:letter-spacing 0.8px
@@ -36,7 +37,7 @@
 	a.button
 		&:hover
 			:background black
-			:border 1.5px solid white
+			:border 1.5px solid black
 			:color white
 // .col--three-margin
 // 	:width calc(33.33% - 18.666px)
@@ -45,13 +46,16 @@
 	:color white
 	:padding 30px 60px
 	:margin-bottom 28px
+	a.button
+		&:hover
+			:border 1.5px solid white
 	+display-for(sm)
 		:padding 50px 36px
 	+display-for(xs)
 		:padding 50px 28px
 .story 
 	:position relative
-	:background-color black
+	:background-color white
 	:color white
 	:margin-bottom 28px
 	&:nth-of-type(1n+3)

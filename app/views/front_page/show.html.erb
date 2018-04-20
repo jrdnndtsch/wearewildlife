@@ -46,7 +46,7 @@
 		</section>
 	<% end %>
 
-	<section class="stories wrapper">
+	<section class="stories">
 		<% if @stories_title.title.present? %>
 		
 				<h2 class="title"><%= @stories_title.title%></h2>
@@ -55,9 +55,9 @@
 		<% if @featured_story.present? %>
 			<div class="featured-story">
 				<%= link_to url_for(@featured_story.link), :target => '_blank' do%>
-					<h3 class="featured-title"><%= @featured_story.title %></h3>
+					<h3 class="wrapper featured-title"><%= @featured_story.title %></h3>
 				<% end %>	
-				<div class="wrapper--flex stories--flex">
+				<div class="wrapper wrapper--flex stories--flex">
 					<div class="col--two">
 						<%= simple_format(@featured_story.description) %>
 					</div>
@@ -69,15 +69,17 @@
 						</div>
 					</div>
 				</div>
-				<% if @featured_story.button_name.present? %>
-					<%= link_to @featured_story.button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
-				<% else %>
-					<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
-				<% end %>
+				<div class="wrapper">
+					<% if @featured_story.button_name.present? %>
+						<%= link_to @featured_story.button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
+					<% else %>
+						<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
+					<% end %>
+				</div>
 			</div>
 		<% end %>
 		<% if @stories.present? %>
-			<div class="wrapper--flex">
+			<div class="wrapper wrapper--flex">
 				<% @stories.each do |story| %>
 					<div class="col--three-margin story">
 						
@@ -103,31 +105,6 @@
 			<a href="#count-for-nature" class="button button--primary">I Count For Nature</a>
 		</div>
 	</div>
-
-	<section class="social">
-		<div class="hashtag">	
-			<h2 class="center-text">#CountForNature</h2>
-			<p class="center-text"><a href="https://www.facebook.com/WWFCanada/" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/WWFCanada" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/wwfcanada/" target="_blank"><i class="fa fa-instagram"></i></a></p>
-		</div>
-
-		<div class="wrapper--flex tweet-flex">
-			<% @socials.each_with_index do |social, index| %>
-				<div class="social-element col--four">
-					<% if index.modulo(2).zero? %>
-						<% if social.present? %>
-							<div class="tweet">
-								<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
-							</div>
-						<% end %>
-					<% else %>
-						<% if social.present? %>
-							<div class="instagram" style="background-image: url(<%= social.image_url %>)">
-							</div>
-						<% end %>
-					<% end %>
-				</div>
-			<% end %>
-	</section>
 
 	<% if @blogs.present? %>
 		<section class="wp-blog wrapper">
@@ -165,6 +142,33 @@
 		</section>
 	<% end %>
 
+	<section class="social">
+		<div class="hashtag">	
+			<h2 class="center-text">#CountForNature</h2>
+			<p class="center-text"><a href="https://www.facebook.com/WWFCanada/" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/WWFCanada" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/wwfcanada/" target="_blank"><i class="fa fa-instagram"></i></a></p>
+		</div>
+
+		<div class="wrapper--flex tweet-flex">
+			<% @socials.each_with_index do |social, index| %>
+				<div class="social-element col--four">
+					<% if index.modulo(2).zero? %>
+						<% if social.present? %>
+							<div class="tweet">
+								<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
+							</div>
+						<% end %>
+					<% else %>
+						<% if social.present? %>
+							<div class="instagram" style="background-image: url(<%= social.image_url %>)">
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+			<% end %>
+	</section>
+
+	
+
 	<% if @featured_donor.present? %>
 		<section class="featured-donor">
 			<div class="wrapper">
@@ -194,7 +198,7 @@
 		</section>
 	<% end %>
 
-	<section id="count-for-nature" class="wrapper wrapper--form">
+	<!-- <section id="count-for-nature" class="wrapper wrapper--form">
 		<div id="wufoo-mvhjj9902vjtoi">
 
 		Fill out my <a href="https://wwfcanada.wufoo.com/forms/mvhjj9902vjtoi">online form</a>.
@@ -233,7 +237,7 @@
 
 		})(document, 'script');</script>
 	</section>
-
+ -->
 	<% if @generic_stories.present? %>
 		<section class="generic-stories wrapper">
 			<% if @generic_stories_title.title.present? %>
@@ -311,9 +315,7 @@
 			$('.header').removeClass('hidden').hide().fadeIn(300, function(){
 				$('.header-text').removeClass('hidden').hide().fadeIn(1000, function(){
 				  $('.sub-title-01').removeClass('hidden').hide().fadeIn(2000, function(){
-				  	$('.sub-title-02').removeClass('hidden').hide().fadeIn(500, function(){
-				  		$('.sub-title-03').removeClass('hidden').hide().fadeIn(500)
-				  	});
+				  	$('.sub-title-03').removeClass('hidden').hide().fadeIn(500);
 				  });
 				});	
 			});
