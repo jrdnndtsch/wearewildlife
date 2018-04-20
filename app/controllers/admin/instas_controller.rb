@@ -8,6 +8,7 @@ class Admin::InstasController < ApplicationController
 			this_insta = Insta.where(id: index_plus_one).first_or_initialize({text: insta.caption.text, image_url: insta.images.standard_resolution.url})
 			this_insta.update({text: insta.caption.text, image_url: insta.images.standard_resolution.url})
 			this_insta.save
+			puts 'insta saved !!!! <<<>>> !!!!'
 		end 
 		render nothing: true, status: :ok, content_type: "text/html"
 	end
