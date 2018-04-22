@@ -29,6 +29,14 @@
       </div> 
     </div> 
     <div class="field">
+      <%= f.label "Show Social"%>
+      <%= f.check_box :show_social %>
+    </div>
+    <div class="field">
+      <%= f.label "French Show Social"%>
+      <%= f.check_box :fr_show_social %>
+    </div>
+    <div class="field">
       <%= f.label @header.video_lang(current_user) %>
       <%= f.text_field :video_link %>
     </div>

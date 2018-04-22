@@ -33,9 +33,7 @@
 		<source src="<%= @header.video_link %>" type="video/mp4">
 		</video>
 		<div class="header-text hidden">
-			<h2 class="hidden sub-title-01"><span class="count"><%= @header.number %></span></h2>
-			<h3 class="hidden sub-title-02"><%= @header.fr_tag_line %></h3>	
-			<a href="#count-for-nature" class="hidden sub-title-03 button button--primary">Un + pour la nature</a>
+			<%= embedded_svg 'manature.svg', class: "hidden sub-title-01" %>
 			<%= image_tag 'down-arrow.svg', class: "hidden sub-title-03" %>
 		</div>
 	</div>
@@ -48,7 +46,7 @@
 		</section>
 	<% end %>
 
-	<section class="stories wrapper">
+	<section class="stories">
 		<% if @stories_title.title.present? %>
 		
 				<h2 class="title"><%= @stories_title.fr_title%></h2>
@@ -57,9 +55,9 @@
 		<% if @featured_story.present? %>
 			<div class="featured-story">
 				<%= link_to url_for(@featured_story.fr_link), :target => '_blank' do%>
-					<h3 class="featured-title"><%= @featured_story.fr_title %></h3>
+					<h3 class="wrapper featured-title"><%= @featured_story.fr_title %></h3>
 				<% end %>	
-				<div class="wrapper--flex stories--flex">
+				<div class="wrapper wrapper--flex stories--flex">
 					<div class="col--two">
 						<%= simple_format(@featured_story.fr_description) %>
 					</div>
@@ -71,15 +69,17 @@
 						</div>
 					</div>
 				</div>
-				<% if @featured_story.fr_button_name.present? %>
-					<%= link_to @featured_story.fr_button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
-				<% else %>
-					<%= link_to 'en savoir plus ▸', url_for(@featured_story.fr_link), :target => "_blank", class: 'button button--secondary button--inverted'  %>
-				<% end %>
+				<div class="wrapper">
+					<% if @featured_story.fr_button_name.present? %>
+						<%= link_to @featured_story.fr_button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
+					<% else %>
+						<%= link_to 'en savoir plus ▸', url_for(@featured_story.fr_link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
+					<% end %>
+				</div>
 			</div>
 		<% end %>
 		<% if @stories.present? %>
-			<div class="wrapper--flex">
+			<div class="wrapper wrapper--flex">
 				<% @stories.each do |story| %>
 					<div class="col--three-margin story">
 						
@@ -106,36 +106,16 @@
 		</div>
 	</div>
 
-	<section class="social">
-		<div class="hashtag">	
-			<h2 class="center-text">#Plus1</h2>
-			<p class="center-text"><a href="https://www.facebook.com/WWFCanadafrancais" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/wwfcanadafr" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/wwfcanadafr" target="_blank"><i class="fa fa-instagram"></i></a></p>
-		</div>
-
-		<div class="wrapper--flex tweet-flex">
-			<% @socials.each_with_index do |social, index| %>
-				<div class="social-element col--four">
-					<% if index.modulo(2).zero? %>
-						<% if social.present? %>
-							<div class="tweet">
-								<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
-							</div>
-						<% end %>
-					<% else %>
-						<% if social.present? %>
-							<div class="instagram" style="background-image: url(<%= social.image_url %>)">
-							</div>
-						<% end %>
-					<% end %>
-				</div>
-			<% end %>
-	</section>
-
-	<% if @blogs.present? %>
+		<% if @blogs.present? %>
 		<section class="wp-blog wrapper">
 			<% if @title_blog.title.present? %>
 				<h2 class="title"><%= @title_blog.title%></h2>
 			<% end %>
+			<section class="about wrapper">
+				<% if @title_blog.fr_section_text.present? %>
+					<%= simple_format(@title_blog.fr_section_text) %>
+				<% end %>
+			</section>
 			<% @blogs.each do |blog| %>
 			<div class="wrapper--flex">
 				<div class="col--two">
@@ -162,6 +142,36 @@
 			<% end %>
 		</section>
 	<% end %>
+
+
+	<% if @header.fr_show_social %>
+		<section class="social">
+			<div class="hashtag">	
+				<h2 class="center-text">#Plus1</h2>
+				<p class="center-text"><a href="https://www.facebook.com/WWFCanadafrancais" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/wwfcanadafr" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/wwfcanadafr" target="_blank"><i class="fa fa-instagram"></i></a></p>
+			</div>
+
+			<div class="wrapper--flex tweet-flex">
+				<% @socials.each_with_index do |social, index| %>
+					<div class="social-element col--four">
+						<% if index.modulo(2).zero? %>
+							<% if social.present? %>
+								<div class="tweet">
+									<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
+								</div>
+							<% end %>
+						<% else %>
+							<% if social.present? %>
+								<div class="instagram" style="background-image: url(<%= social.image_url %>)">
+								</div>
+							<% end %>
+						<% end %>
+					</div>
+				<% end %>
+		</section>
+	<% end %>
+
+
 
 	<% if @featured_donor.present? %>
 		<section class="featured-donor">
@@ -192,46 +202,48 @@
 		</section>
 	<% end %>
 
-	<section id="count-for-nature" class="wrapper wrapper--form">
+	<!-- <section id="count-for-nature" class="wrapper wrapper--form">
 
 		<div id="wufoo-me9mt9i1h5zygk">
 
 		Fill out my <a href="https://wwfcanada.wufoo.com/forms/me9mt9i1h5zygk">online form</a>.
 
-		</div>
+		</div> -->
 
-		<script type="text/javascript">var me9mt9i1h5zygk;(function(d, t) {
+		<script type="text/javascript">
+			// var me9mt9i1h5zygk;(function(d, t) {
 
-		var s = d.createElement(t), options = {
+		// var s = d.createElement(t), options = {
 
-		'userName':'wwfcanada',
+		// 'userName':'wwfcanada',
 
-		'formHash':'me9mt9i1h5zygk',
+		// 'formHash':'me9mt9i1h5zygk',
 
-		'autoResize':true,
+		// 'autoResize':true,
 
-		'height':'686',
+		// 'height':'686',
 
-		'async':true,
+		// 'async':true,
 
-		'host':'wufoo.com',
+		// 'host':'wufoo.com',
 
-		'header':'show',
+		// 'header':'show',
 
-		'ssl':true};
+		// 'ssl':true};
 
-		s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
+		// s.src = ('https:' == d.location.protocol ? 'https://' : 'http://') + 'www.wufoo.com/scripts/embed/form.js';
 
-		s.onload = s.onreadystatechange = function() {
+		// s.onload = s.onreadystatechange = function() {
 
-		var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
+		// var rs = this.readyState; if (rs) if (rs != 'complete') if (rs != 'loaded') return;
 
-		try { me9mt9i1h5zygk = new WufooForm();me9mt9i1h5zygk.initialize(options);me9mt9i1h5zygk.display(); } catch (e) {}};
+		// try { me9mt9i1h5zygk = new WufooForm();me9mt9i1h5zygk.initialize(options);me9mt9i1h5zygk.display(); } catch (e) {}};
 
-		var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
+		// var scr = d.getElementsByTagName(t)[0], par = scr.parentNode; par.insertBefore(s, scr);
 
-		})(document, 'script');</script>
-	</section>
+		// })(document, 'script');
+	</script>
+	<!-- </section> -->
 
 	<% if @generic_stories.present? %>
 		<section class="generic-stories wrapper">
@@ -310,9 +322,7 @@
 			$('.header').removeClass('hidden').hide().fadeIn(300, function(){
 				$('.header-text').removeClass('hidden').hide().fadeIn(1000, function(){
 				  $('.sub-title-01').removeClass('hidden').hide().fadeIn(2000, function(){
-				  	$('.sub-title-02').removeClass('hidden').hide().fadeIn(500, function(){
-				  		$('.sub-title-03').removeClass('hidden').hide().fadeIn(500)
-				  	});
+				  	$('.sub-title-03').removeClass('hidden').hide().fadeIn(500)
 				  });
 				});	
 			});

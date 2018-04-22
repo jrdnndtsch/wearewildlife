@@ -9,6 +9,10 @@
     <%= f.label @fr_blogs.first.title_lang(current_user) %><br>
     <%= f.text_field :title, class: 'title--field', :data => {:id => @title.first.id} %>
   </div>
+  <div class="field col--two">
+    <%= f.label :fr_section_text %><br>
+    <%= f.text_area :fr_section_text, class: 'title--field', :data => {:id => @title.first.id} %>
+  </div>
   <div class="field">
     <%= f.hidden_field :section_name, value: 'fr_blog' %>
   </div>

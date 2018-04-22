@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170324161946) do
+ActiveRecord::Schema.define(version: 20180422190040) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -102,8 +102,8 @@ ActiveRecord::Schema.define(version: 20170324161946) do
     t.integer  "number"
     t.string   "tag_line"
     t.text     "about"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.string   "video_link"
     t.string   "video_photo_file_name"
     t.string   "video_photo_content_type"
@@ -111,6 +111,8 @@ ActiveRecord::Schema.define(version: 20170324161946) do
     t.datetime "video_photo_updated_at"
     t.string   "fr_tag_line"
     t.text     "fr_about"
+    t.boolean  "show_social",              default: true
+    t.boolean  "fr_show_social",           default: true
   end
 
   create_table "insta", force: :cascade do |t|
@@ -174,9 +176,11 @@ ActiveRecord::Schema.define(version: 20170324161946) do
   create_table "titles", force: :cascade do |t|
     t.string   "title"
     t.string   "section_name"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "fr_title"
+    t.text     "section_text"
+    t.text     "fr_section_text"
   end
 
   create_table "tweets", force: :cascade do |t|

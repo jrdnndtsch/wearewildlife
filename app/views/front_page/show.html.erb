@@ -33,7 +33,8 @@
 		<source src="<%= @header.video_link %>" type="video/mp4">
 		</video>
 		<div class="header-text hidden">
-			<h2 class="hidden sub-title-01"><span class="count"><%= @header.number %></span></h2>	
+			<!-- <h2 class="hidden sub-title-01"><span class="count"><%= @header.number %></span></h2>	 -->
+			<%= embedded_svg 'wildifer.svg', class: "hidden sub-title-01" %>
 			<%= image_tag 'down-arrow.svg', class: "hidden sub-title-03" %>
 		</div>
 	</div>
@@ -111,6 +112,11 @@
 			<% if @title_blog.title.present? %>
 				<h2 class="title"><%= @title_blog.title%></h2>
 			<% end %>
+			<section class="about wrapper">
+				<% if @title_blog.section_text.present? %>
+					<%= simple_format(@title_blog.section_text) %>
+				<% end %>
+			</section>
 			<% @blogs.each do |blog| %>
 			<div class="wrapper--flex">
 				<div class="col--two">
@@ -142,30 +148,32 @@
 		</section>
 	<% end %>
 
-	<section class="social">
-		<div class="hashtag">	
-			<h2 class="center-text">#CountForNature</h2>
-			<p class="center-text"><a href="https://www.facebook.com/WWFCanada/" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/WWFCanada" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/wwfcanada/" target="_blank"><i class="fa fa-instagram"></i></a></p>
-		</div>
+	<% if @header.show_social %>
+		<section class="social">
+			<div class="hashtag">	
+				<h2 class="center-text">#CountForNature</h2>
+				<p class="center-text"><a href="https://www.facebook.com/WWFCanada/" target="_blank"><i class="fa fa-facebook"></i></a><a href="https://twitter.com/WWFCanada" target="_blank"><i class="fa fa-twitter"></i></a><a href="https://www.instagram.com/wwfcanada/" target="_blank"><i class="fa fa-instagram"></i></a></p>
+			</div>
 
-		<div class="wrapper--flex tweet-flex">
-			<% @socials.each_with_index do |social, index| %>
-				<div class="social-element col--four">
-					<% if index.modulo(2).zero? %>
-						<% if social.present? %>
-							<div class="tweet">
-								<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
-							</div>
+			<div class="wrapper--flex tweet-flex">
+				<% @socials.each_with_index do |social, index| %>
+					<div class="social-element col--four">
+						<% if index.modulo(2).zero? %>
+							<% if social.present? %>
+								<div class="tweet">
+									<p ><%= Rinku.auto_link(social.text, :all, 'target="_blank"').html_safe %></p>
+								</div>
+							<% end %>
+						<% else %>
+							<% if social.present? %>
+								<div class="instagram" style="background-image: url(<%= social.image_url %>)">
+								</div>
+							<% end %>
 						<% end %>
-					<% else %>
-						<% if social.present? %>
-							<div class="instagram" style="background-image: url(<%= social.image_url %>)">
-							</div>
-						<% end %>
-					<% end %>
-				</div>
-			<% end %>
-	</section>
+					</div>
+				<% end %>
+		</section>
+	<% end %>
 
 	
 
