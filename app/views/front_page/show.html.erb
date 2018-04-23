@@ -13,7 +13,7 @@
 					<ul class="menu--sub">
 						<% main_menu.sub_menus.each do |sub_menu| %>
 							<li class="item--sub"><%= link_to sub_menu.title, url_for(sub_menu.link), :target => "_blank" %>
-								<% if sub_menu.description.present? %>
+								<% if sub_menu.try(:description).try(:present?) %>
 								<div class="menu--sub-desc">
 									<p><%=sub_menu.description%></p>
 								</div>
@@ -41,7 +41,7 @@
 </div>
 
 <div class="content-wrapper">
-	<% if @header.about.present? %>
+	<% if @header.try(:about).try(:present?) %>
 		<section class="about wrapper">
 			<p><%= simple_format(@header.about) %></p>	
 		</section>
@@ -259,7 +259,7 @@
 						<!-- <div class="description"> -->
 							<div class="description"><%= simple_format(gstory.short_description) %></div>
 						<!-- </div> -->
-						<% if gstory.button_name.present? %>
+						<% if gstory.try(:button_name).try(:present?) %>
 							<%= link_to gstory.button_name + ' ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary'  %>
 						<% else %>
 							<%= link_to 'read more ▸', url_for(gstory.link), :target => "_blank", class: 'button button--secondary' %>

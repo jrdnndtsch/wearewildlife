@@ -47,7 +47,7 @@
 	<% end %>
 
 	<section class="stories">
-		<% if @stories_title.title.present? %>
+		<% if @stories_title.try(:title).try(:present?) %>
 		
 				<h2 class="title"><%= @stories_title.fr_title%></h2>
 			
@@ -108,11 +108,11 @@
 
 		<% if @blogs.present? %>
 		<section class="wp-blog wrapper">
-			<% if @title_blog.title.present? %>
+			<% if @title_blog.try(:title).try(:present?) %>
 				<h2 class="title"><%= @title_blog.title%></h2>
 			<% end %>
 			<section class="about wrapper">
-				<% if @title_blog.fr_section_text.present? %>
+				<% if @title_blog.try(:fr_section_text).try(:present?) %>
 					<%= simple_format(@title_blog.fr_section_text) %>
 				<% end %>
 			</section>
@@ -121,9 +121,9 @@
 				<div class="col--two">
 					<div class="photo-by" <% if blog.photo_by.present?%>title="<%= blog.photo_by%>"<% end %>>
 						<%= link_to url_for(blog.link), :target => '_blank' do%><% end %>
-						<% if blog.video_link.present? %>
+						<% if blog.try(:video_link).try(:present?) %>
 							<video src="<%= blog.video_link %>" controls ></video>
-						<% elsif blog.photo.present? %>
+						<% elsif blog.try(:photo).try(:present?) %>
 						  <%= image_tag blog.photo.url  %>
 						<% else %>
 						  <%= image_tag blog.image_url %>
@@ -135,7 +135,7 @@
 						<h3><%= blog.title %></h3>
 					<% end %>	
 					<p><span class="author"><%= blog.author %></span></p>
-					<p class="short-desc"><%= blog.short_description.html_safe %></p>
+					<p class="short-desc"><%= blog.try(:short_description).try(:html_safe) %></p>
 					<%= link_to 'En Savoir Plus ▸' , url_for(blog.link), :target => "_blank", class: "button button--secondary" %>
 				</div>
 			</div>
@@ -193,7 +193,7 @@
 				</div>
 			</div>
 			<div class="wrapper">
-				<% if @featured_donor.fr_button_name.present? %>
+				<% if @featured_donor.try(:fr_button_name).try(:present?) %>
 					<%= link_to @featured_donor.fr_button_name + ' ▸', url_for(@featured_donor.fr_link), :target => "_blank", class: 'button button--secondary'  %>
 				<% else %>
 					<%= link_to 'Donate Now ▸', url_for(@featured_donor.fr_link), :target => "_blank", class: "button button--secondary" %>
@@ -247,7 +247,7 @@
 
 	<% if @generic_stories.present? %>
 		<section class="generic-stories wrapper">
-			<% if @generic_stories_title.title.present? %>
+			<% if @generic_stories_title.try(:title).try(:present?) %>
 				<h2 class="title"><%=  @generic_stories_title.fr_title%></h2>
 			<% end %>
 			<div class="wrapper--flex">	
@@ -258,7 +258,7 @@
 						<!-- <div class="description"> -->
 							<div class="description"><%= simple_format(gstory.fr_short_description) %></div>
 						<!-- </div> -->
-						<% if gstory.fr_button_name.present? %>
+						<% if gstory.try(:fr_button_name).try(:present?) %>
 							<%= link_to gstory.fr_button_name + ' ▸', url_for(gstory.fr_link), :target => "_blank", class: 'button button--secondary'  %>
 						<% else %>
 							<%= link_to 'en savoir plus ▸', url_for(gstory.fr_link), :target => "_blank", class: 'button button--secondary' %>
