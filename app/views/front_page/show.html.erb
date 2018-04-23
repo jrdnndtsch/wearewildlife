@@ -48,7 +48,7 @@
 	<% end %>
 
 	<section class="stories">
-		<% if @stories_title.title.present? %>
+		<% if @stories_title.try(:title).try(:present?) %>
 		
 				<h2 class="title"><%= @stories_title.title%></h2>
 			
@@ -109,11 +109,11 @@
 
 	<% if @blogs.present? %>
 		<section class="wp-blog wrapper">
-			<% if @title_blog.title.present? %>
+			<% if @title_blog.try(:title).try(:present?) %>
 				<h2 class="title"><%= @title_blog.title%></h2>
 			<% end %>
 			<section class="about wrapper">
-				<% if @title_blog.section_text.present? %>
+				<% if @title_blog.try(:section_text).try(:present?) %>
 					<%= simple_format(@title_blog.section_text) %>
 				<% end %>
 			</section>
@@ -136,8 +136,8 @@
 						<h3><%= blog.title %></h3>
 					<% end %>	
 					<p><span class="author"><%= blog.author %></span></p>
-					<p class="short-desc"><%= blog.short_description.html_safe %></p>
-					<% if blog.video_link.present? %>
+					<p class="short-desc"><%= blog.try(:short_description).try(:html_safe) %></p>
+					<% if blog.try(:video_link).try(:present?) %>
 						<%= link_to 'Watch Video ▸' , url_for(blog.link), :target => "_blank", class: "button button--secondary" %>
 					<% else %>
 						<%= link_to 'Read More ▸' , url_for(blog.link), :target => "_blank", class: "button button--secondary" %>
@@ -197,7 +197,7 @@
 				</div>
 			</div>
 			<div class="wrapper">
-				<% if @featured_donor.button_name.present? %>
+				<% if @featured_donor.try(:button_name).try(:present?) %>
 					<%= link_to @featured_donor.button_name + ' ▸', url_for(@featured_donor.link), :target => "_blank", class: 'button button--secondary'  %>
 				<% else %>
 					<%= link_to 'Donate Now ▸', url_for(@featured_donor.link), :target => "_blank", class: "button button--secondary" %>
@@ -248,7 +248,7 @@
  -->
 	<% if @generic_stories.present? %>
 		<section class="generic-stories wrapper">
-			<% if @generic_stories_title.title.present? %>
+			<% if @generic_stories_title.try(:title).try(:present?) %>
 				<h2 class="title"><%=  @generic_stories_title.title%></h2>
 			<% end %>
 			<div class="wrapper--flex">	
