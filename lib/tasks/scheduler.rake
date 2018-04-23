@@ -22,6 +22,7 @@ task :update_feed => :environment do
 	end 
 
 	@instas = Instagram.user_recent_media(@wwfcanada, {:count => 15})
+	puts "getting instas"
 	@instas_with_hashtag = @instas.select { |pic| pic.caption.try(:text).try(:include?, '#wildlife') }
 	@instas_with_hashtag.last(4).each_with_index do |insta, index|
 		index_plus_one = index + 1
@@ -51,6 +52,7 @@ task :update_feed => :environment do
 	end 
 
 	@fr_instas = Instagram.user_recent_media(@wwfcanadafr, {:count => 15})
+	puts "getting french instas"
 	@fr_instas_with_hashtag = @fr_instas.select { |pic| pic.caption.try(:text).try(:include?, '#Plus1') }
 	puts @fr_instas_with_hashtag
 	@fr_instas_with_hashtag.last(4).each_with_index do |insta, index|
