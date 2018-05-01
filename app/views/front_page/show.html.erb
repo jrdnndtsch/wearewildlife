@@ -34,7 +34,8 @@
 		</video>
 		<div class="header-text hidden">
 			<!-- <h2 class="hidden sub-title-01"><span class="count"><%= @header.number %></span></h2>	 -->
-			<%= embedded_svg 'wildifer.svg', class: "sub-title-01 big-blur" %>
+			<%= image_tag 'wildlifer.png', class: "sub-title-01 big-blur" %>
+	<!-- 		<%= embedded_svg 'wildifer.svg', class: "sub-title-01 big-blur" %> -->
 			<%= image_tag 'down-arrow.svg', class: "hidden sub-title-03" %>
 		</div>
 	</div>
@@ -61,6 +62,11 @@
 				<div class="wrapper wrapper--flex stories--flex">
 					<div class="col--two">
 						<%= simple_format(@featured_story.description) %>
+						<% if @featured_story.button_name.present? %>
+						<%= link_to @featured_story.button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
+					<% else %>
+						<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
+					<% end %>
 					</div>
 					<div class="col--two">
 						<div class="photo-by" <% if @featured_story.photo_by.present?%>title="<%= @featured_story.photo_by%>"<% end %>>
@@ -69,13 +75,6 @@
 							<% end %>
 						</div>
 					</div>
-				</div>
-				<div class="wrapper">
-					<% if @featured_story.button_name.present? %>
-						<%= link_to @featured_story.button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
-					<% else %>
-						<%= link_to 'read more ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
-					<% end %>
 				</div>
 			</div>
 		<% end %>

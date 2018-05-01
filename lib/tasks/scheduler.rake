@@ -13,7 +13,7 @@ task :update_feed => :environment do
 	@wwf_tweets = $client.search("from:WWFCanada", :result_type => "recent").take(25)
 	puts "<<<<<THIS IS THE FIRST EN TWEET >>>>>>>"
 	puts @wwf_tweets.first.text
-	@wwf_tweets_with_hashtag = @wwf_tweets.select { |tweet| tweet.text.include?('#WWFGoWild') }
+	@wwf_tweets_with_hashtag = @wwf_tweets.select { |tweet| tweet.text.include?('#wildlifer' || '#Wildlifer') }
 	@wwf_tweets_with_hashtag.last(4).each_with_index do |tweet, index|
 		index_plus_one = index + 1
 		this_tweet = Tweet.where(id: index_plus_one).first_or_initialize
@@ -24,7 +24,7 @@ task :update_feed => :environment do
 
 	@instas = Instagram.user_recent_media(@wwfcanada, {:count => 15})
 	puts "getting instas"
-	@instas_with_hashtag = @instas.select { |pic| pic.caption.try(:text).try(:include?, '#wildlifer') }
+	@instas_with_hashtag = @instas.select { |pic| pic.caption.try(:text).try(:include?, '#wildlifer' || "#Wildlifer") }
 	@instas_with_hashtag.last(4).each_with_index do |insta, index|
 		index_plus_one = index + 1
 		this_insta = Insta.where(id: index_plus_one).first_or_initialize({text: insta.caption.text, image_url: insta.images.standard_resolution.url})

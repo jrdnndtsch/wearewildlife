@@ -60,6 +60,11 @@
 				<div class="wrapper wrapper--flex stories--flex">
 					<div class="col--two">
 						<%= simple_format(@featured_story.fr_description) %>
+						<% if @featured_story.fr_button_name.present? %>
+						<%= link_to @featured_story.fr_button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
+						<% else %>
+							<%= link_to 'en savoir plus ▸', url_for(@featured_story.fr_link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
+						<% end %>
 					</div>
 					<div class="col--two">
 						<div class="photo-by" <% if @featured_story.photo_by.present?%>title="<%= @featured_story.photo_by%>"<% end %>>
@@ -68,13 +73,6 @@
 							<% end %>
 						</div>
 					</div>
-				</div>
-				<div class="wrapper">
-					<% if @featured_story.fr_button_name.present? %>
-						<%= link_to @featured_story.fr_button_name + ' ▸', url_for(@featured_story.link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
-					<% else %>
-						<%= link_to 'en savoir plus ▸', url_for(@featured_story.fr_link), :target => "_blank", class: 'button button--tertiary button--inverted'  %>
-					<% end %>
 				</div>
 			</div>
 		<% end %>
