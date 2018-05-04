@@ -48,7 +48,7 @@
 		</section>
 	<% end %>
 
-	<section class="stories">
+	<section id="stories" class="stories">
 		<% if @stories_title.try(:title).try(:present?) %>
 		
 				<h2 class="title"><%= @stories_title.title%></h2>
@@ -146,6 +146,10 @@
 			<% end %>
 		</section>
 	<% end %>
+
+	<section class="back-up">
+		<a href="#stories"><%= embedded_svg 'up-arrow-black.svg' %></a> 
+	</section>
 
 	<% if @header.show_social %>
 		<section class="social">
