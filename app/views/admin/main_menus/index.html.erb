@@ -14,7 +14,7 @@
   </thead>
 
   <tbody>
-    <% @main_menus.each do |main_menu| %>
+    <% @main_menus.order(:order).each do |main_menu| %>
       <tr>
         <td><%= main_menu.title_used(current_user, main_menu) %></td>
         <td class="table--button"><%= link_to edit_admin_main_menu_path(main_menu), class: 'button button--primary button--edit as--no-margin-bottom' do %>

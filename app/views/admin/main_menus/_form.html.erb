@@ -28,7 +28,7 @@
   </div>
  
   <h2>Sub Menus</h2>
-  <%= f.fields_for :sub_menus do |builder| %>
+  <%= f.fields_for :sub_menus , f.object.sub_menus.order(:order)do |builder| %>
     <%= render 'sub_menu_fields', f: builder %>
   <% end %>
 
