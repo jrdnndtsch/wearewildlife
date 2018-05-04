@@ -75,6 +75,6 @@ class Admin::MainMenusController < AdminController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def main_menu_params
-      params.require(:main_menu).permit(:title, :fr_title, :link, :fr_link, :order, sub_menus_attributes:[:id, :title, :fr_title, :link, :fr_link, :description, :fr_description, :main_menu_id, :_destroy])
+      params.require(:main_menu).permit(:title, :fr_title, :link, :fr_link, :order, sub_menus_attributes:[:id, :title, :fr_title, :link, :fr_link, :description, :fr_description, :main_menu_id, :order, :_destroy])
     end
 end
