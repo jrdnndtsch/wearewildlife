@@ -8,7 +8,7 @@
 			<span></span>
 		</a>
 		<ul class="wrapper--flex menu--main">
-			<% @main_menus.each do |main_menu| %>
+			<% @main_menus.order(:order).each do |main_menu| %>
 				<li class="item--main"><span><%= main_menu.title %></span>
 					<ul class="menu--sub">
 						<% main_menu.sub_menus.each do |sub_menu| %>
@@ -34,7 +34,7 @@
 		</video>
 		<div class="header-text hidden">
 			<!-- <h2 class="hidden sub-title-01"><span class="count"><%= @header.number %></span></h2>	 -->
-			<%= image_tag 'wildlifer.png', class: "sub-title-01 big-blur" %>
+			<%= image_tag 'wildlifer.png', class: "sub-title-01 small blur" %>
 	<!-- 		<%= embedded_svg 'wildifer.svg', class: "sub-title-01 big-blur" %> -->
 			<%= image_tag 'down-arrow.svg', class: "hidden sub-title-03" %>
 		</div>
@@ -325,9 +325,8 @@
 		$('.main').removeClass('hidden')
 			$('.header').removeClass('hidden').hide().fadeIn(300, function(){
 				$('.header-text').removeClass('hidden').hide().fadeIn(1000, function(){
-				  $('.sub-title-01').removeClass('big-blur').fadeIn(2000, function(){
-				  	$('.sub-title-03').removeClass('hidden').hide().fadeIn(500);
-				  });
+				  $('.sub-title-01').removeClass('small blur')
+			  	$('.sub-title-03').removeClass('hidden').hide().fadeIn(500);
 				});	
 			});
 		function vidFade() {

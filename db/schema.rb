@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180422190040) do
+ActiveRecord::Schema.define(version: 20180504134155) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
@@ -129,6 +129,7 @@ ActiveRecord::Schema.define(version: 20180422190040) do
     t.datetime "updated_at", null: false
     t.string   "fr_title"
     t.string   "fr_link"
+    t.integer  "order"
   end
 
   create_table "stories", force: :cascade do |t|
@@ -169,6 +170,7 @@ ActiveRecord::Schema.define(version: 20180422190040) do
     t.string   "fr_title"
     t.string   "fr_link"
     t.string   "fr_description"
+    t.integer  "order"
   end
 
   add_index "sub_menus", ["main_menu_id"], name: "index_sub_menus_on_main_menu_id"

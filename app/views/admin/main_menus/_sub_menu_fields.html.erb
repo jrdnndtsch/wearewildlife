@@ -8,7 +8,10 @@
       <%= f.label :titre %><br>
       <%= f.text_field :fr_title %>
     </div>
-
+  </div>
+  <div class="field">
+    <%= f.label :order %>
+    <%= f.select :order, options_for_select(1..(@main_menu.sub_menus.count + 1), f.object.order), prompt: "None Selected" %>
   </div>
 
   <div class="wrapper--flex">

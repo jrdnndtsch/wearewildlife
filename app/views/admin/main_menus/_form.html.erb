@@ -21,6 +21,11 @@
       <%= f.text_field :fr_title %>
     </div>
   </div>
+
+  <div class="field">
+    <%= f.label :order %>
+    <%= f.select :order, options_for_select(1..(MainMenu.count + 1), f.object.order), prompt: "None Selected" %>
+  </div>
  
   <h2>Sub Menus</h2>
   <%= f.fields_for :sub_menus do |builder| %>

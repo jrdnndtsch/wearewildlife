@@ -33,7 +33,7 @@
 		<source src="<%= @header.video_link %>" type="video/mp4">
 		</video>
 		<div class="header-text hidden">
-			<%= embedded_svg 'manature.svg', class: "big-blur sub-title-01" %>
+			<%= embedded_svg 'manature.svg', class: "small blur sub-title-01" %>
 			<%= image_tag 'down-arrow.svg', class: "hidden sub-title-03" %>
 		</div>
 	</div>
@@ -320,12 +320,19 @@
 		var pauseButton = document.querySelector("#polina button");
 		var windowSize = $(window).innerWidth();
 
+		// $('.main').removeClass('hidden')
+		// 	$('.header').removeClass('hidden').hide().fadeIn(300, function(){
+		// 		$('.header-text').removeClass('hidden').hide().fadeIn(1000, function(){
+		// 		  $('.sub-title-01').removeClass('big-blur').fadeIn(2000, function(){
+		// 		  	$('.sub-title-03').removeClass('hidden').hide().fadeIn(500)
+		// 		  });
+		// 		});	
+		// 	});
 		$('.main').removeClass('hidden')
 			$('.header').removeClass('hidden').hide().fadeIn(300, function(){
 				$('.header-text').removeClass('hidden').hide().fadeIn(1000, function(){
-				  $('.sub-title-01').removeClass('big-blur').fadeIn(2000, function(){
-				  	$('.sub-title-03').removeClass('hidden').hide().fadeIn(500)
-				  });
+				  $('.sub-title-01').removeClass('small blur')
+			  	$('.sub-title-03').removeClass('hidden').hide().fadeIn(500);
 				});	
 			});
 		function vidFade() {
