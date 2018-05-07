@@ -28,7 +28,7 @@
 </nav>
 <div class="header hidden">
 	<div class="video-container" data-image= "<%= image_url @header.video_photo.url('header') %>"=>
-		<video poster="<%= image_url(@header.video_photo.url('header'))%>" id="bgvid" loop preload="none">
+		<video poster="<%= image_url(@header.video_photo.url('header'))%>" id="bgvid" loop preload="none" muted>
 
 		<source src="<%= @header.video_link %>" type="video/mp4">
 		</video>
@@ -335,7 +335,15 @@
 
 	// only play video if bigger than Medium size
     if(windowSize > 768){
-    	$('#bgvid')[0].play();
+    	console.log('big screen')
+    	var promise = $('#bgvid')[0].play();
+    	if (promise !== undefined) {
+    		promise.then(_ => {
+    			console.log('autoplay started')
+    		}).catch(error => {
+    			console.log('autoplay prevented')
+    		})
+    	}
     }else{
     	$('video').remove()
     	var image = $('.video-container').data('image')
