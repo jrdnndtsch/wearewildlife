@@ -42,7 +42,7 @@ task :update_feed => :environment do
 	end
 
 	@fr_wwf_tweets = $client.search("from:WWFCanadaFR", :result_type => "recent").take(25)
-	@fr_wwf_tweets_with_hashtag = @fr_wwf_tweets.select { |tweet| tweet.text.include?('#JourdelaTerre') }
+	@fr_wwf_tweets_with_hashtag = @fr_wwf_tweets.select { |tweet| tweet.text.include?('#MaNature' || '#manature') }
 
 	@fr_wwf_tweets_with_hashtag.last(4).each_with_index do |tweet, index|
 		index_plus_one = index + 1
@@ -54,7 +54,7 @@ task :update_feed => :environment do
 
 	@fr_instas = Instagram.user_recent_media(@wwfcanadafr, {:count => 15})
 	puts "getting french instas"
-	@fr_instas_with_hashtag = @fr_instas.select { |pic| pic.caption.try(:text).try(:include?, '#JourdelaTerre') }
+	@fr_instas_with_hashtag = @fr_instas.select { |pic| pic.caption.try(:text).try(:include?, '#MaNature' || '#manature') }
 	puts @fr_instas_with_hashtag
 	@fr_instas_with_hashtag.last(4).each_with_index do |insta, index|
 		index_plus_one = index + 1
