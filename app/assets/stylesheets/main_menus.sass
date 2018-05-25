@@ -69,7 +69,8 @@ nav.main
 
 
 
-
+.item--main * 
+	// :pointer-events none
 .menu--main
 	// :display none !important
 	+display-for(md sm xs)
@@ -151,6 +152,7 @@ nav.main
 	:padding 0 16px
 	:min-width 220px
 	:display none
+	:z-index 1000
 	// :transition all 0.3s
 	+display-for(md sm xs)
 		:position static
@@ -165,6 +167,9 @@ nav.main
 	a 
 		:color black
 		:font-size 14px
+		:height 100%
+		:width 100%
+		:display block
 		&:hover
 			:color $pink
 	.menu--sub-desc

@@ -376,12 +376,13 @@
 		// var windowSize = $(window).innerWidth()
 		function mainMenu(){
 			if(windowSize >= 960){
+
 				$('.item--main').on('mouseenter', function(){
-					$(this).find('a').addClass('active');
+					$(this).find('span').addClass('active');
 					$(this).find('.menu--sub').addClass('active');
 				});
 				$('.item--main').on('mouseleave', function(){
-					$(this).find('a').removeClass('active');
+					$(this).find('span').removeClass('active');
 					$(this).find('.menu--sub').removeClass('active');
 				});
 
