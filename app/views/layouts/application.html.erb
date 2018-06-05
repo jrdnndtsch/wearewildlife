@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Be a Wildlifer – WWF-Canada</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application' %>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- ----------------- -->
 
-  <meta name="description" content="Channel your love of wildlife into action by joining grassroots conservation efforts near you. Restore habitat, contribute to scientific research and help wildlife thrive.">
 
  
+ <% if request.env["PATH_INFO"] == "/en" %>
 
-<!-- for facebook -->
+  <title>Be a Wildlifer – WWF-Canada</title>
+
+  <meta name="description" content="<%= yield(:meta_description) %>">
+
+  <!-- for facebook -->
 
   <meta property="og:title" content="Be a Wildlifer" />
 
@@ -27,7 +30,7 @@
 
   <!-- for Twitter -->
 
-   <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <meta name="twitter:site" content="@wwfcanada">
 
@@ -36,6 +39,35 @@
     <meta name="twitter:description" content=" Make protecting wildlife a part of your life." />
 
     <meta name="twitter:image" content="https://s3.ca-central-1.amazonaws.com/wildlifer/social-share-girl-dad-wordmark.jpg" />
+
+  <% else %>
+
+    <title>On a besoin de vous – quelle que soit votre nature</title>
+  
+    <meta name="description" content="<%= yield(:meta_description) %>">
+
+    <!-- FACEBOOK -->
+
+    <meta property="og:title" content="Quelle que soit votre nature" />
+
+    <meta property="og:image" content="https://s3.ca-central-1.amazonaws.com/wildlifer/social-share-girl-dad-wordmark-FR.jpg" />
+
+    <meta property="og:description" content="Qui que vous soyez, vous pouvez faire une différence pour les espèces. Joignez-vous aux efforts de conservation de votre communauté." />
+
+
+    <!-- TWITTER -->
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="twitter:site" content="@WWFCanadaFR">
+
+    <meta name="twitter:title" content="Quelle que soit votre nature" />
+
+    <meta name="twitter:description" content="Faites de la protection de la nature un véritable mode de vie." />
+
+    <meta name="twitter:image" content="https://s3.ca-central-1.amazonaws.com/wildlifer/social-share-girl-dad-wordmark-FR.jpg" /> 
+
+  <% end %>
 
 
   <%= favicon_link_tag 'wwf-favicon.png' %>
@@ -81,6 +113,7 @@
   })(window,document,'script','dataLayer','GTM-WHS8JR');</script>
 
   <!-- End Google Tag Manager -->
+
 
 <%= yield %>
 

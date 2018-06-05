@@ -18,4 +18,8 @@ module ApplicationHelper
 		end
 		doc.to_html.html_safe
 	end
+
+	def meta_description(meta_text)
+		content_for(:meta_description){ meta_text }
+	end
 end
